@@ -1,0 +1,32 @@
+{
+  "name": "prestige-webdesign",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/robots": "^5.7.1",
+    "@nuxtjs/seo": "^3.4.0",
+    "@nuxtjs/sitemap": "^7.6.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@types/three": "^0.183.1",
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/nuxt": "^14.2.1",
+    "gsap": "^3.14.2",
+    "nuxt": "^4.4.2",
+    "three": "^0.183.2",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19"
+  }
+}
