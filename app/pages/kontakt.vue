@@ -1,4 +1,14 @@
 <script setup lang="ts">
+type ContactFormPayload = {
+  name: string
+  email: string
+  phone: string
+  company: string
+  service: string
+  message: string
+  website: string
+}
+
 useSeoMeta({
   title: 'Kontakt | Prestige Webdesign – Kostenlose Beratung',
   description: 'Kontaktieren Sie Prestige Webdesign in Dortmund. Kostenlose Beratung für Webdesign & SEO. Schnelle Antworten, persönliche Betreuung.',
@@ -6,18 +16,20 @@ useSeoMeta({
   ogDescription: 'Kontaktieren Sie Prestige Webdesign in Dortmund fuer Webdesign, SEO und E-Commerce. Wir antworten meist innerhalb von 24 Stunden.',
 })
 
-const form = reactive({
+const form = reactive<ContactFormPayload>({
   name: '',
   email: '',
   phone: '',
   company: '',
   service: '',
   message: '',
+  website: '',
 })
 
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const hasAcceptedPrivacyPolicy = ref(false)
+const submitError = ref('')
 
 useHead({
   script: [
@@ -47,11 +59,35 @@ useHead({
 })
 
 async function handleSubmit() {
+  submitError.value = ''
   isSubmitting.value = true
-  // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 1500))
-  isSubmitting.value = false
-  isSubmitted.value = true
+
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: { ...form },
+    })
+
+    isSubmitted.value = true
+    Object.assign(form, {
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      service: '',
+      message: '',
+      website: '',
+    })
+    hasAcceptedPrivacyPolicy.value = false
+  }
+  catch (error) {
+    submitError.value = error instanceof Error
+      ? error.message
+      : 'Die Nachricht konnte nicht versendet werden. Bitte versuchen Sie es erneut.'
+  }
+  finally {
+    isSubmitting.value = false
+  }
 }
 
 const contactInfo = [
@@ -142,6 +178,10 @@ const contactInfo = [
                 <h2 class="text-2xl font-display font-bold text-white mb-2">Kostenlose Beratung anfordern</h2>
                 <p id="contact-form-description" class="text-dark-300 text-sm mb-8">Füllen Sie das Formular aus und wir melden uns bei Ihnen.</p>
 
+                <div v-if="submitError" class="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-100" role="alert">
+                  {{ submitError }}
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label for="name" class="block text-sm font-medium text-dark-100 mb-2">Name *</label>
@@ -226,6 +266,18 @@ const contactInfo = [
                   />
                 </div>
 
+                <div class="hidden" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input
+                    id="website"
+                    v-model="form.website"
+                    name="website"
+                    type="text"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+
                 <div class="flex items-start gap-3">
                   <input id="privacy-policy" v-model="hasAcceptedPrivacyPolicy" name="privacy-policy" type="checkbox" required class="mt-1 accent-primary-500" />
                   <label for="privacy-policy" class="text-dark-300 text-sm">
@@ -236,7 +288,7 @@ const contactInfo = [
                 <button
                   type="submit"
                   class="btn-primary w-full md:w-auto"
-                  :disabled="isSubmitting"
+                  :disabled="isSubmitting || !hasAcceptedPrivacyPolicy"
                   :aria-busy="isSubmitting"
                   aria-describedby="contact-form-description"
                 >
