@@ -242,7 +242,7 @@ const benefits = [
 
             <div
               :class="[
-                'glass-card p-8 h-full flex flex-direction column',
+                'glass-card p-8 h-full flex flex-col',
                 pkg.highlight ? 'border-primary-600/50 border-2 scale-105' : '',
               ]"
             >
@@ -259,13 +259,6 @@ const benefits = [
                 </span>
                 <span class="text-dark-200 ml-2">{{ pkg.period }}</span>
               </div>
-
-              <a href="mailto:info@prestige-webdesign.de" :class="[
-                'btn-primary w-full justify-center mb-8',
-                pkg.highlight ? '' : 'btn-secondary',
-              ]">
-                Paket wählen
-              </a>
 
               <div class="space-y-4">
                 <p class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Enthalten:</p>
