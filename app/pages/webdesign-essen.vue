@@ -12,9 +12,9 @@
         <p class="text-lg text-gray-400 mb-8 max-w-3xl">
           Essen – Grüne Hauptstadt Europas 2015 und wirtschaftliches Zentrum der Region. Wir verstehen die Anforderungen dieser dynamischen Stadt und entwickeln Websites, die Ihre Essener Zielgruppe erreichen und begeistern.
         </p>
-        <button class="btn-primary text-lg px-8 py-4">
+        <NuxtLink to="/kontakt" class="btn-primary text-lg px-8 py-4">
           Kostenlose Beratung vereinbaren
-        </button>
+        </NuxtLink>
       </div>
     </section>
 
@@ -214,8 +214,7 @@ useSeoMeta({
   description: 'Webdesign Essen: Moderne Webagentur für Essen & Umgebung. Professionelle Websites, SEO, E-Commerce-Lösungen.',
   ogDescription: 'Webdesign Essen: Moderne Webagentur für Essen & Umgebung. Professionelle Websites, SEO, E-Commerce-Lösungen.',
   keywords: 'Webdesign Essen, Webagentur Essen, Website Essen, SEO Essen, Webentwicklung Essen, Online Marketing Essen',
-  ogImage: '/og-essen.jpg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
   robots: 'index, follow',
-  canonical: 'https://prestige-webdesign.de/webdesign-essen',
 })
 </script>

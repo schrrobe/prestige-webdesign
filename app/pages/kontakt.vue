@@ -2,6 +2,8 @@
 useSeoMeta({
   title: 'Kontakt | Prestige Webdesign – Kostenlose Beratung',
   description: 'Kontaktieren Sie Prestige Webdesign in Dortmund. Kostenlose Beratung für Webdesign & SEO. Schnelle Antworten, persönliche Betreuung.',
+  ogTitle: 'Kontakt | Prestige Webdesign',
+  ogDescription: 'Kontaktieren Sie Prestige Webdesign in Dortmund fuer Webdesign, SEO und E-Commerce. Wir antworten meist innerhalb von 24 Stunden.',
 })
 
 const form = reactive({
@@ -15,6 +17,34 @@ const form = reactive({
 
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
+const hasAcceptedPrivacyPolicy = ref(false)
+
+useHead({
+  script: [
+    {
+      key: 'contact-structured-data',
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Kontakt',
+        url: 'https://prestige-webdesign.de/kontakt',
+        mainEntity: {
+          '@type': 'ProfessionalService',
+          name: 'Prestige Webdesign',
+          email: 'info@prestige-webdesign.de',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Kapitelwiese 14',
+            postalCode: '44263',
+            addressLocality: 'Dortmund',
+            addressCountry: 'DE',
+          },
+        },
+      }),
+    },
+  ],
+})
 
 async function handleSubmit() {
   isSubmitting.value = true
@@ -79,7 +109,7 @@ const contactInfo = [
                 </div>
                 <div>
                   <p class="text-dark-300 text-sm mb-1">{{ info.label }}</p>
-                  <a :href="info.href" target="_blank" class="text-white font-medium hover:text-primary-400 transition-colors">
+                  <a :href="info.href" :target="info.icon === 'location' ? '_blank' : undefined" :rel="info.icon === 'location' ? 'noreferrer' : undefined" class="text-white font-medium hover:text-primary-400 transition-colors">
                     {{ info.value }}
                   </a>
                 </div>
@@ -98,7 +128,7 @@ const contactInfo = [
           <!-- Contact Form -->
           <div class="lg:col-span-2">
             <div class="glass-card p-8 md:p-10">
-              <div v-if="isSubmitted" class="text-center py-12">
+              <div v-if="isSubmitted" class="text-center py-12" role="status" aria-live="polite">
                 <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                   <svg class="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -110,43 +140,55 @@ const contactInfo = [
 
               <form v-else @submit.prevent="handleSubmit" class="space-y-6">
                 <h2 class="text-2xl font-display font-bold text-white mb-2">Kostenlose Beratung anfordern</h2>
-                <p class="text-dark-300 text-sm mb-8">Füllen Sie das Formular aus und wir melden uns bei Ihnen.</p>
+                <p id="contact-form-description" class="text-dark-300 text-sm mb-8">Füllen Sie das Formular aus und wir melden uns bei Ihnen.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-medium text-dark-100 mb-2">Name *</label>
+                    <label for="name" class="block text-sm font-medium text-dark-100 mb-2">Name *</label>
                     <input
+                      id="name"
                       v-model="form.name"
+                      name="name"
                       type="text"
                       required
+                      autocomplete="name"
                       class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                       placeholder="Ihr Name"
                     />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-dark-100 mb-2">E-Mail *</label>
+                    <label for="email" class="block text-sm font-medium text-dark-100 mb-2">E-Mail *</label>
                     <input
+                      id="email"
                       v-model="form.email"
+                      name="email"
                       type="email"
                       required
+                      autocomplete="email"
                       class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                       placeholder="ihre@email.de"
                     />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-dark-100 mb-2">Telefon</label>
+                    <label for="phone" class="block text-sm font-medium text-dark-100 mb-2">Telefon</label>
                     <input
+                      id="phone"
                       v-model="form.phone"
+                      name="phone"
                       type="tel"
+                      autocomplete="tel"
                       class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                       placeholder="Ihre Telefonnummer"
                     />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-dark-100 mb-2">Unternehmen</label>
+                    <label for="company" class="block text-sm font-medium text-dark-100 mb-2">Unternehmen</label>
                     <input
+                      id="company"
                       v-model="form.company"
+                      name="company"
                       type="text"
+                      autocomplete="organization"
                       class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                       placeholder="Ihr Unternehmen"
                     />
@@ -154,9 +196,11 @@ const contactInfo = [
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-dark-100 mb-2">Gewünschte Leistung</label>
+                  <label for="service" class="block text-sm font-medium text-dark-100 mb-2">Gewünschte Leistung</label>
                   <select
+                    id="service"
                     v-model="form.service"
+                    name="service"
                     class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
                   >
                     <option value="" class="bg-dark-800">Bitte wählen...</option>
@@ -169,27 +213,32 @@ const contactInfo = [
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-dark-100 mb-2">Nachricht *</label>
+                  <label for="message" class="block text-sm font-medium text-dark-100 mb-2">Nachricht *</label>
                   <textarea
+                    id="message"
                     v-model="form.message"
+                    name="message"
                     required
                     rows="5"
+                    autocomplete="off"
                     class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
                     placeholder="Beschreiben Sie Ihr Projekt..."
                   />
                 </div>
 
                 <div class="flex items-start gap-3">
-                  <input type="checkbox" required class="mt-1 accent-primary-500" />
-                  <p class="text-dark-300 text-sm">
+                  <input id="privacy-policy" v-model="hasAcceptedPrivacyPolicy" name="privacy-policy" type="checkbox" required class="mt-1 accent-primary-500" />
+                  <label for="privacy-policy" class="text-dark-300 text-sm">
                     Ich habe die <NuxtLink to="/datenschutz" class="text-primary-400 hover:text-primary-300 underline">Datenschutzerklärung</NuxtLink> gelesen und bin mit der Verarbeitung meiner Daten einverstanden.
-                  </p>
+                  </label>
                 </div>
 
                 <button
                   type="submit"
                   class="btn-primary w-full md:w-auto"
                   :disabled="isSubmitting"
+                  :aria-busy="isSubmitting"
+                  aria-describedby="contact-form-description"
                 >
                   <svg v-if="isSubmitting" class="animate-spin w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />

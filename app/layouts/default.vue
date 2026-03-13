@@ -19,8 +19,14 @@ function declineCookies() {
 
 <template>
   <div class="min-h-screen flex flex-col">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-lg focus:bg-primary-500 focus:px-4 focus:py-3 focus:text-white"
+    >
+      Zum Hauptinhalt springen
+    </a>
     <AppHeader />
-    <main class="flex-1">
+    <main id="main-content" tabindex="-1" class="flex-1 focus:outline-none">
       <slot />
     </main>
     <AppFooter />

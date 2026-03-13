@@ -12,9 +12,9 @@
         <p class="text-lg text-gray-400 mb-8 max-w-3xl">
           Von Hightech-Startups über etablierte Industrie bis zu mittelständischen Dienstleistern: Wir kennen die Chancen und Anforderungen Bochums und entwickeln Websites, die wirklich funktionieren.
         </p>
-        <button class="btn-primary text-lg px-8 py-4">
+        <NuxtLink to="/kontakt" class="btn-primary text-lg px-8 py-4">
           Kostenlose Beratung vereinbaren
-        </button>
+        </NuxtLink>
       </div>
     </section>
 
@@ -202,8 +202,7 @@ useSeoMeta({
   description: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen. SEO & Digital Marketing. Jetzt Beratung buchen!',
   ogDescription: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen. SEO & Digital Marketing. Jetzt Beratung buchen!',
   keywords: 'Webdesign Bochum, Webagentur Bochum, Website Bochum, SEO Bochum, Webentwicklung Bochum, Digital Marketing Bochum',
-  ogImage: '/og-bochum.jpg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
   robots: 'index, follow',
-  canonical: 'https://prestige-webdesign.de/webdesign-bochum',
 })
 </script>

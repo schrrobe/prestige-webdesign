@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="140" r="180" fill="#0EA5E9" fill-opacity="0.16"/>
+  <circle cx="180" cy="520" r="220" fill="#F97316" fill-opacity="0.12"/>
+  <rect x="84" y="84" width="1032" height="462" rx="36" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.12"/>
+  <rect x="132" y="154" width="92" height="92" rx="24" fill="url(#logo)"/>
+  <path d="M174.941 186.136C174.941 176.67 167.271 169 157.805 169H148V232H160.299C170.075 232 178 224.075 178 214.299C178 208.938 175.607 204.136 171.842 200.89C173.773 197.964 174.941 194.459 174.941 190.682V186.136ZM159.438 181.75C162.332 181.75 164.679 184.096 164.679 186.99V191.153C164.679 194.047 162.332 196.394 159.438 196.394H157.438V181.75H159.438ZM161.414 219.25H157.438V204.105H161.414C165.597 204.105 168.988 207.496 168.988 211.678C168.988 215.86 165.597 219.25 161.414 219.25Z" fill="white"/>
+  <text x="132" y="330" fill="white" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">Prestige Webdesign</text>
+  <text x="132" y="396" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">
+    Webdesign, SEO und E-Commerce fuer Dortmund, Bochum und Essen
+  </text>
+  <text x="132" y="454" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">
+    Moderne Websites mit Fokus auf Sichtbarkeit, Performance und Conversion
+  </text>
+  <defs>
+    <linearGradient id="bg" x1="1180" y1="32" x2="40" y2="598" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="132" y1="154" x2="224" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F97316"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+</svg>

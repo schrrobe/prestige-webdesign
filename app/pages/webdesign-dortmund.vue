@@ -12,9 +12,9 @@
         <p class="text-lg text-gray-400 mb-8 max-w-3xl">
           Von der Innenstadt bis zum Technologiepark: Wir kennen die Anforderungen Dortmunder Wirtschaft und schaffen digitale Lösungen, die Ihr Business nach vorne bringen.
         </p>
-        <button class="btn-primary text-lg px-8 py-4">
+        <NuxtLink to="/kontakt" class="btn-primary text-lg px-8 py-4">
           Kostenlose Beratung vereinbaren
-        </button>
+        </NuxtLink>
       </div>
     </section>
 
@@ -203,8 +203,7 @@ useSeoMeta({
   description: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
   ogDescription: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
   keywords: 'Webdesign Dortmund, Webagentur Dortmund, Website Dortmund, SEO Dortmund, Webentwicklung Dortmund, Online Marketing Dortmund',
-  ogImage: '/og-dortmund.jpg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
   robots: 'index, follow',
-  canonical: 'https://prestige-webdesign.de/webdesign-dortmund',
 })
 </script>
