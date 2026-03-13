@@ -1,35 +1,10 @@
 <script setup lang="ts">
-type ContactFormPayload = {
-  name: string
-  email: string
-  phone: string
-  company: string
-  service: string
-  message: string
-  website: string
-}
-
 useSeoMeta({
   title: 'Kontakt | Prestige Webdesign – Kostenlose Beratung',
   description: 'Kontaktieren Sie Prestige Webdesign in Dortmund. Kostenlose Beratung für Webdesign & SEO. Schnelle Antworten, persönliche Betreuung.',
   ogTitle: 'Kontakt | Prestige Webdesign',
   ogDescription: 'Kontaktieren Sie Prestige Webdesign in Dortmund fuer Webdesign, SEO und E-Commerce. Wir antworten meist innerhalb von 24 Stunden.',
 })
-
-const form = reactive<ContactFormPayload>({
-  name: '',
-  email: '',
-  phone: '',
-  company: '',
-  service: '',
-  message: '',
-  website: '',
-})
-
-const isSubmitting = ref(false)
-const isSubmitted = ref(false)
-const hasAcceptedPrivacyPolicy = ref(false)
-const submitError = ref('')
 
 useHead({
   script: [
@@ -57,38 +32,6 @@ useHead({
     },
   ],
 })
-
-async function handleSubmit() {
-  submitError.value = ''
-  isSubmitting.value = true
-
-  try {
-    await $fetch('/api/contact', {
-      method: 'POST',
-      body: { ...form },
-    })
-
-    isSubmitted.value = true
-    Object.assign(form, {
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: '',
-      website: '',
-    })
-    hasAcceptedPrivacyPolicy.value = false
-  }
-  catch (error) {
-    submitError.value = error instanceof Error
-      ? error.message
-      : 'Die Nachricht konnte nicht versendet werden. Bitte versuchen Sie es erneut.'
-  }
-  finally {
-    isSubmitting.value = false
-  }
-}
 
 const contactInfo = [
   {
@@ -164,141 +107,32 @@ const contactInfo = [
           <!-- Contact Form -->
           <div class="lg:col-span-2">
             <div class="glass-card p-8 md:p-10">
-              <div v-if="isSubmitted" class="text-center py-12" role="status" aria-live="polite">
-                <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
-                  <svg class="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <div class="space-y-6">
+                <div class="w-16 h-16 rounded-full bg-primary-500/10 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 class="text-2xl font-display font-bold text-white mb-3">Nachricht gesendet!</h3>
-                <p class="text-dark-200">Vielen Dank für Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen.</p>
-              </div>
-
-              <form v-else @submit.prevent="handleSubmit" class="space-y-6">
-                <h2 class="text-2xl font-display font-bold text-white mb-2">Kostenlose Beratung anfordern</h2>
-                <p id="contact-form-description" class="text-dark-300 text-sm mb-8">Füllen Sie das Formular aus und wir melden uns bei Ihnen.</p>
-
-                <div v-if="submitError" class="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-100" role="alert">
-                  {{ submitError }}
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label for="name" class="block text-sm font-medium text-dark-100 mb-2">Name *</label>
-                    <input
-                      id="name"
-                      v-model="form.name"
-                      name="name"
-                      type="text"
-                      required
-                      autocomplete="name"
-                      class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
-                      placeholder="Ihr Name"
-                    />
-                  </div>
-                  <div>
-                    <label for="email" class="block text-sm font-medium text-dark-100 mb-2">E-Mail *</label>
-                    <input
-                      id="email"
-                      v-model="form.email"
-                      name="email"
-                      type="email"
-                      required
-                      autocomplete="email"
-                      class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
-                      placeholder="ihre@email.de"
-                    />
-                  </div>
-                  <div>
-                    <label for="phone" class="block text-sm font-medium text-dark-100 mb-2">Telefon</label>
-                    <input
-                      id="phone"
-                      v-model="form.phone"
-                      name="phone"
-                      type="tel"
-                      autocomplete="tel"
-                      class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
-                      placeholder="Ihre Telefonnummer"
-                    />
-                  </div>
-                  <div>
-                    <label for="company" class="block text-sm font-medium text-dark-100 mb-2">Unternehmen</label>
-                    <input
-                      id="company"
-                      v-model="form.company"
-                      name="company"
-                      type="text"
-                      autocomplete="organization"
-                      class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
-                      placeholder="Ihr Unternehmen"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label for="service" class="block text-sm font-medium text-dark-100 mb-2">Gewünschte Leistung</label>
-                  <select
-                    id="service"
-                    v-model="form.service"
-                    name="service"
-                    class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                  <h2 class="text-2xl font-display font-bold text-white mb-2">Kontaktformular voruebergehend deaktiviert</h2>
+                  <p class="text-dark-200 leading-relaxed">
+                    Das Formular ist aktuell nicht aktiv, da das derzeitige Hosting keinen serverseitigen Node.js-Betrieb fuer den sicheren Versand unterstuetzt.
+                    Schreiben Sie uns bitte direkt per E-Mail. Wir antworten in der Regel innerhalb von 24 Stunden.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <p class="text-sm uppercase tracking-wider text-dark-300 mb-2">Direkter Kontakt</p>
+                  <a
+                    href="mailto:info@prestige-webdesign.de?subject=Anfrage%20ueber%20prestige-webdesign.de"
+                    class="inline-flex items-center gap-2 text-lg font-semibold text-primary-400 hover:text-primary-300 transition-colors"
                   >
-                    <option value="" class="bg-dark-800">Bitte wählen...</option>
-                    <option value="webdesign" class="bg-dark-800">Webdesign</option>
-                    <option value="seo" class="bg-dark-800">SEO / Suchmaschinenoptimierung</option>
-                    <option value="ecommerce" class="bg-dark-800">E-Commerce / Online-Shop</option>
-                    <option value="wartung" class="bg-dark-800">Wartung & Support</option>
-                    <option value="sonstiges" class="bg-dark-800">Sonstiges</option>
-                  </select>
+                    info@prestige-webdesign.de
+                  </a>
                 </div>
-
-                <div>
-                  <label for="message" class="block text-sm font-medium text-dark-100 mb-2">Nachricht *</label>
-                  <textarea
-                    id="message"
-                    v-model="form.message"
-                    name="message"
-                    required
-                    rows="5"
-                    autocomplete="off"
-                    class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-dark-300 focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-all resize-none"
-                    placeholder="Beschreiben Sie Ihr Projekt..."
-                  />
-                </div>
-
-                <div class="hidden" aria-hidden="true">
-                  <label for="website">Website</label>
-                  <input
-                    id="website"
-                    v-model="form.website"
-                    name="website"
-                    type="text"
-                    tabindex="-1"
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="flex items-start gap-3">
-                  <input id="privacy-policy" v-model="hasAcceptedPrivacyPolicy" name="privacy-policy" type="checkbox" required class="mt-1 accent-primary-500" />
-                  <label for="privacy-policy" class="text-dark-300 text-sm">
-                    Ich habe die <NuxtLink to="/datenschutz" class="text-primary-400 hover:text-primary-300 underline">Datenschutzerklärung</NuxtLink> gelesen und bin mit der Verarbeitung meiner Daten einverstanden.
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn-primary w-full md:w-auto"
-                  :disabled="isSubmitting || !hasAcceptedPrivacyPolicy"
-                  :aria-busy="isSubmitting"
-                  aria-describedby="contact-form-description"
-                >
-                  <svg v-if="isSubmitting" class="animate-spin w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                  </svg>
-                  {{ isSubmitting ? 'Wird gesendet...' : 'Nachricht senden' }}
-                </button>
-              </form>
+                <p class="text-sm text-dark-300">
+                  Sobald eine passende serverseitige Umgebung oder ein externer Formularservice eingerichtet ist, kann das Formular wieder aktiviert werden.
+                </p>
+              </div>
             </div>
           </div>
         </div>
