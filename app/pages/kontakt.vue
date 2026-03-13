@@ -60,7 +60,7 @@ const contactInfo = [
           Lassen Sie uns <span class="text-gradient">sprechen</span>
         </h1>
         <p class="text-dark-200 text-lg max-w-2xl">
-          Sprechen Sie mit unseren Experten – per E-Mail oder über das Kontaktformular. Wir antworten meist innerhalb von 24 Stunden.
+          Sprechen Sie mit unseren Experten per E-Mail. Wir antworten meist innerhalb von 24 Stunden.
         </p>
       </div>
     </section>
@@ -114,10 +114,10 @@ const contactInfo = [
                   </svg>
                 </div>
                 <div>
-                  <h2 class="text-2xl font-display font-bold text-white mb-2">Kontaktformular voruebergehend deaktiviert</h2>
+                  <h2 class="text-2xl font-display font-bold text-white mb-2">Schreiben Sie uns direkt</h2>
                   <p class="text-dark-200 leading-relaxed">
-                    Das Formular ist aktuell nicht aktiv, da das derzeitige Hosting keinen serverseitigen Node.js-Betrieb fuer den sicheren Versand unterstuetzt.
-                    Schreiben Sie uns bitte direkt per E-Mail. Wir antworten in der Regel innerhalb von 24 Stunden.
+                    Teilen Sie uns Ihr Anliegen einfach per E-Mail mit. Ob Webdesign, SEO, E-Commerce oder Wartung:
+                    Wir antworten in der Regel innerhalb von 24 Stunden und melden uns persoenlich bei Ihnen.
                   </p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -129,9 +129,6 @@ const contactInfo = [
                     info@prestige-webdesign.de
                   </a>
                 </div>
-                <p class="text-sm text-dark-300">
-                  Sobald eine passende serverseitige Umgebung oder ein externer Formularservice eingerichtet ist, kann das Formular wieder aktiviert werden.
-                </p>
               </div>
             </div>
           </div>

@@ -50,9 +50,9 @@ useSeoMeta({
                 Wenn Sie unsere Website besuchen, erfassen wir automatisch bestimmte Informationen: IP-Adresse, Browsertyp und -version, Betriebssystem, besuchte Seiten und Verweildauer, Referrer-Information sowie Klicks und Interaktionen. Diese Daten werden verwendet, um unsere Website zu verbessern, die Benutzerfreundlichkeit zu optimieren und Missbrauch zu verhindern.
               </p>
 
-              <h3 class="text-lg font-semibold text-white mt-6 mb-3">3.2 Durch Formulare bereitgestellte Daten</h3>
+              <h3 class="text-lg font-semibold text-white mt-6 mb-3">3.2 Durch Kontaktaufnahme bereitgestellte Daten</h3>
               <p class="text-dark-200 leading-relaxed">
-                Wenn Sie unsere Kontaktformulare verwenden, erfassen wir: Name, E-Mail-Adresse, Telefonnummer (optional), Unternehmen (optional) und Ihren Nachrichtentext. Diese Daten verwenden wir ausschließlich, um auf Ihre Anfrage zu antworten.
+                Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben wie Name, E-Mail-Adresse, Telefonnummer (optional), Unternehmen (optional) und Ihren Nachrichtentext. Diese Daten verwenden wir ausschließlich, um auf Ihre Anfrage zu antworten.
               </p>
 
               <h3 class="text-lg font-semibold text-white mt-6 mb-3">3.3 Cookies und ähnliche Technologien</h3>
