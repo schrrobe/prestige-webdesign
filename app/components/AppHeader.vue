@@ -11,6 +11,7 @@ const navItems = [
     to: '/leistungen',
     children: [
       { label: 'Webdesign', to: '/leistungen/webdesign' },
+      { label: 'Webanwendungen', to: '/leistungen/webanwendungen' },
       { label: 'SEO', to: '/leistungen/seo' },
       { label: 'E-Commerce', to: '/leistungen/e-commerce' },
       { label: 'Wartung & Support', to: '/leistungen/wartung' },

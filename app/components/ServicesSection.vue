@@ -28,6 +28,13 @@ const services = [
     link: '/leistungen/wartung',
     gradient: 'from-green-500 to-emerald-500',
   },
+  {
+    icon: 'app',
+    title: 'Webanwendungen',
+    description: 'Komplexe individuelle Web-Apps, Portale und digitale Tools fuer Prozesse, Plattformen und interne Ablaeufe.',
+    link: '/leistungen/webanwendungen',
+    gradient: 'from-indigo-500 to-sky-500',
+  },
 ]
 </script>
 
@@ -49,7 +56,7 @@ const services = [
       </div>
 
       <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         <NuxtLink
           v-for="(service, index) in services"
           :key="service.title"
@@ -76,6 +83,11 @@ const services = [
             <!-- Shield Icon -->
             <svg v-if="service.icon === 'shield'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <!-- App Icon -->
+            <svg v-if="service.icon === 'app'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3h4.5A2.25 2.25 0 0116.5 5.25v13.5A2.25 2.25 0 0114.25 21h-4.5A2.25 2.25 0 017.5 18.75V5.25A2.25 2.25 0 019.75 3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 7h4m-4 4h4m-4 4h2" />
             </svg>
           </div>
 
