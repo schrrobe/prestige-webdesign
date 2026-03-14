@@ -183,6 +183,8 @@
       </div>
     </section>
 
+    <CityKeywordLinks city-slug="bottrop" city-name="Bottrop" />
+
     <CTASection />
   </div>
 </template>

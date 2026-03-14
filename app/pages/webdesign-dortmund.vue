@@ -192,6 +192,8 @@
     </section>
 
     <!-- CTA Section -->
+    <CityKeywordLinks city-slug="dortmund" city-name="Dortmund" />
+
     <CTASection />
   </div>
 </template>
