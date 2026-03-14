@@ -84,6 +84,7 @@ watch(route, () => {
               class="px-4 py-2 text-sm font-medium text-dark-100 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 flex items-center gap-1"
               :aria-expanded="activeDropdown === item.label"
               :aria-controls="`nav-submenu-${item.label}`"
+              :id="`nav-trigger-${item.label}`"
               aria-haspopup="true"
               @focus="activeDropdown = item.label"
               @click="activeDropdown = activeDropdown === item.label ? null : item.label"
@@ -101,7 +102,7 @@ watch(route, () => {
               class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0"
               :class="activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : ''"
             >
-              <div class="glass-card p-2 min-w-[220px] shadow-2xl shadow-black/30" role="menu">
+              <div class="glass-card p-2 min-w-[220px] shadow-2xl shadow-black/30" role="menu" :aria-labelledby="`nav-trigger-${item.label}`">
                 <NuxtLink
                   v-for="child in item.children"
                   :key="child.label"
@@ -151,7 +152,7 @@ watch(route, () => {
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-4"
     >
-      <div
+      <nav
         v-if="isMobileMenuOpen"
         id="mobile-navigation"
         class="lg:hidden bg-dark-800/95 backdrop-blur-xl border-t border-white/5 max-h-[calc(100vh-5rem)] overflow-y-auto"
@@ -188,7 +189,7 @@ watch(route, () => {
             </NuxtLink>
           </div>
         </div>
-      </div>
+      </nav>
     </Transition>
   </header>
 </template>
