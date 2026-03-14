@@ -18,6 +18,18 @@ const locations = [
     link: '/webdesign-essen',
     highlight: null,
   },
+  {
+    city: 'Bottrop',
+    description: 'Lokale Websites fuer Unternehmen in Bottrop mit Fokus auf Sichtbarkeit, Vertrauen und mobile Nutzerfreundlichkeit.',
+    link: '/webdesign-bottrop',
+    highlight: null,
+  },
+  {
+    city: 'Unna',
+    description: 'Professionelles Webdesign fuer Unternehmen in Unna und im Kreis Unna, klar strukturiert und lokal suchmaschinenoptimiert.',
+    link: '/webdesign-unna',
+    highlight: null,
+  },
 ]
 </script>
 
@@ -34,7 +46,7 @@ const locations = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
         <NuxtLink
           v-for="location in locations"
           :key="location.city"

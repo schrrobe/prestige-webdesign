@@ -23,6 +23,8 @@ const navItems = [
       { label: 'Webdesign Dortmund', to: '/webdesign-dortmund' },
       { label: 'Webdesign Bochum', to: '/webdesign-bochum' },
       { label: 'Webdesign Essen', to: '/webdesign-essen' },
+      { label: 'Webdesign Bottrop', to: '/webdesign-bottrop' },
+      { label: 'Webdesign Unna', to: '/webdesign-unna' },
     ],
   },
   { label: 'Kontakt', to: '/kontakt' },
