@@ -203,6 +203,8 @@
     </section>
 
     <!-- CTA Section -->
+    <CityKeywordLinks city-slug="essen" city-name="Essen" />
+
     <CTASection />
   </div>
 </template>
