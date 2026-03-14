@@ -42,6 +42,16 @@ useHead(() => ({
       rel: 'canonical',
       href: canonicalUrl.value,
     },
+    {
+      rel: 'alternate',
+      hreflang: 'de-DE',
+      href: canonicalUrl.value,
+    },
+    {
+      rel: 'alternate',
+      hreflang: 'x-default',
+      href: canonicalUrl.value,
+    },
   ],
   script: [
     {
@@ -51,6 +61,14 @@ useHead(() => ({
     },
   ],
 }))
+
+useSeoMeta({
+  ogUrl: () => canonicalUrl.value,
+  ogImage: `${siteUrl}/images/og-default.svg`,
+  ogImageAlt: 'Prestige Webdesign - Webdesign, SEO und E-Commerce im Ruhrgebiet',
+  twitterCard: 'summary_large_image',
+  twitterImage: `${siteUrl}/images/og-default.svg`,
+})
 </script>
 
 <template>

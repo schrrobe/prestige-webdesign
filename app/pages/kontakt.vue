@@ -88,7 +88,7 @@ const contactInfo = [
                 </div>
                 <div>
                   <p class="text-dark-300 text-sm mb-1">{{ info.label }}</p>
-                  <a :href="info.href" :target="info.icon === 'location' ? '_blank' : undefined" :rel="info.icon === 'location' ? 'noreferrer' : undefined" class="text-white font-medium hover:text-primary-400 transition-colors">
+                  <a :href="info.href" :target="info.icon === 'location' ? '_blank' : undefined" :rel="info.icon === 'location' ? 'noopener noreferrer' : undefined" class="text-white font-medium hover:text-primary-400 transition-colors">
                     {{ info.value }}
                   </a>
                 </div>
@@ -120,7 +120,7 @@ const contactInfo = [
                     Wir antworten in der Regel innerhalb von 24 Stunden und melden uns persoenlich bei Ihnen.
                   </p>
                 </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <address class="rounded-2xl border border-white/10 bg-white/5 p-6 not-italic">
                   <p class="text-sm uppercase tracking-wider text-dark-300 mb-2">Direkter Kontakt</p>
                   <a
                     href="mailto:info@prestige-webdesign.de?subject=Anfrage%20ueber%20prestige-webdesign.de"
@@ -128,7 +128,7 @@ const contactInfo = [
                   >
                     info@prestige-webdesign.de
                   </a>
-                </div>
+                </address>
               </div>
             </div>
           </div>
