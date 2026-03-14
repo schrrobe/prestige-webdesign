@@ -4,31 +4,26 @@ const locations = [
     city: 'Dortmund',
     description: 'Unser Hauptstandort im Herzen des Ruhrgebiets. Wir kennen den Markt in Dortmund und erstellen Websites, die funktionieren.',
     link: '/webdesign-dortmund',
-    highlight: 'Hauptsitz',
   },
   {
     city: 'Bochum',
     description: 'Eine Stadt mit vielfältiger Kultur und wirtschaftlicher Dynamik. Professionelles Webdesign für Bochumer Unternehmen.',
     link: '/webdesign-bochum',
-    highlight: null,
   },
   {
     city: 'Essen',
     description: 'Innovativ und modern – genau wie unsere Websites für Essener Unternehmen. Von der Zeche Zollverein bis zur Messe Essen.',
     link: '/webdesign-essen',
-    highlight: null,
   },
   {
     city: 'Bottrop',
     description: 'Lokale Websites fuer Unternehmen in Bottrop mit Fokus auf Sichtbarkeit, Vertrauen und mobile Nutzerfreundlichkeit.',
     link: '/webdesign-bottrop',
-    highlight: null,
   },
   {
     city: 'Unna',
     description: 'Professionelles Webdesign fuer Unternehmen in Unna und im Kreis Unna, klar strukturiert und lokal suchmaschinenoptimiert.',
     link: '/webdesign-unna',
-    highlight: null,
   },
 ]
 </script>
@@ -53,10 +48,6 @@ const locations = [
           :to="location.link"
           class="glass-card-hover p-8 text-center group relative"
         >
-          <div v-if="location.highlight" class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold bg-primary-500/20 text-primary-300 rounded-full border border-primary-500/20">
-            {{ location.highlight }}
-          </div>
-
           <!-- City icon placeholder -->
           <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center border border-primary-500/20 group-hover:scale-110 transition-transform duration-500">
             <svg class="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
