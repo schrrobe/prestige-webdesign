@@ -17,22 +17,11 @@ const navItems = [
       { label: 'Wartung & Support', to: '/leistungen/wartung' },
     ],
   },
-  {
-    label: 'Standorte',
-    children: [
-      { label: 'Webdesign Dortmund', to: '/webdesign-dortmund' },
-      { label: 'Webdesign Bochum', to: '/webdesign-bochum' },
-      { label: 'Webdesign Essen', to: '/webdesign-essen' },
-      { label: 'Webdesign Bottrop', to: '/webdesign-bottrop' },
-      { label: 'Webdesign Unna', to: '/webdesign-unna' },
-    ],
-  },
   { label: 'Kontakt', to: '/kontakt' },
 ]
 
 function setMobileMenuState(nextState: boolean) {
   isMobileMenuOpen.value = nextState
-  document.body.classList.toggle('overflow-hidden', nextState)
 }
 
 onMounted(() => {
@@ -42,7 +31,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  document.body.classList.remove('overflow-hidden')
 })
 
 function handleScroll() {
@@ -166,7 +154,7 @@ watch(route, () => {
       <div
         v-if="isMobileMenuOpen"
         id="mobile-navigation"
-        class="lg:hidden bg-dark-800/95 backdrop-blur-xl border-t border-white/5"
+        class="lg:hidden bg-dark-800/95 backdrop-blur-xl border-t border-white/5 max-h-[calc(100vh-5rem)] overflow-y-auto"
         aria-label="Mobile Navigation"
       >
         <div class="px-4 py-6 space-y-1">
