@@ -62,15 +62,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
-    '/leistungen/**': { prerender: true },
-    '/webdesign-dortmund': { prerender: true },
-    '/webdesign-bochum': { prerender: true },
-    '/webdesign-essen': { prerender: true },
-    '/webdesign-bottrop': { prerender: true },
-    '/webdesign-unna': { prerender: true },
-    '/impressum': { prerender: true },
-    '/datenschutz': { prerender: true },
-    '/kontakt': { prerender: true },
+    '/**': { prerender: true },
   },
 })
