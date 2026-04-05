@@ -1,9 +1,49 @@
 <script setup lang="ts">
+const faqItems = [
+  {
+    question: 'Warum brauche ich regelmäßige Website-Wartung?',
+    answer: 'Websites ohne Wartung werden zur Sicherheitslücke: Veraltete Plugins, fehlende Updates und ungepatchte Sicherheitslücken laden Angreifer ein. Außerdem verlieren nicht gewartete Websites an Ladegeschwindigkeit und damit an Google-Rankings.',
+  },
+  {
+    question: 'Was passiert, wenn ich keine Wartung buche?',
+    answer: 'Ohne Wartung riskieren Sie Hackerangriffe, Datenverlust, Website-Ausfälle und schlechtere Google-Rankings. Im schlimmsten Fall müssen Sie Ihre Website komplett neu aufsetzen – das kostet deutlich mehr als regelmäßige Wartung.',
+  },
+  {
+    question: 'Kann ich das Wartungspaket jederzeit kündigen?',
+    answer: 'Ja, alle Wartungspakete sind monatlich kündbar. Es gibt keine langen Vertragslaufzeiten. Zusätzlich bieten wir eine kostenlose Testwoche für alle Pakete an.',
+  },
+  {
+    question: 'Wie schnell reagieren Sie bei Problemen?',
+    answer: 'Im Basis-Paket antworten wir per E-Mail innerhalb von 24 Stunden. Im Professional-Paket garantieren wir eine Reaktionszeit von 4 Stunden. Im Premium-Paket haben Sie einen dedizierten Ansprechpartner für schnellstmögliche Reaktionszeiten.',
+  },
+]
+
 useSeoMeta({
   title: 'Website Wartung | Prestige Webdesign – Support & Updates',
   description: 'Website Wartung und Support für Ihre Website. Sicherheitsupdates, Backups, Performance-Optimierung und 24/7 Monitoring. Prestige Webdesign Ruhrgebiet.',
   ogTitle: 'Website Wartung & Support | Prestige Webdesign',
   ogDescription: 'Professionelle Website-Wartung: Updates, Backups, Sicherheit und Performance-Optimierung für Ihre Website.',
+})
+
+useHead({
+  script: [
+    {
+      key: 'wartung-faq-schema',
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }),
+    },
+  ],
 })
 
 const packages = [

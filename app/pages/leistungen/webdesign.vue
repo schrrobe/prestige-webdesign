@@ -1,9 +1,49 @@
 <script setup lang="ts">
+const faqItems = [
+  {
+    question: 'Was kostet eine professionelle Website?',
+    answer: 'Die Kosten für eine professionelle Website variieren je nach Umfang, Design und Funktionen. Einfache Unternehmenswebsites starten ab etwa 1.500 €, umfangreichere Projekte mit individuellen Funktionen kosten entsprechend mehr. Wir erstellen Ihnen gerne ein unverbindliches Angebot.',
+  },
+  {
+    question: 'Wie lange dauert die Entwicklung einer Website?',
+    answer: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig, abhängig von Umfang und Feedbackzeiten. Wir arbeiten in einem klar strukturierten Prozess und halten Sie in jedem Schritt auf dem Laufenden.',
+  },
+  {
+    question: 'Was ist responsives Webdesign?',
+    answer: 'Responsives Webdesign bedeutet, dass Ihre Website auf allen Geräten – Desktop, Tablet und Smartphone – perfekt aussieht und funktioniert. Da mehr als 60 % der Nutzer mobil surfen, ist responsives Design heute ein absolutes Muss.',
+  },
+  {
+    question: 'Kümmern Sie sich auch um Texte und Inhalte?',
+    answer: 'Ja, auf Wunsch übernehmen wir die Erstellung von SEO-optimierten Texten, die Ihre Zielgruppe ansprechen und gleichzeitig bei Google gut ranken. Alternativ können Sie eigene Inhalte liefern, die wir dann einpflegen.',
+  },
+]
+
 useSeoMeta({
   title: 'Webdesign | Prestige Webdesign – Moderne Responsive Websites',
   description: 'Professionelles Webdesign für moderne Responsive Websites. Wir entwickeln benutzerfreundliche und suchmaschinenoptimierte Websites, die Ihre Besucher in Kunden verwandeln. Jetzt beraten lassen!',
   ogTitle: 'Webdesign Agentur | Prestige Webdesign',
   ogDescription: 'Professionelles Webdesign: Responsive Websites mit modernem Design und hoher Benutzerfreundlichkeit aus Dortmund.',
+})
+
+useHead({
+  script: [
+    {
+      key: 'webdesign-faq-schema',
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }),
+    },
+  ],
 })
 
 const processSteps = [

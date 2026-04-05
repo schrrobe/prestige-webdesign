@@ -1,9 +1,49 @@
 <script setup lang="ts">
+const faqItems = [
+  {
+    question: 'WooCommerce oder Shopify – was ist die bessere Wahl?',
+    answer: 'Das hängt von Ihren Anforderungen ab. WooCommerce bietet maximale Flexibilität und ist ideal für komplexe Shops mit besonderen Anforderungen. Shopify ist einfacher zu verwalten und eignet sich hervorragend für einen schnellen Marktstart. Wir beraten Sie kostenlos bei der Wahl der richtigen Plattform.',
+  },
+  {
+    question: 'Was kostet ein professioneller Online-Shop?',
+    answer: 'Ein professioneller Online-Shop kostet je nach Umfang zwischen 2.500 und 15.000 €. Entscheidend sind Produktanzahl, individuelle Funktionen, Zahlungsanbieter und Designaufwand. Wir erstellen Ihnen ein transparentes, unverbindliches Angebot.',
+  },
+  {
+    question: 'Welche Zahlungsanbieter können integriert werden?',
+    answer: 'Wir integrieren alle gängigen Zahlungsanbieter: PayPal, Stripe, Klarna, SOFORT, Kreditkarte und mehr. Die Auswahl richtet sich nach Ihrer Zielgruppe und Ihren Präferenzen.',
+  },
+  {
+    question: 'Ist der Shop DSGVO-konform?',
+    answer: 'Ja, wir entwickeln alle Shops von Anfang an DSGVO-konform: SSL-Verschlüsselung, korrekte Datenschutzhinweise, Cookie-Consent und PCI-DSS-konforme Zahlungsabwicklung sind selbstverständlich enthalten.',
+  },
+]
+
 useSeoMeta({
   title: 'E-Commerce | Prestige Webdesign – Online-Shop Entwicklung',
   description: 'E-Commerce Lösungen und Online-Shop Entwicklung mit WooCommerce und Shopify. Professionelle Shop-Entwicklung im Ruhrgebiet mit Payment-Integration und Produktverwaltung.',
   ogTitle: 'E-Commerce Shop Entwicklung | Prestige Webdesign',
   ogDescription: 'Online-Shop Entwicklung: WooCommerce & Shopify Expertise. Professionelle E-Commerce Lösungen für Ihren Online-Handel.',
+})
+
+useHead({
+  script: [
+    {
+      key: 'ecommerce-faq-schema',
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }),
+    },
+  ],
 })
 
 const platformFeatures = [

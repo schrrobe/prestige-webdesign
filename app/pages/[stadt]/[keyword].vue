@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
 
+type ProcessItem = { step: string; title: string; text: string }
+
 type KeywordConfig = {
   h1: string
   keyword: string
@@ -12,6 +14,10 @@ type KeywordConfig = {
   detailTitle: string
   detailText: string
   benefits: string[]
+  contextTitle: string
+  contextText: string
+  processTitle: string
+  processItems: ProcessItem[]
 }
 
 type KeywordSeed = {
@@ -42,6 +48,15 @@ function toConfig(seed: KeywordSeed): KeywordConfig {
       `Klarer digitaler Auftritt für ${seed.focus}`,
       'Mehr qualifizierte Anfragen über die Website',
       'Stärkere lokale Sichtbarkeit in {city}',
+    ],
+    contextTitle: `${seed.h1} – warum {city}er ${seed.focus} jetzt handeln sollten`,
+    contextText: `${seed.focus} in {city} stehen im digitalen Wettbewerb vor einer klaren Aufgabe: online sichtbar sein und gleichzeitig Vertrauen bei potenziellen Kunden aufbauen. Eine professionelle Lösung für ${seed.keyword} verbindet beides. Statt generischer Templates entwickeln wir eine Website, die exakt auf Ihre Zielgruppe, Ihre Stärken und den lokalen Markt in {city} ausgerichtet ist. Das Ergebnis ist ein digitaler Auftritt, der nicht nur gut aussieht, sondern aktiv Anfragen generiert und Ihr Unternehmen nachhaltig stärkt.`,
+    processTitle: `So setzen wir ${seed.h1} in {city} um`,
+    processItems: [
+      { step: '01', title: 'Analyse & Strategie', text: `Wir analysieren Ihre Ziele als ${seed.focus} in {city}, verstehen Ihre Zielgruppe und identifizieren die stärksten Hebel für mehr Sichtbarkeit.` },
+      { step: '02', title: 'Konzept & Design', text: `Individuelles Design und eine Seitenstruktur, die auf ${seed.focus} und die Anforderungen des Markts in {city} zugeschnitten ist.` },
+      { step: '03', title: 'Umsetzung & SEO', text: `Responsive, schnell ladend und technisch sauber – mit einer lokalen SEO-Basis, die Ihre Sichtbarkeit in {city} gezielt stärkt.` },
+      { step: '04', title: 'Launch & Begleitung', text: `Professioneller Launch, persönliche Einweisung und optionaler Support für nachhaltige Ergebnisse.` },
     ],
   }
 }
@@ -162,6 +177,15 @@ if (!city.value || !keywordData.value) {
 
 const withCity = (text: string) => text.replaceAll('{city}', city.value!.name)
 
+const cityPageSlug = computed(() => `/webdesign-${stadt.value}`)
+
+const serviceLinks = [
+  { label: 'Webdesign', to: '/leistungen/webdesign' },
+  { label: 'SEO', to: '/leistungen/seo' },
+  { label: 'E-Commerce', to: '/leistungen/e-commerce' },
+  { label: 'Website-Wartung', to: '/leistungen/wartung' },
+]
+
 const pageTitle = computed(() => `${withCity(keywordData.value.h1)} | Prestige Webdesign`)
 const pageDescription = computed(() => `${withCity(keywordData.value.intro)} ${withCity(keywordData.value.offerText)}`)
 const seoKeywords = computed(() => `${withCity(keywordData.value.keyword)}, ${withCity(keywordData.value.h1).toLowerCase()}, webdesign ${city.value.name.toLowerCase()}`)
@@ -172,7 +196,7 @@ useSeoMeta({
   description: () => pageDescription.value,
   ogDescription: () => pageDescription.value,
   keywords: () => seoKeywords.value,
-  robots: 'noindex, follow',
+  robots: 'index, follow',
 })
 </script>
 
@@ -240,6 +264,64 @@ useSeoMeta({
             {{ withCity(benefit) }}
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section-padding bg-dark-850">
+      <div class="container-narrow">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-white">
+          {{ withCity(keywordData.contextTitle) }}
+        </h2>
+        <p class="text-lg text-gray-300 max-w-4xl leading-relaxed">
+          {{ withCity(keywordData.contextText) }}
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container-narrow">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-10 text-gradient">
+          {{ withCity(keywordData.processTitle) }}
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            v-for="item in keywordData.processItems"
+            :key="item.step"
+            class="glass-card p-6 rounded-xl"
+          >
+            <div class="text-primary-400 text-4xl font-display font-bold mb-3">
+              {{ item.step }}
+            </div>
+            <h3 class="font-display text-lg text-white mb-2">{{ item.title }}</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              {{ withCity(item.text) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-dark-850">
+      <div class="container-narrow">
+        <h2 class="font-display text-2xl font-bold mb-6 text-white">
+          Mehr von Prestige Webdesign in {{ city.name }}
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <NuxtLink
+            :to="cityPageSlug"
+            class="glass-card px-4 py-2 rounded-lg text-primary-300 hover:text-primary-100 transition-colors text-sm"
+          >
+            Alle Leistungen in {{ city.name }}
+          </NuxtLink>
+          <NuxtLink
+            v-for="link in serviceLinks"
+            :key="link.to"
+            :to="link.to"
+            class="glass-card px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-colors text-sm"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </div>
       </div>
     </section>
 
