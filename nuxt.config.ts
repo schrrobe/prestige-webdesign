@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 const dynamicCities = ['dortmund', 'essen', 'bochum', 'bottrop']
-const dynamicKeywords = [
+
+// Alle Keyword-Slugs – werden pregerendert (aber nur die Top-5 sind indexiert)
+const allKeywords = [
   'webdesign-fuer-unternehmen', 'websites-fuer-unternehmen', 'professionelle-website-fuer-firma',
   'homepage-fuer-firma-erstellen-lassen', 'internetseite-fuer-unternehmen', 'firmenwebsite-erstellen-lassen',
   'business-website-erstellen-lassen', 'webseite-fuer-firma',
@@ -34,8 +36,21 @@ const dynamicKeywords = [
   'professionelle-firmenwebsite-in-stadt',
 ]
 
-const dynamicRoutes = dynamicCities.flatMap(city =>
-  dynamicKeywords.map(keyword => `/${city}/${keyword}`),
+// Nur diese 5 Keywords kommen in die Sitemap (werden indexiert)
+const topKeywords = [
+  'webdesign-agentur',
+  'website-erstellen-lassen',
+  'webdesign-fuer-unternehmen',
+  'webdesign-fuer-kleine-unternehmen',
+  'webdesigner-beauftragen',
+]
+
+const allDynamicRoutes = dynamicCities.flatMap(city =>
+  allKeywords.map(keyword => `/${city}/${keyword}`),
+)
+
+const sitemapDynamicRoutes = dynamicCities.flatMap(city =>
+  topKeywords.map(keyword => `/${city}/${keyword}`),
 )
 
 export default defineNuxtConfig({
@@ -86,7 +101,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    urls: dynamicRoutes,
+    urls: sitemapDynamicRoutes,
   },
 
   robots: {
@@ -106,7 +121,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: dynamicRoutes,
+      routes: allDynamicRoutes,
     },
   },
 })
