@@ -172,7 +172,7 @@ useSeoMeta({
   description: () => pageDescription.value,
   ogDescription: () => pageDescription.value,
   keywords: () => seoKeywords.value,
-  robots: 'index, follow',
+  robots: 'noindex, follow',
 })
 </script>
 

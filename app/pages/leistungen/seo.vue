@@ -1,9 +1,57 @@
 <script setup lang="ts">
+const faqItems = [
+  {
+    question: 'Welche SEO-Massnahmen bringen zuerst Wirkung?',
+    answer: 'Am schnellsten wirken meist technische Bereinigungen, bessere Seitentitel, staerkere interne Verlinkung und klar fokussierte Leistungs- oder Standortseiten mit echter Suchintention.',
+  },
+  {
+    question: 'Warum sind wenige starke Seiten besser als viele Keywordseiten?',
+    answer: 'Viele aehnliche Seiten teilen Relevanz auf und wirken schnell duenn. Wenige starke Seiten mit klarer Leistung, lokalem Bezug und hilfreichen Inhalten erzielen meist stabilere Rankings.',
+  },
+  {
+    question: 'Braucht jedes lokale Unternehmen eigene Standortseiten?',
+    answer: 'Nur wenn fuer den Standort ein echter Mehrwert vorhanden ist. Gute Standortseiten enthalten regionale Relevanz, passende Leistungen, Kontaktmoeglichkeiten und echte Inhalte statt reiner Keyword-Varianten.',
+  },
+  {
+    question: 'Welche Rolle spielen Webdesign und SEO zusammen?',
+    answer: 'SEO bringt Sichtbarkeit, gutes Webdesign macht aus Besuchern Anfragen. Erst die Kombination aus Technik, Inhalt, Nutzerfuehrung und Vertrauen fuehrt zu messbaren Ergebnissen.',
+  },
+]
+
+const regionalLinks = [
+  { label: 'Webdesign Dortmund', to: '/webdesign-dortmund' },
+  { label: 'Webdesign Bochum', to: '/webdesign-bochum' },
+  { label: 'Webdesign Essen', to: '/webdesign-essen' },
+  { label: 'Webdesign Bottrop', to: '/webdesign-bottrop' },
+  { label: 'Webdesign Unna', to: '/webdesign-unna' },
+]
+
 useSeoMeta({
   title: 'SEO Agentur | Prestige Webdesign – Suchmaschinenoptimierung Dortmund',
   description: 'Professionelle SEO-Agentur für bessere Google Rankings. Suchmaschinenoptimierung im Ruhrgebiet mit technischem SEO, Content-Strategie und lokaler SEO. Jetzt beraten lassen!',
   ogTitle: 'SEO Agentur Dortmund | Prestige Webdesign',
   ogDescription: 'SEO-Agentur im Ruhrgebiet: Professionelle Suchmaschinenoptimierung für mehr qualifizierte Besucher und bessere Rankings.',
+})
+
+useHead({
+  script: [
+    {
+      key: 'seo-faq-schema',
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }),
+    },
+  ],
 })
 
 const seoServices = [
@@ -101,8 +149,8 @@ const keywords = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <NuxtLink to="/#kontakt" class="btn-secondary">
-              Mehr über SEO erfahren
+            <NuxtLink to="/kontakt" class="btn-secondary">
+              SEO Beratung anfragen
             </NuxtLink>
           </div>
         </div>
@@ -349,6 +397,46 @@ const keywords = [
         </div>
       </div>
     </section>
+
+    <section class="section-padding">
+      <div class="container-narrow mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-8 items-start">
+          <div class="glass-card p-8">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">
+              SEO fuer Unternehmen im Ruhrgebiet
+            </h2>
+            <p class="text-dark-200 leading-relaxed mb-4">
+              Gute Rankings entstehen nicht durch isolierte Keywords, sondern durch starke Zielseiten. Deshalb verknuepfen wir SEO immer mit klaren Leistungsseiten, regionaler Relevanz und einer nutzerorientierten Seitenstruktur.
+            </p>
+            <p class="text-dark-200 leading-relaxed">
+              Wenn Sie in Dortmund, Bochum, Essen, Bottrop oder im Kreis Unna Kunden gewinnen wollen, sollten Ihre wichtigsten Seiten die Suchintention direkt bedienen und klar zur Kontaktaufnahme fuehren.
+            </p>
+          </div>
+
+          <div class="glass-card p-8">
+            <h3 class="text-2xl font-display font-bold text-white mb-5">
+              Regionale SEO-Zielseiten
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <NuxtLink
+                v-for="link in regionalLinks"
+                :key="link.to"
+                :to="link.to"
+                class="px-4 py-2 rounded-full bg-white/5 text-white hover:text-primary-300 transition-colors duration-200"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SeoFaqSection
+      title="FAQ zur Suchmaschinenoptimierung"
+      intro="Diese Fragen tauchen in SEO-Projekten besonders haeufig auf. Gleichzeitig staerken sie die Seite inhaltlich fuer Suchanfragen mit Informations- und Kaufintention."
+      :items="faqItems"
+    />
 
     <!-- CTA Section -->
     <CTASection
