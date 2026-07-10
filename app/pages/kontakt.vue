@@ -39,97 +39,77 @@ const contactInfo = [
     label: 'E-Mail',
     value: 'info@prestige-webdesign.de',
     href: 'mailto:info@prestige-webdesign.de',
+    external: false,
   },
   {
-    icon: 'location',
+    icon: 'map-pin',
     label: 'Adresse',
     value: 'Kapitelwiese 14, 44263 Dortmund',
     href: 'https://maps.google.com/?q=Kapitelwiese+14+44263+Dortmund',
+    external: true,
   },
+]
+
+const steps = [
+  { title: 'Sie schreiben uns', description: 'Beschreiben Sie kurz Ihr Vorhaben über das Formular oder per E-Mail.' },
+  { title: 'Wir melden uns', description: 'In der Regel innerhalb von 24 Stunden mit einer ersten Einschätzung.' },
+  { title: 'Kostenloses Erstgespräch', description: 'Wir besprechen Ziele, Umfang und die passenden nächsten Schritte.' },
 ]
 </script>
 
 <template>
   <div>
     <!-- Hero -->
-    <section class="pt-32 pb-20 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-900/10 to-dark-900" />
-      <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <span class="text-primary-400 text-sm font-semibold uppercase tracking-wider mb-4 block">Kontakt</span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-          Lassen Sie uns <span class="text-gradient">sprechen</span>
-        </h1>
-        <p class="text-dark-200 text-lg max-w-2xl">
-          Sprechen Sie mit unseren Experten per E-Mail. Wir antworten meist innerhalb von 24 Stunden.
-        </p>
-      </div>
-    </section>
+    <PageHero
+      badge="Kontakt"
+      title="Lassen Sie uns"
+      highlight="sprechen"
+      subtitle="Erzählen Sie uns von Ihrem Projekt. Wir antworten in der Regel innerhalb von 24 Stunden – persönlich und unverbindlich."
+      compact
+    />
 
-    <!-- Contact Section -->
-    <section class="section-padding !pt-0">
-      <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <!-- Contact Info -->
-          <div class="lg:col-span-1 space-y-6">
-            <div
-              v-for="info in contactInfo"
-              :key="info.label"
-              class="glass-card p-6"
-            >
+    <!-- Kontakt: Formular + Kanäle -->
+    <section class="section-padding relative overflow-hidden !pt-4">
+      <div class="container-narrow mx-auto relative">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          <!-- Formular -->
+          <div class="lg:col-span-3">
+            <ContactForm />
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:col-span-2 space-y-6">
+            <div v-for="info in contactInfo" :key="info.label" class="glass-card p-6">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center shrink-0">
-                  <svg v-if="info.icon === 'mail'" class="w-6 h-6 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <svg v-if="info.icon === 'location'" class="w-6 h-6 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
+                <IconBadge :icon="info.icon" tone="primary" size="md" />
                 <div>
                   <p class="text-dark-300 text-sm mb-1">{{ info.label }}</p>
-                  <a :href="info.href" :target="info.icon === 'location' ? '_blank' : undefined" :rel="info.icon === 'location' ? 'noopener noreferrer' : undefined" class="text-white font-medium hover:text-primary-400 transition-colors">
+                  <a
+                    :href="info.href"
+                    :target="info.external ? '_blank' : undefined"
+                    :rel="info.external ? 'noopener noreferrer' : undefined"
+                    class="text-white font-medium hover:text-primary-300 transition-colors break-words"
+                  >
                     {{ info.value }}
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Additional Info -->
+            <!-- Ablauf -->
             <div class="glass-card p-6">
-              <h3 class="text-white font-semibold mb-3">Antwortzeit</h3>
-              <p class="text-dark-200 text-sm leading-relaxed">
-                Wir antworten auf Ihre Anfrage in der Regel innerhalb von 24 Stunden. Für dringende Anliegen erreichen Sie uns per E-Mail.
-              </p>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="lg:col-span-2">
-            <div class="glass-card p-8 md:p-10">
-              <div class="space-y-6">
-                <div class="w-16 h-16 rounded-full bg-primary-500/10 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 class="text-2xl font-display font-bold text-white mb-2">Schreiben Sie uns direkt</h2>
-                  <p class="text-dark-200 leading-relaxed">
-                    Teilen Sie uns Ihr Anliegen einfach per E-Mail mit. Ob Webdesign, SEO, E-Commerce oder Wartung:
-                    Wir antworten in der Regel innerhalb von 24 Stunden und melden uns persoenlich bei Ihnen.
-                  </p>
-                </div>
-                <address class="rounded-2xl border border-white/10 bg-white/5 p-6 not-italic">
-                  <p class="text-sm uppercase tracking-wider text-dark-300 mb-2">Direkter Kontakt</p>
-                  <a
-                    href="mailto:info@prestige-webdesign.de?subject=Anfrage%20ueber%20prestige-webdesign.de"
-                    class="inline-flex items-center gap-2 text-lg font-semibold text-primary-400 hover:text-primary-300 transition-colors"
-                  >
-                    info@prestige-webdesign.de
-                  </a>
-                </address>
-              </div>
+              <h2 class="text-white font-semibold mb-5">So läuft die Zusammenarbeit</h2>
+              <ol class="space-y-5">
+                <li v-for="(step, i) in steps" :key="step.title" class="flex gap-4">
+                  <span class="w-8 h-8 rounded-lg bg-primary-500/10 ring-1 ring-inset ring-primary-500/25 flex items-center justify-center text-primary-300 text-sm font-semibold shrink-0">
+                    {{ i + 1 }}
+                  </span>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">{{ step.title }}</h3>
+                    <p class="text-dark-300 text-sm mt-0.5 leading-relaxed">{{ step.description }}</p>
+                  </div>
+                </li>
+              </ol>
             </div>
           </div>
         </div>

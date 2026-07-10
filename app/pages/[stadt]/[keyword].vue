@@ -276,49 +276,40 @@ useHead(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+  <div>
     <!-- Hero -->
-    <section class="section-padding pt-32 pb-20 bg-gradient-to-br from-primary-900/10 to-dark-900">
-      <div class="container-narrow">
-        <p class="text-primary-300 text-sm uppercase tracking-[0.2em] mb-4">
-          {{ city.name }} · {{ seed.focus }}
-        </p>
-        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 text-gradient">
-          {{ h1 }}
-        </h1>
-        <p class="text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
-          <template v-if="isTopPage && richContent">
-            {{ richContent.mainText.slice(0, 200) }}
-          </template>
-          <template v-else>
-            Mit {{ withCity(seed.keyword) }} in {{ city.name }} positionieren wir Ihr Unternehmen professionell und conversionstark.
-          </template>
-        </p>
-        <NuxtLink to="/kontakt" class="btn-primary text-lg px-8 py-4">
-          Kostenlose Beratung anfragen
-        </NuxtLink>
-      </div>
-    </section>
+    <PageHero
+      :badge="`${city.name} · ${seed.focus}`"
+      :subtitle="isTopPage && richContent
+        ? richContent.mainText.slice(0, 200)
+        : `Mit ${withCity(seed.keyword)} in ${city.name} positionieren wir Ihr Unternehmen professionell und conversionstark.`"
+    >
+      <template #title>{{ h1 }}</template>
+      <NuxtLink to="/kontakt" class="btn-primary text-base">
+        Kostenlose Beratung anfragen
+        <AppIcon name="arrow-right" class="w-5 h-5" />
+      </NuxtLink>
+    </PageHero>
 
     <!-- Rich Content für Top-Seiten -->
     <template v-if="isTopPage && richContent">
       <!-- Haupttext + Stadtkontext -->
-      <section class="section-padding bg-dark-850">
-        <div class="container-narrow">
-          <div class="grid md:grid-cols-2 gap-10 items-start">
+      <section class="section-padding relative overflow-hidden bg-dark-800/30">
+        <div class="container-narrow mx-auto relative">
+          <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div>
-              <h2 class="font-display text-3xl font-bold mb-5 text-white">
+              <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-5">
                 {{ h1 }} in {{ city.name }}
               </h2>
-              <p class="text-gray-300 leading-relaxed">
+              <p class="text-dark-200 leading-relaxed">
                 {{ richContent.mainText }}
               </p>
             </div>
-            <div v-if="cityContext" class="glass-card p-6 rounded-xl">
-              <h3 class="font-display text-lg font-bold text-primary-300 mb-3">
+            <div v-if="cityContext" class="glass-card p-8">
+              <h3 class="text-lg font-semibold text-primary-300 mb-3">
                 {{ city.name }} als Standort
               </h3>
-              <p class="text-gray-300 text-sm leading-relaxed">
+              <p class="text-dark-200 text-sm leading-relaxed">
                 {{ cityContext }}
               </p>
             </div>
@@ -327,86 +318,75 @@ useHead(() => {
       </section>
 
       <!-- Vorteile -->
-      <section class="section-padding">
-        <div class="container-narrow">
-          <h2 class="font-display text-3xl md:text-4xl font-bold mb-10 text-gradient">
-            Was Sie von uns bekommen
+      <section class="section-padding relative overflow-hidden">
+        <div class="container-narrow mx-auto relative">
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
+            Was Sie von uns <span class="text-gradient">bekommen</span>
           </h2>
           <div class="grid md:grid-cols-2 gap-6">
             <article
               v-for="benefit in richContent.benefits"
               :key="benefit.title"
-              class="glass-card p-6 rounded-xl"
+              class="glass-card p-8 flex gap-4"
             >
-              <h3 class="font-display text-lg text-white mb-2">{{ benefit.title }}</h3>
-              <p class="text-gray-300 text-sm leading-relaxed">{{ benefit.text }}</p>
+              <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">{{ benefit.title }}</h3>
+                <p class="text-dark-200 text-sm leading-relaxed">{{ benefit.text }}</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <!-- Prozess -->
-      <section class="section-padding bg-dark-850">
-        <div class="container-narrow">
-          <h2 class="font-display text-3xl md:text-4xl font-bold mb-10 text-white">
-            So arbeiten wir zusammen
+      <section class="section-padding relative overflow-hidden bg-dark-800/30">
+        <div class="container-narrow mx-auto relative">
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
+            So arbeiten wir <span class="text-gradient">zusammen</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div
               v-for="(step, index) in ['Erstgespräch & Analyse', 'Konzept & Angebot', 'Umsetzung & Review', 'Launch & Support']"
               :key="step"
-              class="glass-card p-6 rounded-xl"
+              class="glass-card p-8"
             >
-              <div class="text-primary-400 text-4xl font-display font-bold mb-3">
+              <div class="text-primary-300 text-4xl font-display font-semibold mb-3">
                 0{{ index + 1 }}
               </div>
-              <h3 class="font-display text-lg text-white">{{ step }}</h3>
+              <h3 class="text-lg font-semibold text-white">{{ step }}</h3>
             </div>
           </div>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section class="section-padding">
-        <div class="container-narrow">
-          <h2 class="font-display text-3xl md:text-4xl font-bold mb-10 text-gradient">
-            Häufige Fragen zu {{ h1 }}
+      <section class="section-padding relative overflow-hidden">
+        <div class="container-narrow mx-auto relative">
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10 text-center">
+            Häufige Fragen zu <span class="text-gradient">{{ h1 }}</span>
           </h2>
-          <div class="space-y-4 max-w-3xl">
-            <details
-              v-for="faq in richContent.faqItems"
-              :key="faq.question"
-              class="glass-card p-6 rounded-xl group"
-            >
-              <summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center">
-                {{ faq.question }}
-                <span class="text-primary-400 ml-4 flex-shrink-0">+</span>
-              </summary>
-              <p class="text-gray-300 mt-4 leading-relaxed text-sm">
-                {{ faq.answer }}
-              </p>
-            </details>
-          </div>
+          <FaqAccordion :items="richContent.faqItems" />
         </div>
       </section>
     </template>
 
     <!-- Basis-Content für noindex-Seiten -->
     <template v-else>
-      <section class="section-padding bg-dark-850">
-        <div class="container-narrow">
+      <section class="section-padding relative overflow-hidden bg-dark-800/30">
+        <div class="container-narrow mx-auto relative">
           <div class="grid md:grid-cols-3 gap-6">
-            <article class="glass-card p-6 rounded-xl">
-              <h3 class="font-display text-xl text-white mb-3">Leistung</h3>
-              <p class="text-gray-300">Wir setzen {{ withCity(seed.keyword) }} mit klarem Seitenaufbau, starker Nutzerführung und technischer SEO-Basis um.</p>
+            <article class="glass-card p-8">
+              <h2 class="text-xl font-semibold text-white mb-3">Leistung</h2>
+              <p class="text-dark-200 leading-relaxed">Wir setzen {{ withCity(seed.keyword) }} mit klarem Seitenaufbau, starker Nutzerführung und technischer SEO-Basis um.</p>
             </article>
-            <article class="glass-card p-6 rounded-xl">
-              <h3 class="font-display text-xl text-white mb-3">Zielgruppe</h3>
-              <p class="text-gray-300">Unsere Lösung ist auf {{ seed.focus }} ausgerichtet und unterstützt Sie dabei, mehr qualifizierte Anfragen zu erhalten.</p>
+            <article class="glass-card p-8">
+              <h2 class="text-xl font-semibold text-white mb-3">Zielgruppe</h2>
+              <p class="text-dark-200 leading-relaxed">Unsere Lösung ist auf {{ seed.focus }} ausgerichtet und unterstützt Sie dabei, mehr qualifizierte Anfragen zu erhalten.</p>
             </article>
-            <article class="glass-card p-6 rounded-xl">
-              <h3 class="font-display text-xl text-white mb-3">Standort</h3>
-              <p class="text-gray-300">Durch lokale Ausrichtung auf {{ city.name }} wird Ihre Website in regionalen Suchanfragen sichtbarer.</p>
+            <article class="glass-card p-8">
+              <h2 class="text-xl font-semibold text-white mb-3">Standort</h2>
+              <p class="text-dark-200 leading-relaxed">Durch lokale Ausrichtung auf {{ city.name }} wird Ihre Website in regionalen Suchanfragen sichtbarer.</p>
             </article>
           </div>
         </div>
@@ -414,15 +394,15 @@ useHead(() => {
     </template>
 
     <!-- Interne Links -->
-    <section class="section-padding bg-dark-850">
-      <div class="container-narrow">
-        <h2 class="font-display text-xl font-bold mb-5 text-white">
+    <section class="section-padding relative overflow-hidden bg-dark-800/30">
+      <div class="container-narrow mx-auto relative">
+        <h2 class="text-xl font-semibold text-white mb-5">
           Mehr von Prestige Webdesign in {{ city.name }}
         </h2>
         <div class="flex flex-wrap gap-3">
           <NuxtLink
             :to="cityPageSlug"
-            class="glass-card px-4 py-2 rounded-lg text-primary-300 hover:text-primary-100 transition-colors text-sm"
+            class="glass-card px-4 py-2 rounded-full text-primary-300 hover:text-primary-200 transition-colors text-sm"
           >
             Alle Leistungen in {{ city.name }}
           </NuxtLink>
@@ -430,7 +410,7 @@ useHead(() => {
             v-for="link in serviceLinks"
             :key="link.to"
             :to="link.to"
-            class="glass-card px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-colors text-sm"
+            class="glass-card px-4 py-2 rounded-full text-dark-100 hover:text-white transition-colors text-sm"
           >
             {{ link.label }}
           </NuxtLink>

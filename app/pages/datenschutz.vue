@@ -8,15 +8,14 @@ useSeoMeta({
 
 <template>
   <div>
-    <section class="pt-32 pb-20 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-900/10 to-dark-900" />
-      <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Datenschutzerklärung</h1>
-        <p class="text-dark-300">Letzte Aktualisierung: 13. März 2026</p>
-      </div>
-    </section>
+    <PageHero
+      badge="Rechtliches"
+      title="Datenschutzerklärung"
+      subtitle="Letzte Aktualisierung: 13. März 2026"
+      compact
+    />
 
-    <section class="section-padding !pt-0">
+    <section class="section-padding relative overflow-hidden !pt-4">
       <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl">
           <div class="glass-card p-8 md:p-12 prose-dark space-y-10">
@@ -37,7 +36,7 @@ useSeoMeta({
                 <p>Robert Schreiner</p>
                 <p>Kapitelwiese 14</p>
                 <p>44263 Dortmund, Deutschland</p>
-                <p>E-Mail: <a href="mailto:info@prestige-webdesign.de" class="text-primary-400 hover:text-primary-300">info@prestige-webdesign.de</a></p>
+                <p>E-Mail: <a href="mailto:info@prestige-webdesign.de" class="text-primary-300 hover:text-primary-200">info@prestige-webdesign.de</a></p>
               </div>
             </div>
 
@@ -51,8 +50,11 @@ useSeoMeta({
               </p>
 
               <h3 class="text-lg font-semibold text-white mt-6 mb-3">3.2 Durch Kontaktaufnahme bereitgestellte Daten</h3>
-              <p class="text-dark-200 leading-relaxed">
+              <p class="text-dark-200 leading-relaxed mb-3">
                 Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben wie Name, E-Mail-Adresse, Telefonnummer (optional), Unternehmen (optional) und Ihren Nachrichtentext. Diese Daten verwenden wir ausschließlich, um auf Ihre Anfrage zu antworten.
+              </p>
+              <p class="text-dark-200 leading-relaxed">
+                Für das Kontaktformular auf dieser Website nutzen wir den Dienst Web3Forms (Nexinvent Media Ltd.). Die von Ihnen im Formular eingegebenen Daten (Name, E-Mail-Adresse, gewähltes Thema und Ihre Nachricht) werden über Web3Forms verarbeitet und an unsere E-Mail-Adresse weitergeleitet. Rechtsgrundlage ist Ihre Einwilligung sowie unser berechtigtes Interesse an der Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. a und f DSGVO). Dabei kann eine Übermittlung an Server außerhalb der EU erfolgen.
               </p>
 
               <h3 class="text-lg font-semibold text-white mt-6 mb-3">3.3 Cookies und ähnliche Technologien</h3>
@@ -89,7 +91,7 @@ useSeoMeta({
             <div>
               <h2 class="text-xl font-display font-semibold text-white mb-4">6. Datenempfänger und Weitergabe</h2>
               <p class="text-dark-200 leading-relaxed">
-                Ihre Daten werden intern zur Erbringung unserer Services verwendet. Externe Datenempfänger sind: Google Analytics (Website-Analyse), E-Mail-Dienste (Kontaktkommunikation), Webhosts und Server-Provider (technische Speicherung) sowie Behörden (falls gesetzlich verpflichtet). Alle Datenempfänger sind vertraglich zur Einhaltung der DSGVO verpflichtet.
+                Ihre Daten werden intern zur Erbringung unserer Services verwendet. Externe Datenempfänger sind: Google Analytics (Website-Analyse), Web3Forms (Verarbeitung von Kontaktformular-Anfragen), E-Mail-Dienste (Kontaktkommunikation), Webhosts und Server-Provider (technische Speicherung) sowie Behörden (falls gesetzlich verpflichtet). Alle Datenempfänger sind vertraglich zur Einhaltung der DSGVO verpflichtet.
               </p>
             </div>
 
@@ -114,7 +116,7 @@ useSeoMeta({
                 <p class="text-dark-200"><strong class="text-white">Recht auf Datenportabilität (Art. 20):</strong> Sie können Ihre Daten in maschinenlesbarem Format erhalten.</p>
                 <p class="text-dark-200"><strong class="text-white">Widerspruchsrecht (Art. 21):</strong> Sie können der Verarbeitung widersprechen, besonders bei Marketing und Profiling.</p>
               </div>
-              <p class="text-dark-200 mt-4">Kontaktieren Sie uns per E-Mail unter <a href="mailto:info@prestige-webdesign.de" class="text-primary-400 hover:text-primary-300">info@prestige-webdesign.de</a>. Wir antworten innerhalb von 30 Tagen.</p>
+              <p class="text-dark-200 mt-4">Kontaktieren Sie uns per E-Mail unter <a href="mailto:info@prestige-webdesign.de" class="text-primary-300 hover:text-primary-200">info@prestige-webdesign.de</a>. Wir antworten innerhalb von 30 Tagen.</p>
             </div>
 
             <!-- 9 -->
@@ -151,7 +153,7 @@ useSeoMeta({
               <div class="text-dark-200 space-y-1">
                 <p>Prestige Webdesign – Robert Schreiner</p>
                 <p>Kapitelwiese 14, 44263 Dortmund</p>
-                <p>E-Mail: <a href="mailto:info@prestige-webdesign.de" class="text-primary-400 hover:text-primary-300">info@prestige-webdesign.de</a></p>
+                <p>E-Mail: <a href="mailto:info@prestige-webdesign.de" class="text-primary-300 hover:text-primary-200">info@prestige-webdesign.de</a></p>
               </div>
             </div>
           </div>

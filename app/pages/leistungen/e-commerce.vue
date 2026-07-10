@@ -129,66 +129,37 @@ const benefits = [
 </script>
 
 <template>
-  <div class="bg-dark-900 text-white">
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-900/10 to-dark-900" />
-      <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary-600/5 rounded-full blur-[120px]" />
-
-      <div class="container-narrow mx-auto relative">
-        <div class="max-w-3xl">
-          <span class="text-primary-400 text-sm font-semibold uppercase tracking-wider mb-4 block">E-Commerce Leistung</span>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
-            Professionelle <span class="text-gradient">E-Commerce Lösungen</span>
-          </h1>
-          <p class="text-xl text-dark-200 max-w-2xl leading-relaxed mb-8">
-            Verkaufen Sie online mit einem professionellen Shop, der nicht nur gut aussieht, sondern auch nachweislich mehr Umsätze generiert. Mit WooCommerce oder Shopify – wir finden die perfekte Lösung für Sie.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:info@prestige-webdesign.de" class="btn-primary">
-              Kostenlose Shop-Beratung
-              <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <NuxtLink to="/#kontakt" class="btn-secondary">
-              Unsere Projekte
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div>
+    <PageHero
+      badge="E-Commerce Leistung"
+      title="Professionelle"
+      highlight="E-Commerce Lösungen"
+      subtitle="Verkaufen Sie online mit einem professionellen Shop, der nicht nur gut aussieht, sondern auch nachweislich mehr Umsätze generiert. Mit WooCommerce oder Shopify – wir finden die perfekte Lösung für Sie."
+    >
+      <NuxtLink to="/kontakt" class="btn-primary text-base">Kostenlose Beratung <AppIcon name="arrow-right" class="w-5 h-5" /></NuxtLink>
+      <NuxtLink to="/leistungen" class="btn-secondary text-base">Alle Leistungen</NuxtLink>
+    </PageHero>
 
     <!-- Platform Comparison Section -->
     <section class="section-padding relative overflow-hidden">
-      <div class="absolute top-1/2 left-0 w-[300px] h-[300px] bg-primary-600/5 rounded-full blur-[100px] -translate-x-1/2" />
-
       <div class="container-narrow mx-auto relative">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            WooCommerce oder <span class="text-gradient">Shopify?</span>
-          </h2>
-          <p class="text-lg text-dark-200 max-w-2xl mx-auto">
-            Beide Plattformen haben Vorteile. Wir helfen Ihnen, die beste Lösung für Ihre Anforderungen zu wählen und perfekt umzusetzen.
-          </p>
-        </div>
+        <SectionHeader
+          label="Plattformen"
+          title="WooCommerce oder"
+          highlight="Shopify?"
+          subtitle="Beide Plattformen haben Vorteile. Wir helfen Ihnen, die beste Lösung für Ihre Anforderungen zu wählen und perfekt umzusetzen."
+          class="mb-16"
+        />
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div
             v-for="platform in platformFeatures"
             :key="platform.title"
-            class="glass-card-hover p-8"
+            class="glass-card p-8"
           >
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-blue-500 to-cyan-500">
-              <svg v-if="platform.icon === 'woocommerce'" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
-              <svg v-if="platform.icon === 'shopify'" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <IconBadge :icon="platform.icon" tone="orange" size="lg" class="mb-6" />
 
-            <h3 class="text-2xl font-display font-bold text-white mb-3">
+            <h3 class="text-xl font-semibold text-white mb-3">
               {{ platform.title }}
             </h3>
             <p class="text-dark-200 mb-6 leading-relaxed">
@@ -203,9 +174,7 @@ const benefits = [
                   :key="feature"
                   class="flex items-start gap-3"
                 >
-                  <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
+                  <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" />
                   <span class="text-dark-200">{{ feature }}</span>
                 </li>
               </ul>
@@ -216,19 +185,15 @@ const benefits = [
     </section>
 
     <!-- Services Section -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/5 via-dark-900 to-primary-900/5" />
-      <div class="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary-600/5 rounded-full blur-[100px]" />
-
+    <section class="section-padding relative overflow-hidden bg-dark-800/30">
       <div class="container-narrow mx-auto relative">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Unser E-Commerce <span class="text-gradient">Service-Portfolio</span>
-          </h2>
-          <p class="text-lg text-dark-200 max-w-2xl mx-auto">
-            Von der Shop-Entwicklung bis zur Optimierung – wir kümmern uns um alles, damit Ihr Online-Shop erfolgreich ist.
-          </p>
-        </div>
+        <SectionHeader
+          label="Service-Portfolio"
+          title="Unser E-Commerce"
+          highlight="Service-Portfolio"
+          subtitle="Von der Shop-Entwicklung bis zur Optimierung – wir kümmern uns um alles, damit Ihr Online-Shop erfolgreich ist."
+          class="mb-16"
+        />
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
@@ -236,36 +201,8 @@ const benefits = [
             :key="service.title"
             class="glass-card-hover p-8 group"
           >
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-orange-500 to-red-500 group-hover:scale-110 transition-transform duration-300">
-              <!-- Cart Icon -->
-              <svg v-if="service.icon === 'cart'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
-              <!-- Products Icon -->
-              <svg v-if="service.icon === 'products'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-              </svg>
-              <!-- Payment Icon -->
-              <svg v-if="service.icon === 'payment'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h6m4 0h2M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z" />
-              </svg>
-              <!-- Shipping Icon -->
-              <svg v-if="service.icon === 'shipping'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-              </svg>
-              <!-- Security Icon -->
-              <svg v-if="service.icon === 'security'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <!-- Analytics Icon -->
-              <svg v-if="service.icon === 'analytics'" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-
-            <!-- Content -->
-            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-gradient transition-all duration-300">
+            <IconBadge :icon="service.icon" tone="orange" size="lg" class="mb-6 group-hover:scale-105" />
+            <h3 class="text-xl font-semibold text-white mb-3">
               {{ service.title }}
             </h3>
             <p class="text-dark-200 leading-relaxed">
@@ -278,25 +215,22 @@ const benefits = [
 
     <!-- Benefits Section -->
     <section class="section-padding relative overflow-hidden">
-      <div class="absolute top-1/4 left-0 w-[300px] h-[300px] bg-primary-600/5 rounded-full blur-[100px] -translate-x-1/2" />
-
       <div class="container-narrow mx-auto relative">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Warum ein <span class="text-gradient">professioneller Online-Shop</span>
-          </h2>
-          <p class="text-lg text-dark-200 max-w-2xl mx-auto">
-            Ein gut entwickelter Online-Shop ist eine der besten Investitionen für stabiles, skalierungsfähiges Geschäftswachstum.
-          </p>
-        </div>
+        <SectionHeader
+          label="Vorteile"
+          title="Warum ein"
+          highlight="professioneller Online-Shop"
+          subtitle="Ein gut entwickelter Online-Shop ist eine der besten Investitionen für stabiles, skalierungsfähiges Geschäftswachstum."
+          class="mb-16"
+        />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             v-for="benefit in benefits"
             :key="benefit.number"
-            class="glass-card p-8 hover:bg-white/15 transition-all duration-300 hover:-translate-y-2"
+            class="glass-card-hover p-8 group"
           >
-            <div class="text-primary-400 text-5xl font-display font-bold mb-4">
+            <div class="text-primary-300 text-5xl font-display font-bold mb-4">
               {{ benefit.number }}
             </div>
             <h3 class="text-xl font-semibold text-white mb-3">
@@ -310,39 +244,50 @@ const benefits = [
       </div>
     </section>
 
+    <!-- Trust Stats -->
+    <section class="section-padding relative overflow-hidden bg-dark-800/30">
+      <div class="container-narrow mx-auto relative">
+        <StatsRow bordered />
+      </div>
+    </section>
+
     <!-- Success Story Section -->
     <section class="section-padding relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-900/5 to-dark-900" />
-      <div class="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary-600/5 rounded-full blur-[100px]" />
-
       <div class="container-narrow mx-auto relative">
-        <div class="max-w-4xl">
-          <div class="glass-card p-10 md:p-12 border-primary-600/30">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="text-xl">⭐</span>
-              <span class="text-xl">⭐</span>
-              <span class="text-xl">⭐</span>
-              <span class="text-xl">⭐</span>
-              <span class="text-xl">⭐</span>
+        <SectionHeader
+          label="Erfolgsgeschichte"
+          title="Was unsere"
+          highlight="Kunden sagen"
+          class="mb-12"
+        />
+
+        <div class="max-w-4xl mx-auto">
+          <div class="glass-card p-8 md:p-10">
+            <div class="flex items-center gap-1 mb-6">
+              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
+              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
+              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
+              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
+              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
             </div>
 
-            <h3 class="text-3xl font-display font-bold text-white mb-4">
-              "Seitdem wir unseren Shop online haben, sind unsere Umsätze um über 300% gestiegen."
-            </h3>
+            <blockquote class="text-lg md:text-xl text-white leading-relaxed mb-6">
+              "Seitdem wir unseren Shop online haben, sind unsere Umsätze um über 300% gestiegen." Mit Prestige Webdesign haben wir einen professionellen Online-Shop aufgebaut, der nicht nur gut aussieht, sondern auch wirklich verkauft. Das Team hat uns vom Anfang bis nach dem Launch begleitet und bietet kontinuierlichen Support. Wir sind sehr zufrieden!
+            </blockquote>
 
-            <p class="text-lg text-dark-200 mb-8 leading-relaxed">
-              Mit Prestige Webdesign haben wir einen professionellen Online-Shop aufgebaut, der nicht nur gut aussieht, sondern auch wirklich verkauft. Das Team hat uns vom Anfang bis nach dem Launch begleitet und bietet kontinuierlichen Support. Wir sind sehr zufrieden!
-            </p>
-
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600" />
-              <div>
-                <p class="font-semibold text-white">Jennifer Weber</p>
-                <p class="text-dark-300 text-sm">Gründerin, Fashion Boutique Online</p>
-              </div>
-            </div>
+            <cite class="not-italic text-dark-300 text-sm">
+              Jennifer Weber – Gründerin, Fashion Boutique Online
+            </cite>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding relative overflow-hidden bg-dark-800/30">
+      <div class="container-narrow mx-auto relative">
+        <SectionHeader title="Häufige Fragen zu" highlight="E-Commerce" class="mb-12" />
+        <FaqAccordion :items="faqItems" />
       </div>
     </section>
 

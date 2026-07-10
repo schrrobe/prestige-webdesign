@@ -74,7 +74,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Prestige Webdesign: Professionelle Webagentur für modernes Webdesign, SEO & E-Commerce im Ruhrgebiet. Jetzt Kontakt aufnehmen!' },
         { name: 'author', content: 'Prestige Webdesign - Robert Schreiner' },
-        { name: 'theme-color', content: '#0f172a' },
+        { name: 'theme-color', content: '#101113' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Prestige Webdesign' },
         { property: 'og:locale', content: 'de_DE' },
@@ -90,7 +90,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap' },
       ],
     },
   },
@@ -108,6 +108,14 @@ export default defineNuxtConfig({
     rules: [
       { UserAgent: '*', Allow: '/' },
     ],
+  },
+
+  runtimeConfig: {
+    public: {
+      // Web3Forms Access Key – zur Build-Zeit via NUXT_PUBLIC_WEB3FORMS_KEY setzen.
+      // Solange leer, nutzt das Kontaktformular den mailto-Fallback.
+      web3formsKey: '',
+    },
   },
 
   tailwindcss: {

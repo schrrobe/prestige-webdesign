@@ -25,35 +25,35 @@ const footerLinks = {
 
 <template>
   <footer class="bg-dark-950 border-t border-white/5">
-    <!-- Main Footer -->
-    <div class="container-narrow mx-auto section-padding !pb-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
         <!-- Brand -->
-        <div class="lg:col-span-1">
-          <NuxtLink to="/" class="flex items-center gap-3 mb-6">
+        <div class="col-span-2 lg:col-span-1">
+          <NuxtLink to="/" class="inline-flex items-center gap-3 mb-6 rounded-lg">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center font-display font-bold text-lg text-white">
               P
             </div>
-            <div>
-              <span class="text-lg font-bold text-white">Prestige</span>
-              <span class="text-lg font-light text-primary-400 ml-1">Webdesign</span>
+            <div class="leading-none">
+              <span class="text-lg font-bold text-white tracking-tight">Prestige</span>
+              <span class="text-lg font-light text-primary-300 ml-1">Webdesign</span>
             </div>
           </NuxtLink>
-          <p class="text-dark-200 text-sm leading-relaxed mb-6">
+          <p class="text-dark-200 text-sm leading-relaxed mb-6 max-w-xs">
             Ihre professionelle Webagentur im Ruhrgebiet. Modernes Webdesign, SEO und E-Commerce aus Dortmund.
           </p>
-          <div class="space-y-2 text-sm text-dark-200">
+          <address class="not-italic space-y-2 text-sm text-dark-200">
             <p>Robert Schreiner</p>
             <p>Kapitelwiese 14, 44263 Dortmund</p>
-            <a href="mailto:info@prestige-webdesign.de" class="text-primary-400 hover:text-primary-300 transition-colors block">
+            <a href="mailto:info@prestige-webdesign.de" class="inline-flex items-center gap-2 text-primary-300 hover:text-primary-200 transition-colors">
+              <AppIcon name="mail" class="w-4 h-4" />
               info@prestige-webdesign.de
             </a>
-          </div>
+          </address>
         </div>
 
         <!-- Leistungen -->
         <div>
-          <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Leistungen</h3>
+          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Leistungen</h2>
           <ul class="space-y-3">
             <li v-for="link in footerLinks.leistungen" :key="link.to">
               <NuxtLink :to="link.to" class="text-dark-200 hover:text-white text-sm transition-colors duration-200">
@@ -65,7 +65,7 @@ const footerLinks = {
 
         <!-- Standorte -->
         <div>
-          <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Standorte</h3>
+          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Standorte</h2>
           <ul class="space-y-3">
             <li v-for="link in footerLinks.standorte" :key="link.to">
               <NuxtLink :to="link.to" class="text-dark-200 hover:text-white text-sm transition-colors duration-200">
@@ -76,11 +76,14 @@ const footerLinks = {
         </div>
 
         <!-- CTA -->
-        <div>
-          <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Lassen Sie uns gemeinsam wachsen</h3>
-          <p class="text-dark-200 text-sm mb-6">Ihre Anfrage ist willkommen – wir antworten meist innerhalb von 24 Stunden.</p>
+        <div class="col-span-2 lg:col-span-1">
+          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Gemeinsam wachsen</h2>
+          <p class="text-dark-200 text-sm mb-6 max-w-xs">
+            Ihre Anfrage ist willkommen – wir antworten meist innerhalb von 24 Stunden.
+          </p>
           <NuxtLink to="/kontakt" class="btn-primary text-sm !px-6 !py-3">
             Kontakt aufnehmen
+            <AppIcon name="arrow-right" class="w-4 h-4" />
           </NuxtLink>
         </div>
       </div>
@@ -92,7 +95,7 @@ const footerLinks = {
         <p class="text-dark-300 text-xs">
           &copy; {{ currentYear }} Prestige Webdesign. Alle Rechte vorbehalten.
         </p>
-        <div class="flex gap-6">
+        <nav class="flex gap-6" aria-label="Rechtliches">
           <NuxtLink
             v-for="link in footerLinks.rechtliches"
             :key="link.to"
@@ -101,7 +104,7 @@ const footerLinks = {
           >
             {{ link.label }}
           </NuxtLink>
-        </div>
+        </nav>
       </div>
     </div>
   </footer>

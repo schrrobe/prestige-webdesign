@@ -49,9 +49,6 @@ useHead({
 
 <template>
   <div>
-    <h1 class="sr-only">
-      Prestige Webdesign – Webagentur für Webdesign, SEO und E-Commerce im Ruhrgebiet
-    </h1>
     <HeroSection />
     <ServicesSection />
     <AboutSection />
