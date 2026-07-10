@@ -18,6 +18,10 @@ logs
 .fleet
 .idea
 
+# Local tooling artifacts
+.claude
+.tokensave
+
 # Local env files
 .env
 .env.*

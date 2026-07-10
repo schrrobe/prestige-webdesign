@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const faqItems = [
   {
-    question: 'Was bringt professionelles Webdesign fuer Google Rankings?',
-    answer: 'Professionelles Webdesign verbessert Struktur, Ladezeit, mobile Nutzbarkeit und interne Verlinkung. Damit wird Ihre Website fuer Nutzer hilfreicher und fuer Suchmaschinen leichter verstaendlich.',
+    question: 'Was bringt professionelles Webdesign für Google Rankings?',
+    answer: 'Professionelles Webdesign verbessert Struktur, Ladezeit, mobile Nutzbarkeit und interne Verlinkung. Damit wird Ihre Website für Nutzer hilfreicher und für Suchmaschinen leichter verständlich.',
   },
   {
     question: 'Wie lange dauert SEO, bis Ergebnisse sichtbar werden?',
-    answer: 'Erste Verbesserungen bei Technik, Indexierung und lokalen Suchanfragen sind oft frueher sichtbar. Nachhaltige Rankings fuer umkaempfte Begriffe entwickeln sich in der Regel ueber mehrere Monate.',
+    answer: 'Erste Verbesserungen bei Technik, Indexierung und lokalen Suchanfragen sind oft früher sichtbar. Nachhaltige Rankings für umkämpfte Begriffe entwickeln sich in der Regel über mehrere Monate.',
   },
   {
     question: 'Warum sind lokale Standortseiten wichtig?',
@@ -14,13 +14,13 @@ const faqItems = [
   },
   {
     question: 'Welche Seiten sollten priorisiert optimiert werden?',
-    answer: 'Zuerst die Startseite, die wichtigsten Leistungsseiten, die Kontaktseite und starke lokale Landingpages. Diese Seiten tragen meist den groessten Anteil an Sichtbarkeit, Vertrauen und Anfragen.',
+    answer: 'Zuerst die Startseite, die wichtigsten Leistungsseiten, die Kontaktseite und starke lokale Landingpages. Diese Seiten tragen meist den größten Anteil an Sichtbarkeit, Vertrauen und Anfragen.',
   },
 ]
 
 useSeoMeta({
-  title: 'Prestige Webdesign | Webagentur Dortmund – Webdesign, SEO & E-Commerce',
-  description: 'Prestige Webdesign: Professionelle Webagentur für modernes Webdesign, SEO & E-Commerce im Ruhrgebiet. Jetzt Kontakt aufnehmen!',
+  title: 'Webdesign & SEO im Ruhrgebiet – Webagentur Dortmund | Prestige Webdesign',
+  description: 'Moderne Websites, SEO und Online-Shops für Unternehmen in Dortmund, Bochum, Essen & Umgebung. Festpreis, persönliche Betreuung, Antwort in 24 h – jetzt kostenlos beraten lassen.',
   ogTitle: 'Prestige Webdesign | Professionelle Webagentur im Ruhrgebiet',
   ogDescription: 'Moderne Websites für Ihr Business in Dortmund, Bochum und Essen. Webdesign, SEO & E-Commerce aus einer Hand.',
 })
@@ -54,8 +54,8 @@ useHead({
     <AboutSection />
     <LocationsSection />
     <SeoFaqSection
-      title="Haeufige Fragen zu Webdesign, SEO und lokaler Sichtbarkeit"
-      intro="Diese Antworten staerken die wichtigsten Themen rund um Sichtbarkeit, Conversion und regionale Auffindbarkeit im Ruhrgebiet."
+      title="Häufige Fragen zu Webdesign, SEO und lokaler Sichtbarkeit"
+      intro="Diese Antworten stärken die wichtigsten Themen rund um Sichtbarkeit, Conversion und regionale Auffindbarkeit im Ruhrgebiet."
       :items="faqItems"
     />
     <CTASection />

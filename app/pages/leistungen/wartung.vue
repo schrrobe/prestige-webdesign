@@ -19,7 +19,7 @@ const faqItems = [
 ]
 
 useSeoMeta({
-  title: 'Website Wartung | Prestige Webdesign – Support & Updates',
+  title: 'Website-Wartung ab 79 €/Monat – Updates, Backups & Support | Prestige Webdesign',
   description: 'Website Wartung und Support für Ihre Website. Sicherheitsupdates, Backups, Performance-Optimierung und 24/7 Monitoring. Prestige Webdesign Ruhrgebiet.',
   ogTitle: 'Website Wartung & Support | Prestige Webdesign',
   ogDescription: 'Professionelle Website-Wartung: Updates, Backups, Sicherheit und Performance-Optimierung für Ihre Website.',
@@ -56,7 +56,7 @@ const packages = [
       'Tägliche Sicherheits-Backups',
       'Sicherheitsupdates',
       'Basic Performance-Monitoring',
-      ' Email-Support',
+      'E-Mail-Support',
       'Monatlicher Report',
       'Uptime-Garantie 99,5%',
     ],
@@ -88,7 +88,7 @@ const packages = [
       'Real-Time Sicherheits-Backups',
       'Proaktive Sicherheitsupdates',
       'Kontinuierliche Performance-Optimierung',
-      ' Dedizierter Ansprechpartner',
+      'Dedizierter Ansprechpartner',
       'Tägliche detaillierte Reports',
       'Uptime-Garantie 99,95%',
       'Wöchentliche Audits & Optimierungen',

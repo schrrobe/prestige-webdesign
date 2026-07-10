@@ -1,54 +1,54 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Webanwendungen | Prestige Webdesign – Komplexe individuelle Web-Apps',
-  description: 'Wir entwickeln komplexe Webanwendungen fuer Unternehmen: Kundenportale, Dashboards, Buchungssysteme, interne Tools und digitale Plattformen.',
+  title: 'Individuelle Webanwendungen entwickeln lassen – Portale, Tools & Apps | Prestige Webdesign',
+  description: 'Wir entwickeln komplexe Webanwendungen für Unternehmen: Kundenportale, Dashboards, Buchungssysteme, interne Tools und digitale Plattformen.',
   ogTitle: 'Komplexe Webanwendungen | Prestige Webdesign',
-  ogDescription: 'Individuelle Web-Apps fuer Prozesse, Plattformen und digitale Geschaeftsmodelle. Skalierbar, performant und exakt auf Ihr Unternehmen zugeschnitten.',
+  ogDescription: 'Individuelle Web-Apps für Prozesse, Plattformen und digitale Geschäftsmodelle. Skalierbar, performant und exakt auf Ihr Unternehmen zugeschnitten.',
 })
 
 const solutionAreas = [
   {
     title: 'Kundenportale & Plattformen',
-    description: 'Digitale Bereiche fuer Kunden, Partner oder Mitglieder mit Login, Rollen, Dokumenten, Statusverfolgung und individuellen Workflows.',
+    description: 'Digitale Bereiche für Kunden, Partner oder Mitglieder mit Login, Rollen, Dokumenten, Statusverfolgung und individuellen Workflows.',
   },
   {
     title: 'Dashboards & interne Tools',
-    description: 'Massgeschneiderte Oberflaechen fuer Vertrieb, Operations, Support oder Management mit Kennzahlen, Filtern und Prozessautomatisierung.',
+    description: 'Maßgeschneiderte Oberflächen für Vertrieb, Operations, Support oder Management mit Kennzahlen, Filtern und Prozessautomatisierung.',
   },
   {
     title: 'Buchungs- & Anfrageprozesse',
-    description: 'Digitale Strecken fuer Terminbuchung, Konfiguration, Reservierung oder Lead-Qualifizierung inklusive Validierung und Benachrichtigungen.',
+    description: 'Digitale Strecken für Terminbuchung, Konfiguration, Reservierung oder Lead-Qualifizierung inklusive Validierung und Benachrichtigungen.',
   },
   {
-    title: 'API-gestuetzte Systeme',
-    description: 'Anbindung externer Dienste, CRM-, ERP- oder Zahlungs-Schnittstellen fuer reibungslose Datenfluesse und weniger manuelle Arbeit.',
+    title: 'API-gestützte Systeme',
+    description: 'Anbindung externer Dienste, CRM-, ERP- oder Zahlungs-Schnittstellen für reibungslose Datenflüsse und weniger manuelle Arbeit.',
   },
 ]
 
 const features = [
   {
     title: 'Individuelle Logik',
-    description: 'Ihre Anwendung wird an reale Prozesse angepasst statt umgekehrt. Rollen, Freigaben, Stati und Sonderfaelle werden von Anfang an mitgedacht.',
+    description: 'Ihre Anwendung wird an reale Prozesse angepasst statt umgekehrt. Rollen, Freigaben, Stati und Sonderfälle werden von Anfang an mitgedacht.',
   },
   {
     title: 'Skalierbare Architektur',
-    description: 'Wir planen fuer Wachstum, damit Nutzerzahlen, Datenvolumen und neue Funktionen spaeter nicht zum technischen Problem werden.',
+    description: 'Wir planen für Wachstum, damit Nutzerzahlen, Datenvolumen und neue Funktionen später nicht zum technischen Problem werden.',
   },
   {
-    title: 'Starke UX fuer komplexe Prozesse',
-    description: 'Auch anspruchsvolle Anwendungen muessen klar bedienbar sein. Wir strukturieren Informationsdichte so, dass Nutzer schnell ans Ziel kommen.',
+    title: 'Starke UX für komplexe Prozesse',
+    description: 'Auch anspruchsvolle Anwendungen müssen klar bedienbar sein. Wir strukturieren Informationsdichte so, dass Nutzer schnell ans Ziel kommen.',
   },
   {
-    title: 'Sicherheit & Stabilitaet',
-    description: 'Berechtigungen, Eingabevalidierung, robuste Datenfluesse und saubere technische Trennung sorgen fuer einen zuverlaessigen Betrieb.',
+    title: 'Sicherheit & Stabilität',
+    description: 'Berechtigungen, Eingabevalidierung, robuste Datenflüsse und saubere technische Trennung sorgen für einen zuverlässigen Betrieb.',
   },
   {
     title: 'Wartbarkeit im Alltag',
-    description: 'Sauberer Code, nachvollziehbare Komponenten und klare Systemlogik erleichtern spaetere Erweiterungen und laufende Betreuung.',
+    description: 'Sauberer Code, nachvollziehbare Komponenten und klare Systemlogik erleichtern spätere Erweiterungen und laufende Betreuung.',
   },
   {
     title: 'Business-Fokus',
-    description: 'Nicht nur Technik: Wir entwickeln Anwendungen, die Zeit sparen, Fehler reduzieren und neue digitale Angebote moeglich machen.',
+    description: 'Nicht nur Technik: Wir entwickeln Anwendungen, die Zeit sparen, Fehler reduzieren und neue digitale Angebote möglich machen.',
   },
 ]
 
@@ -56,12 +56,12 @@ const processSteps = [
   {
     number: '01',
     title: 'Prozessaufnahme',
-    description: 'Wir analysieren Ziele, Nutzergruppen, Sonderfaelle und Schnittstellen, damit die Anwendung fachlich von Anfang an belastbar ist.',
+    description: 'Wir analysieren Ziele, Nutzergruppen, Sonderfälle und Schnittstellen, damit die Anwendung fachlich von Anfang an belastbar ist.',
   },
   {
     number: '02',
     title: 'Konzept & UX',
-    description: 'Wir definieren Informationsarchitektur, Rollenlogik, Screens und User Flows fuer eine Anwendung, die im Alltag effizient nutzbar ist.',
+    description: 'Wir definieren Informationsarchitektur, Rollenlogik, Screens und User Flows für eine Anwendung, die im Alltag effizient nutzbar ist.',
   },
   {
     number: '03',
@@ -77,9 +77,9 @@ const processSteps = [
 
 const useCases = [
   'Kundenportale mit Login und Self-Service-Funktionen',
-  'Verwaltungsoberflaechen fuer Teams und interne Ablaeufe',
+  'Verwaltungsoberflächen für Teams und interne Abläufe',
   'Buchungs-, Reservierungs- oder Konfigurationssysteme',
-  'Digitale Plattformen fuer Services, Daten und Prozesse',
+  'Digitale Plattformen für Services, Daten und Prozesse',
 ]
 </script>
 
@@ -252,7 +252,7 @@ const useCases = [
 
     <CTASection
       title="Sie planen eine individuelle Webanwendung?"
-      subtitle="Schildern Sie uns Ihr Vorhaben per E-Mail. Wir bewerten gemeinsam, welche Architektur und welcher Projektumfang fuer Ihr Vorhaben sinnvoll sind."
+      subtitle="Schildern Sie uns Ihr Vorhaben per E-Mail. Wir bewerten gemeinsam, welche Architektur und welcher Projektumfang für Ihr Vorhaben sinnvoll sind."
       buttonText="Projekt anfragen"
       buttonLink="/kontakt"
     />

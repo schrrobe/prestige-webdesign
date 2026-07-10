@@ -19,7 +19,7 @@ const faqItems = [
 ]
 
 useSeoMeta({
-  title: 'E-Commerce | Prestige Webdesign – Online-Shop Entwicklung',
+  title: 'Online-Shop erstellen lassen – WooCommerce & Shopify | Prestige Webdesign',
   description: 'E-Commerce Lösungen und Online-Shop Entwicklung mit WooCommerce und Shopify. Professionelle Shop-Entwicklung im Ruhrgebiet mit Payment-Integration und Produktverwaltung.',
   ogTitle: 'E-Commerce Shop Entwicklung | Prestige Webdesign',
   ogDescription: 'Online-Shop Entwicklung: WooCommerce & Shopify Expertise. Professionelle E-Commerce Lösungen für Ihren Online-Handel.',
@@ -75,7 +75,7 @@ const services = [
   {
     icon: 'payment',
     title: 'Payment-Integration',
-    description: 'Integration von PayPal, Stripe, Klarna, SOFORT und anderen Zahlungsgatewayss für sichere Transaktionen.',
+    description: 'Integration von PayPal, Stripe, Klarna, SOFORT und anderen Zahlungsanbietern für sichere Transaktionen.',
   },
   {
     icon: 'shipping',
@@ -251,33 +251,41 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Success Story Section -->
+    <!-- Was einen erfolgreichen Shop ausmacht -->
     <section class="section-padding relative overflow-hidden">
       <div class="container-narrow mx-auto relative">
         <SectionHeader
-          label="Erfolgsgeschichte"
-          title="Was unsere"
-          highlight="Kunden sagen"
+          label="Erfolgsfaktoren"
+          title="Was einen erfolgreichen"
+          highlight="Online-Shop ausmacht"
+          subtitle="Ein Shop verkauft nicht durch Zufall. Diese Faktoren entscheiden darüber, ob aus Besuchern Käufer werden."
           class="mb-12"
         />
 
-        <div class="max-w-4xl mx-auto">
-          <div class="glass-card p-8 md:p-10">
-            <div class="flex items-center gap-1 mb-6">
-              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
-              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
-              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
-              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
-              <AppIcon name="star" class="w-5 h-5 text-accent-400 fill-current" />
-            </div>
-
-            <blockquote class="text-lg md:text-xl text-white leading-relaxed mb-6">
-              "Seitdem wir unseren Shop online haben, sind unsere Umsätze um über 300% gestiegen." Mit Prestige Webdesign haben wir einen professionellen Online-Shop aufgebaut, der nicht nur gut aussieht, sondern auch wirklich verkauft. Das Team hat uns vom Anfang bis nach dem Launch begleitet und bietet kontinuierlichen Support. Wir sind sehr zufrieden!
-            </blockquote>
-
-            <cite class="not-italic text-dark-300 text-sm">
-              Jennifer Weber – Gründerin, Fashion Boutique Online
-            </cite>
+        <div class="max-w-4xl mx-auto grid gap-4">
+          <div class="glass-card p-6 flex gap-4">
+            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
+            <p class="text-dark-200 leading-relaxed">
+              <span class="text-white font-semibold">Reibungsloser Checkout:</span> Jeder zusätzliche Schritt kostet Conversions. Wir reduzieren den Kaufprozess auf das Nötigste – mit klaren Zahlungswegen und Trust-Signalen.
+            </p>
+          </div>
+          <div class="glass-card p-6 flex gap-4">
+            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
+            <p class="text-dark-200 leading-relaxed">
+              <span class="text-white font-semibold">Schnelle Ladezeiten:</span> Studien zeigen, dass jede zusätzliche Sekunde Ladezeit die Kaufabbrüche erhöht. Performance ist bei uns kein Nachgedanke, sondern Teil des Fundaments.
+            </p>
+          </div>
+          <div class="glass-card p-6 flex gap-4">
+            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
+            <p class="text-dark-200 leading-relaxed">
+              <span class="text-white font-semibold">Mobile-First:</span> Der Großteil der Shop-Besuche erfolgt mobil. Ihr Shop muss auf dem Smartphone genauso überzeugen wie am Desktop.
+            </p>
+          </div>
+          <div class="glass-card p-6 flex gap-4">
+            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
+            <p class="text-dark-200 leading-relaxed">
+              <span class="text-white font-semibold">Auffindbarkeit:</span> Produkte und Kategorien werden von Anfang an suchmaschinenfreundlich strukturiert, damit Sie auch über Google gefunden werden.
+            </p>
           </div>
         </div>
       </div>

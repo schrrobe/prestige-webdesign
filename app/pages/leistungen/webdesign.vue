@@ -19,8 +19,8 @@ const faqItems = [
 ]
 
 useSeoMeta({
-  title: 'Webdesign | Prestige Webdesign – Moderne Responsive Websites',
-  description: 'Professionelles Webdesign für moderne Responsive Websites. Wir entwickeln benutzerfreundliche und suchmaschinenoptimierte Websites, die Ihre Besucher in Kunden verwandeln. Jetzt beraten lassen!',
+  title: 'Webdesign zum Festpreis – responsive Websites für Unternehmen | Prestige Webdesign',
+  description: 'Professionelles Webdesign: responsive, SEO-optimiert und conversion-stark. Websites ab 1.500 € zum Festpreis – jetzt kostenlose Beratung sichern.',
   ogTitle: 'Webdesign Agentur | Prestige Webdesign',
   ogDescription: 'Professionelles Webdesign: Responsive Websites mit modernem Design und hoher Benutzerfreundlichkeit aus Dortmund.',
 })
@@ -176,7 +176,7 @@ const reasons = [
               Warum <span class="text-gradient">Prestige Webdesign</span> wählen?
             </h2>
             <p class="text-lg text-dark-200 mb-8 leading-relaxed">
-              Wir unterstützen Unternehmen im Ruhrgebiet bei ihrer digitalen Präsenz. Unser Team aus erfahrenen Designern und Entwicklern bringt Ihre Vision in die Realität.
+              Wir unterstützen Unternehmen im Ruhrgebiet bei ihrer digitalen Präsenz – persönlich betreut, mit Design und Entwicklung aus einer Hand. So bringen wir Ihre Vision ohne Reibungsverluste in die Realität.
             </p>
             <ul class="space-y-5">
               <li v-for="reason in reasons" :key="reason.title" class="flex gap-4">

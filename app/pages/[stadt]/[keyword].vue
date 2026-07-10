@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { TOP_KEYWORDS } from '~/data/site'
+
 const route = useRoute()
 
 // Nur diese 5 Keywords werden indexiert (4 Städte × 5 = 20 Seiten)
@@ -88,11 +90,11 @@ const richContentMap: Record<string, RichContent> = {
     ],
   },
   'webdesigner-beauftragen': {
-    mainText: 'Einen Webdesigner zu beauftragen ist eine Investition – und wie bei jeder Investition kommt es auf die richtige Wahl an. Freelancer oder Agentur? Billiganbieter oder Premiumlösung? Die Antwort hängt von Ihrem Projekt ab. Wir bieten das Beste aus beiden Welten: persönliche Betreuung, Agentur-Qualität und faire Preise für den Mittelstand. Über 150 abgeschlossene Projekte sprechen für sich.',
+    mainText: 'Einen Webdesigner zu beauftragen ist eine Investition – und wie bei jeder Investition kommt es auf die richtige Wahl an. Freelancer oder Agentur? Billiganbieter oder Premiumlösung? Die Antwort hängt von Ihrem Projekt ab. Wir bieten das Beste aus beiden Welten: persönliche Betreuung, Agentur-Qualität und faire Preise für den Mittelstand. Über 50 abgeschlossene Projekte sprechen für sich.',
     benefits: [
       { title: 'Persönlicher Ansprechpartner', text: 'Sie arbeiten direkt mit dem Designer – keine Vermittler, kein Stille-Post-Problem.' },
       { title: 'Transparente Kalkulation', text: 'Festpreisangebote statt Stundensätze – Sie wissen von Anfang an, was es kostet.' },
-      { title: 'Referenzen und Erfahrung', text: 'Über 150 abgeschlossene Projekte – wir wissen, was funktioniert und was nicht.' },
+      { title: 'Referenzen und Erfahrung', text: 'Über 50 abgeschlossene Projekte – wir wissen, was funktioniert und was nicht.' },
       { title: 'Langfristige Partnerschaft', text: 'Wir sind auch nach dem Launch für Sie da: Updates, Erweiterungen, Support.' },
     ],
     faqItems: [
@@ -229,6 +231,16 @@ const cityContext = computed(() => cityContextMap[stadt.value] ?? null)
 
 const cityPageSlug = computed(() => `/webdesign-${stadt.value}`)
 
+// Querverlinkung der anderen Top-Keyword-Seiten derselben Stadt (gegen Orphan Pages)
+const siblingKeywordLinks = computed(() =>
+  TOP_KEYWORDS
+    .filter(kw => kw.slug !== keyword.value)
+    .map(kw => ({
+      to: `/${stadt.value}/${kw.slug}`,
+      label: `${kw.label} ${city.value!.name}`,
+    })),
+)
+
 const serviceLinks = [
   { label: 'Webdesign', to: '/leistungen/webdesign' },
   { label: 'SEO', to: '/leistungen/seo' },
@@ -238,12 +250,9 @@ const serviceLinks = [
 
 const h1 = computed(() => withCity(seed.value.h1))
 const pageTitle = computed(() => `${h1.value} in ${city.value!.name} | Prestige Webdesign`)
-const pageDescription = computed(() => {
-  if (isTopPage.value && richContent.value) {
-    return `${richContent.value.mainText.slice(0, 160)}`
-  }
-  return `${h1.value} in ${city.value!.name} – Prestige Webdesign: Professionelle Webagentur im Ruhrgebiet. Jetzt kostenlos beraten lassen.`
-})
+const pageDescription = computed(() =>
+  `${h1.value} in ${city.value!.name} – zum Festpreis, SEO inklusive, persönlich betreut. Ihre Webagentur für ${city.value!.name} und das Ruhrgebiet. Jetzt anfragen.`,
+)
 
 useSeoMeta({
   title: () => pageTitle.value,
@@ -408,6 +417,20 @@ useHead(() => {
           </NuxtLink>
           <NuxtLink
             v-for="link in serviceLinks"
+            :key="link.to"
+            :to="link.to"
+            class="glass-card px-4 py-2 rounded-full text-dark-100 hover:text-white transition-colors text-sm"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </div>
+
+        <h2 class="text-xl font-semibold text-white mt-10 mb-5">
+          Häufige Anfragen in {{ city.name }}
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <NuxtLink
+            v-for="link in siblingKeywordLinks"
             :key="link.to"
             :to="link.to"
             class="glass-card px-4 py-2 rounded-full text-dark-100 hover:text-white transition-colors text-sm"

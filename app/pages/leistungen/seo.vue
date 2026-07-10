@@ -2,19 +2,19 @@
 const faqItems = [
   {
     question: 'Welche SEO-Massnahmen bringen zuerst Wirkung?',
-    answer: 'Am schnellsten wirken meist technische Bereinigungen, bessere Seitentitel, staerkere interne Verlinkung und klar fokussierte Leistungs- oder Standortseiten mit echter Suchintention.',
+    answer: 'Am schnellsten wirken meist technische Bereinigungen, bessere Seitentitel, stärkere interne Verlinkung und klar fokussierte Leistungs- oder Standortseiten mit echter Suchintention.',
   },
   {
     question: 'Warum sind wenige starke Seiten besser als viele Keywordseiten?',
-    answer: 'Viele aehnliche Seiten teilen Relevanz auf und wirken schnell duenn. Wenige starke Seiten mit klarer Leistung, lokalem Bezug und hilfreichen Inhalten erzielen meist stabilere Rankings.',
+    answer: 'Viele ähnliche Seiten teilen Relevanz auf und wirken schnell dünn. Wenige starke Seiten mit klarer Leistung, lokalem Bezug und hilfreichen Inhalten erzielen meist stabilere Rankings.',
   },
   {
     question: 'Braucht jedes lokale Unternehmen eigene Standortseiten?',
-    answer: 'Nur wenn fuer den Standort ein echter Mehrwert vorhanden ist. Gute Standortseiten enthalten regionale Relevanz, passende Leistungen, Kontaktmoeglichkeiten und echte Inhalte statt reiner Keyword-Varianten.',
+    answer: 'Nur wenn für den Standort ein echter Mehrwert vorhanden ist. Gute Standortseiten enthalten regionale Relevanz, passende Leistungen, Kontaktmöglichkeiten und echte Inhalte statt reiner Keyword-Varianten.',
   },
   {
     question: 'Welche Rolle spielen Webdesign und SEO zusammen?',
-    answer: 'SEO bringt Sichtbarkeit, gutes Webdesign macht aus Besuchern Anfragen. Erst die Kombination aus Technik, Inhalt, Nutzerfuehrung und Vertrauen fuehrt zu messbaren Ergebnissen.',
+    answer: 'SEO bringt Sichtbarkeit, gutes Webdesign macht aus Besuchern Anfragen. Erst die Kombination aus Technik, Inhalt, Nutzerführung und Vertrauen führt zu messbaren Ergebnissen.',
   },
 ]
 
@@ -27,7 +27,7 @@ const regionalLinks = [
 ]
 
 useSeoMeta({
-  title: 'SEO Agentur | Prestige Webdesign – Suchmaschinenoptimierung Dortmund',
+  title: 'SEO Agentur Dortmund – Suchmaschinenoptimierung fürs Ruhrgebiet | Prestige Webdesign',
   description: 'Professionelle SEO-Agentur für bessere Google Rankings. Suchmaschinenoptimierung im Ruhrgebiet mit technischem SEO, Content-Strategie und lokaler SEO. Jetzt beraten lassen!',
   ogTitle: 'SEO Agentur Dortmund | Prestige Webdesign',
   ogDescription: 'SEO-Agentur im Ruhrgebiet: Professionelle Suchmaschinenoptimierung für mehr qualifizierte Besucher und bessere Rankings.',
@@ -58,12 +58,12 @@ const seoServices = [
   {
     icon: 'technical',
     title: 'Technisches SEO',
-    description: 'Optimale Seiten-Architektur, Core Web Vitals, Mobile-Optimierung und technische Fehlerbe hebung für höhere Rankings.',
+    description: 'Optimale Seiten-Architektur, Core Web Vitals, Mobile-Optimierung und technische Fehlerbehebung für höhere Rankings.',
   },
   {
     icon: 'content',
     title: 'Content-Optimierung',
-    description: 'Strategisch planerter und SEO-optimierter Content, der Ihre Zielgruppe anzieht und in Google höher rankt.',
+    description: 'Strategisch geplanter und SEO-optimierter Content, der Ihre Zielgruppe anzieht und in Google höher rankt.',
   },
   {
     icon: 'local',
@@ -105,8 +105,8 @@ const benefits = [
     description: 'Im Vergleich zu bezahlter Werbung sind organische Leads kostengünstiger und konvertieren oft besser.',
   },
   {
-    title: 'Competitive Advantage',
-    description: 'Mit professioneller SEO setzen Sie sich gegen Konkurrenten durch, die Ihre Keywordstrategie noch nicht optimiert haben.',
+    title: 'Wettbewerbsvorteil',
+    description: 'Mit professioneller SEO setzen Sie sich gegen Konkurrenten durch, die ihre Keyword-Strategie noch nicht optimiert haben.',
   },
   {
     title: 'Wachstum ohne zusätzliche Kosten',
@@ -279,13 +279,13 @@ const keywords = [
         <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-8 items-start">
           <div class="glass-card p-8">
             <h2 class="text-3xl font-display font-bold text-white mb-4">
-              SEO fuer Unternehmen im Ruhrgebiet
+              SEO für Unternehmen im Ruhrgebiet
             </h2>
             <p class="text-dark-200 leading-relaxed mb-4">
               Gute Rankings entstehen nicht durch isolierte Keywords, sondern durch starke Zielseiten. Deshalb verknuepfen wir SEO immer mit klaren Leistungsseiten, regionaler Relevanz und einer nutzerorientierten Seitenstruktur.
             </p>
             <p class="text-dark-200 leading-relaxed">
-              Wenn Sie in Dortmund, Bochum, Essen, Bottrop oder im Kreis Unna Kunden gewinnen wollen, sollten Ihre wichtigsten Seiten die Suchintention direkt bedienen und klar zur Kontaktaufnahme fuehren.
+              Wenn Sie in Dortmund, Bochum, Essen, Bottrop oder im Kreis Unna Kunden gewinnen wollen, sollten Ihre wichtigsten Seiten die Suchintention direkt bedienen und klar zur Kontaktaufnahme führen.
             </p>
           </div>
 
@@ -310,7 +310,7 @@ const keywords = [
 
     <SeoFaqSection
       title="FAQ zur Suchmaschinenoptimierung"
-      intro="Diese Fragen tauchen in SEO-Projekten besonders haeufig auf. Gleichzeitig staerken sie die Seite inhaltlich fuer Suchanfragen mit Informations- und Kaufintention."
+      intro="Diese Fragen tauchen in SEO-Projekten besonders häufig auf. Gleichzeitig stärken sie die Seite inhaltlich für Suchanfragen mit Informations- und Kaufintention."
       :items="faqItems"
     />
 

@@ -1,8 +1,22 @@
 <script setup lang="ts">
+import { TOP_KEYWORDS, KEYWORD_CITIES } from '~/data/site'
+
 const props = defineProps<{
   citySlug: 'dortmund' | 'essen' | 'bochum' | 'bottrop' | 'unna'
   cityName: string
 }>()
+
+// Nur Städte mit dynamischen Keyword-Landingpages erhalten die Direktlinks.
+const hasKeywordPages = computed(() =>
+  (KEYWORD_CITIES as readonly string[]).includes(props.citySlug),
+)
+
+const keywordLinks = computed(() =>
+  TOP_KEYWORDS.map(kw => ({
+    to: `/${props.citySlug}/${kw.slug}`,
+    label: `${kw.label} ${props.cityName}`,
+  })),
+)
 
 const serviceLinks = [
   {
@@ -63,6 +77,25 @@ const cityLinks = [
             {{ link.description }}
           </p>
         </NuxtLink>
+      </div>
+
+      <div v-if="hasKeywordPages">
+        <h3 class="font-display text-2xl font-semibold text-white mb-4">
+          Beliebte Anfragen in {{ props.cityName }}
+        </h3>
+        <p class="text-dark-200 leading-relaxed mb-5 max-w-3xl">
+          Direkt zu den häufigsten Suchanfragen aus {{ props.cityName }} – mit lokalem Bezug, klarer Leistung und Kontaktweg.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <NuxtLink
+            v-for="link in keywordLinks"
+            :key="link.to"
+            :to="link.to"
+            class="glass-card px-5 py-2.5 rounded-full text-sm text-dark-100 hover:text-white hover:border-white/20 transition-colors duration-200"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </div>
       </div>
 
       <div>

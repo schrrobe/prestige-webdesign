@@ -190,8 +190,8 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Webdesign Dortmund | Prestige Webdesign – Webagentur Dortmund',
-  ogTitle: 'Webdesign Dortmund | Prestige Webdesign – Webagentur Dortmund',
+  title: 'Webdesign Dortmund – Websites, SEO & E-Commerce | Prestige Webdesign',
+  ogTitle: 'Webdesign Dortmund – Websites, SEO & E-Commerce | Prestige Webdesign',
   description: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
   ogDescription: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
   keywords: 'Webdesign Dortmund, Webagentur Dortmund, Website Dortmund, SEO Dortmund, Webentwicklung Dortmund, Online Marketing Dortmund',

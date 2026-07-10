@@ -44,7 +44,7 @@ const structuredData = computed(() => {
       '@id': `${siteUrl}/#organization`,
       name: 'Prestige Webdesign',
       url: siteUrl,
-      image: `${siteUrl}/images/og-default.svg`,
+      image: `${siteUrl}/images/og-default.png`,
       email: 'info@prestige-webdesign.de',
       priceRange: '€€',
       address: {
@@ -62,8 +62,12 @@ const structuredData = computed(() => {
           closes: '18:00',
         },
       ],
-      areaServed: ['Dortmund', 'Bochum', 'Essen', 'Ruhrgebiet'],
-      serviceType: ['Webdesign', 'SEO', 'E-Commerce', 'Website-Wartung'],
+      areaServed: ['Dortmund', 'Bochum', 'Essen', 'Bottrop', 'Unna', 'Kreis Unna', 'Ruhrgebiet'],
+      serviceType: ['Webdesign', 'SEO', 'E-Commerce', 'Webanwendungen', 'Website-Wartung'],
+      founder: {
+        '@type': 'Person',
+        name: 'Robert Schreiner',
+      },
     },
     {
       '@context': 'https://schema.org',
@@ -122,10 +126,13 @@ useHead(() => ({
 
 useSeoMeta({
   ogUrl: () => canonicalUrl.value,
-  ogImage: `${siteUrl}/images/og-default.svg`,
+  ogImage: `${siteUrl}/images/og-default.png`,
+  ogImageType: 'image/png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   ogImageAlt: 'Prestige Webdesign - Webdesign, SEO und E-Commerce im Ruhrgebiet',
   twitterCard: 'summary_large_image',
-  twitterImage: `${siteUrl}/images/og-default.svg`,
+  twitterImage: `${siteUrl}/images/og-default.png`,
 })
 </script>
 

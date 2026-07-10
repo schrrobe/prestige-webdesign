@@ -4,10 +4,10 @@
       badge="Webdesign Unna"
       title="Webdesign"
       highlight="Unna"
-      subtitle="Professionelles Webdesign fuer Unternehmen in Unna, die online sichtbar, glaubwuerdig und leicht kontaktierbar sein wollen. Wir entwickeln moderne Websites mit lokalem SEO-Fokus und klarer Struktur."
+      subtitle="Professionelles Webdesign für Unternehmen in Unna, die online sichtbar, glaubwürdig und leicht kontaktierbar sein wollen. Wir entwickeln moderne Websites mit lokalem SEO-Fokus und klarer Struktur."
     >
       <p class="mt-6 text-dark-200 max-w-2xl leading-relaxed">
-        Von der Innenstadt ueber Massen bis nach Kamen, Holzwickede und die Umgebung: Wir gestalten digitale Auftritte, die regional funktionieren und langfristig tragfaehig sind.
+        Von der Innenstadt über Massen bis nach Kamen, Holzwickede und die Umgebung: Wir gestalten digitale Auftritte, die regional funktionieren und langfristig tragfähig sind.
       </p>
       <NuxtLink to="/kontakt" class="btn-primary text-base">
         Kostenlose Beratung vereinbaren
@@ -23,12 +23,12 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <p class="text-dark-200 mb-4 leading-relaxed">
-              In Unna suchen viele Kunden gezielt nach regionalen Anbietern. Eine Website muss daher nicht nur gut aussehen, sondern schnell Orientierung bieten, Leistungen klar erklaeren und auf mobilen Geraeten ohne Huerden nutzbar sein.
+              In Unna suchen viele Kunden gezielt nach regionalen Anbietern. Eine Website muss daher nicht nur gut aussehen, sondern schnell Orientierung bieten, Leistungen klar erklären und auf mobilen Geräten ohne Huerden nutzbar sein.
             </p>
             <ul class="space-y-3 text-dark-200">
               <li class="flex items-start gap-3">
                 <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Lokale SEO fuer Suchanfragen in Unna und dem Kreis Unna</span>
+                <span>Lokale SEO für Suchanfragen in Unna und dem Kreis Unna</span>
               </li>
               <li class="flex items-start gap-3">
                 <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
@@ -36,13 +36,13 @@
               </li>
               <li class="flex items-start gap-3">
                 <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Mobile Nutzerfuehrung fuer schnelle Kontaktwege</span>
+                <span>Mobile Nutzerführung für schnelle Kontaktwege</span>
               </li>
             </ul>
           </div>
           <div>
             <p class="text-dark-200 mb-4 leading-relaxed">
-              Besonders fuer Handwerk, Dienstleistungen, Beratungen, Praxen oder lokale Fachbetriebe ist eine praezise Online-Praesenz entscheidend. Wir entwickeln Websites, die Inhalte verstaendlich strukturieren und Unternehmen in Unna digital professionell positionieren.
+              Besonders für Handwerk, Dienstleistungen, Beratungen, Praxen oder lokale Fachbetriebe ist eine präzise Online-Präsenz entscheidend. Wir entwickeln Websites, die Inhalte verständlich strukturieren und Unternehmen in Unna digital professionell positionieren.
             </p>
             <ul class="space-y-3 text-dark-200">
               <li class="flex items-start gap-3">
@@ -51,7 +51,7 @@
               </li>
               <li class="flex items-start gap-3">
                 <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Technisch solide Basis fuer SEO und spaetere Erweiterungen</span>
+                <span>Technisch solide Basis für SEO und spätere Erweiterungen</span>
               </li>
               <li class="flex items-start gap-3">
                 <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
@@ -66,7 +66,7 @@
     <section class="section-padding relative overflow-hidden">
       <div class="container-narrow mx-auto relative">
         <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Digitale <span class="text-gradient">Leistungen</span> fuer Unternehmen in Unna
+          Digitale <span class="text-gradient">Leistungen</span> für Unternehmen in Unna
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass-card-hover p-8 group">
@@ -75,27 +75,27 @@
               Moderne Unternehmenswebsites
             </h3>
             <p class="text-dark-300">
-              Websites fuer Unternehmen in Unna, die professionell auftreten, Inhalte schnell vermitteln und auch bei komplexeren Leistungen klar bleiben.
+              Websites für Unternehmen in Unna, die professionell auftreten, Inhalte schnell vermitteln und auch bei komplexeren Leistungen klar bleiben.
             </p>
           </div>
 
           <div class="glass-card-hover p-8 group">
             <IconBadge icon="seo" tone="primary" size="lg" class="mb-6" />
             <h3 class="text-xl font-semibold text-white mb-3">
-              SEO fuer den Kreis Unna
+              SEO für den Kreis Unna
             </h3>
             <p class="text-dark-300">
-              Wir optimieren Inhalte und Technik fuer lokale Suchintentionen, damit Ihr Unternehmen in Unna besser gefunden wird.
+              Wir optimieren Inhalte und Technik für lokale Suchintentionen, damit Ihr Unternehmen in Unna besser gefunden wird.
             </p>
           </div>
 
           <div class="glass-card-hover p-8 group">
             <IconBadge icon="cart" tone="primary" size="lg" class="mb-6" />
             <h3 class="text-xl font-semibold text-white mb-3">
-              Individuelle digitale Loesungen
+              Individuelle digitale Lösungen
             </h3>
             <p class="text-dark-300">
-              Wenn Standardseiten nicht ausreichen, entwickeln wir zusaetzliche Module, Webanwendungen oder spezielle digitale Prozesse.
+              Wenn Standardseiten nicht ausreichen, entwickeln wir zusätzliche Module, Webanwendungen oder spezielle digitale Prozesse.
             </p>
           </div>
 
@@ -129,7 +129,7 @@
             <div class="text-primary-300 text-4xl font-display font-semibold mb-4">02</div>
             <h3 class="text-xl font-semibold text-white mb-3">Klare Positionierung</h3>
             <p class="text-dark-300">
-              Ihre Website erklaert Leistungen, Schwerpunkte und Vorteile so, dass Nutzer schnell verstehen, warum sie mit Ihnen arbeiten sollten.
+              Ihre Website erklärt Leistungen, Schwerpunkte und Vorteile so, dass Nutzer schnell verstehen, warum sie mit Ihnen arbeiten sollten.
             </p>
           </div>
           <div class="glass-card p-8">
@@ -141,9 +141,9 @@
           </div>
           <div class="glass-card p-8">
             <div class="text-primary-300 text-4xl font-display font-semibold mb-4">04</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Technische Stabilitaet</h3>
+            <h3 class="text-xl font-semibold text-white mb-3">Technische Stabilität</h3>
             <p class="text-dark-300">
-              Ladezeiten, Code-Struktur und SEO-Grundlagen sorgen dafuer, dass die Website auch langfristig belastbar bleibt.
+              Ladezeiten, Code-Struktur und SEO-Grundlagen sorgen dafür, dass die Website auch langfristig belastbar bleibt.
             </p>
           </div>
           <div class="glass-card p-8">
@@ -157,7 +157,7 @@
             <div class="text-primary-300 text-4xl font-display font-semibold mb-4">06</div>
             <h3 class="text-xl font-semibold text-white mb-3">Digitale Zukunftssicherheit</h3>
             <p class="text-dark-300">
-              Wir bauen Websites so, dass sie spaeter erweitert, optimiert oder um neue Funktionen ergaenzt werden koennen.
+              Wir bauen Websites so, dass sie später erweitert, optimiert oder um neue Funktionen ergänzt werden können.
             </p>
           </div>
         </div>
@@ -172,10 +172,10 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Webdesign Unna | Prestige Webdesign – Webagentur fuer Unna',
-  ogTitle: 'Webdesign Unna | Prestige Webdesign – Webagentur fuer Unna',
-  description: 'Webdesign Unna: Moderne Websites, lokale SEO und digitale Loesungen fuer Unternehmen in Unna und dem Kreis Unna. Klar strukturiert, barrierearm und conversionstark.',
-  ogDescription: 'Webdesign Unna fuer Unternehmen, Dienstleister und regionale Anbieter. Professionelle Websites mit lokaler SEO und starker Nutzerfuehrung.',
+  title: 'Webdesign Unna | Prestige Webdesign – Webagentur für Unna',
+  ogTitle: 'Webdesign Unna | Prestige Webdesign – Webagentur für Unna',
+  description: 'Webdesign Unna: Moderne Websites, lokale SEO und digitale Lösungen für Unternehmen in Unna und dem Kreis Unna. Klar strukturiert, barrierearm und conversionstark.',
+  ogDescription: 'Webdesign Unna für Unternehmen, Dienstleister und regionale Anbieter. Professionelle Websites mit lokaler SEO und starker Nutzerführung.',
   keywords: 'Webdesign Unna, Webagentur Unna, Website Unna, SEO Unna, Webentwicklung Unna, Kreis Unna Webdesign',
   ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
   robots: 'index, follow',

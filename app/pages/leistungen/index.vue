@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Leistungen | Prestige Webdesign – Webdesign, SEO, E-Commerce & Wartung',
-  description: 'Modernes, responsive Webdesign für Ihr Unternehmen. Prestige Webdesign entwickelt Websites, die funktionieren. Kostenlose Beratung im Ruhrgebiet!',
+  title: 'Leistungen: Webdesign, SEO, E-Commerce & Wartung | Prestige Webdesign',
+  description: 'Alle Leistungen im Überblick: Webdesign, Suchmaschinenoptimierung, Online-Shops, Webanwendungen und Wartung – aus einer Hand im Ruhrgebiet. Jetzt kostenlos beraten lassen.',
 })
 </script>
 

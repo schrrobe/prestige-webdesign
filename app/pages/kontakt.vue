@@ -3,7 +3,7 @@ useSeoMeta({
   title: 'Kontakt | Prestige Webdesign – Kostenlose Beratung',
   description: 'Kontaktieren Sie Prestige Webdesign in Dortmund. Kostenlose Beratung für Webdesign & SEO. Schnelle Antworten, persönliche Betreuung.',
   ogTitle: 'Kontakt | Prestige Webdesign',
-  ogDescription: 'Kontaktieren Sie Prestige Webdesign in Dortmund fuer Webdesign, SEO und E-Commerce. Wir antworten meist innerhalb von 24 Stunden.',
+  ogDescription: 'Kontaktieren Sie Prestige Webdesign in Dortmund für Webdesign, SEO und E-Commerce. Wir antworten meist innerhalb von 24 Stunden.',
 })
 
 useHead({
