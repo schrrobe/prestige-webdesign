@@ -26,3 +26,8 @@ logs
 .env
 .env.*
 !.env.example
+
+# Impeccable – lokale Prüf- und Entscheidungsartefakte
+.impeccable/review/
+.impeccable/questions/
+.impeccable/hook.cache.json

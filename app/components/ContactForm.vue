@@ -1,201 +1,140 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-const accessKey = (config.public.web3formsKey as string) || ''
+/**
+ * Ausführliches Kontaktformular. Pflicht ist nur die E-Mail-Adresse –
+ * alles andere hilft, hält aber niemanden auf.
+ */
+import { INQUIRY_TOPICS } from '~/data/services'
+import { CONTACT } from '~/data/site'
 
-const form = reactive({
-  name: '',
-  email: '',
-  projekt: '',
-  message: '',
-  botcheck: '', // Honeypot
-})
+const route = useRoute()
+const initialTopic = typeof route.query.thema === 'string' && (INQUIRY_TOPICS as readonly string[]).includes(route.query.thema)
+  ? route.query.thema
+  : ''
 
-const errors = reactive<Record<string, string>>({
-  name: '',
-  email: '',
-  projekt: '',
-  message: '',
-})
+const form = reactive({ name: '', email: '', topic: initialTopic, message: '', botcheck: '' })
+const emailError = ref('')
+const emailInput = ref<HTMLInputElement | null>(null)
+const statusHeading = ref<HTMLElement | null>(null)
 
-type Status = 'idle' | 'submitting' | 'success' | 'error'
-const status = ref<Status>('idle')
-
-const projektOptionen = [
-  'Webdesign',
-  'SEO',
-  'E-Commerce',
-  'Webanwendung',
-  'Wartung & Support',
-  'Sonstiges',
-]
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-function validate(): boolean {
-  errors.name = form.name.trim() ? '' : 'Bitte geben Sie Ihren Namen an.'
-  errors.email = !form.email.trim()
-    ? 'Bitte geben Sie Ihre E-Mail-Adresse an.'
-    : emailRegex.test(form.email.trim())
-      ? ''
-      : 'Bitte geben Sie eine gültige E-Mail-Adresse an.'
-  errors.projekt = form.projekt ? '' : 'Bitte wählen Sie ein Thema.'
-  errors.message = form.message.trim().length >= 10
-    ? ''
-    : 'Bitte beschreiben Sie Ihr Anliegen (mind. 10 Zeichen).'
-  return !errors.name && !errors.email && !errors.projekt && !errors.message
-}
+const { status, send, reset } = useInquiry()
 
 async function onSubmit() {
-  if (form.botcheck) return // Bot erkannt -> still verwerfen
-  if (!validate()) return
-
-  status.value = 'submitting'
-  const subject = `Anfrage (${form.projekt}) über prestige-webdesign.de`
-
-  try {
-    if (accessKey) {
-      const res = await $fetch<{ success: boolean }>('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: {
-          access_key: accessKey,
-          subject,
-          from_name: 'Prestige Webdesign Kontaktformular',
-          name: form.name,
-          email: form.email,
-          projekt: form.projekt,
-          message: form.message,
-        },
-      })
-      if (!res?.success) throw new Error('submit failed')
-    } else {
-      // Fallback ohne konfigurierten Endpunkt: vorbefülltes E-Mail-Programm öffnen
-      const body = `Name: ${form.name}\nE-Mail: ${form.email}\nThema: ${form.projekt}\n\n${form.message}`
-      window.location.href = `mailto:info@prestige-webdesign.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    }
-    status.value = 'success'
-  } catch {
-    status.value = 'error'
+  emailError.value = validateEmail(form.email)
+  if (emailError.value) {
+    emailInput.value?.focus()
+    return
+  }
+  await send({ name: form.name, email: form.email, topic: form.topic, message: form.message, source: 'Kontaktseite' }, form.botcheck)
+  if (status.value === 'sent' || status.value === 'mailto') {
+    await nextTick()
+    statusHeading.value?.focus()
   }
 }
 
-function resetForm() {
-  form.name = ''
-  form.email = ''
-  form.projekt = ''
-  form.message = ''
-  status.value = 'idle'
+function startOver() {
+  Object.assign(form, { name: '', topic: '', message: '' })
+  reset()
 }
 </script>
 
 <template>
-  <div class="glass-card p-8 md:p-10">
-    <!-- Erfolg -->
-    <div v-if="status === 'success'" class="text-center py-8">
-      <span class="mx-auto mb-6 flex w-14 h-14 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-300 ring-1 ring-inset ring-emerald-500/25">
-        <AppIcon name="check-circle" class="w-7 h-7" />
-      </span>
-      <h2 class="text-2xl font-display font-semibold text-white mb-3">Vielen Dank!</h2>
-      <p class="text-dark-200 leading-relaxed max-w-md mx-auto">
-        Ihre Nachricht ist bei uns eingegangen. Wir melden uns in der Regel innerhalb von 24 Stunden persönlich bei Ihnen.
+  <div class="border-2 border-ink bg-sheet p-6 md:p-10">
+    <div v-if="status === 'sent' || status === 'mailto'" role="status" class="relative py-6">
+      <p
+        class="animate-stamp absolute right-0 top-0 border-[3px] border-signal-ink px-3 py-1 text-2xl uppercase text-signal-ink"
+        style="font-stretch: 62%; font-weight: 880;"
+        aria-hidden="true"
+      >{{ status === 'sent' ? 'Angefragt' : 'Fast fertig' }}</p>
+      <h2 ref="statusHeading" tabindex="-1" class="t-headline max-w-[16ch] pt-12 focus:outline-none">
+        {{ status === 'sent' ? 'Danke – Ihre Nachricht ist angekommen.' : 'Bitte noch im E-Mail-Programm absenden.' }}
+      </h2>
+      <p v-if="status === 'sent'" class="t-lead mt-5 max-w-xl text-ink-soft">
+        Ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen – mit einer ersten Einschätzung und einem Terminvorschlag.
       </p>
-      <button type="button" class="btn-ghost mt-6" @click="resetForm">
-        Weitere Nachricht senden
-      </button>
+      <p v-else class="t-lead mt-5 max-w-xl text-ink-soft">
+        Ihr E-Mail-Programm hat eine vorbereitete Nachricht geöffnet. Falls nicht: schreiben Sie direkt an
+        <a :href="`mailto:${CONTACT.email}`" class="link text-ink">{{ CONTACT.email }}</a>.
+      </p>
+      <button type="button" class="btn btn-outline mt-8" @click="startOver">Weitere Nachricht schreiben</button>
     </div>
 
-    <!-- Formular -->
-    <form v-else novalidate class="space-y-6" @submit.prevent="onSubmit">
-      <div>
-        <h2 class="text-2xl font-display font-semibold text-white mb-2">Schreiben Sie uns</h2>
-        <p class="text-dark-200 text-sm leading-relaxed">
-          Erzählen Sie uns von Ihrem Projekt. Alle Felder mit * sind Pflichtfelder.
-        </p>
-      </div>
+    <form v-else novalidate aria-labelledby="cf-title" @submit.prevent="onSubmit">
+      <h2 id="cf-title" class="t-title">Erzählen Sie mir von Ihrem Vorhaben</h2>
+      <p class="mt-2 text-ink-soft">Nur die E-Mail-Adresse ist Pflicht. Alles andere hilft mir, gut vorbereitet ins Gespräch zu gehen.</p>
 
-      <!-- Honeypot (visuell versteckt) -->
-      <div class="hidden" aria-hidden="true">
-        <label>Bitte nicht ausfüllen
-          <input v-model="form.botcheck" type="text" tabindex="-1" autocomplete="off" />
-        </label>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label for="cf-name" class="block text-sm font-medium text-dark-100 mb-2">Name *</label>
-          <input
-            id="cf-name"
-            v-model="form.name"
-            type="text"
-            autocomplete="name"
-            class="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-white placeholder:text-dark-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 transition-colors"
-            :class="errors.name ? 'border-red-400/60' : ''"
-            :aria-invalid="!!errors.name"
-            :aria-describedby="errors.name ? 'cf-name-error' : undefined"
-            placeholder="Ihr Name"
-          />
-          <p v-if="errors.name" id="cf-name-error" class="mt-1.5 text-sm text-red-300">{{ errors.name }}</p>
+      <fieldset class="mt-8">
+        <legend class="field-label">Worum geht es?</legend>
+        <div class="flex flex-wrap gap-2">
+          <label v-for="t in INQUIRY_TOPICS" :key="t" class="chip">
+            <input v-model="form.topic" type="radio" name="cf-topic" :value="t" class="sr-only" />
+            {{ t }}
+          </label>
         </div>
+      </fieldset>
 
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
         <div>
-          <label for="cf-email" class="block text-sm font-medium text-dark-100 mb-2">E-Mail *</label>
+          <label for="cf-name" class="field-label">Name <span class="font-normal text-ink-soft">(optional)</span></label>
+          <input id="cf-name" v-model="form.name" type="text" autocomplete="name" class="input" />
+        </div>
+        <div>
+          <label for="cf-email" class="field-label">E-Mail-Adresse</label>
           <input
             id="cf-email"
+            ref="emailInput"
             v-model="form.email"
             type="email"
+            inputmode="email"
             autocomplete="email"
-            class="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-white placeholder:text-dark-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 transition-colors"
-            :class="errors.email ? 'border-red-400/60' : ''"
-            :aria-invalid="!!errors.email"
-            :aria-describedby="errors.email ? 'cf-email-error' : undefined"
-            placeholder="name@beispiel.de"
+            required
+            aria-required="true"
+            class="input"
+            :aria-invalid="!!emailError"
+            :aria-describedby="emailError ? 'cf-email-error' : undefined"
+            placeholder="name@firma.de"
+            @input="emailError && (emailError = validateEmail(form.email))"
           />
-          <p v-if="errors.email" id="cf-email-error" class="mt-1.5 text-sm text-red-300">{{ errors.email }}</p>
+          <p v-if="emailError" id="cf-email-error" class="field-error">
+            <AppIcon name="alert" class="mt-0.5 h-5 w-5 shrink-0" />{{ emailError }}
+          </p>
         </div>
       </div>
 
-      <div>
-        <label for="cf-projekt" class="block text-sm font-medium text-dark-100 mb-2">Thema *</label>
-        <select
-          id="cf-projekt"
-          v-model="form.projekt"
-          class="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-white focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 transition-colors"
-          :class="[errors.projekt ? 'border-red-400/60' : '', form.projekt ? 'text-white' : 'text-dark-400']"
-          :aria-invalid="!!errors.projekt"
-          :aria-describedby="errors.projekt ? 'cf-projekt-error' : undefined"
-        >
-          <option value="" disabled>Bitte auswählen …</option>
-          <option v-for="opt in projektOptionen" :key="opt" :value="opt" class="bg-dark-800 text-white">{{ opt }}</option>
-        </select>
-        <p v-if="errors.projekt" id="cf-projekt-error" class="mt-1.5 text-sm text-red-300">{{ errors.projekt }}</p>
-      </div>
-
-      <div>
-        <label for="cf-message" class="block text-sm font-medium text-dark-100 mb-2">Ihre Nachricht *</label>
+      <div class="mt-6">
+        <label for="cf-message" class="field-label">Ihre Nachricht <span class="font-normal text-ink-soft">(optional)</span></label>
         <textarea
           id="cf-message"
           v-model="form.message"
-          rows="5"
-          class="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-white placeholder:text-dark-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 transition-colors resize-y"
-          :class="errors.message ? 'border-red-400/60' : ''"
-          :aria-invalid="!!errors.message"
-          :aria-describedby="errors.message ? 'cf-message-error' : undefined"
-          placeholder="Beschreiben Sie kurz Ihr Vorhaben, Ihre Ziele und Ihren Zeitrahmen."
+          rows="6"
+          class="input resize-y"
+          aria-describedby="cf-message-hint"
         />
-        <p v-if="errors.message" id="cf-message-error" class="mt-1.5 text-sm text-red-300">{{ errors.message }}</p>
+        <p id="cf-message-hint" class="mt-2 text-sm text-ink-soft">
+          Hilfreich: Was macht Ihr Betrieb? Gibt es schon eine Website? Bis wann soll es fertig sein?
+        </p>
       </div>
 
-      <div v-if="status === 'error'" class="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200" role="alert">
-        Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an
-        <a href="mailto:info@prestige-webdesign.de" class="underline hover:text-white">info@prestige-webdesign.de</a>.
+      <div class="hidden" aria-hidden="true">
+        <label>Bitte leer lassen <input v-model="form.botcheck" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <button type="submit" class="btn-primary w-full sm:w-auto" :disabled="status === 'submitting'">
-        <template v-if="status === 'submitting'">Wird gesendet …</template>
-        <template v-else>
-          Nachricht senden
-          <AppIcon name="arrow-right" class="w-5 h-5" />
-        </template>
-      </button>
+      <p v-if="status === 'error'" role="alert" class="mt-6 border-2 border-danger px-4 py-3 font-semibold text-danger">
+        Das hat nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an
+        <a :href="`mailto:${CONTACT.email}`" class="underline">{{ CONTACT.email }}</a>.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <button type="submit" class="btn btn-signal" :disabled="status === 'submitting'">
+          <template v-if="status === 'submitting'">Wird gesendet …</template>
+          <template v-else>
+            Nachricht senden
+            <AppIcon name="arrow-right" class="h-5 w-5" />
+          </template>
+        </button>
+        <p class="text-sm text-ink-soft">
+          Mit dem Absenden gelten die Hinweise im <NuxtLink to="/datenschutz" class="link">Datenschutz</NuxtLink>.
+        </p>
+      </div>
     </form>
   </div>
 </template>

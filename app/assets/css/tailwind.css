@@ -2,170 +2,285 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  Farbpolitik (dark theme):
-  - Überschriften / High-Emphasis:  text-white
-  - Fließtext:                      text-dark-200  (#909296, AA auf dark-900)
-  - Sekundär / gedämpft:            text-dark-300
-  - Links & kleine Akzente:         min. text-primary-300  (primary-400 fällt bei Kleintext durch WCAG AA)
-  - Marken-Akzent (sparsam):        text-accent-400 / accent-500
-*/
+/* =====================================================================
+   Prestige Webdesign – „Revier-Stadionheft“
+   Papier, Druckschwarz, Rasengrün als tragende Fläche, Signal-Orange
+   nur für Handlungen. Tokens als RGB-Kanäle, Hell/Dunkel tauscht nur sie.
+   ===================================================================== */
 
 @layer base {
-  html {
-    @apply scroll-smooth;
-    scroll-behavior: smooth;
+  :root {
+    color-scheme: light;
+    --paper: 244 244 239;
+    --sheet: 252 252 249;
+    --ink: 21 22 20;
+    --ink-soft: 74 77 71;
+    --rule: 132 136 128;
+    --field: 13 74 50;
+    --field-deep: 9 54 36;
+    --field-ink: 244 244 239;
+    --field-soft: 185 211 195;
+    --signal: 255 90 31;
+    --signal-ink: 179 58 10;
+    --board: 21 22 20;
+    --board-dot: 244 244 239;
+    --danger: 180 35 24;
+    --focus: var(--ink);
+    --grain-opacity: 0.05;
+    --header-h: 4.25rem;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
+  /* „Flutlicht“: Systemeinstellung, solange niemand „Hell“ gewählt hat */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      color-scheme: dark;
+      --paper: 15 20 17;
+      --sheet: 23 30 26;
+      --ink: 236 237 230;
+      --ink-soft: 169 173 164;
+      --rule: 95 101 92;
+      --field: 18 56 38;
+      --field-deep: 11 38 25;
+      --field-ink: 236 237 230;
+      --field-soft: 185 211 195;
+      --signal: 255 106 48;
+      --signal-ink: 255 122 69;
+      --board: 8 10 9;
+      --board-dot: 244 244 239;
+      --danger: 255 138 128;
+      --grain-opacity: 0.035;
     }
   }
 
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --paper: 15 20 17;
+    --sheet: 23 30 26;
+    --ink: 236 237 230;
+    --ink-soft: 169 173 164;
+    --rule: 95 101 92;
+    --field: 18 56 38;
+    --field-deep: 11 38 25;
+    --field-ink: 236 237 230;
+    --field-soft: 185 211 195;
+    --signal: 255 106 48;
+    --signal-ink: 255 122 69;
+    --board: 8 10 9;
+    --board-dot: 244 244 239;
+    --danger: 255 138 128;
+    --grain-opacity: 0.035;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
   body {
-    @apply bg-dark-900 text-white font-sans antialiased;
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    caret-color: rgb(var(--signal-ink));
   }
 
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible,
-  summary:focus-visible,
-  [tabindex]:focus-visible {
-    @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-dark-900;
-  }
-
-  ::selection {
-    @apply bg-primary-600/40 text-white;
+  /* Zeitungspapier-Korn – ein Hauch Offsetdruck, kein Effekt */
+  body { position: relative; }
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-balance;
+    @apply font-display;
+    text-wrap: balance;
   }
+
+  p, li, dd { text-wrap: pretty; }
+
+  :focus-visible {
+    outline: 3px solid rgb(var(--focus));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgb(var(--signal));
+    color: rgb(21 22 20);
+  }
+
+  /* Tabellarische Ziffern überall, wo Zahlen stehen */
+  table, .tabular { font-variant-numeric: tabular-nums; }
+
+  * { scrollbar-width: thin; scrollbar-color: rgb(var(--ink-soft)) rgb(var(--paper)); }
 }
 
 @layer components {
-  /* ---------- Buttons ---------- */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-semibold
-           bg-gradient-to-b from-primary-500 to-primary-600 text-white
-           shadow-lg shadow-primary-950/40
-           hover:from-primary-400 hover:to-primary-500 hover:shadow-xl hover:shadow-primary-800/40
-           hover:-translate-y-0.5 active:translate-y-0
-           transition-all duration-200;
+  /* ---------- Raster ---------- */
+  .wrap { @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-10; }
+  .section { @apply py-16 md:py-24; }
+  .section-tight { @apply py-12 md:py-16; }
+
+  /* Grüne Fläche: Text und Fokus kippen auf Papierfarbe */
+  .on-field {
+    @apply bg-field text-field-ink;
+    --focus: var(--field-ink);
+  }
+  .on-field ::selection { background: rgb(var(--signal)); color: rgb(21 22 20); }
+
+  .on-ink {
+    background: rgb(var(--ink));
+    color: rgb(var(--paper));
+    --focus: var(--paper);
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-semibold
-           border border-white/15 text-white bg-white/[0.02]
-           hover:bg-white/[0.06] hover:border-white/25 hover:-translate-y-0.5 active:translate-y-0
-           transition-all duration-200;
+  /* ---------- Typografie ---------- */
+  .t-display {
+    font-stretch: 62%;
+    font-weight: 860;
+    line-height: 0.93 !important;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .t-headline {
+    font-stretch: 72%;
+    font-weight: 820;
+    line-height: 0.98 !important;
+    letter-spacing: -0.012em;
+    @apply text-[2.125rem] sm:text-5xl lg:text-[3.5rem];
+  }
+  .t-title {
+    font-stretch: 82%;
+    font-weight: 760;
+    line-height: 1.1;
+    @apply text-xl md:text-2xl;
+  }
+  .t-label {
+    font-stretch: 88%;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    @apply text-[0.8125rem];
+  }
+  .t-lead { @apply text-lg md:text-xl leading-relaxed; }
+  .t-board { @apply font-board; font-weight: 800; letter-spacing: 0.04em; }
+
+  .link {
+    @apply underline decoration-2 underline-offset-[0.22em] transition-colors duration-150;
+    text-decoration-color: rgb(var(--signal));
+  }
+  .link:hover { text-decoration-color: currentColor; }
+
+  /* Fließtext für lange Inhalte (Recht, Fallstudien) */
+  .prose-paper { @apply max-w-text; }
+  .prose-paper h2 { @apply mt-12 mb-3 text-xl md:text-2xl; font-stretch: 82%; font-weight: 760; line-height: 1.1; }
+  .prose-paper h3 { @apply font-bold mt-8 mb-2 text-lg; }
+  .prose-paper p { @apply mb-4; }
+  .prose-paper ul { @apply mb-4 list-disc pl-5 space-y-1; }
+  .prose-paper a {
+    @apply underline decoration-2 underline-offset-[0.22em];
+    text-decoration-color: rgb(var(--signal));
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium
-           text-dark-200 hover:text-white
-           border border-transparent hover:bg-white/[0.05]
-           transition-colors duration-200;
+  /* ---------- Buttons: gedruckte Felder, eckig, 48px hoch ---------- */
+  .btn {
+    @apply inline-flex min-h-12 whitespace-nowrap items-center justify-center gap-2.5 border-2 px-6 py-2.5 text-center transition-colors duration-150;
+    font-stretch: 85%;
+    font-weight: 780;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    line-height: 1.15;
   }
+  .btn:active { transform: translateY(1px); }
+  .btn[disabled], .btn[aria-disabled='true'] { @apply cursor-not-allowed opacity-60; }
 
-  /* ---------- Surfaces ---------- */
-  .glass-card {
-    @apply bg-white/[0.03] border border-white/[0.06] rounded-2xl backdrop-blur-sm;
+  /* Signal: die eine Handlung. Druckschwarz auf Orange (5,8:1). */
+  .btn-signal { @apply border-ink bg-signal text-[#151614]; }
+  .btn-signal:hover { @apply bg-[#151614] text-signal border-[#151614]; }
+  .on-field .btn-signal, .on-ink .btn-signal { @apply border-signal; }
+
+  .btn-ink { @apply border-ink bg-ink text-paper; }
+  .btn-ink:hover { @apply bg-transparent text-ink; }
+
+  .btn-outline { @apply border-current bg-transparent; }
+  .btn-outline:hover { @apply bg-ink text-paper border-ink; }
+  .on-field .btn-outline:hover { @apply bg-field-ink text-field border-field-ink; }
+
+  /* ---------- Formulare ---------- */
+  .input {
+    @apply block w-full min-h-12 border-2 border-rule bg-sheet px-4 py-3 text-ink transition-colors duration-150;
+    border-radius: 0;
   }
+  .input::placeholder { color: rgb(var(--ink-soft)); opacity: 1; }
+  .input:hover { @apply border-ink-soft; }
+  .input:focus { @apply border-ink outline-none; box-shadow: 0 0 0 2px rgb(var(--ink)); }
+  .input[aria-invalid='true'] { @apply border-danger; }
+  .field-label { @apply mb-2 block font-bold; font-stretch: 90%; }
+  .field-error { @apply mt-2 flex items-start gap-2 text-[0.9375rem] font-semibold text-danger; }
 
-  .glass-card-hover {
-    @apply glass-card transition duration-300
-           hover:bg-white/[0.05] hover:border-white/[0.12] hover:-translate-y-1;
+  /* Auswahl-Chips (Radio/Checkbox als bedruckte Felder) */
+  .chip {
+    @apply relative inline-flex min-h-11 cursor-pointer select-none items-center border-2 border-ink px-3.5 py-2 transition-colors duration-150;
+    font-stretch: 88%;
+    font-weight: 700;
   }
+  .chip:hover { @apply bg-ink/[0.06]; }
+  .chip:has(input:checked) { @apply bg-ink text-paper; }
+  .chip:has(input:focus-visible) { outline: 3px solid rgb(var(--focus)); outline-offset: 3px; }
 
-  /* ---------- Layout ---------- */
-  .section-padding {
-    @apply py-20 md:py-28 px-4 sm:px-6 lg:px-8;
+  /* ---------- Linien wie im Heft ---------- */
+  .rule-heavy { border-top: 6px solid rgb(var(--ink)); }
+  .rule-thin { border-top: 1px solid rgb(var(--ink) / 0.25); }
+
+  /* ---------- Eintrittskarte ---------- */
+  .ticket {
+    --notch: 14px;
+    --tear: 4.75rem;
+    @apply relative bg-sheet text-ink;
+    -webkit-mask:
+      radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat;
+    mask:
+      radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat;
   }
-
-  .container-narrow {
-    @apply max-w-7xl mx-auto;
-  }
-
-  .container-tight {
-    @apply max-w-3xl mx-auto;
-  }
-
-  /* ---------- Typography helpers ---------- */
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-200 via-primary-300 to-primary-100 bg-clip-text text-transparent;
-  }
-
-  .eyebrow {
-    @apply inline-block text-primary-300 text-xs sm:text-sm font-semibold uppercase tracking-[0.15em];
+  .ticket-tear {
+    @apply absolute inset-x-6 border-t-2 border-dashed border-ink/40;
+    top: var(--tear);
   }
 }
 
 @layer utilities {
-  /* Primary-getöntes Gradient-Mesh für Hero/CTA-Hintergründe */
-  .bg-mesh {
-    background-image:
-      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(76, 110, 245, 0.18), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(92, 124, 250, 0.10), transparent 55%),
-      radial-gradient(ellipse 60% 50% at 0% 20%, rgba(66, 99, 235, 0.08), transparent 55%);
-  }
-
-  /* Feines Punktraster – wird an den Rändern ausgeblendet */
-  .bg-dot-grid {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
-  .mask-fade-edges {
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 40%, transparent 75%);
-    mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 40%, transparent 75%);
-  }
-
-  .blur-blob {
-    @apply absolute rounded-full blur-[100px] pointer-events-none;
-  }
+  .stretch-62 { font-stretch: 62%; }
+  .stretch-75 { font-stretch: 75%; }
+  .stretch-88 { font-stretch: 88%; }
 }
 
-/* Sanfte Drift-Bewegung nur, wenn keine Bewegungsreduktion gewünscht ist */
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes drift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(4%, -5%) scale(1.06); }
-  }
-
-  .animate-drift {
-    animation: drift 20s ease-in-out infinite;
-  }
-
-  .animate-drift-slow {
-    animation: drift 28s ease-in-out infinite reverse;
-  }
+/* ---------- Bewegung: ein Moment pro Element, nie Pflicht ---------- */
+@keyframes board-switch {
+  0% { opacity: 0.35; }
+  100% { opacity: 1; }
 }
+.animate-board { animation: board-switch 360ms steps(4, end); }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes stamp-in {
+  0% { opacity: 0; transform: rotate(-9deg) scale(1.5); filter: blur(2px); }
+  60% { opacity: 1; transform: rotate(-9deg) scale(0.96); filter: blur(0); }
+  100% { opacity: 1; transform: rotate(-9deg) scale(1); }
 }
-
-::-webkit-scrollbar-track {
-  @apply bg-dark-900;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-dark-400 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-dark-300;
-}
+.animate-stamp { animation: stamp-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
+  *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

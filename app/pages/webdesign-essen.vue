@@ -1,192 +1,127 @@
-<template>
-  <div>
-    <!-- Hero Section -->
-    <PageHero
-      badge="Webdesign Essen"
-      title="Webdesign"
-      highlight="Essen"
-      subtitle="Moderne Webagentur für Essen und die ganze Metropole Ruhr. Prestige Webdesign schafft professionelle Websites und digitale Lösungen, die Essener Unternehmen zum Wachstum verhelfen."
-    >
-      <p class="mt-6 text-dark-200 max-w-2xl leading-relaxed">
-        Essen – Grüne Hauptstadt Europas 2015 und wirtschaftliches Zentrum der Region. Wir verstehen die Anforderungen dieser dynamischen Stadt und entwickeln Websites, die Ihre Essener Zielgruppe erreichen und begeistern.
-      </p>
-      <NuxtLink to="/kontakt" class="btn-primary text-base">
-        Kostenlose Beratung vereinbaren
-        <AppIcon name="arrow-right" class="w-5 h-5" />
-      </NuxtLink>
-    </PageHero>
-
-    <!-- Why Essen Web Design Matters -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Webdesign Essen: Digital erfolgreich in der <span class="text-gradient">Metropole Ruhr</span>
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Essen ist mehr als Geschichte – die Stadt ist Heimat moderner Industrie, innovativer Startups und etablierter Mittelständler. Von den weltbekannten Zechen bis zum zukunftsweisenden ThyssenKrupp Quartier: Essen befindet sich im Wandel. Um in diesem dynamischen Umfeld erfolgreich zu sein, benötigen Sie eine digitale Präsenz, die genauso innovativ und zukunftsorientiert ist wie Essen selbst.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Websites, die den innovativen Geist Essens widerspiegeln</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Lokale SEO für bessere Sichtbarkeit in Essen & Umgebung</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Performance & Sicherheit auf höchstem Niveau</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Die Essener Wirtschaft ist vielseitig: Einzelhandel in der attraktiven Innenstadt, spezialisierte Handwerksbetriebe, Tech-Unternehmen und internationale Konzerne. Alle haben eines gemeinsam – sie brauchen Websites, die nicht nur professionell aussehen, sondern auch tatsächliche geschäftliche Ergebnisse liefern. Wir bei Prestige Webdesign verstehen diese Vielfalt und entwickeln maßgeschneiderte Lösungen, die Ihre Essener Position stärken und nachhaltiges Wachstum unterstützen.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Benutzer- und konversionsfokussierte Designs</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Mobile-First Entwicklung</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Langfristiger technischer Support & Weiterentwicklung</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Webdesign & <span class="text-gradient">Digitale Lösungen</span> für Essen
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Service 1: Custom Web Design -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="code" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Custom Webdesign
-            </h3>
-            <p class="text-dark-300">
-              Individuell gestaltete, responsive Websites für Essener Unternehmen. Jedes Design ist maßgeschneidert für Ihre Branche und Ihre Kunden.
-            </p>
-          </div>
-
-          <!-- Service 2: SEO & Local Search -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="seo" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              SEO & Lokale Suche
-            </h3>
-            <p class="text-dark-300">
-              Ihre Website wird sichtbar, wenn Essener Kunden nach Ihnen suchen. Wir optimieren für lokale Keywords und Google My Business.
-            </p>
-          </div>
-
-          <!-- Service 3: E-Commerce & Online Sales -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="cart" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              E-Commerce & Online-Shops
-            </h3>
-            <p class="text-dark-300">
-              Professionelle, sichere Shops für Einzelhandel und Produzenten in Essen. Verkaufen Sie online mit vertrauenswürdigen Systemen.
-            </p>
-          </div>
-
-          <!-- Service 4: Digital Strategy & Consulting -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="shield" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Digitale Strategie & Beratung
-            </h3>
-            <p class="text-dark-300">
-              Nicht sicher, wie Sie digital durchstarten? Wir beraten zu Strategie, Marketing und Technologie für Ihr Essen Business.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits & Advantages -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Was Sie mit <span class="text-gradient">professionellem Webdesign</span> in Essen erreichen
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">01</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Erhöhte Online-Sichtbarkeit</h3>
-            <p class="text-dark-300">
-              Essener Kunden finden Sie schneller, wenn sie nach Ihren Produkten oder Dienstleistungen suchen. Eine gut optimierte Website ist Ihr bestes Marketinginstrument.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">02</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Glaubwürdigkeit & Vertrauen</h3>
-            <p class="text-dark-300">
-              Eine professionelle Website signalisiert Kompetenz und Seriösität. Potenzielle Kunden vertrauen Ihrem Unternehmen mehr, wenn es online gut dargestellt ist.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">03</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Mehr Anfragen & Umsatz</h3>
-            <p class="text-dark-300">
-              Eine konversionsorientierte Website bringt mehr Kontaktanfragen und Verkäufe. Wir bauen Websites, die nicht nur schön aussehen, sondern auch verkaufen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">04</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Competitive Advantage</h3>
-            <p class="text-dark-300">
-              Viele Essener Konkurrenten haben veraltete oder unprofessionelle Websites. Mit Prestige Webdesign nehmen Sie einen klaren Wettbewerbsvorteil ein.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">05</div>
-            <h3 class="text-xl font-semibold text-white mb-3">24/7 Kundenakquisition</h3>
-            <p class="text-dark-300">
-              Während Sie schlafen, arbeitet Ihre Website. Sie gewinnen neue Kunden rund um die Uhr, ohne zusätzlichen Aufwand.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">06</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Datengestützte Entscheidungen</h3>
-            <p class="text-dark-300">
-              Mit detaillierter Analytics verstehen Sie Ihre Kunden besser. Datengestützte Entscheidungen führen zu besseren Geschäftsergebnissen.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <CityKeywordLinks city-slug="essen" city-name="Essen" />
-
-    <CTASection />
-  </div>
-</template>
-
 <script setup lang="ts">
 useSeoMeta({
   title: 'Webdesign Essen | Prestige Webdesign – Webagentur für Essen',
   ogTitle: 'Webdesign Essen | Prestige Webdesign – Webagentur für Essen',
-  description: 'Webdesign Essen: Moderne Webagentur für Essen & Umgebung. Professionelle Websites, SEO, E-Commerce-Lösungen.',
-  ogDescription: 'Webdesign Essen: Moderne Webagentur für Essen & Umgebung. Professionelle Websites, SEO, E-Commerce-Lösungen.',
+  description: 'Webdesign Essen: Professionelle Websites für Essen & Umgebung ab 800 € Festpreis. SEO, E-Commerce-Lösungen und Wartung aus einer Hand.',
+  ogDescription: 'Webdesign Essen: Professionelle Websites für Essen & Umgebung ab 800 € Festpreis. SEO, E-Commerce-Lösungen und Wartung aus einer Hand.',
   keywords: 'Webdesign Essen, Webagentur Essen, Website Essen, SEO Essen, Webentwicklung Essen, Online Marketing Essen',
-  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.png',
   robots: 'index, follow',
 })
+
+const localPoints = [
+  'Websites, die zu Ihrem Betrieb in Essen passen',
+  'Lokale SEO für bessere Sichtbarkeit in Essen & Umgebung',
+  'Schnelle Ladezeiten und sichere Technik',
+  'Klare Nutzerführung bis zur Anfrage',
+  'Mobile-First entwickelt',
+  'Auf Wunsch Wartung und Weiterentwicklung nach dem Launch',
+]
+
+const benefits = [
+  { title: 'Mehr Online-Sichtbarkeit', text: 'Essener Kunden finden Sie leichter, wenn sie nach Ihren Produkten oder Leistungen suchen. Eine gut gebaute Website ist dafür die Grundlage.' },
+  { title: 'Glaubwürdigkeit & Vertrauen', text: 'Eine professionelle Website zeigt Kompetenz und Seriosität. Interessenten fassen schneller Vertrauen, wenn Ihr Betrieb online gut dasteht.' },
+  { title: 'Mehr Anfragen', text: 'Klare Inhalte und kurze Wege zum Kontakt machen aus Besuchern eher Anfragen – darauf richte ich jede Seite aus.' },
+  { title: 'Abstand zur Konkurrenz', text: 'Viele Websites in Essen sind in die Jahre gekommen. Mit einem schnellen, modernen Auftritt heben Sie sich ab.' },
+  { title: 'Rund um die Uhr erreichbar', text: 'Ihre Website beantwortet Fragen und nimmt Anfragen an, auch wenn Ihr Betrieb geschlossen hat.' },
+  { title: 'Entscheidungen mit Daten', text: 'Mit der Google Search Console sehen Sie, wonach Ihre Kunden suchen und wie sie Sie finden.' },
+]
 </script>
+
+<template>
+  <div>
+    <PageCover
+      title="Webdesign Essen"
+      lead="Websites für Essener Unternehmen – von der Rüttenscheider Straße bis zum Handwerksbetrieb im Essener Norden. Ein Ansprechpartner aus dem Ruhrgebiet, der gestaltet und entwickelt, zum Festpreis ab 800 €."
+    >
+      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
+    </PageCover>
+
+    <!-- Taktik: warum Essen -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+      <div class="wrap grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="local-title" class="t-headline">Webdesign Essen: Digital erfolgreich in der Metropole Ruhr</h2>
+        </div>
+        <div class="max-w-text lg:col-span-7">
+          <p class="t-lead">
+            Essen ist mehr als Geschichte. Die Grüne Hauptstadt Europas 2015 ist Heimat moderner Industrie, junger Unternehmen und eines starken Mittelstands –
+            von der Zeche Zollverein bis zum ThyssenKrupp Quartier. Wer hier bestehen will, braucht eine Website, die genauso zeitgemäß ist wie die Stadt.
+          </p>
+          <p class="mt-5 text-ink-soft">
+            Die Essener Wirtschaft ist vielseitig: Einzelhandel in der Innenstadt, spezialisierte Handwerksbetriebe, Kanzleien, Praxen und große Unternehmen.
+            Sie alle brauchen Websites, die nicht nur professionell aussehen, sondern Anfragen bringen. Ich baue Ihre Seite passend zu Ihrem Betrieb –
+            mit WordPress zum Selbstpflegen oder individuell entwickelt.
+          </p>
+          <CheckList class="mt-8" :items="localPoints" columns />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabelle: Leistungen & Preise -->
+    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+      <div class="wrap">
+        <SectionHead
+          id="prices-title"
+          title="Webdesign & digitale Lösungen für Essen"
+          intro="Websites, lokale Suche, Online-Shops und Wartung für Essener Betriebe – mit Preisanker vorab und einem Festpreis nach dem kostenlosen Erstgespräch."
+        >
+          <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+        </SectionHead>
+        <ServiceTable class="mt-10" />
+      </div>
+    </section>
+
+    <!-- Taktik: was Sie erreichen -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="benefits-title">
+      <div class="wrap">
+        <SectionHead
+          id="benefits-title"
+          title="Was Sie mit professionellem Webdesign in Essen erreichen"
+          intro="Eine Website ist kein Selbstzweck. Sie soll Ihrem Betrieb in Essen Arbeit abnehmen und neue Kunden bringen."
+        />
+        <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="item in benefits" :key="item.title" class="border-t-2 border-ink pt-5">
+            <h3 class="t-title">{{ item.title }}</h3>
+            <p class="mt-3 text-ink-soft">{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heimspiele: Referenzen -->
+    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+      <div class="wrap">
+        <SectionHead
+          id="refs-title"
+          title="Websites aus dem Revier."
+          intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – alle aus Dortmund und NRW, alle online. Klicken Sie ruhig rein."
+        >
+          <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+        </SectionHead>
+        <ReferenceShowcase class="mt-12" />
+      </div>
+    </section>
+
+    <!-- Spielplan: Ablauf -->
+    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+      <div class="wrap">
+        <SectionHead
+          id="process-title"
+          title="So läuft Ihr Projekt ab."
+          intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
+        />
+        <ProcessFixture class="mt-10" />
+      </div>
+    </section>
+
+    <CityKeywordLinks city-slug="essen" city-name="Essen" />
+
+    <KickoffSection
+      source="Webdesign Essen – Anpfiff"
+      title="Ihre Website für Essen."
+      text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
+    />
+  </div>
+</template>

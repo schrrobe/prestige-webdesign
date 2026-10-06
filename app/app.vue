@@ -4,37 +4,10 @@ const route = useRoute()
 
 const canonicalUrl = computed(() => new URL(route.path || '/', siteUrl).toString())
 
-const segmentNames: Record<string, string> = {
-  leistungen: 'Leistungen',
-  webdesign: 'Webdesign',
-  seo: 'SEO',
-  'e-commerce': 'E-Commerce',
-  wartung: 'Wartung',
-  webanwendungen: 'Webanwendungen',
-  kontakt: 'Kontakt',
-  'webdesign-dortmund': 'Webdesign Dortmund',
-  'webdesign-essen': 'Webdesign Essen',
-  'webdesign-bochum': 'Webdesign Bochum',
-  'webdesign-bottrop': 'Webdesign Bottrop',
-  'webdesign-unna': 'Webdesign Unna',
-  dortmund: 'Dortmund',
-  essen: 'Essen',
-  bochum: 'Bochum',
-  bottrop: 'Bottrop',
-}
-
-const breadcrumbItems = computed(() => {
-  const segments = route.path.split('/').filter(Boolean)
-  if (segments.length === 0) return []
-  const items: Array<{ name: string; url: string }> = [{ name: 'Startseite', url: siteUrl }]
-  let current = siteUrl
-  for (const seg of segments) {
-    current = `${current}/${seg}`
-    const name = segmentNames[seg] ?? seg.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-    items.push({ name, url: current })
-  }
-  return items
-})
+const crumbs = useBreadcrumbs()
+const breadcrumbItems = computed(() =>
+  crumbs.value.map(c => ({ name: c.name, url: c.path === '/' ? siteUrl : `${siteUrl}${c.path}` })),
+)
 
 const structuredData = computed(() => {
   const schemas: object[] = [
@@ -119,7 +92,7 @@ useHead(() => ({
     {
       key: 'structured-data',
       type: 'application/ld+json',
-      children: structuredData.value,
+      innerHTML: structuredData.value,
     },
   ],
 }))
@@ -130,7 +103,7 @@ useSeoMeta({
   ogImageType: 'image/png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'Prestige Webdesign - Webdesign, SEO und E-Commerce im Ruhrgebiet',
+  ogImageAlt: 'Prestige Webdesign – Webdesign aus Dortmund für das Ruhrgebiet',
   twitterCard: 'summary_large_image',
   twitterImage: `${siteUrl}/images/og-default.png`,
 })

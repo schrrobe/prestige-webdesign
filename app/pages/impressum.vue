@@ -8,69 +8,52 @@ useSeoMeta({
 
 <template>
   <div>
-    <PageHero
-      badge="Rechtliches"
+    <PageCover
       title="Impressum"
-      subtitle="Angaben gemäß § 5 TMG"
-      compact
+      lead="Angaben gemäß § 5 TMG"
+      rubric="Kleingedrucktes"
     />
 
-    <section class="section-padding relative overflow-hidden !pt-4">
-      <div class="container-narrow mx-auto relative">
-        <div class="max-w-3xl">
-          <div class="glass-card p-8 md:p-12 space-y-10">
-            <!-- Anbieter -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Prestige Webdesign</h2>
-              <div class="text-dark-200 space-y-1">
-                <p><strong class="text-white">Inhaber:</strong> Robert Schreiner</p>
-                <p><strong class="text-white">Adresse:</strong> Kapitelwiese 14, 44263 Dortmund, Deutschland</p>
-                <p><strong class="text-white">E-Mail:</strong> <a href="mailto:info@prestige-webdesign.de" class="text-primary-300 hover:text-primary-200">info@prestige-webdesign.de</a></p>
-              </div>
-            </div>
+    <section class="section" data-rubric="Kleingedrucktes" aria-label="Impressum">
+      <div class="wrap">
+        <div class="prose-paper">
+          <!-- Anbieter -->
+          <h2 class="!mt-0">Prestige Webdesign</h2>
+          <p class="!mb-1"><strong>Inhaber:</strong> Robert Schreiner</p>
+          <p class="!mb-1"><strong>Adresse:</strong> Kapitelwiese 14, 44263 Dortmund, Deutschland</p>
+          <p><strong>E-Mail:</strong> <a href="mailto:info@prestige-webdesign.de">info@prestige-webdesign.de</a></p>
 
-            <!-- Geschäftsbereich -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Geschäftsbereich</h2>
-              <p class="text-dark-200 leading-relaxed">
-                Webdesign, Suchmaschinenoptimierung (SEO), E-Commerce-Lösungen, Website-Wartung und digitale Beratung.
-              </p>
-            </div>
+          <!-- Geschäftsbereich -->
+          <h2>Geschäftsbereich</h2>
+          <p>
+            Webdesign, Suchmaschinenoptimierung (SEO), E-Commerce-Lösungen, Website-Wartung und digitale Beratung.
+          </p>
 
-            <!-- Verantwortlich -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Verantwortlich für den Inhalt</h2>
-              <p class="text-dark-200 leading-relaxed">Robert Schreiner, Kapitelwiese 14, 44263 Dortmund</p>
-            </div>
+          <!-- Verantwortlich -->
+          <h2>Verantwortlich für den Inhalt</h2>
+          <p>Robert Schreiner, Kapitelwiese 14, 44263 Dortmund</p>
 
-            <!-- Haftungsausschluss -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Haftungsausschluss</h2>
-              <p class="text-dark-200 leading-relaxed mb-4">
-                Die Inhalte dieser Website wurden mit größter Sorgfalt zusammengestellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Eine Haftung für Schäden, die durch die Nutzung der Informationen entstehen, ist ausgeschlossen.
-              </p>
-              <p class="text-dark-200 leading-relaxed">
-                Externe Links werden regelmäßig überprüft. Sollten jedoch fehlerhafte oder illegale Inhalte auf verlinkten Seiten vorhanden sein, wird um sofortige Benachrichtigung gebeten, damit diese Links entfernt werden können.
-              </p>
-            </div>
+          <!-- Haftungsausschluss -->
+          <h2>Haftungsausschluss</h2>
+          <p>
+            Die Inhalte dieser Website wurden mit größter Sorgfalt zusammengestellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Eine Haftung für Schäden, die durch die Nutzung der Informationen entstehen, ist ausgeschlossen.
+          </p>
+          <p>
+            Externe Links werden regelmäßig überprüft. Sollten jedoch fehlerhafte oder illegale Inhalte auf verlinkten Seiten vorhanden sein, wird um sofortige Benachrichtigung gebeten, damit diese Links entfernt werden können.
+          </p>
 
-            <!-- Urheberrecht -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Urheberrecht</h2>
-              <p class="text-dark-200 leading-relaxed">
-                Die Inhalte und Werke auf dieser Website sind urheberrechtlich geschützt. Jede Art der Vervielfältigung, Bearbeitung, Verbreitung und Veröffentlichung bedarf schriftlicher Zustimmung des Inhabers.
-              </p>
-            </div>
+          <!-- Urheberrecht -->
+          <h2>Urheberrecht</h2>
+          <p>
+            Die Inhalte und Werke auf dieser Website sind urheberrechtlich geschützt. Jede Art der Vervielfältigung, Bearbeitung, Verbreitung und Veröffentlichung bedarf schriftlicher Zustimmung des Inhabers.
+          </p>
 
-            <!-- Datenschutz -->
-            <div>
-              <h2 class="text-xl font-display font-semibold text-white mb-4">Datenschutz</h2>
-              <p class="text-dark-200 leading-relaxed">
-                Die Verarbeitung Ihrer personenbezogenen Daten erfolgt in Übereinstimmung mit unserer
-                <NuxtLink to="/datenschutz" class="text-primary-300 hover:text-primary-200 underline">Datenschutzerklärung</NuxtLink>.
-              </p>
-            </div>
-          </div>
+          <!-- Datenschutz -->
+          <h2>Datenschutz</h2>
+          <p>
+            Die Verarbeitung Ihrer personenbezogenen Daten erfolgt in Übereinstimmung mit unserer
+            <NuxtLink to="/datenschutz">Datenschutzerklärung</NuxtLink>.
+          </p>
         </div>
       </div>
     </section>
