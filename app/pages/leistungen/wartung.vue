@@ -13,12 +13,8 @@ const faqItems = [
     answer: 'Ohne Wartung riskieren Sie Hackerangriffe, Datenverlust, Ausfälle und schlechtere Google-Rankings. Im schlimmsten Fall muss Ihre Website komplett neu aufgesetzt werden – das kostet deutlich mehr als regelmäßige Pflege.',
   },
   {
-    question: 'Kann ich das Wartungspaket jederzeit kündigen?',
-    answer: 'Ja, alle Wartungspakete sind monatlich kündbar, ohne lange Vertragslaufzeiten. Außerdem können Sie jedes Paket eine Woche lang kostenlos testen.',
-  },
-  {
     question: 'Wie schnell reagieren Sie bei Problemen?',
-    answer: 'Im Basis-Paket antworte ich per E-Mail innerhalb von 24 Stunden. Im Professional-Paket reagiere ich innerhalb von 4 Stunden. Im Premium-Paket haben Ihre Anliegen Vorrang, und die Supportstunden sind nicht begrenzt.',
+    answer: 'In allen Paketen antworte ich innerhalb von 24 Stunden. In den Paketen Professional und Premium haben Ihre Anliegen Vorrang vor allgemeinen Anfragen.',
   },
 ]
 
@@ -59,20 +55,16 @@ interface Package {
 const packages: Package[] = [
   { name: 'Basis', price: '79', description: 'Für kleinere Websites mit grundlegenden Anforderungen.' },
   { name: 'Professional', price: '199', description: 'Für geschäftskritische Websites mit höheren Anforderungen.' },
-  { name: 'Premium', price: '399', description: 'Für Websites mit höchster Verfügbarkeit und umfassender Betreuung.' },
+  { name: 'Premium', price: '399', description: 'Für Websites, die umfassend betreut werden sollen.' },
 ]
 
 /** Leistungen je Paket – Reihenfolge der Werte = Basis, Professional, Premium. null = nicht enthalten. */
-// OFFEN (Robert bestätigen): Backup-Intervalle, Reaktionszeiten, „unbegrenzte Supportstunden“,
-// Uptime-Garantien, „monatlich kündbar“ und die kostenlose Testwoche stammen von der alten Wartungsseite.
-// Vor dem Livegang prüfen und ggf. anpassen – nichts davon ist in PRODUCT.md bestätigt.
 const comparison: { label: string; values: (string | null)[] }[] = [
-  { label: 'Sicherheits-Backups', values: ['Täglich', 'Stündlich', 'In Echtzeit'] },
+  { label: 'Sicherheits-Backups', values: ['Regelmäßig', 'Regelmäßig', 'Regelmäßig'] },
   { label: 'Sicherheitsupdates', values: ['Regelmäßig', 'Automatisch', 'Proaktiv'] },
   { label: 'Performance', values: ['Basis-Monitoring', 'Erweiterte Optimierung', 'Kontinuierliche Optimierung'] },
-  { label: 'Support', values: ['Per E-Mail, Antwort in 24 h', 'Vorrangig, Reaktion in 4 h', 'Vorrangig, unbegrenzte Supportstunden'] },
+  { label: 'Support', values: ['Per E-Mail, Antwort in 24 h', 'Vorrangig, Antwort in 24 h', 'Vorrangig, Antwort in 24 h'] },
   { label: 'Reports', values: ['Monatlich', 'Wöchentlich, detailliert', 'Täglich, detailliert'] },
-  { label: 'Uptime-Garantie', values: ['99,5 %', '99,9 %', '99,95 %'] },
   { label: 'Audit & Empfehlungen', values: [null, 'Monatlich', 'Wöchentlich, mit Optimierungen'] },
   { label: 'SEO', values: [null, 'SEO-Monitoring', 'Erweitertes SEO & Content-Updates'] },
   { label: 'Neue Funktionen', values: [null, null, 'Vorrangig umgesetzt'] },
@@ -85,7 +77,7 @@ const maintenanceServices = [
   },
   {
     title: 'Automatische Backups',
-    description: 'Tägliche oder häufigere Sicherungen sorgen dafür, dass Ihre Website im Notfall schnell wiederhergestellt ist.',
+    description: 'Regelmäßige Sicherungen sorgen dafür, dass Ihre Website im Notfall wiederhergestellt werden kann.',
   },
   {
     title: 'Performance-Optimierung',
@@ -93,7 +85,7 @@ const maintenanceServices = [
   },
   {
     title: 'Monitoring',
-    description: 'Ihre Website wird laufend überwacht. Fällt etwas aus, erfahre ich es – und kümmere mich darum.',
+    description: 'Ich behalte Erreichbarkeit und Fehlermeldungen Ihrer Website im Blick und kümmere mich, wenn etwas nicht stimmt.',
   },
   {
     title: 'Persönlicher Support',
@@ -136,7 +128,7 @@ const reasons = [
           <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">ab 79 €</p>
           <p class="mt-1 font-semibold">pro Monat</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
-            {{ service.priceNote }} im Monat – monatlich kündbar.
+            {{ service.priceNote }} im Monat.
           </p>
         </div>
       </template>
@@ -230,7 +222,7 @@ const reasons = [
 
         <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p class="max-w-text font-semibold">
-            Jedes Paket können Sie die erste Woche kostenlos testen. Bei allen Paketen bin ich Ihr Ansprechpartner.
+            Bei allen Paketen bin ich Ihr Ansprechpartner – Sie sprechen immer mit derselben Person.
           </p>
           <a href="#anpfiff" class="btn btn-signal shrink-0">Paket anfragen</a>
         </div>

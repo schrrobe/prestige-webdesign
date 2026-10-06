@@ -28,7 +28,7 @@ const others = REFERENCES.slice(1)
           </div>
           <div>
             <dt class="t-label text-ink-soft">Meine Rolle</dt>
-            <dd class="mt-1 font-bold">Design &amp; Umsetzung</dd>
+            <dd class="mt-1 font-bold">{{ featured.role }}</dd>
           </div>
         </dl>
         <div class="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-auto lg:pt-8">

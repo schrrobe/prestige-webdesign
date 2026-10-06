@@ -1,7 +1,7 @@
 /**
  * Referenzen – vom Inhaber freigegeben (Name, Screenshot, Link).
  * Nur öffentlich überprüfbare Fakten; keine Kennzahlen, keine Zitate.
- * Rolle bei allen Projekten: Design & Umsetzung.
+ * Rollen vom Inhaber bestätigt (Shape & Flow inkl. SEO).
  */
 export interface Reference {
   slug: string
@@ -12,6 +12,7 @@ export interface Reference {
   location: string
   year?: number
   tool: 'Individuell (Nuxt)' | 'WordPress'
+  role: string
   summary: string
   task: string
   built: string[]
@@ -29,6 +30,7 @@ export const REFERENCES: Reference[] = [
     industry: 'Studio für brasilianische Lymphdrainage',
     location: 'Dortmund',
     tool: 'Individuell (Nuxt)',
+    role: 'Design, Umsetzung & SEO',
     summary: 'Individuell entwickelte Website mit Preisübersicht, Ratgeber und starker Sichtbarkeit für Google und KI-Suchen.',
     task: 'Ein Studio mit erklärungsbedürftiger Methode braucht eine Seite, die Vertrauen aufbaut, Preise offenlegt und Terminanfragen leicht macht.',
     built: [
@@ -55,6 +57,7 @@ export const REFERENCES: Reference[] = [
     location: 'Ennepetal · NRW',
     year: 2022,
     tool: 'WordPress',
+    role: 'Design & Umsetzung',
     summary: 'Bildstarke WordPress-Website für ein Fotografenpaar – mit Galerien, Blog und eigener Seite für Dortmund.',
     task: 'Fotografen verkaufen mit Bildern. Die Seite muss Arbeiten groß zeigen, Persönlichkeit vermitteln und Anfragen für Hochzeiten einsammeln.',
     built: [
@@ -81,6 +84,7 @@ export const REFERENCES: Reference[] = [
     location: 'Dortmund',
     year: 2023,
     tool: 'WordPress',
+    role: 'Design & Umsetzung',
     summary: 'WordPress-Website für ein Dortmunder Transportunternehmen – mit Fuhrpark, Zertifikaten und Stellenangeboten.',
     task: 'Ein Familienbetrieb im Bau-Umfeld braucht eine Seite, die Leistungen und Fuhrpark zeigt und gleichzeitig Fahrer für das Team gewinnt.',
     built: [
