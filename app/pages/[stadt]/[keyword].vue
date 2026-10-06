@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TOP_KEYWORDS } from '~/data/site'
+import { CONTACT, TOP_KEYWORDS } from '~/data/site'
 
 const route = useRoute()
 
@@ -34,83 +34,83 @@ const cityMap: Record<string, { name: string; adjective: string }> = {
 // Einzigartiger Content pro Keyword (gilt für alle 4 Städte, kombiniert mit stadtspezifischem Text)
 const richContentMap: Record<string, RichContent> = {
   'webdesign-agentur': {
-    mainText: 'Eine erfahrene Webdesign-Agentur vor Ort kennt nicht nur aktuelle Design-Trends, sondern auch die regionalen Besonderheiten Ihres Markts. Wir entwickeln keine Standardlösungen vom Band, sondern Websites, die exakt auf Ihre Zielgruppe, Ihre Branche und Ihre Ziele zugeschnitten sind. Von der ersten Beratung bis zum Launch begleiten wir Sie persönlich – und stehen auch danach als langfristiger Partner zur Seite.',
+    mainText: 'Ein Webdesigner vor Ort kennt nicht nur aktuelle Gestaltung, sondern auch die Betriebe und Kunden in Ihrer Region. Bei mir bekommen Sie keine Standardlösung vom Band, sondern eine Website, die auf Ihre Zielgruppe, Ihre Branche und Ihre Ziele zugeschnitten ist. Ich arbeite allein – ohne Agentur-Apparat, dafür mit einem festen Ansprechpartner: Von der ersten Beratung bis zum Launch betreue ich Sie persönlich und bin auch danach für Sie da.',
     benefits: [
-      { title: 'Individuelle Umsetzung', text: 'Kein Template, kein Baukastensystem – Ihre Website wird von Grund auf für Sie entwickelt.' },
-      { title: 'Lokale Marktkenntnis', text: 'Als regionale Agentur kennen wir Ihren Markt, Ihre Wettbewerber und Ihre Zielgruppe.' },
-      { title: 'Full-Service aus einer Hand', text: 'Design, Entwicklung, SEO und Wartung – alles ohne Schnittstellenverluste.' },
-      { title: 'Messbare Ergebnisse', text: 'Wir entwickeln mit klarem Fokus auf Anfragen, Conversions und Ihre Geschäftsziele.' },
+      { title: 'Das passende Werkzeug', text: 'WordPress, wenn Sie selbst pflegen wollen – individuell entwickelt, wenn Tempo und eigene Ideen zählen.' },
+      { title: 'Aus dem Revier', text: 'Ich sitze in Dortmund und arbeite für Betriebe im ganzen Ruhrgebiet. Kurze Wege, gleiche Sprache.' },
+      { title: 'Alles aus einer Hand', text: 'Design, Entwicklung, SEO-Grundlage und auf Wunsch Wartung – ohne Übergaben zwischen verschiedenen Leuten.' },
+      { title: 'Auf Anfragen ausgerichtet', text: 'Jede Seite hat ein Ziel: dass Interessenten Sie kontaktieren. Schönheit um ihrer selbst willen gibt es bei mir nicht.' },
     ],
     faqItems: [
-      { question: 'Was unterscheidet eine lokale Webdesign-Agentur von einer überregionalen?', answer: 'Eine lokale Agentur kennt Ihre Region, Ihre Wettbewerber und die Erwartungen Ihrer Zielgruppe vor Ort. Sie erreichen direkt einen Ansprechpartner, der Ihr Unternehmen wirklich versteht – statt anonymer Projektmanager.' },
-      { question: 'Was kostet eine Webdesign-Agentur im Vergleich zu einem Freelancer?', answer: 'Eine Agentur bietet eingespieltes Team, breitere Kompetenzen und zuverlässige Verfügbarkeit. Die Kosten sind oft vergleichbar mit einem guten Freelancer, die Qualität und Planungssicherheit jedoch höher. Wir bieten transparente Festpreise.' },
-      { question: 'Wie läuft die Zusammenarbeit mit Prestige Webdesign ab?', answer: 'Nach einem kostenlosen Erstgespräch erstellen wir ein Konzept und ein Festpreisangebot. Im Projektverlauf arbeiten wir in enger Abstimmung mit Ihnen – mit klaren Meilensteinen und regelmäßigen Updates bis zum Launch.' },
+      { question: 'Was unterscheidet eine lokale Webdesign-Agentur von einer überregionalen?', answer: 'Ein Anbieter aus der Region kennt Ihre Gegend, Ihre Wettbewerber und die Erwartungen Ihrer Kunden vor Ort. Bei mir sprechen Sie direkt mit der Person, die Ihre Website gestaltet und entwickelt – statt mit wechselnden Projektmanagern.' },
+      { question: 'Was kostet eine Webdesign-Agentur im Vergleich zu einem Freelancer?', answer: 'Agenturen rechnen meist Projektmanagement und mehrere Beteiligte mit ein. Ich arbeite allein und direkt mit Ihnen, ohne diesen Überbau. Eine Unternehmenswebsite beginnt bei 800 €. Nach dem kostenlosen Erstgespräch bekommen Sie einen Festpreis.' },
+      { question: 'Wie läuft die Zusammenarbeit mit Prestige Webdesign ab?', answer: 'Nach einem kostenlosen Erstgespräch bekommen Sie ein schriftliches Angebot zum Festpreis. Danach gestalte und entwickle ich Ihre Seite, Sie sehen Zwischenstände und geben Feedback. Vor dem Launch teste ich alles auf Smartphone, Tablet und Desktop.' },
     ],
   },
   'website-erstellen-lassen': {
-    mainText: 'Wer eine professionelle Website erstellen lassen möchte, steht vor einer wichtigen Entscheidung: günstige Baukastenlösung oder individuelle Entwicklung? Billige Lösungen mögen kurzfristig sparen – langfristig kosten sie Rankings, Anfragen und Vertrauen. Wir entwickeln Websites, die technisch sauber, SEO-optimiert und auf Ihre Zielgruppe ausgerichtet sind. Das Ergebnis ist eine Website, die aktiv für Ihr Unternehmen arbeitet.',
+    mainText: 'Wer eine professionelle Website erstellen lassen möchte, steht vor einer wichtigen Entscheidung: Baukasten oder Profi? Baukastenseiten sparen kurzfristig – kosten aber oft Sichtbarkeit, Anfragen und Vertrauen. Ich baue Websites, die technisch sauber, für Suchmaschinen gut lesbar und auf Ihre Zielgruppe ausgerichtet sind. So entsteht eine Website, die aktiv für Ihr Unternehmen arbeitet.',
     benefits: [
-      { title: 'Festpreis und Transparenz', text: 'Kein böses Erwachen: Sie wissen vorher genau, was Ihre Website kostet.' },
+      { title: 'Festpreis und Transparenz', text: 'Kein böses Erwachen: Sie wissen vorher genau, was Ihre Website kostet – ab 800 €.' },
       { title: 'SEO von Anfang an', text: 'Die technische SEO-Basis ist von Tag 1 eingebaut – keine nachträglichen Korrekturen nötig.' },
-      { title: 'Mobiloptimiert', text: 'Über 60 % Ihrer Besucher kommen vom Smartphone. Ihre Website sieht auf jedem Gerät perfekt aus.' },
-      { title: 'Schnelle Umsetzung', text: 'Von der Idee zum Launch in 2 bis 6 Wochen – strukturiert und ohne unnötige Verzögerungen.' },
+      { title: 'Mobil zuerst', text: 'Viele Ihrer Besucher kommen vom Smartphone. Ihre Website funktioniert auf jedem Gerät.' },
+      { title: 'Schnelle Umsetzung', text: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig – strukturiert und ohne unnötige Verzögerungen.' },
     ],
     faqItems: [
-      { question: 'Was kostet es, eine Website erstellen zu lassen?', answer: 'Eine professionelle Unternehmenswebsite kostet je nach Umfang zwischen 1.500 und 8.000 €. Entscheidend sind Seitenanzahl, Funktionen und Designaufwand. Wir erstellen Ihnen ein unverbindliches Festpreisangebot.' },
-      { question: 'Wie lange dauert die Erstellung einer Website?', answer: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig. Wir arbeiten in einem strukturierten Prozess mit festen Meilensteinen, damit Sie immer wissen, wo das Projekt steht.' },
-      { question: 'Was brauche ich, bevor ich eine Website erstellen lasse?', answer: 'Im Idealfall haben Sie Ihre Inhalte bereits vorbereitet – Texte, Bilder, Logo. Wir helfen aber auch dabei: von der Textoptimierung bis zur Bildauswahl. Das besprechen wir im Erstgespräch.' },
+      { question: 'Was kostet es, eine Website erstellen zu lassen?', answer: 'Eine Unternehmenswebsite beginnt bei 800 €. Entscheidend sind Seitenanzahl, Funktionen und Gestaltungsaufwand. Online-Shops liegen zwischen 2.500 und 15.000 €. Nach dem kostenlosen Erstgespräch bekommen Sie ein unverbindliches Angebot zum Festpreis.' },
+      { question: 'Wie lange dauert die Erstellung einer Website?', answer: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig – abhängig von Umfang und Feedbackzeiten. Ich arbeite mit klaren Schritten, damit Sie immer wissen, wo Ihr Projekt steht.' },
+      { question: 'Was brauche ich, bevor ich eine Website erstellen lasse?', answer: 'Im Idealfall liegen Texte, Bilder und Logo schon bereit. Wenn noch etwas fehlt, ist das kein Hindernis – wie wir das lösen, besprechen wir im Erstgespräch.' },
     ],
   },
   'webdesign-fuer-unternehmen': {
-    mainText: 'Die Website Ihres Unternehmens ist oft der erste Kontaktpunkt mit potenziellen Kunden – und entscheidet in Sekunden über Vertrauen oder Absprung. Gutes Webdesign für Unternehmen verbindet Ästhetik mit Funktion: eine klare Struktur, die Besucher führt, Inhalte, die überzeugen, und eine technische Basis, die Google versteht. Wir entwickeln Unternehmenswebsites, die nicht nur gut aussehen, sondern messbar Anfragen generieren.',
+    mainText: 'Die Website Ihres Unternehmens ist oft der erste Kontakt mit neuen Kunden – und entscheidet in Sekunden über Vertrauen oder Absprung. Gutes Webdesign für Unternehmen verbindet Gestaltung mit Funktion: eine klare Struktur, die Besucher führt, Inhalte, die überzeugen, und eine technische Basis, die Google versteht. Ich baue Unternehmenswebsites, die nicht nur gut aussehen, sondern Anfragen bringen sollen.',
     benefits: [
-      { title: 'Professionelle Außenwirkung', text: 'Ihre Website repräsentiert Ihr Unternehmen – wir sorgen dafür, dass der erste Eindruck stimmt.' },
-      { title: 'Conversion-optimiert', text: 'Jede Seite ist darauf ausgelegt, Besucher in Anfragen oder Kunden zu verwandeln.' },
-      { title: 'Skalierbar und wartbar', text: 'Ihre Website wächst mit Ihrem Unternehmen – erweiterbar, pflegbar und zukunftssicher.' },
-      { title: 'Google-sichtbar', text: 'Technische SEO-Grundlage und strukturierte Inhalte sorgen für bessere Rankings.' },
+      { title: 'Professionelle Außenwirkung', text: 'Ihre Website repräsentiert Ihr Unternehmen – ich sorge dafür, dass der erste Eindruck stimmt.' },
+      { title: 'Auf Anfragen ausgerichtet', text: 'Jede Seite ist darauf ausgelegt, Besucher zu einer Anfrage oder einem Kauf zu führen.' },
+      { title: 'Erweiterbar und pflegbar', text: 'Ihre Website wächst mit Ihrem Unternehmen – erweiterbar, pflegbar und technisch sauber gebaut.' },
+      { title: 'Für Google lesbar', text: 'Eine technische SEO-Grundlage und strukturierte Inhalte helfen Suchmaschinen, Ihre Seite zu verstehen.' },
     ],
     faqItems: [
-      { question: 'Was macht eine gute Unternehmenswebsite aus?', answer: 'Eine gute Unternehmenswebsite ist klar strukturiert, lädt schnell, überzeugt auf mobilen Geräten und führt Besucher zielgerichtet zu einer Anfrage. Design und Funktion müssen im Einklang stehen.' },
-      { question: 'Muss ich meine bestehende Website komplett ersetzen?', answer: 'Nicht zwingend. Manchmal reichen gezielte Verbesserungen an Struktur, Design oder Inhalten. Wir analysieren Ihre aktuelle Website kostenlos und empfehlen die wirtschaftlichste Lösung.' },
-      { question: 'Wie wichtig ist Mobile-Optimierung für Unternehmen?', answer: 'Sehr wichtig: Über 60 % aller Websitebesuche erfolgen über Smartphones. Google bewertet die mobile Version als Hauptversion. Eine nicht mobiloptimierte Seite kostet Rankings und Kunden.' },
+      { question: 'Was macht eine gute Unternehmenswebsite aus?', answer: 'Eine gute Unternehmenswebsite ist klar strukturiert, lädt schnell, funktioniert auf dem Smartphone und führt Besucher zielgerichtet zu einer Anfrage. Gestaltung und Funktion müssen zusammenpassen.' },
+      { question: 'Muss ich meine bestehende Website komplett ersetzen?', answer: 'Nicht zwingend. Manchmal reichen gezielte Verbesserungen an Struktur, Gestaltung oder Inhalten. Im kostenlosen Erstgespräch schaue ich mir Ihre aktuelle Website an und sage Ihnen ehrlich, welche Lösung sich wirtschaftlich lohnt.' },
+      { question: 'Wie wichtig ist Mobile-Optimierung für Unternehmen?', answer: 'Sehr wichtig: Ein großer Teil der Besuche kommt vom Smartphone, und Google bewertet die mobile Version einer Seite als Hauptversion. Eine Seite, die am Handy schlecht funktioniert, kostet Sichtbarkeit und Kunden.' },
     ],
   },
   'webdesign-fuer-kleine-unternehmen': {
-    mainText: 'Kleine Unternehmen haben oft keine eigene IT-Abteilung und kein unbegrenztes Budget – trotzdem brauchen sie eine professionelle Online-Präsenz, um im Wettbewerb zu bestehen. Wir spezialisieren uns auf überschaubare Projekte, die echten Mehrwert liefern: klares Design, schnelle Ladezeiten, mobile Optimierung und eine SEO-Grundlage, die lokal wirkt. Ohne unnötigen Overhead, ohne Overengineering – genau das, was Ihr Unternehmen wirklich braucht.',
+    mainText: 'Kleine Unternehmen haben selten eine eigene IT-Abteilung oder ein großes Budget – und brauchen trotzdem einen professionellen Auftritt im Netz. Genau solche überschaubaren Projekte baue ich gern: klare Gestaltung, schnelle Ladezeiten, gute Bedienung am Smartphone und eine SEO-Grundlage, die lokal wirkt. Ohne unnötigen Aufwand und ohne Technik, die niemand braucht – genau das, was Ihr Betrieb wirklich braucht.',
     benefits: [
-      { title: 'Faire Preise, klarer Umfang', text: 'Kein überteuertes Agenturpaket – sondern genau das, was Ihr Unternehmen wirklich braucht.' },
-      { title: 'Einfache Pflege', text: 'Wir entwickeln so, dass Sie Texte und Bilder selbst aktualisieren können – ohne Technik-Kenntnisse.' },
-      { title: 'Lokale Sichtbarkeit', text: 'Für kleine Unternehmen ist lokales SEO entscheidend – damit Kunden aus der Region Sie finden.' },
-      { title: 'Persönliche Betreuung', text: 'Kein Ticketsystem, kein Call-Center: Sie haben immer einen direkten Ansprechpartner.' },
+      { title: 'Faire Preise, klarer Umfang', text: 'Kein überteuertes Agenturpaket, sondern genau das, was Ihr Betrieb braucht – ab 800 € zum Festpreis.' },
+      { title: 'Einfache Pflege', text: 'Auf Wunsch mit WordPress, damit Sie Texte und Bilder selbst ändern können – ohne Technikkenntnisse.' },
+      { title: 'Lokale Sichtbarkeit', text: 'Für kleine Unternehmen ist lokale Suche entscheidend – damit Kunden aus der Region Sie finden.' },
+      { title: 'Persönliche Betreuung', text: 'Kein Ticketsystem, kein Callcenter: Sie haben immer einen direkten Ansprechpartner.' },
     ],
     faqItems: [
-      { question: 'Ab welchem Budget lohnt sich eine professionelle Website für kleine Unternehmen?', answer: 'Bereits ab 1.500 € ist eine professionelle, mobiloptimierte und SEO-freundliche Website möglich. Wir finden gemeinsam den richtigen Umfang für Ihr Budget und Ihre Ziele.' },
-      { question: 'Kann ich meine Website später selbst pflegen?', answer: 'Ja. Wir entwickeln entweder mit einem CMS wie WordPress oder mit einer einfachen Bearbeitungsoberfläche, sodass Sie Texte, Bilder und Inhalte selbst aktualisieren können – ohne Technik-Kenntnisse.' },
-      { question: 'Braucht ein kleines Unternehmen wirklich SEO?', answer: 'Ja, gerade kleine Unternehmen profitieren enorm von lokalem SEO. Wenn jemand in Ihrer Stadt nach Ihrem Service sucht, sollten Sie gefunden werden. Das ist oft mit überschaubarem Aufwand erreichbar.' },
+      { question: 'Ab welchem Budget lohnt sich eine professionelle Website für kleine Unternehmen?', answer: 'Eine professionelle, mobile und suchmaschinenfreundliche Website ist bei mir ab 800 € möglich. Im Erstgespräch finden wir gemeinsam den richtigen Umfang für Ihr Budget und Ihre Ziele.' },
+      { question: 'Kann ich meine Website später selbst pflegen?', answer: 'Ja. Mit WordPress pflegen Sie Texte, Bilder und Angebote selbst – ich richte alles so ein, dass es ohne Technikkenntnisse funktioniert, und zeige es Ihnen bei der Übergabe.' },
+      { question: 'Braucht ein kleines Unternehmen wirklich SEO?', answer: 'Ja, gerade kleine Unternehmen profitieren von lokaler Suchmaschinenoptimierung. Wenn jemand in Ihrer Stadt nach Ihrer Leistung sucht, sollten Sie gefunden werden – und die Grundlagen dafür sind oft mit überschaubarem Aufwand gelegt.' },
     ],
   },
   'webdesigner-beauftragen': {
-    mainText: 'Einen Webdesigner zu beauftragen ist eine Investition – und wie bei jeder Investition kommt es auf die richtige Wahl an. Freelancer oder Agentur? Billiganbieter oder Premiumlösung? Die Antwort hängt von Ihrem Projekt ab. Wir bieten das Beste aus beiden Welten: persönliche Betreuung, Agentur-Qualität und faire Preise für den Mittelstand. Über 50 abgeschlossene Projekte sprechen für sich.',
+    mainText: `Einen Webdesigner zu beauftragen ist eine Investition – und wie bei jeder Investition kommt es auf die richtige Wahl an. Freelancer oder Agentur? Günstig oder hochwertig? Die Antwort hängt von Ihrem Projekt ab. Bei mir bekommen Sie einen persönlichen Ansprechpartner, der gestaltet und entwickelt, und einen Festpreis, bevor es losgeht. Seit ${CONTACT.since} habe ich über 10 Projekte abgeschlossen – drei davon können Sie sich unter Referenzen ansehen.`,
     benefits: [
-      { title: 'Persönlicher Ansprechpartner', text: 'Sie arbeiten direkt mit dem Designer – keine Vermittler, kein Stille-Post-Problem.' },
+      { title: 'Persönlicher Ansprechpartner', text: 'Sie arbeiten direkt mit mir – keine Vermittler, keine stille Post.' },
       { title: 'Transparente Kalkulation', text: 'Festpreisangebote statt Stundensätze – Sie wissen von Anfang an, was es kostet.' },
-      { title: 'Referenzen und Erfahrung', text: 'Über 50 abgeschlossene Projekte – wir wissen, was funktioniert und was nicht.' },
-      { title: 'Langfristige Partnerschaft', text: 'Wir sind auch nach dem Launch für Sie da: Updates, Erweiterungen, Support.' },
+      { title: 'Referenzen und Erfahrung', text: `Seit ${CONTACT.since} im Webdesign, über 10 abgeschlossene Projekte – ich weiß, was funktioniert und was nicht.` },
+      { title: 'Auch nach dem Launch da', text: 'Updates, Erweiterungen und Support – auf Wunsch als Wartungspaket ab 79 € im Monat.' },
     ],
     faqItems: [
-      { question: 'Freelancer oder Agentur – was ist besser?', answer: 'Eine Agentur bietet Teambreite, zuverlässige Verfügbarkeit und breitere Kompetenz. Ein Freelancer ist oft günstiger, birgt aber Risiken bei Krankheit oder Urlaub. Wir verbinden die Stärken beider Modelle: persönliche Betreuung mit Agentur-Rückhalt.' },
-      { question: 'Worauf sollte ich beim Beauftragen eines Webdesigners achten?', answer: 'Wichtig sind: nachweisbare Referenzen, klare Verträge mit Festpreisen, Rechteübertragung am fertigen Design, Erfahrung mit SEO und Mobiloptimierung sowie Support nach dem Launch.' },
-      { question: 'Was passiert, wenn mir das Design nicht gefällt?', answer: 'Wir arbeiten iterativ: Erst Wireframes und Moodboards, dann Design – immer mit Ihrem Feedback. Sie haben mindestens zwei Feedbackrunden vor der finalen Umsetzung, damit das Ergebnis wirklich passt.' },
+      { question: 'Freelancer oder Agentur – was ist besser?', answer: 'Das hängt vom Projekt ab. Eine Agentur bringt mehr Köpfe mit, aber auch mehr Abstimmung und meist höhere Preise. Ein Freelancer wie ich arbeitet direkter: Sie sprechen immer mit der Person, die Ihre Website baut. Für die meisten Firmenwebsites ist das der kürzere Weg.' },
+      { question: 'Worauf sollte ich beim Beauftragen eines Webdesigners achten?', answer: 'Wichtig sind: Referenzen, die Sie sich live ansehen können, ein klares Angebot mit Festpreis, die Rechte am fertigen Design, Erfahrung mit SEO und mobiler Darstellung sowie Unterstützung nach dem Launch.' },
+      { question: 'Was passiert, wenn mir das Design nicht gefällt?', answer: 'Sie sehen schon während der Umsetzung Zwischenstände und geben Feedback, bevor es weitergeht. So fallen Änderungswünsche früh auf. Wie viele Korrekturrunden enthalten sind, steht vorher im Angebot.' },
     ],
   },
 }
 
 // Stadtspezifischer Kontext für die 20 Top-Seiten
 const cityContextMap: Record<string, string> = {
-  dortmund: 'Dortmund ist mit rund 600.000 Einwohnern die größte Stadt des Ruhrgebiets und ein wichtiger Digitalstandort. Der Technologiepark Dortmund hat sich zu einem der führenden IT-Cluster Nordrhein-Westfalens entwickelt. Für Unternehmen hier ist eine starke Online-Präsenz kein Luxus – sie ist Voraussetzung, um im wachsenden Wettbewerb sichtbar zu bleiben.',
-  essen: 'Essen hat sich von der Kohle- und Stahlstadt zur modernen Dienstleistungsmetropole gewandelt. Als Sitz zahlreicher Großunternehmen und eines starken Mittelstands ist der Wettbewerb um digitale Sichtbarkeit hoch. Eine professionelle Website, die bei Essener Suchanfragen gefunden wird, ist für lokale Unternehmen ein entscheidender Vorteil.',
-  bochum: 'Bochum verbindet Universitätsstadt und Wirtschaftsstandort: Die Ruhr-Universität mit über 43.000 Studierenden sorgt für ein modernes, digital affines Umfeld. Das bedeutet für Unternehmen in Bochum: eine technikaffine Zielgruppe, die hohe Ansprüche an Online-Auftritte stellt – und die zwischen mehreren Anbietern wählt.',
-  bottrop: 'Bottrop ist eine der kompakteren Städte des Ruhrgebiets – mit einer engen Vernetzung der lokalen Wirtschaft. Für Unternehmen hier ist die persönliche Empfehlung wichtig, aber auch die Online-Auffindbarkeit: Wer bei Google lokal gefunden wird, hat einen klaren Vorteil gegenüber Wettbewerbern, die noch auf Mund-zu-Mund-Propaganda setzen.',
+  dortmund: 'Dortmund ist mit rund 600.000 Einwohnern die größte Stadt des Ruhrgebiets und ein wichtiger Digitalstandort – rund um den Technologiepark sind viele IT-Unternehmen zu Hause. Prestige Webdesign sitzt in Dortmund-Hörde. Für Betriebe in Dortmund ist eine starke Online-Präsenz kein Luxus, sondern Voraussetzung, um im Wettbewerb sichtbar zu bleiben.',
+  essen: 'Essen hat sich von der Kohle- und Stahlstadt zur modernen Dienstleistungsmetropole gewandelt. Als Sitz großer Unternehmen und eines starken Mittelstands ist der Wettbewerb um Sichtbarkeit im Netz hoch. Eine Website, die bei Suchanfragen aus Essen gefunden wird, ist für lokale Betriebe ein echter Vorteil.',
+  bochum: 'Bochum verbindet Universitätsstadt und Wirtschaftsstandort: Die Ruhr-Universität mit Zehntausenden Studierenden prägt ein junges, digital geübtes Umfeld. Für Unternehmen in Bochum heißt das: Ihre Kunden haben hohe Ansprüche an Websites – und vergleichen mehrere Anbieter.',
+  bottrop: 'Bottrop ist eine der kompakteren Städte des Ruhrgebiets, die lokale Wirtschaft ist eng vernetzt. Persönliche Empfehlungen zählen hier viel – aber auch die Auffindbarkeit im Netz: Wer bei Google lokal gefunden wird, hat einen klaren Vorteil gegenüber Betrieben, die nur auf Mundpropaganda setzen.',
 }
 
 const keywordSeeds: Record<string, KeywordSeed> = {
@@ -249,9 +249,11 @@ const serviceLinks = [
 ]
 
 const h1 = computed(() => withCity(seed.value.h1))
-const pageTitle = computed(() => `${h1.value} in ${city.value!.name} | Prestige Webdesign`)
+// Seeds mit {city} enthalten die Stadt schon – sonst „… in Dortmund in Dortmund“
+const h1InCity = computed(() => seed.value.h1.includes('{city}') ? h1.value : `${h1.value} in ${city.value!.name}`)
+const pageTitle = computed(() => `${h1InCity.value} | Prestige Webdesign`)
 const pageDescription = computed(() =>
-  `${h1.value} in ${city.value!.name} – zum Festpreis, SEO inklusive, persönlich betreut. Ihre Webagentur für ${city.value!.name} und das Ruhrgebiet. Jetzt anfragen.`,
+  `${h1InCity.value} – zum Festpreis ab 800 €, persönlich betreut von einem Ansprechpartner. Webdesign für ${city.value!.name} und das Ruhrgebiet. Jetzt Erstgespräch anfragen.`,
 )
 
 useSeoMeta({
@@ -269,7 +271,7 @@ useHead(() => {
       {
         key: 'keyword-faq-schema',
         type: 'application/ld+json',
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
           mainEntity: richContent.value!.faqItems.map(item => ({
@@ -282,165 +284,187 @@ useHead(() => {
     ],
   }
 })
+
+// Darstellung: Vorspann und eigener Brotkrumenpfad (die Stadtebene /<stadt> existiert nicht als Seite)
+const coverLead = computed(() =>
+  `Für ${seed.value.focus} in ${city.value!.name} und im ganzen Ruhrgebiet: schnelle, mobile Websites von einem Ansprechpartner aus Dortmund – zum Festpreis ab 800 €.`,
+)
 </script>
 
 <template>
   <div>
-    <!-- Hero -->
-    <PageHero
-      :badge="`${city.name} · ${seed.focus}`"
-      :subtitle="isTopPage && richContent
-        ? richContent.mainText.slice(0, 200)
-        : `Mit ${withCity(seed.keyword)} in ${city.name} positionieren wir Ihr Unternehmen professionell und conversionstark.`"
-    >
-      <template #title>{{ h1 }}</template>
-      <NuxtLink to="/kontakt" class="btn-primary text-base">
-        Kostenlose Beratung anfragen
-        <AppIcon name="arrow-right" class="w-5 h-5" />
-      </NuxtLink>
-    </PageHero>
+    <PageCover :title="h1" :lead="coverLead" align="start">
+      <a href="#anpfiff" class="btn btn-signal lg:hidden">Erstgespräch anfragen</a>
+      <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
+      <template #aside>
+        <TicketForm :source="`Keyword-Seite – ${h1InCity}`" class="hidden lg:block" />
+      </template>
+    </PageCover>
 
     <!-- Rich Content für Top-Seiten -->
     <template v-if="isTopPage && richContent">
-      <!-- Haupttext + Stadtkontext -->
-      <section class="section-padding relative overflow-hidden bg-dark-800/30">
-        <div class="container-narrow mx-auto relative">
-          <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-            <div>
-              <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-5">
-                {{ h1 }} in {{ city.name }}
-              </h2>
-              <p class="text-dark-200 leading-relaxed">
-                {{ richContent.mainText }}
-              </p>
-            </div>
-            <div v-if="cityContext" class="glass-card p-8">
-              <h3 class="text-lg font-semibold text-primary-300 mb-3">
-                {{ city.name }} als Standort
-              </h3>
-              <p class="text-dark-200 text-sm leading-relaxed">
-                {{ cityContext }}
-              </p>
-            </div>
+      <!-- Taktik: Haupttext + Stadtkontext -->
+      <section class="section" data-rubric="Taktik" aria-labelledby="kw-main-title">
+        <div class="wrap grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <h2 id="kw-main-title" class="t-headline">{{ h1InCity }}</h2>
+            <p class="t-lead mt-6 max-w-text">{{ richContent.mainText }}</p>
           </div>
+          <aside v-if="cityContext" class="lg:col-span-5 lg:pt-2" aria-labelledby="kw-city-title">
+            <div class="rule-heavy pt-6">
+              <h3 id="kw-city-title" class="t-title">{{ city.name }} als Standort</h3>
+              <p class="mt-3 text-ink-soft">{{ cityContext }}</p>
+              <NuxtLink :to="cityPageSlug" class="link mt-4 inline-flex min-h-11 items-center gap-2 font-semibold">
+                Webdesign {{ city.name }}
+                <AppIcon name="arrow-right" class="h-4 w-4" />
+              </NuxtLink>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <!-- Vorteile -->
-      <section class="section-padding relative overflow-hidden">
-        <div class="container-narrow mx-auto relative">
-          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-            Was Sie von uns <span class="text-gradient">bekommen</span>
-          </h2>
-          <div class="grid md:grid-cols-2 gap-6">
-            <article
-              v-for="benefit in richContent.benefits"
-              :key="benefit.title"
-              class="glass-card p-8 flex gap-4"
-            >
-              <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-              <div>
-                <h3 class="text-lg font-semibold text-white mb-2">{{ benefit.title }}</h3>
-                <p class="text-dark-200 text-sm leading-relaxed">{{ benefit.text }}</p>
-              </div>
-            </article>
-          </div>
+      <!-- Aufstellung: Vorteile -->
+      <section class="section bg-sheet" data-rubric="Aufstellung" aria-labelledby="kw-benefits-title">
+        <div class="wrap">
+          <SectionHead id="kw-benefits-title" title="Was Sie von mir bekommen" />
+          <ul class="mt-10 border-t-2 border-ink">
+            <li v-for="benefit in richContent.benefits" :key="benefit.title" class="grid gap-x-8 gap-y-2 border-b border-ink/25 py-6 md:grid-cols-12 md:py-8">
+              <h3 class="t-title md:col-span-5">{{ benefit.title }}</h3>
+              <p class="max-w-xl text-ink-soft md:col-span-7">{{ benefit.text }}</p>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <!-- Prozess -->
-      <section class="section-padding relative overflow-hidden bg-dark-800/30">
-        <div class="container-narrow mx-auto relative">
-          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-            So arbeiten wir <span class="text-gradient">zusammen</span>
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div
-              v-for="(step, index) in ['Erstgespräch & Analyse', 'Konzept & Angebot', 'Umsetzung & Review', 'Launch & Support']"
-              :key="step"
-              class="glass-card p-8"
-            >
-              <div class="text-primary-300 text-4xl font-display font-semibold mb-3">
-                0{{ index + 1 }}
-              </div>
-              <h3 class="text-lg font-semibold text-white">{{ step }}</h3>
-            </div>
-          </div>
+      <!-- Tabelle: Leistungen & Preise -->
+      <section class="section" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
+        <div class="wrap">
+          <SectionHead
+            id="kw-prices-title"
+            title="Was es kostet – vorher, nicht hinterher."
+            intro="Jedes Projekt beginnt mit einem kostenlosen Erstgespräch. Danach bekommen Sie ein Angebot zum Festpreis. Was dort steht, zahlen Sie – nicht mehr."
+          >
+            <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+          </SectionHead>
+          <ServiceTable class="mt-10" />
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section class="section-padding relative overflow-hidden">
-        <div class="container-narrow mx-auto relative">
-          <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10 text-center">
-            Häufige Fragen zu <span class="text-gradient">{{ h1 }}</span>
-          </h2>
-          <FaqAccordion :items="richContent.faqItems" />
+      <!-- Spielplan: Ablauf -->
+      <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="kw-process-title">
+        <div class="wrap">
+          <SectionHead
+            id="kw-process-title"
+            title="So arbeiten wir zusammen."
+            intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
+          />
+          <ProcessFixture class="mt-10" />
+        </div>
+      </section>
+
+      <!-- Heimspiele: Referenzen -->
+      <section class="section" data-rubric="Heimspiele" aria-labelledby="kw-refs-title">
+        <div class="wrap">
+          <SectionHead
+            id="kw-refs-title"
+            title="Websites aus dem Revier."
+            intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – alle aus Dortmund und NRW, alle online. Klicken Sie ruhig rein."
+          >
+            <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+          </SectionHead>
+          <ReferenceShowcase class="mt-12" />
+        </div>
+      </section>
+
+      <!-- Fragen -->
+      <section class="section bg-sheet" data-rubric="Fragen" aria-labelledby="kw-faq-title">
+        <div class="wrap grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <h2 id="kw-faq-title" class="t-headline">Häufige Fragen zu {{ h1 }}</h2>
+          </div>
+          <FaqList class="lg:col-span-8" :items="richContent.faqItems" />
         </div>
       </section>
     </template>
 
     <!-- Basis-Content für noindex-Seiten -->
     <template v-else>
-      <section class="section-padding relative overflow-hidden bg-dark-800/30">
-        <div class="container-narrow mx-auto relative">
-          <div class="grid md:grid-cols-3 gap-6">
-            <article class="glass-card p-8">
-              <h2 class="text-xl font-semibold text-white mb-3">Leistung</h2>
-              <p class="text-dark-200 leading-relaxed">Wir setzen {{ withCity(seed.keyword) }} mit klarem Seitenaufbau, starker Nutzerführung und technischer SEO-Basis um.</p>
-            </article>
-            <article class="glass-card p-8">
-              <h2 class="text-xl font-semibold text-white mb-3">Zielgruppe</h2>
-              <p class="text-dark-200 leading-relaxed">Unsere Lösung ist auf {{ seed.focus }} ausgerichtet und unterstützt Sie dabei, mehr qualifizierte Anfragen zu erhalten.</p>
-            </article>
-            <article class="glass-card p-8">
-              <h2 class="text-xl font-semibold text-white mb-3">Standort</h2>
-              <p class="text-dark-200 leading-relaxed">Durch lokale Ausrichtung auf {{ city.name }} wird Ihre Website in regionalen Suchanfragen sichtbarer.</p>
-            </article>
-          </div>
+      <section class="section" data-rubric="Aufstellung" aria-labelledby="kw-basic-title">
+        <div class="wrap">
+          <SectionHead id="kw-basic-title" :title="h1InCity" />
+          <dl class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-3">
+            <div class="border-t-2 border-ink pt-5">
+              <dt class="t-title">Leistung</dt>
+              <dd class="mt-3 text-ink-soft">Ich setze {{ h1 }} mit klarem Seitenaufbau, einfacher Nutzerführung und technischer SEO-Basis um.</dd>
+            </div>
+            <div class="border-t-2 border-ink pt-5">
+              <dt class="t-title">Zielgruppe</dt>
+              <dd class="mt-3 text-ink-soft">Ausgerichtet auf {{ seed.focus }} – damit aus Besuchern Ihrer Website mehr passende Anfragen werden.</dd>
+            </div>
+            <div class="border-t-2 border-ink pt-5">
+              <dt class="t-title">Standort</dt>
+              <dd class="mt-3 text-ink-soft">Durch die lokale Ausrichtung auf {{ city.name }} wird Ihre Website bei regionalen Suchanfragen leichter gefunden.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
+        <div class="wrap">
+          <SectionHead
+            id="kw-prices-title"
+            title="Was es kostet – vorher, nicht hinterher."
+            intro="Nach dem kostenlosen Erstgespräch bekommen Sie ein Angebot zum Festpreis. Was dort steht, zahlen Sie – nicht mehr."
+          >
+            <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+          </SectionHead>
+          <ServiceTable class="mt-10" />
+        </div>
+      </section>
+
+      <section class="section" data-rubric="Spielplan" aria-labelledby="kw-process-title">
+        <div class="wrap">
+          <SectionHead
+            id="kw-process-title"
+            title="So arbeiten wir zusammen."
+            intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
+          />
+          <ProcessFixture class="mt-10" />
         </div>
       </section>
     </template>
 
-    <!-- Interne Links -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-xl font-semibold text-white mb-5">
-          Mehr von Prestige Webdesign in {{ city.name }}
-        </h2>
-        <div class="flex flex-wrap gap-3">
-          <NuxtLink
-            :to="cityPageSlug"
-            class="glass-card px-4 py-2 rounded-full text-primary-300 hover:text-primary-200 transition-colors text-sm"
-          >
+    <!-- Auswärts: interne Links -->
+    <section class="section" :class="isTopPage && richContent ? '' : 'bg-sheet'" data-rubric="Auswärts" aria-labelledby="kw-links-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="kw-links-title" class="t-headline">Mehr von Prestige Webdesign in {{ city.name }}</h2>
+          <NuxtLink :to="cityPageSlug" class="btn btn-ink mt-8">
             Alle Leistungen in {{ city.name }}
+            <AppIcon name="arrow-right" class="h-5 w-5" />
           </NuxtLink>
-          <NuxtLink
-            v-for="link in serviceLinks"
-            :key="link.to"
-            :to="link.to"
-            class="glass-card px-4 py-2 rounded-full text-dark-100 hover:text-white transition-colors text-sm"
-          >
-            {{ link.label }}
-          </NuxtLink>
+          <ul class="mt-10 border-t-2 border-ink">
+            <li v-for="link in serviceLinks" :key="link.to" class="border-b border-ink/25">
+              <NuxtLink :to="link.to" class="group flex min-h-12 items-center justify-between gap-4 py-3 text-lg font-bold" style="font-stretch: 88%;">
+                {{ link.label }}
+                <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
-
-        <h2 class="text-xl font-semibold text-white mt-10 mb-5">
-          Häufige Anfragen in {{ city.name }}
-        </h2>
-        <div class="flex flex-wrap gap-3">
-          <NuxtLink
-            v-for="link in siblingKeywordLinks"
-            :key="link.to"
-            :to="link.to"
-            class="glass-card px-4 py-2 rounded-full text-dark-100 hover:text-white transition-colors text-sm"
-          >
-            {{ link.label }}
-          </NuxtLink>
+        <div class="lg:col-span-6 lg:col-start-7">
+          <h3 class="t-title">Häufige Anfragen in {{ city.name }}</h3>
+          <ul class="mt-6 border-t-2 border-ink">
+            <li v-for="link in siblingKeywordLinks" :key="link.to" class="border-b border-ink/25">
+              <NuxtLink :to="link.to" class="link flex min-h-12 items-center py-3 font-semibold">
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <CTASection />
+    <KickoffSection :source="`${h1InCity} – Anpfiff`" />
   </div>
 </template>

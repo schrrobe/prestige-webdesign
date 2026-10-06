@@ -71,7 +71,9 @@ const icons: Record<string, string[]> = {
     'M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z',
     'M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z',
   ],
-  menu: ['M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'],
+  menu: ['M3.75 7h16.5M3.75 12h16.5M3.75 17h16.5'],
+  plus: ['M12 4.5v15m7.5-7.5h-15'],
+  'alert': ['M12 9v3.75m0 3.75h.008M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'],
   close: ['M6 18 18 6M6 6l12 12'],
 }
 
@@ -84,7 +86,7 @@ const paths = computed(() => icons[props.name] ?? [])
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    stroke-width="1.6"
+    stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
   >

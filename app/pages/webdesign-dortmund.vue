@@ -1,201 +1,126 @@
-<template>
-  <div>
-    <!-- Hero Section -->
-    <PageHero
-      badge="Webdesign Dortmund"
-      title="Webdesign"
-      highlight="Dortmund"
-      subtitle="Moderne, responsive Websites für Dortmunder Unternehmen, die online wachsen möchten. Unsere lokale Webagentur verbindet kreative Webdesign-Lösungen mit strategischer SEO-Optimierung – perfekt für Ihren Erfolg in der Metropole Ruhr."
-    >
-      <p class="mt-6 text-dark-200 max-w-2xl leading-relaxed">
-        Von der Innenstadt bis zum Technologiepark: Wir kennen die Anforderungen Dortmunder Wirtschaft und schaffen digitale Lösungen, die Ihr Business nach vorne bringen.
-      </p>
-      <NuxtLink to="/kontakt" class="btn-primary text-base">
-        Kostenlose Beratung vereinbaren
-        <AppIcon name="arrow-right" class="w-5 h-5" />
-      </NuxtLink>
-    </PageHero>
-
-    <!-- Why Local Web Design Matters -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Warum lokale Webgestaltung für"
-          highlight="Dortmund entscheidend ist"
-          align="left"
-          class="mb-10"
-        />
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Dortmund ist ein Wirtschaftsstandort mit großem Potenzial. Ob im Signal Iduna Park Umfeld, im zukunftsweisenden Technologiepark oder in der revitalisierten Dortmunder Innenstadt – professionelle Websites sind das digitale Fundament erfolgreicher Unternehmen. Wir verstehen die lokale Geschäftskultur und erstellen Websites, die Ihre Zielgruppe direkt anspricht.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">Lokaloptimierte Websites für bessere Sichtbarkeit in Dortmund</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">SEO-Strategie für lokale Suchanfragen</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">Mobile-First Design für On-the-Go Kunden</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Mit einer professionellen Website positionieren Sie Ihr Dortmunder Unternehmen als vertrauenswürdig und innovativ. Ob Industrie, Handel, Dienstleistung oder Handwerk – eine durchdachte Online-Präsenz ist nicht optional, sondern essentiell. Unser Team kreiert Websites, die nicht nur schön aussehen, sondern auch messbare Ergebnisse liefern.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">Konvertierungsoptimierte Designs</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">Benutzerfreundliche Interfaces</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span class="ml-3">Wartung und Support vor Ort</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Webdesign & Digital-Lösungen für"
-          highlight="Dortmund"
-          align="left"
-          class="mb-10"
-        />
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Service 1: Web Design -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="code" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Modernes Webdesign
-            </h3>
-            <p class="text-dark-300">
-              Zeitgemäße, ansprechende Designs, die Ihre Marke in Dortmund authentisch repräsentieren und Ihre Kunden begeistern.
-            </p>
-          </div>
-
-          <!-- Service 2: SEO Optimization -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="seo" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Lokale SEO-Optimierung
-            </h3>
-            <p class="text-dark-300">
-              Ihre Website rankt lokal – in Dortmund und Umgebung. Wir optimieren für relevante Keywords und Ihre Zielgruppe vor Ort.
-            </p>
-          </div>
-
-          <!-- Service 3: E-Commerce -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="cart" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              E-Commerce & Shop-Systeme
-            </h3>
-            <p class="text-dark-300">
-              Online verkaufen leicht gemacht: Sichere, benutzerfreundliche E-Commerce-Lösungen für Ihr Dortmunder Business.
-            </p>
-          </div>
-
-          <!-- Service 4: Maintenance -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="shield" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Wartung & Support
-            </h3>
-            <p class="text-dark-300">
-              Regelmäßige Updates, Sicherheit und technischer Support – damit Ihre Website immer optimal läuft.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Local SEO Benefits -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Lokale SEO für Dortmund –"
-          highlight="Das bedeutet es für Ihr Business"
-          align="left"
-          class="mb-10"
-        />
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">01</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Höhere Sichtbarkeit</h3>
-            <p class="text-dark-300">
-              Ihre Website wird gezielt Dortmunder Kunden angezeigt, die aktiv nach Ihren Dienstleistungen oder Produkten suchen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">02</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Qualifizierte Leads</h3>
-            <p class="text-dark-300">
-              Lokale Optimierung bringt Interessenten mit echter Kaufabsicht – nicht nur Clicks, sondern echte Geschäftschancen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">03</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Wettbewerbsvorteil</h3>
-            <p class="text-dark-300">
-              Viele Dortmunder Konkurrenten optimieren nicht lokal. Sie können diesen Vorteil für sich nutzen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">04</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Vertrauensaufbau</h3>
-            <p class="text-dark-300">
-              Eine lokal optimierte Website zeigt, dass Sie Teil der Dortmunder Community sind – das schafft Vertrauen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">05</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Mobile Nutzer</h3>
-            <p class="text-dark-300">
-              "Webdesign Dortmund" Suchen kommen oft von unterwegs. Unsere Websites sind perfekt für Mobile-First optimiert.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">06</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Messbarer ROI</h3>
-            <p class="text-dark-300">
-              Transparente Analytics zeigen Ihnen genau, welche Besucher konvertieren und wie Ihre Website performt.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <CityKeywordLinks city-slug="dortmund" city-name="Dortmund" />
-
-    <CTASection />
-  </div>
-</template>
-
 <script setup lang="ts">
 useSeoMeta({
   title: 'Webdesign Dortmund – Websites, SEO & E-Commerce | Prestige Webdesign',
   ogTitle: 'Webdesign Dortmund – Websites, SEO & E-Commerce | Prestige Webdesign',
-  description: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
-  ogDescription: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen. SEO, E-Commerce, Wartung. Lokale Webagentur mit Expertise.',
+  description: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen ab 800 € Festpreis. SEO, E-Commerce, Wartung – vom Webdesigner direkt aus Dortmund.',
+  ogDescription: 'Webdesign Dortmund: Moderne Websites für Dortmunder Unternehmen ab 800 € Festpreis. SEO, E-Commerce, Wartung – vom Webdesigner direkt aus Dortmund.',
   keywords: 'Webdesign Dortmund, Webagentur Dortmund, Website Dortmund, SEO Dortmund, Webentwicklung Dortmund, Online Marketing Dortmund',
-  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.png',
   robots: 'index, follow',
 })
+
+const localPoints = [
+  'Websites, die bei Suchen in Dortmund gefunden werden',
+  'SEO-Grundlage für lokale Suchanfragen',
+  'Mobil zuerst gebaut – für Kunden, die unterwegs suchen',
+  'Klare Wege zur Anfrage statt Selbstzweck-Design',
+  'Benutzerfreundlich und barrierefrei nach WCAG 2.2 AA',
+  'Wartung und Support auf Wunsch – per Paket ab 79 € im Monat',
+]
+
+const localSeo = [
+  { title: 'Höhere Sichtbarkeit', text: 'Ihre Website wird Dortmunder Kunden angezeigt, die aktiv nach Ihren Leistungen oder Produkten suchen.' },
+  { title: 'Passendere Anfragen', text: 'Lokale Optimierung bringt Interessenten aus Ihrer Umgebung, die wirklich etwas brauchen – nicht nur Klicks.' },
+  { title: 'Wettbewerbsvorteil', text: 'Viele Betriebe in Dortmund kümmern sich nicht um lokale Suche. Genau dort können Sie sich absetzen.' },
+  { title: 'Vertrauen vor Ort', text: 'Adresse, Einzugsgebiet und lokale Bezüge zeigen: Sie sind hier zu Hause und erreichbar.' },
+  { title: 'Mobile Nutzer', text: 'Wer „Webdesign Dortmund“ oder Ihre Leistung sucht, tut das oft am Smartphone. Deshalb baue ich mobil zuerst.' },
+  { title: 'Nachvollziehbare Ergebnisse', text: 'Mit der Google Search Console sehen Sie, wie Ihre Seite gefunden wird und wo es noch Luft gibt.' },
+]
 </script>
+
+<template>
+  <div>
+    <PageCover
+      title="Webdesign Dortmund"
+      lead="Websites für Dortmunder Betriebe – von der Innenstadt bis zum Technologiepark. Ich sitze selbst in Dortmund, gestalte und entwickle Ihre Seite persönlich und nenne Ihnen vorher den Preis: Festpreis ab 800 €."
+    >
+      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
+    </PageCover>
+
+    <!-- Taktik: warum lokal -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+      <div class="wrap grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="local-title" class="t-headline">Warum lokale Webgestaltung für Dortmund entscheidend ist</h2>
+        </div>
+        <div class="max-w-text lg:col-span-7">
+          <p class="t-lead">
+            Dortmund ist ein Wirtschaftsstandort mit großem Potenzial. Ob im Umfeld des Signal Iduna Parks, im Technologiepark oder in der Innenstadt:
+            Eine gute Website ist für Betriebe hier das digitale Fundament. Ich kenne die Stadt und baue Websites, die Ihre Kunden in Dortmund direkt ansprechen.
+          </p>
+          <p class="mt-5 text-ink-soft">
+            Mit einer professionellen Website zeigen Sie, dass Ihr Dortmunder Unternehmen vertrauenswürdig ist. Ob Industrie, Handel, Dienstleistung oder Handwerk –
+            eine durchdachte Online-Präsenz gehört heute dazu. Mir geht es nicht nur ums Aussehen, sondern darum, dass aus Besuchern Anfragen werden.
+          </p>
+          <CheckList class="mt-8" :items="localPoints" columns />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabelle: Leistungen & Preise -->
+    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+      <div class="wrap">
+        <SectionHead
+          id="prices-title"
+          title="Webdesign & Digital-Lösungen für Dortmund"
+          intro="Websites, lokale SEO, Online-Shops und Wartung für Ihr Dortmunder Business – mit Preisanker vorab und einem Festpreis nach dem kostenlosen Erstgespräch."
+        >
+          <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+        </SectionHead>
+        <ServiceTable class="mt-10" />
+      </div>
+    </section>
+
+    <!-- Taktik: lokale SEO -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="seo-title">
+      <div class="wrap">
+        <SectionHead
+          id="seo-title"
+          title="Lokale SEO für Dortmund – das bedeutet es für Ihr Business"
+          intro="Wer in Dortmund sucht, will meistens jemanden aus Dortmund. Eine lokal optimierte Website sorgt dafür, dass Sie bei diesen Suchen auftauchen."
+        />
+        <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="item in localSeo" :key="item.title" class="border-t-2 border-ink pt-5">
+            <h3 class="t-title">{{ item.title }}</h3>
+            <p class="mt-3 text-ink-soft">{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heimspiele: Referenzen -->
+    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+      <div class="wrap">
+        <SectionHead
+          id="refs-title"
+          title="Websites aus Dortmund und NRW."
+          intro="Zwei der drei Projekte stehen hier in Dortmund – ein Studio und ein Transportunternehmen. Alle Seiten sind online, klicken Sie ruhig rein."
+        >
+          <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+        </SectionHead>
+        <ReferenceShowcase class="mt-12" />
+      </div>
+    </section>
+
+    <!-- Spielplan: Ablauf -->
+    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+      <div class="wrap">
+        <SectionHead
+          id="process-title"
+          title="So läuft Ihr Projekt in Dortmund ab."
+          intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
+        />
+        <ProcessFixture class="mt-10" />
+      </div>
+    </section>
+
+    <CityKeywordLinks city-slug="dortmund" city-name="Dortmund" />
+
+    <KickoffSection
+      source="Webdesign Dortmund – Anpfiff"
+      title="Ihre Website aus Dortmund."
+      text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
+    />
+  </div>
+</template>

@@ -53,10 +53,23 @@ const sitemapDynamicRoutes = dynamicCities.flatMap(city =>
   topKeywords.map(keyword => `/${city}/${keyword}`),
 )
 
+// Fallstudien (siehe app/data/references.ts)
+const referenceRoutes = ['shape-and-flow', '13th-passion', 'holtstraeter-transporte'].map(
+  slug => `/referenzen/${slug}`,
+)
+
+// Setzt das gewählte Farbschema vor dem ersten Paint (kein Aufblitzen).
+const themeBootScript = `try{var t=localStorage.getItem('pw-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   future: { compatibilityVersion: 4 },
+
+  css: [
+    '@fontsource-variable/archivo/wdth.css',
+    '@fontsource-variable/doto/wght.css',
+  ],
 
   modules: [
     '@nuxtjs/tailwindcss',
@@ -74,7 +87,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Prestige Webdesign: Professionelle Webagentur für modernes Webdesign, SEO & E-Commerce im Ruhrgebiet. Jetzt Kontakt aufnehmen!' },
         { name: 'author', content: 'Prestige Webdesign - Robert Schreiner' },
-        { name: 'theme-color', content: '#101113' },
+        { name: 'theme-color', content: '#0d4a32' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Prestige Webdesign' },
         { property: 'og:locale', content: 'de_DE' },
@@ -90,10 +103,12 @@ export default defineNuxtConfig({
         { name: 'geo.placename', content: 'Dortmund' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      ],
+      script: [
+        { key: 'theme-boot', innerHTML: themeBootScript, tagPosition: 'head' },
       ],
     },
   },
@@ -104,7 +119,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    urls: sitemapDynamicRoutes,
+    urls: [...sitemapDynamicRoutes, ...referenceRoutes],
   },
 
   robots: {
@@ -118,6 +133,9 @@ export default defineNuxtConfig({
       // Web3Forms Access Key – zur Build-Zeit via NUXT_PUBLIC_WEB3FORMS_KEY setzen.
       // Solange leer, nutzt das Kontaktformular den mailto-Fallback.
       web3formsKey: '',
+      // Google Analytics 4 – via NUXT_PUBLIC_GA_MEASUREMENT_ID setzen.
+      // Solange leer, wird weder GA geladen noch ein Cookie-Banner gezeigt.
+      gaMeasurementId: '',
     },
   },
 
@@ -132,7 +150,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: allDynamicRoutes,
+      routes: [...allDynamicRoutes, ...referenceRoutes],
     },
   },
 })
