@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T00:00:00Z",
+  "title": "Design System: Prestige Webdesign",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Zeitungspapier", "canonical": "rgb(244 244 239)", "cssVar": "--paper", "dark": "#0f1411", "tonalRamp": ["#262722", "#3d3e38", "#5a5b54", "#7b7c74", "#a0a199", "#c7c8c0", "#e4e4dd", "#f4f4ef"] },
+      "sheet": { "role": "neutral", "displayName": "Bogen", "canonical": "rgb(252 252 249)", "cssVar": "--sheet", "dark": "#171e1a", "tonalRamp": ["#272824", "#3f403b", "#5c5d57", "#7e7f78", "#a3a49d", "#cacac4", "#ebebe6", "#fcfcf9"] },
+      "ink": { "role": "neutral", "displayName": "Druckschwarz", "canonical": "rgb(21 22 20)", "cssVar": "--ink", "dark": "#ecede6", "tonalRamp": ["#151614", "#2a2b28", "#41433e", "#5c5e58", "#7b7d76", "#9fa19a", "#c6c8c1", "#ecede6"] },
+      "ink-soft": { "role": "neutral", "displayName": "Druckgrau", "canonical": "rgb(74 77 71)", "cssVar": "--ink-soft", "dark": "#a9ada4", "tonalRamp": ["#1c1d1a", "#30322e", "#4a4d47", "#656862", "#83867f", "#a9ada4", "#cdd0c8", "#eceee8"] },
+      "rule": { "role": "neutral", "displayName": "Linie", "canonical": "rgb(139 143 134)", "cssVar": "--rule", "dark": "#5f655c", "tonalRamp": ["#22241f", "#383b35", "#51544d", "#6c7068", "#848880", "#abafa6", "#cbcec6", "#e9ebe5"] },
+      "field": { "role": "primary", "displayName": "Rasengrün", "canonical": "rgb(13 74 50)", "cssVar": "--field", "dark": "#123826", "tonalRamp": ["#05211a", "#093624", "#0d4a32", "#1f6a4b", "#3f8c6a", "#6fb090", "#b9d3c3", "#e6f0ea"] },
+      "field-ink": { "role": "on-primary", "displayName": "Papier auf Rasen", "canonical": "rgb(244 244 239)", "cssVar": "--field-ink", "dark": "#ecede6" },
+      "field-soft": { "role": "on-primary-variant", "displayName": "Kreidegrün", "canonical": "rgb(185 211 195)", "cssVar": "--field-soft", "dark": "#b9d3c3" },
+      "signal": { "role": "secondary", "displayName": "Signal-Orange", "canonical": "rgb(255 90 31)", "cssVar": "--signal", "dark": "#ff6a30", "tonalRamp": ["#3d1203", "#6b2107", "#9a310b", "#c9420f", "#ff5a1f", "#ff8559", "#ffb294", "#ffe0d3"] },
+      "signal-ink": { "role": "secondary-text", "displayName": "Signal-Tinte", "canonical": "rgb(179 58 10)", "cssVar": "--signal-ink", "dark": "#ff7a45" },
+      "board": { "role": "surface-special", "displayName": "Anzeigetafel", "canonical": "rgb(21 22 20)", "cssVar": "--board", "dark": "#080a09" },
+      "board-dot": { "role": "on-surface-special", "displayName": "Tafelpunkt", "canonical": "rgb(244 244 239)", "cssVar": "--board-dot", "dark": "#f4f4ef" },
+      "danger": { "role": "error", "displayName": "Foul", "canonical": "rgb(180 35 24)", "cssVar": "--danger", "dark": "#ff8a80" }
+    },
+    "contrastPairs": {
+      "light": { "ink/paper": 16.4, "ink-soft/paper": 7.8, "ink/signal": 5.8, "field-ink/field": 9.3, "field-soft/field": 6.5, "signal-ink/paper": 5.4, "signal/field (display only)": 3.3, "danger/sheet": 6.4 },
+      "flutlicht": { "ink/paper": 15.8, "ink-soft/paper": 8.2, "ink/signal": 6.4, "field-ink/field": 11.0, "signal-ink/sheet": 6.6, "danger/sheet": 7.4 }
+    },
+    "themes": {
+      "light": "default :root",
+      "flutlicht": "@media (prefers-color-scheme: dark) :root:not([data-theme='light']) and :root[data-theme='dark']; swaps RGB channels only",
+      "grainOpacity": { "light": 0.05, "flutlicht": 0.035 }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Plakat", "purpose": "One cover H1 per page; Anpfiff and footer sign-offs.", "className": "t-display" },
+      "headline": { "displayName": "Schlagzeile", "purpose": "Every section H2 via SectionHead.", "className": "t-headline" },
+      "title": { "displayName": "Titel", "purpose": "H3, process step names, status headings.", "className": "t-title" },
+      "lead": { "displayName": "Vorspann", "purpose": "Intro paragraph under display/headline.", "className": "t-lead" },
+      "body": { "displayName": "Fließtext", "purpose": "Reading copy, max 68ch." },
+      "label": { "displayName": "Tabellenkopf", "purpose": "Table heads, dt terms, process timing, footer column headings. Never above a heading.", "className": "t-label" },
+      "board": { "displayName": "Punktmatrix", "purpose": "Scoreboard values and header rubric only.", "className": "t-board" }
+    },
+    "shadows": [
+      { "name": "focus-ring-input", "value": "0 0 0 2px rgb(var(--ink))", "purpose": "Input focus stroke; the only box-shadow. Not elevation." }
+    ],
+    "borders": {
+      "frame": "2px solid rgb(var(--ink))",
+      "rule-heavy": "6px solid rgb(var(--ink)) (border-top)",
+      "hairline": "1px solid rgb(var(--ink) / 0.25)",
+      "perforation": "2px dashed rgb(var(--ink) / 0.4)",
+      "stamp": "3px solid rgb(var(--signal-ink))",
+      "focus-outline": "3px solid rgb(var(--focus)), offset 3px"
+    },
+    "motion": [
+      { "name": "board-switch", "value": "opacity 0.35 -> 1, 360ms steps(4, end)", "purpose": "Header rubric change on scroll; never on first paint." },
+      { "name": "stamp-in", "value": "rotate(-9deg) scale(1.5) blur(2px) -> scale(0.96) -> scale(1), 520ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "'Angefragt' stamp after form submit." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Tailwind ease-out token." },
+      { "name": "duration-color", "value": "150ms", "purpose": "Button, input, chip, link colour changes." },
+      { "name": "duration-nudge", "value": "200ms ease-out", "purpose": "Nav underline scale-in, arrow translate-x 4px, FAQ plus rotate." },
+      { "name": "reduced-motion", "value": "animation/transition-duration 0.01ms !important", "purpose": "prefers-reduced-motion: reduce; smooth scroll only on no-preference." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ],
+    "rubrics": ["Titelseite", "Heimspiele", "Tabelle", "Taktik", "Spielplan", "Vorwort", "Fragen", "Anpfiff", "Abpfiff", "Aufstellung", "Auswärts", "Spielbericht", "Kontakt", "Kleingedrucktes"],
+    "components": [
+      {
+        "name": "button-signal",
+        "description": "The one primary action per view. Press black on signal orange (5.8:1); hover inverts.",
+        "html": "<button class=\"ds-btn ds-btn-signal\">Erstgespräch anfragen</button>",
+        "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 24px; border: 2px solid; border-radius: 0; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 780; letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.9375rem; line-height: 1.15; white-space: nowrap; cursor: pointer; transition: background-color 150ms, color 150ms, border-color 150ms; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 3px solid #151614; outline-offset: 3px; } .ds-btn-signal { background: #ff5a1f; color: #151614; border-color: #151614; } .ds-btn-signal:hover { background: #151614; color: #ff5a1f; border-color: #151614; }"
+      },
+      {
+        "name": "button-ink",
+        "description": "Secondary decisive action. Ink fill that empties on hover.",
+        "html": "<button class=\"ds-btn-ink\">Zur Fallstudie</button>",
+        "css": ".ds-btn-ink { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 24px; border: 2px solid #151614; border-radius: 0; background: #151614; color: #f4f4ef; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 780; letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.9375rem; line-height: 1.15; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-btn-ink:hover { background: transparent; color: #151614; } .ds-btn-ink:focus-visible { outline: 3px solid #151614; outline-offset: 3px; }"
+      },
+      {
+        "name": "button-outline",
+        "description": "Tertiary or equal-weight alternative; current-colour frame, fills ink on hover.",
+        "html": "<button class=\"ds-btn-outline\">Referenzen ansehen</button>",
+        "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 24px; border: 2px solid currentColor; border-radius: 0; background: transparent; color: #151614; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 780; letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.9375rem; line-height: 1.15; cursor: pointer; transition: background-color 150ms, color 150ms, border-color 150ms; } .ds-btn-outline:hover { background: #151614; color: #f4f4ef; border-color: #151614; } .ds-btn-outline:focus-visible { outline: 3px solid #151614; outline-offset: 3px; }"
+      },
+      {
+        "name": "input",
+        "description": "Square sheet field with 2px rule frame; focus adds an ink border and 2px ink ring.",
+        "html": "<label class=\"ds-field-label\" for=\"ds-email\">Ihre E-Mail-Adresse</label><input id=\"ds-email\" class=\"ds-input\" type=\"email\" placeholder=\"name@firma.de\">",
+        "css": ".ds-field-label { display: block; margin-bottom: 8px; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-weight: 700; font-stretch: 90%; color: #151614; } .ds-input { display: block; width: 100%; min-height: 48px; padding: 12px 16px; border: 2px solid #848880; border-radius: 0; background: #fcfcf9; color: #151614; font: inherit; font-size: 1.0625rem; transition: border-color 150ms; } .ds-input::placeholder { color: #4a4d47; opacity: 1; } .ds-input:hover { border-color: #4a4d47; } .ds-input:focus { border-color: #151614; outline: none; box-shadow: 0 0 0 2px #151614; }"
+      },
+      {
+        "name": "chip",
+        "description": "Radio/checkbox as a printed box; checked fills ink.",
+        "html": "<label class=\"ds-chip\"><input type=\"radio\" name=\"t\" checked> Neue Website</label><label class=\"ds-chip\"><input type=\"radio\" name=\"t\"> Online-Shop</label>",
+        "css": ".ds-chip { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px; margin: 0 8px 8px 0; border: 2px solid #151614; border-radius: 0; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 88%; font-weight: 700; font-size: 0.9375rem; color: #151614; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-chip:hover { background: rgb(21 22 20 / 0.06); } .ds-chip:has(input:checked) { background: #151614; color: #f4f4ef; } .ds-chip:has(input:focus-visible) { outline: 3px solid #151614; outline-offset: 3px; }"
+      },
+      {
+        "name": "nav",
+        "description": "Sticky paper header, 2px ink base; uppercase condensed links with a 3px signal underline that scales in; rubric board beside the logo.",
+        "html": "<header class=\"ds-header\"><span class=\"ds-rubric\"><i></i>Tabelle</span><nav><a class=\"ds-nav-link ds-active\" href=\"#\">Leistungen</a><a class=\"ds-nav-link\" href=\"#\">Referenzen</a><a class=\"ds-nav-link\" href=\"#\">Preise</a></nav></header>",
+        "css": ".ds-header { display: flex; align-items: center; gap: 16px; height: 4.25rem; padding: 0 24px; background: #f4f4ef; border-bottom: 2px solid #151614; } .ds-header nav { display: flex; margin-left: auto; } .ds-rubric { display: inline-flex; align-items: center; gap: 10px; height: 36px; min-width: 11.5rem; padding: 0 12px; background: #151614; color: #f4f4ef; font-family: 'Doto Variable', Doto, ui-monospace, monospace; font-weight: 800; letter-spacing: 0.04em; font-size: 0.9375rem; text-transform: uppercase; } .ds-rubric i { width: 8px; height: 8px; border-radius: 50%; background: #ff5a1f; } .ds-nav-link { position: relative; display: flex; align-items: center; min-height: 44px; padding: 0 14px; color: #151614; text-decoration: none; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 720; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.875rem; } .ds-nav-link::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: 6px; height: 3px; background: #ff5a1f; transform: scaleX(0); transform-origin: left; transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-link:hover::after, .ds-nav-link.ds-active::after { transform: scaleX(1); } .ds-nav-link:focus-visible { outline: 3px solid #151614; outline-offset: 3px; }"
+      },
+      {
+        "name": "scoreboard",
+        "description": "Black dl of confirmed figures in Doto dot-matrix; field-soft labels below.",
+        "html": "<dl class=\"ds-board\"><div><dd>10+</dd><dt>Projekte</dt></div><div><dd>24h</dd><dt>Antwortzeit</dt></div></dl>",
+        "css": ".ds-board { display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; background: #151614; color: #f4f4ef; } .ds-board div { display: flex; flex-direction: column; gap: 8px; padding: 16px 20px; } .ds-board div + div { border-left: 1px solid rgb(244 244 239 / 0.2); } .ds-board dd { order: -1; margin: 0; font-family: 'Doto Variable', Doto, ui-monospace, monospace; font-weight: 800; letter-spacing: 0.04em; font-size: 3rem; line-height: 1; } .ds-board dt { font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 88%; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #b9d3c3; }"
+      },
+      {
+        "name": "section-head",
+        "description": "6px ink rule, condensed headline, ink-soft lead. Replaces eyebrow labels.",
+        "html": "<div class=\"ds-section-head\"><h2>So läuft’s ab.</h2><p>Fünf Schritte, keine Überraschungen.</p></div>",
+        "css": ".ds-section-head { border-top: 6px solid #151614; padding-top: 32px; color: #151614; } .ds-section-head h2 { margin: 0; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 72%; font-weight: 820; font-size: 3rem; line-height: 0.98; letter-spacing: -0.012em; text-wrap: balance; } .ds-section-head p { margin: 20px 0 0; max-width: 42rem; font-size: 1.25rem; line-height: 1.625; color: #4a4d47; }"
+      },
+      {
+        "name": "ticket",
+        "description": "Inquiry card: sheet with 2px ink frame, side notches and dashed perforation; overlaps the green cover edge.",
+        "html": "<div class=\"ds-ticket\"><div class=\"ds-ticket-head\"><h3>Erstgespräch<span>Eintritt frei</span></h3></div><div class=\"ds-ticket-tear\"></div><div class=\"ds-ticket-body\"><p class=\"ds-stamp\">Angefragt</p></div></div>",
+        "css": ".ds-ticket { --notch: 14px; --tear: 4.75rem; position: relative; max-width: 26rem; background: #fcfcf9; color: #151614; border: 2px solid #151614; -webkit-mask: radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat; } .ds-ticket-head { height: var(--tear); display: flex; align-items: center; padding: 0 24px; } .ds-ticket-head h3 { margin: 0; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 62%; font-weight: 880; font-size: 1.75rem; line-height: 0.95; text-transform: uppercase; } .ds-ticket-head span { display: block; color: #4a4d47; } .ds-ticket-tear { position: absolute; left: 24px; right: 24px; top: var(--tear); border-top: 2px dashed rgb(21 22 20 / 0.4); } .ds-ticket-body { position: relative; min-height: 8rem; padding: 28px 24px 24px; } .ds-stamp { position: absolute; right: 20px; top: 16px; margin: 0; padding: 4px 12px; border: 3px solid #b33a0a; color: #b33a0a; font-family: 'Archivo Variable', Archivo, system-ui, sans-serif; font-stretch: 62%; font-weight: 880; font-size: 1.25rem; text-transform: uppercase; transform: rotate(-9deg); }"
+      }
+    ],
+    "narrative": {
+      "northStar": "Das Revier-Stadionheft",
+      "overview": "The site is the printed programme for a home match: a green cover page, a league table of prices, a fixture list for the process, the home games as references, a personal foreword, and the kick-off ticket. Newsprint paper with a faint offset grain, press black, one solid field of turf green, and one signal orange reserved for doing something. Archivo at its narrowest width sets poster capitals; Doto dot matrix lives only on the scoreboard. Density is a programme's: heavy 6px rules, real numbers in tabular figures, depth only from overlapping framed layers. It rejects the dark-hero, glass-card, icon-tile agency template it replaced.",
+      "keyCharacteristics": [
+        "Three inks: paper/ink, field green, signal orange",
+        "Square corners, 2px print frames, 6px section rules",
+        "Ultra-condensed uppercase display (wdth 62 %, 860-880)",
+        "Header scoreboard announces the current data-rubric",
+        "Flutlicht dark theme swaps RGB-channel tokens only"
+      ],
+      "rules": [
+        { "name": "The Three-Ink Rule", "body": "Paper/ink, field green, signal orange. No fourth hue, no tints beyond alpha on ink, no gradients.", "section": "colors" },
+        { "name": "The Signal-Means-Act Rule", "body": "Orange marks something you can do. Sole exception: the closing word of the home cover headline at display size.", "section": "colors" },
+        { "name": "The Doto Stays on the Board Rule", "body": "The dot-matrix face appears only inside bg-board (ScoreBoard, header rubric).", "section": "typography" },
+        { "name": "The Tabular Rule", "body": "Tables and .tabular use tabular-nums so prices align like a league table.", "section": "typography" },
+        { "name": "The Scherenschnitt Rule", "body": "To lift something, overlap it and frame it. Never shadow, blur or glow it.", "section": "elevation" }
+      ],
+      "dos": [
+        "Do open every section with SectionHead (6px ink rule + headline) and tag it with data-rubric.",
+        "Do keep targets at least 44px, and 48px for buttons and inputs.",
+        "Do use on-field / on-ink so text and --focus flip together; focus is a 3px solid outline offset 3px.",
+        "Do keep one btn-signal per view and pair alternatives at equal size.",
+        "Do hide icons from assistive tech and pair them with real text; announce new tabs via sr-only.",
+        "Do write in Ich-Form addressing the reader as Sie; state only confirmed facts.",
+        "Do alternate paper and sheet bands; start and end the page on field green."
+      ],
+      "donts": [
+        "Don't put an eyebrow or kicker label above a headline.",
+        "Don't build card grids of icon tiles.",
+        "Don't use gradients, glass, blur, or box-shadow for depth.",
+        "Don't round corners.",
+        "Don't set Doto outside the scoreboard and header rubric.",
+        "Don't use signal orange for anything that is not an action (except the one cover word).",
+        "Don't invent testimonials, client counts, awards or team members; no portrait photo."
+      ]
+    }
+  }
+}

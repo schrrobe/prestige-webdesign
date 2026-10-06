@@ -1,111 +1,84 @@
 <script setup lang="ts">
-const currentYear = new Date().getFullYear()
+import { CONTACT, CITIES, SERVICE_NAV } from '~/data/site'
 
-const footerLinks = {
-  leistungen: [
-    { label: 'Webdesign', to: '/leistungen/webdesign' },
-    { label: 'Webanwendungen', to: '/leistungen/webanwendungen' },
-    { label: 'SEO', to: '/leistungen/seo' },
-    { label: 'E-Commerce', to: '/leistungen/e-commerce' },
-    { label: 'Wartung & Support', to: '/leistungen/wartung' },
-  ],
-  standorte: [
-    { label: 'Webdesign Dortmund', to: '/webdesign-dortmund' },
-    { label: 'Webdesign Bochum', to: '/webdesign-bochum' },
-    { label: 'Webdesign Essen', to: '/webdesign-essen' },
-    { label: 'Webdesign Bottrop', to: '/webdesign-bottrop' },
-    { label: 'Webdesign Unna', to: '/webdesign-unna' },
-  ],
-  rechtliches: [
-    { label: 'Impressum', to: '/impressum' },
-    { label: 'Datenschutz', to: '/datenschutz' },
-  ],
-}
+const currentYear = new Date().getFullYear()
+const { measurementId, reopen } = useConsent()
+
+const pages = [
+  { label: 'Referenzen', to: '/referenzen' },
+  { label: 'Preise', to: '/preise' },
+  { label: 'Über mich', to: '/ueber-mich' },
+  { label: 'Kontakt', to: '/kontakt' },
+]
 </script>
 
 <template>
-  <footer class="bg-dark-950 border-t border-white/5">
-    <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-        <!-- Brand -->
-        <div class="col-span-2 lg:col-span-1">
-          <NuxtLink to="/" class="inline-flex items-center gap-3 mb-6 rounded-lg">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center font-display font-bold text-lg text-white">
-              P
-            </div>
-            <div class="leading-none">
-              <span class="text-lg font-bold text-white tracking-tight">Prestige</span>
-              <span class="text-lg font-light text-primary-300 ml-1">Webdesign</span>
-            </div>
-          </NuxtLink>
-          <p class="text-dark-200 text-sm leading-relaxed mb-6 max-w-xs">
-            Ihre professionelle Webagentur im Ruhrgebiet. Modernes Webdesign, SEO und E-Commerce aus Dortmund.
+  <footer class="on-field" data-rubric="Abpfiff">
+    <div class="wrap pb-10 pt-16 md:pt-20">
+      <div class="grid gap-x-8 gap-y-12 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="t-display text-[3.25rem] sm:text-7xl">Glück auf<br>aus Dortmund.</p>
+          <p class="mt-6 max-w-sm text-field-soft">
+            Webdesign für Betriebe im Ruhrgebiet. Ein Ansprechpartner von der ersten Idee bis zum Launch.
           </p>
-          <address class="not-italic space-y-2 text-sm text-dark-200">
-            <p>Robert Schreiner</p>
-            <p>Kapitelwiese 14, 44263 Dortmund</p>
-            <a href="mailto:info@prestige-webdesign.de" class="inline-flex items-center gap-2 text-primary-300 hover:text-primary-200 transition-colors">
-              <AppIcon name="mail" class="w-4 h-4" />
-              info@prestige-webdesign.de
-            </a>
+          <address class="mt-6 not-italic leading-relaxed">
+            {{ CONTACT.owner }} · {{ CONTACT.company }}<br>
+            {{ CONTACT.street }}, {{ CONTACT.zip }} {{ CONTACT.city }}<br>
+            <a :href="`mailto:${CONTACT.email}`" class="link mt-1 inline-flex min-h-11 items-center font-semibold">{{ CONTACT.email }}</a>
           </address>
         </div>
 
-        <!-- Leistungen -->
-        <div>
-          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Leistungen</h2>
-          <ul class="space-y-3">
-            <li v-for="link in footerLinks.leistungen" :key="link.to">
-              <NuxtLink :to="link.to" class="text-dark-200 hover:text-white text-sm transition-colors duration-200">
-                {{ link.label }}
-              </NuxtLink>
+        <nav class="md:col-span-2" aria-labelledby="footer-services">
+          <h2 id="footer-services" class="t-label mb-3 text-field-soft">Leistungen</h2>
+          <ul>
+            <li v-for="link in SERVICE_NAV" :key="link.to">
+              <NuxtLink :to="link.to" class="footer-link">{{ link.label }}</NuxtLink>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <!-- Standorte -->
-        <div>
-          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Standorte</h2>
-          <ul class="space-y-3">
-            <li v-for="link in footerLinks.standorte" :key="link.to">
-              <NuxtLink :to="link.to" class="text-dark-200 hover:text-white text-sm transition-colors duration-200">
-                {{ link.label }}
-              </NuxtLink>
+        <nav class="md:col-span-2" aria-labelledby="footer-cities">
+          <h2 id="footer-cities" class="t-label mb-3 text-field-soft">Standorte</h2>
+          <ul>
+            <li v-for="city in CITIES" :key="city.to">
+              <NuxtLink :to="city.to" class="footer-link">Webdesign {{ city.name }}</NuxtLink>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <!-- CTA -->
-        <div class="col-span-2 lg:col-span-1">
-          <h2 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Gemeinsam wachsen</h2>
-          <p class="text-dark-200 text-sm mb-6 max-w-xs">
-            Ihre Anfrage ist willkommen – wir antworten meist innerhalb von 24 Stunden.
-          </p>
-          <NuxtLink to="/kontakt" class="btn-primary text-sm !px-6 !py-3">
-            Kontakt aufnehmen
-            <AppIcon name="arrow-right" class="w-4 h-4" />
-          </NuxtLink>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="border-t border-white/5">
-      <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-dark-300 text-xs">
-          &copy; {{ currentYear }} Prestige Webdesign. Alle Rechte vorbehalten.
-        </p>
-        <nav class="flex gap-6" aria-label="Rechtliches">
-          <NuxtLink
-            v-for="link in footerLinks.rechtliches"
-            :key="link.to"
-            :to="link.to"
-            class="text-dark-300 hover:text-white text-xs transition-colors duration-200"
-          >
-            {{ link.label }}
+        <nav class="md:col-span-3" aria-labelledby="footer-pages">
+          <h2 id="footer-pages" class="t-label mb-3 text-field-soft">Mehr</h2>
+          <ul>
+            <li v-for="link in pages" :key="link.to">
+              <NuxtLink :to="link.to" class="footer-link">{{ link.label }}</NuxtLink>
+            </li>
+          </ul>
+          <NuxtLink to="/kontakt" class="btn btn-signal mt-6">
+            Erstgespräch anfragen
+            <AppIcon name="arrow-right" class="h-5 w-5" />
           </NuxtLink>
         </nav>
+      </div>
+
+      <div class="mt-16 flex flex-col gap-8 border-t-2 border-field-ink/40 pt-8 md:flex-row md:items-end md:justify-between">
+        <ThemeSwitch />
+        <div class="flex flex-col gap-3 text-sm md:items-end">
+          <ul class="flex flex-wrap gap-x-6">
+            <li><NuxtLink to="/impressum" class="footer-link">Impressum</NuxtLink></li>
+            <li><NuxtLink to="/datenschutz" class="footer-link">Datenschutz</NuxtLink></li>
+            <li v-if="measurementId">
+              <button type="button" class="footer-link" @click="reopen">Cookie-Einstellungen</button>
+            </li>
+          </ul>
+          <p class="text-field-soft">© {{ currentYear }} {{ CONTACT.company }}</p>
+        </div>
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped>
+.footer-link {
+  @apply inline-flex min-h-11 items-center font-semibold underline decoration-transparent decoration-2 underline-offset-[0.22em] transition-colors duration-150 hover:decoration-signal;
+}
+</style>

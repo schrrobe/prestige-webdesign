@@ -1,28 +1,32 @@
 <script setup lang="ts">
+import { SERVICES } from '~/data/services'
+
+const service = SERVICES.find(s => s.slug === 'e-commerce')!
+
 const faqItems = [
   {
     question: 'WooCommerce oder Shopify – was ist die bessere Wahl?',
-    answer: 'Das hängt von Ihren Anforderungen ab. WooCommerce bietet maximale Flexibilität und ist ideal für komplexe Shops mit besonderen Anforderungen. Shopify ist einfacher zu verwalten und eignet sich hervorragend für einen schnellen Marktstart. Wir beraten Sie kostenlos bei der Wahl der richtigen Plattform.',
+    answer: 'Das hängt von Ihren Anforderungen ab. WooCommerce bietet viel Flexibilität und eignet sich für Shops mit besonderen Anforderungen. Shopify ist einfacher zu verwalten und eignet sich gut für einen schnellen Start. Im kostenlosen Erstgespräch berate ich Sie bei der Wahl der passenden Plattform.',
   },
   {
     question: 'Was kostet ein professioneller Online-Shop?',
-    answer: 'Ein professioneller Online-Shop kostet je nach Umfang zwischen 2.500 und 15.000 €. Entscheidend sind Produktanzahl, individuelle Funktionen, Zahlungsanbieter und Designaufwand. Wir erstellen Ihnen ein transparentes, unverbindliches Angebot.',
+    answer: 'Ein professioneller Online-Shop kostet je nach Umfang zwischen 2.500 und 15.000 €. Entscheidend sind Produktanzahl, individuelle Funktionen, Zahlungsanbieter und Designaufwand. Nach dem Erstgespräch bekommen Sie ein transparentes Angebot zum Festpreis.',
   },
   {
     question: 'Welche Zahlungsanbieter können integriert werden?',
-    answer: 'Wir integrieren alle gängigen Zahlungsanbieter: PayPal, Stripe, Klarna, SOFORT, Kreditkarte und mehr. Die Auswahl richtet sich nach Ihrer Zielgruppe und Ihren Präferenzen.',
+    answer: 'Alle gängigen Zahlungsarten lassen sich einbinden, etwa PayPal, Stripe, Klarna und Kreditkarte. Die Auswahl richtet sich nach Ihrer Zielgruppe und Ihren Wünschen.',
   },
   {
     question: 'Ist der Shop DSGVO-konform?',
-    answer: 'Ja, wir entwickeln alle Shops von Anfang an DSGVO-konform: SSL-Verschlüsselung, korrekte Datenschutzhinweise, Cookie-Consent und PCI-DSS-konforme Zahlungsabwicklung sind selbstverständlich enthalten.',
+    answer: 'Ich baue Ihren Shop von Anfang an datenschutzfreundlich: SSL-Verschlüsselung, Datenschutzhinweise, ein Cookie-Banner mit echter Wahlmöglichkeit und eine Zahlungsabwicklung über zertifizierte Anbieter gehören dazu. Die Rechtstexte selbst sollten Sie von einem Anwalt oder einem spezialisierten Dienst erstellen lassen.',
   },
 ]
 
 useSeoMeta({
   title: 'Online-Shop erstellen lassen – WooCommerce & Shopify | Prestige Webdesign',
-  description: 'E-Commerce Lösungen und Online-Shop Entwicklung mit WooCommerce und Shopify. Professionelle Shop-Entwicklung im Ruhrgebiet mit Payment-Integration und Produktverwaltung.',
+  description: 'E-Commerce Lösungen und Online-Shop Entwicklung mit WooCommerce und Shopify. Shop-Entwicklung im Ruhrgebiet mit Payment-Integration und Produktverwaltung – Festpreis von 2.500 bis 15.000 €.',
   ogTitle: 'E-Commerce Shop Entwicklung | Prestige Webdesign',
-  ogDescription: 'Online-Shop Entwicklung: WooCommerce & Shopify Expertise. Professionelle E-Commerce Lösungen für Ihren Online-Handel.',
+  ogDescription: 'Online-Shop Entwicklung mit WooCommerce & Shopify: E-Commerce Lösungen für Ihren Online-Handel, zum Festpreis.',
 })
 
 useHead({
@@ -30,7 +34,7 @@ useHead({
     {
       key: 'ecommerce-faq-schema',
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqItems.map(item => ({
@@ -46,265 +50,222 @@ useHead({
   ],
 })
 
-const platformFeatures = [
+const platforms = [
   {
-    icon: 'woocommerce',
     title: 'WooCommerce',
-    description: 'Flexible, open-source E-Commerce-Lösung für WordPress mit unbegrenzter Skalierbarkeit und voller Kontrolle über Ihren Shop.',
-    features: ['Unbegrenzte Produkte', 'Volle Anpassbarkeit', 'Niedrige Gebühren', 'Community-Support'],
+    claim: 'Für Flexibilität und volle Kontrolle.',
+    description: 'Die Open-Source-Shoplösung für WordPress: Ihr Shop liegt auf Ihrem eigenen Server, und fast alles lässt sich anpassen.',
+    features: ['Unbegrenzt viele Produkte', 'Volle Anpassbarkeit', 'Niedrige laufende Kosten', 'Große Community'],
   },
   {
-    icon: 'shopify',
     title: 'Shopify',
-    description: 'Moderne Cloud-basierte Plattform mit integrierten Tools, automatischen Updates und weltweiter Reichweite für schnelle Umsätze.',
-    features: ['Einfache Verwaltung', 'Integrierte Tools', 'Hohe Sicherheit', 'Multi-Channel Selling'],
+    claim: 'Für einen schnellen, pflegeleichten Start.',
+    description: 'Die Cloud-Plattform mit eingebauten Werkzeugen und automatischen Updates – Sie kümmern sich ums Verkaufen, nicht um den Server.',
+    features: ['Einfache Verwaltung', 'Integrierte Werkzeuge', 'Hohe Sicherheit', 'Verkauf über mehrere Kanäle'],
   },
 ]
 
 const services = [
   {
-    icon: 'cart',
     title: 'Shop-Design & Setup',
-    description: 'Professionelles Design Ihres Online-Shops mit benutzerfreundlicher Navigation und optimiertem Checkout-Prozess.',
+    description: 'Ein Shop-Design mit übersichtlicher Navigation und einem Checkout, der Käufer ohne Umwege zum Abschluss führt.',
   },
   {
-    icon: 'products',
     title: 'Produktverwaltung',
-    description: 'Intelligente Produktdatenbank mit Kategorien, Varianten, Bestände und automatische Lagerbestandsverwaltung.',
+    description: 'Kategorien, Varianten und Lagerbestände – sauber angelegt, damit Sie Ihr Sortiment später selbst pflegen können.',
   },
   {
-    icon: 'payment',
     title: 'Payment-Integration',
-    description: 'Integration von PayPal, Stripe, Klarna, SOFORT und anderen Zahlungsanbietern für sichere Transaktionen.',
+    description: 'Einbindung von PayPal, Stripe, Klarna und weiteren Zahlungsanbietern für sichere Zahlungen.',
   },
   {
-    icon: 'shipping',
     title: 'Versand & Logistik',
-    description: 'Automatische Versandberechnung, Integration mit Versandanbietern und Tracking-Benachrichtigungen für Kunden.',
+    description: 'Versandkosten, Versandarten und Benachrichtigungen für Ihre Kunden – passend zu Ihren Versanddienstleistern.',
   },
   {
-    icon: 'security',
     title: 'Sicherheit & DSGVO',
-    description: 'SSL-Verschlüsselung, PCI-DSS-Konformität, DSGVO-Compliance und Schutz vor Betrug für maximale Kundensicherheit.',
+    description: 'SSL-Verschlüsselung, Datenschutzhinweise, Cookie-Banner und Zahlungsabwicklung über zertifizierte Anbieter.',
   },
   {
-    icon: 'analytics',
-    title: 'Analytics & Reporting',
-    description: 'Umfassende Verkaufs- und Kundenanalysen mit detaillierten Reports über Ihre Shop-Performance.',
+    title: 'Auswertungen',
+    description: 'Übersichten zu Bestellungen, Umsätzen und beliebten Produkten – direkt im Shop-System.',
   },
 ]
 
 const benefits = [
   {
-    number: '01',
-    title: 'Höhere Konversionsraten',
-    description: 'Optimierter Checkout und intuitive Navigation führen zu mehr Käufen und weniger Warenkörbe-Abbrüchen.',
+    title: 'Mehr abgeschlossene Käufe',
+    description: 'Ein klarer Checkout und eine verständliche Navigation führen zu mehr Käufen und weniger abgebrochenen Warenkörben.',
   },
   {
-    number: '02',
-    title: '24/7 Verkaufskanal',
-    description: 'Ihr Online-Shop arbeitet rund um die Uhr, selbst wenn Sie schlafen – kontinuierliche Umsatzgenerierung.',
+    title: 'Verkaufen rund um die Uhr',
+    description: 'Ihr Online-Shop nimmt Bestellungen auch dann an, wenn Ihr Laden geschlossen ist.',
   },
   {
-    number: '03',
     title: 'Kundenbeziehungen stärken',
-    description: 'E-Mails, Newsletter und Kundenloyalitätsprogramme für wiederholte Käufe und bessere Kundenbindung.',
+    description: 'E-Mails, Newsletter und Treueaktionen bringen Kunden zurück und sorgen für wiederholte Käufe.',
   },
   {
-    number: '04',
-    title: 'Skalierbarkeit',
-    description: 'Einfach wachsen: Von wenigen bis zu tausenden Produkten – Ihr Shop wächst mit Ihrem Business.',
+    title: 'Wächst mit Ihnen',
+    description: 'Von wenigen bis zu tausenden Produkten – Ihr Shop wächst mit Ihrem Geschäft.',
   },
   {
-    number: '05',
-    title: 'Datengesteuerte Entscheidungen',
-    description: 'Detaillierte Analysen zeigen Ihnen, wie Kunden kaufen und wo es noch Optimierungspotential gibt.',
+    title: 'Entscheidungen mit Zahlen',
+    description: 'Auswertungen zeigen, wie Ihre Kunden kaufen und wo es noch hakt.',
   },
   {
-    number: '06',
-    title: 'Kosteneffizienz',
-    description: 'Reduzierte Verwaltungskosten durch Automatisierung und effiziente Lagerbestandsverwaltung.',
+    title: 'Weniger Verwaltungsaufwand',
+    description: 'Automatische Abläufe für Bestellungen, Rechnungen und Bestände sparen Zeit im Alltag.',
   },
+]
+
+const successFactors = [
+  { title: 'Reibungsloser Checkout', text: 'Jeder zusätzliche Schritt kostet Käufe. Ich reduziere den Kaufprozess auf das Nötigste – mit klaren Zahlungswegen und Vertrauenssignalen.' },
+  { title: 'Schnelle Ladezeiten', text: 'Jede zusätzliche Sekunde Ladezeit erhöht die Zahl der Kaufabbrüche. Geschwindigkeit ist bei mir kein Nachgedanke, sondern Teil des Fundaments.' },
+  { title: 'Mobile zuerst', text: 'Ein Großteil der Shop-Besuche kommt vom Smartphone. Ihr Shop muss dort genauso überzeugen wie am Desktop.' },
+  { title: 'Auffindbarkeit', text: 'Produkte und Kategorien werden von Anfang an suchmaschinenfreundlich aufgebaut, damit Sie auch über Google gefunden werden.' },
 ]
 </script>
 
 <template>
   <div>
-    <PageHero
-      badge="E-Commerce Leistung"
-      title="Professionelle"
-      highlight="E-Commerce Lösungen"
-      subtitle="Verkaufen Sie online mit einem professionellen Shop, der nicht nur gut aussieht, sondern auch nachweislich mehr Umsätze generiert. Mit WooCommerce oder Shopify – wir finden die perfekte Lösung für Sie."
+    <PageCover
+      title="Online-Shop erstellen lassen."
+      lead="E-Commerce Lösungen mit WooCommerce oder Shopify für Händler und Betriebe im Ruhrgebiet: ein Shop, der auf dem Smartphone verkauft – mit Produkten, Zahlung, Versand und sauberen Abläufen."
     >
-      <NuxtLink to="/kontakt" class="btn-primary text-base">Kostenlose Beratung <AppIcon name="arrow-right" class="w-5 h-5" /></NuxtLink>
-      <NuxtLink to="/leistungen" class="btn-secondary text-base">Alle Leistungen</NuxtLink>
-    </PageHero>
+      <a href="#anpfiff" class="btn btn-signal">Shop-Erstgespräch anfragen</a>
+      <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
-    <!-- Platform Comparison Section -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          label="Plattformen"
-          title="WooCommerce oder"
-          highlight="Shopify?"
-          subtitle="Beide Plattformen haben Vorteile. Wir helfen Ihnen, die beste Lösung für Ihre Anforderungen zu wählen und perfekt umzusetzen."
-          class="mb-16"
+      <template #aside>
+        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+          <p class="mt-2 text-[2.5rem] uppercase leading-none sm:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
+          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+            Produktanzahl, Funktionen und Zahlungsanbieter bestimmen den Preis. Nach dem kostenlosen Erstgespräch steht er fest.
+          </p>
+        </div>
+      </template>
+    </PageCover>
+
+    <!-- Taktik: Plattformwahl -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="platforms-title">
+      <div class="wrap">
+        <SectionHead
+          id="platforms-title"
+          title="WooCommerce oder Shopify?"
+          intro="Beide Plattformen haben ihre Stärken. Ich helfe Ihnen, die passende für Ihre Anforderungen zu wählen – und setze sie sauber um."
+          :rule="false"
         />
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="mt-12 grid border-2 border-ink md:grid-cols-2">
           <div
-            v-for="platform in platformFeatures"
+            v-for="(platform, i) in platforms"
             :key="platform.title"
-            class="glass-card p-8"
+            class="p-6 md:p-10"
+            :class="i > 0 ? 'border-t-2 border-ink md:border-l-2 md:border-t-0' : ''"
           >
-            <IconBadge :icon="platform.icon" tone="orange" size="lg" class="mb-6" />
-
-            <h3 class="text-xl font-semibold text-white mb-3">
-              {{ platform.title }}
-            </h3>
-            <p class="text-dark-200 mb-6 leading-relaxed">
-              {{ platform.description }}
-            </p>
-
-            <div class="space-y-3">
-              <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Hauptmerkmale</h4>
-              <ul class="space-y-2">
-                <li
-                  v-for="feature in platform.features"
-                  :key="feature"
-                  class="flex items-start gap-3"
-                >
-                  <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" />
-                  <span class="text-dark-200">{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
+            <h3 class="text-4xl uppercase leading-none md:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ platform.title }}</h3>
+            <p class="t-title mt-3 text-ink-soft">{{ platform.claim }}</p>
+            <p class="mt-5 max-w-text">{{ platform.description }}</p>
+            <CheckList class="mt-6 border-t border-ink/25 pt-6" :items="platform.features" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          label="Service-Portfolio"
-          title="Unser E-Commerce"
-          highlight="Service-Portfolio"
-          subtitle="Von der Shop-Entwicklung bis zur Optimierung – wir kümmern uns um alles, damit Ihr Online-Shop erfolgreich ist."
-          class="mb-16"
+    <!-- Aufstellung: Leistungsumfang -->
+    <section class="section bg-sheet" data-rubric="Aufstellung" aria-labelledby="portfolio-title">
+      <div class="wrap">
+        <SectionHead
+          id="portfolio-title"
+          title="Mein E-Commerce-Leistungsumfang"
+          intro="Von der Shop-Entwicklung bis zum ersten Verkauf: Ich kümmere mich um die Technik, damit Sie sich um Ihre Kunden kümmern können."
         />
+        <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <li v-for="item in services" :key="item.title" class="border-t-2 border-ink pt-5">
+            <h3 class="t-title">{{ item.title }}</h3>
+            <p class="mt-3 text-ink-soft">{{ item.description }}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="service in services"
-            :key="service.title"
-            class="glass-card-hover p-8 group"
-          >
-            <IconBadge :icon="service.icon" tone="orange" size="lg" class="mb-6 group-hover:scale-105" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              {{ service.title }}
-            </h3>
-            <p class="text-dark-200 leading-relaxed">
-              {{ service.description }}
-            </p>
+    <!-- Taktik: Vorteile -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="benefits-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="benefits-title" class="t-headline">Warum ein professioneller Online-Shop?</h2>
+          <p class="t-lead mt-5 max-w-text text-ink-soft">
+            Ein gut gebauter Online-Shop ist eine der lohnendsten Investitionen, wenn Sie über Ihren Laden oder Ihre Region hinaus verkaufen wollen.
+          </p>
+        </div>
+        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-ink/25 py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
+            <dt class="t-title">{{ benefit.title }}</dt>
+            <dd class="max-w-text text-ink-soft">{{ benefit.description }}</dd>
           </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Aufstellung: Erfolgsfaktoren -->
+    <section class="section on-ink" data-rubric="Aufstellung" aria-labelledby="factors-title">
+      <div class="wrap">
+        <h2 id="factors-title" class="t-headline max-w-3xl">Was einen erfolgreichen Online-Shop ausmacht</h2>
+        <p class="t-lead mt-5 max-w-2xl text-paper/75">
+          Ein Shop verkauft nicht durch Zufall. Diese vier Dinge entscheiden, ob aus Besuchern Käufer werden.
+        </p>
+        <ul class="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+          <li v-for="factor in successFactors" :key="factor.title" class="border-t-2 border-paper pt-5">
+            <h3 class="t-title">{{ factor.title }}</h3>
+            <p class="mt-3 max-w-text text-paper/75">{{ factor.text }}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Heimspiele: Verweis auf Referenzen -->
+    <section class="section-tight border-b-2 border-ink" data-rubric="Heimspiele" aria-labelledby="refs-title">
+      <div class="wrap grid gap-6 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-8">
+          <h2 id="refs-title" class="t-title">Sehen Sie sich an, wie ich arbeite.</h2>
+          <p class="mt-2 max-w-text text-ink-soft">
+            Websites, die ich gestaltet und umgesetzt habe – mit WordPress und individuell entwickelt – finden Sie bei den Referenzen.
+          </p>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <NuxtLink to="/referenzen" class="link inline-flex min-h-11 items-center gap-2 font-bold">
+            Referenzen ansehen
+            <AppIcon name="arrow-right" class="h-5 w-5" />
+          </NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          label="Vorteile"
-          title="Warum ein"
-          highlight="professioneller Online-Shop"
-          subtitle="Ein gut entwickelter Online-Shop ist eine der besten Investitionen für stabiles, skalierungsfähiges Geschäftswachstum."
-          class="mb-16"
+    <!-- Spielplan: Ablauf -->
+    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+      <div class="wrap">
+        <SectionHead
+          id="process-title"
+          title="So entsteht Ihr Online-Shop."
+          intro="Vom Erstgespräch bis zur ersten Bestellung – mit festem Preis und Zwischenständen, die Sie selbst ausprobieren können."
         />
+        <ProcessFixture class="mt-10" :show-duration="false" />
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="benefit in benefits"
-            :key="benefit.number"
-            class="glass-card-hover p-8 group"
-          >
-            <div class="text-primary-300 text-5xl font-display font-bold mb-4">
-              {{ benefit.number }}
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">
-              {{ benefit.title }}
-            </h3>
-            <p class="text-dark-200 leading-relaxed">
-              {{ benefit.description }}
-            </p>
-          </div>
+    <!-- Fragen -->
+    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+      <div class="wrap grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <h2 id="faq-title" class="t-headline">Häufige Fragen zu E-Commerce</h2>
         </div>
+        <FaqList class="lg:col-span-8" :items="faqItems" />
       </div>
     </section>
 
-    <!-- Trust Stats -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <StatsRow bordered />
-      </div>
-    </section>
-
-    <!-- Was einen erfolgreichen Shop ausmacht -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          label="Erfolgsfaktoren"
-          title="Was einen erfolgreichen"
-          highlight="Online-Shop ausmacht"
-          subtitle="Ein Shop verkauft nicht durch Zufall. Diese Faktoren entscheiden darüber, ob aus Besuchern Käufer werden."
-          class="mb-12"
-        />
-
-        <div class="max-w-4xl mx-auto grid gap-4">
-          <div class="glass-card p-6 flex gap-4">
-            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-            <p class="text-dark-200 leading-relaxed">
-              <span class="text-white font-semibold">Reibungsloser Checkout:</span> Jeder zusätzliche Schritt kostet Conversions. Wir reduzieren den Kaufprozess auf das Nötigste – mit klaren Zahlungswegen und Trust-Signalen.
-            </p>
-          </div>
-          <div class="glass-card p-6 flex gap-4">
-            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-            <p class="text-dark-200 leading-relaxed">
-              <span class="text-white font-semibold">Schnelle Ladezeiten:</span> Studien zeigen, dass jede zusätzliche Sekunde Ladezeit die Kaufabbrüche erhöht. Performance ist bei uns kein Nachgedanke, sondern Teil des Fundaments.
-            </p>
-          </div>
-          <div class="glass-card p-6 flex gap-4">
-            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-            <p class="text-dark-200 leading-relaxed">
-              <span class="text-white font-semibold">Mobile-First:</span> Der Großteil der Shop-Besuche erfolgt mobil. Ihr Shop muss auf dem Smartphone genauso überzeugen wie am Desktop.
-            </p>
-          </div>
-          <div class="glass-card p-6 flex gap-4">
-            <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-            <p class="text-dark-200 leading-relaxed">
-              <span class="text-white font-semibold">Auffindbarkeit:</span> Produkte und Kategorien werden von Anfang an suchmaschinenfreundlich strukturiert, damit Sie auch über Google gefunden werden.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader title="Häufige Fragen zu" highlight="E-Commerce" class="mb-12" />
-        <FaqAccordion :items="faqItems" />
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <CTASection
-      title="Lassen Sie uns Ihren Online-Shop entwickeln"
-      subtitle="Mit unserem E-Commerce Expertise und bewährten Prozess bauen wir einen Shop, der Ihre Umsätze steigert. Vereinbaren Sie ein unverbindliches Beratungsgespräch."
-      buttonText="Shop-Beratung buchen"
-      buttonLink="/kontakt"
+    <KickoffSection
+      source="Leistungen E-Commerce – Anpfiff"
+      title="Lassen Sie uns über Ihren Shop sprechen."
+      text="Erzählen Sie mir, was Sie verkaufen und an wen. Im kostenlosen Erstgespräch klären wir Plattform und Umfang – danach bekommen Sie ein Angebot zum Festpreis."
     />
   </div>
 </template>

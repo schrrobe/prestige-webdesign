@@ -1,28 +1,32 @@
 <script setup lang="ts">
+import { SERVICES } from '~/data/services'
+
+const service = SERVICES.find(s => s.slug === 'webdesign')!
+
 const faqItems = [
   {
     question: 'Was kostet eine professionelle Website?',
-    answer: 'Die Kosten für eine professionelle Website variieren je nach Umfang, Design und Funktionen. Einfache Unternehmenswebsites starten ab etwa 1.500 €, umfangreichere Projekte mit individuellen Funktionen kosten entsprechend mehr. Wir erstellen Ihnen gerne ein unverbindliches Angebot.',
+    answer: 'Das hängt von Umfang, Design und Funktionen ab. Eine Unternehmenswebsite beginnt bei 800 €, umfangreichere Projekte mit individuellen Funktionen kosten entsprechend mehr. Nach dem kostenlosen Erstgespräch bekommen Sie ein unverbindliches Angebot zum Festpreis.',
   },
   {
     question: 'Wie lange dauert die Entwicklung einer Website?',
-    answer: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig, abhängig von Umfang und Feedbackzeiten. Wir arbeiten in einem klar strukturierten Prozess und halten Sie in jedem Schritt auf dem Laufenden.',
+    answer: 'Eine typische Unternehmenswebsite ist in 2 bis 6 Wochen fertig, abhängig von Umfang und Feedbackzeiten. Ich arbeite in einem klar strukturierten Ablauf und halte Sie bei jedem Schritt auf dem Laufenden.',
   },
   {
     question: 'Was ist responsives Webdesign?',
-    answer: 'Responsives Webdesign bedeutet, dass Ihre Website auf allen Geräten – Desktop, Tablet und Smartphone – perfekt aussieht und funktioniert. Da mehr als 60 % der Nutzer mobil surfen, ist responsives Design heute ein absolutes Muss.',
+    answer: 'Responsives Webdesign bedeutet, dass Ihre Website auf allen Geräten – Desktop, Tablet und Smartphone – gut aussieht und funktioniert. Weil heute ein Großteil der Besucher mit dem Handy kommt, ist responsives Design keine Kür, sondern Pflicht.',
   },
   {
     question: 'Kümmern Sie sich auch um Texte und Inhalte?',
-    answer: 'Ja, auf Wunsch übernehmen wir die Erstellung von SEO-optimierten Texten, die Ihre Zielgruppe ansprechen und gleichzeitig bei Google gut ranken. Alternativ können Sie eigene Inhalte liefern, die wir dann einpflegen.',
+    answer: 'Ja, auf Wunsch schreibe ich suchmaschinenfreundliche Texte, die Ihre Kunden ansprechen und für Google klar verständlich sind. Alternativ liefern Sie eigene Inhalte, und ich pflege sie ein.',
   },
 ]
 
 useSeoMeta({
   title: 'Webdesign zum Festpreis – responsive Websites für Unternehmen | Prestige Webdesign',
-  description: 'Professionelles Webdesign: responsive, SEO-optimiert und conversion-stark. Websites ab 1.500 € zum Festpreis – jetzt kostenlose Beratung sichern.',
+  description: 'Professionelles Webdesign: responsive, SEO-optimiert und auf Anfragen ausgelegt. Websites ab 800 € zum Festpreis – jetzt kostenloses Erstgespräch sichern.',
   ogTitle: 'Webdesign Agentur | Prestige Webdesign',
-  ogDescription: 'Professionelles Webdesign: Responsive Websites mit modernem Design und hoher Benutzerfreundlichkeit aus Dortmund.',
+  ogDescription: 'Professionelles Webdesign aus Dortmund: responsive Websites mit klarem Design und hoher Benutzerfreundlichkeit – zum Festpreis ab 800 €.',
 })
 
 useHead({
@@ -30,7 +34,7 @@ useHead({
     {
       key: 'webdesign-faq-schema',
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqItems.map(item => ({
@@ -46,176 +50,139 @@ useHead({
   ],
 })
 
-const processSteps = [
-  {
-    number: '01',
-    title: 'Analyse & Strategie',
-    description: 'Wir analysieren Ihre Zielgruppe, Ihre Konkurrenz und Ihre Geschäftsziele, um eine solide Grundlage für das Design zu schaffen.',
-  },
-  {
-    number: '02',
-    title: 'Design & Konzept',
-    description: 'Unser Designteam erstellt beeindruckende Wireframes und hochwertige Mockups, abgestimmt auf Ihre Marke und Ziele.',
-  },
-  {
-    number: '03',
-    title: 'Entwicklung & Testing',
-    description: 'Wir entwickeln Ihre Website mit modernen Technologien und testen umfassend auf Funktionalität, Sicherheit und Performance.',
-  },
-  {
-    number: '04',
-    title: 'Launch & Support',
-    description: 'Nach dem Launch bieten wir kontinuierliche Unterstützung, Updates und Optimierungen für langfristigen Erfolg.',
-  },
-]
-
 const features = [
   {
-    icon: 'responsive',
     title: 'Responsive Design',
-    description: 'Ihre Website funktioniert perfekt auf Desktop, Tablet und Smartphone – ein konsistentes Nutzererlebnis auf allen Geräten.',
+    description: 'Ihre Website funktioniert auf Desktop, Tablet und Smartphone gleich gut – ein stimmiges Erlebnis auf jedem Gerät.',
   },
   {
-    icon: 'speed',
-    title: 'Blitzschnelle Performance',
-    description: 'Optimierte Ladezeiten durch modernes Code, Bildkompression und Best Practices für schnellere Seiten und bessere SEO.',
+    title: 'Schnelle Ladezeiten',
+    description: 'Schlanker Code, komprimierte Bilder und saubere Technik sorgen für kurze Ladezeiten – gut für Besucher und für Google.',
   },
   {
-    icon: 'ux',
-    title: 'Nutzerfreundliche UX',
-    description: 'Intuitive Navigation und angenehme Bedienung führen Ihre Besucher zielgerichtet zu Ihren Leistungen und Produkten.',
+    title: 'Nutzerfreundliche Bedienung',
+    description: 'Eine klare Navigation führt Ihre Besucher ohne Umwege zu Ihren Leistungen, Preisen und zum Kontakt.',
   },
   {
-    icon: 'conversion',
-    title: 'Conversion-optimiert',
-    description: 'Jedes Element ist darauf ausgerichtet, Besucher in Kunden zu verwandeln – mit klaren Calls-to-Action und überzeugenden Inhalten.',
+    title: 'Auf Anfragen ausgelegt',
+    description: 'Jede Seite hat ein Ziel: aus Besuchern Kunden machen – mit klaren Handlungsaufforderungen und überzeugenden Inhalten.',
   },
   {
-    icon: 'seo',
     title: 'SEO-freundlich',
-    description: 'Technisch optimiert für Suchmaschinen mit sauberer Struktur, schnellen Ladezeiten und mobiler Optimierung.',
+    description: 'Technisch sauber für Suchmaschinen aufgebaut: klare Struktur, sprechende Überschriften, schnelle und mobile Seiten.',
   },
   {
-    icon: 'modern',
-    title: 'Moderne Technologie',
-    description: 'Wir nutzen zukunftssichere Technologien wie Vue, Nuxt und Tailwind CSS für robuste und wartbare Websites.',
+    title: 'Barrierefrei nach WCAG 2.2 AA',
+    description: 'Gute Kontraste, Tastaturbedienung und Formulare, die Screenreader verstehen – seit dem Barrierefreiheitsstärkungsgesetz für viele Betriebe Pflicht.',
   },
 ]
 
 const reasons = [
-  { title: 'Individuelle Lösungen', description: 'Jede Website wird speziell für Ihre Anforderungen entwickelt – keine Standardlösungen.' },
-  { title: 'Langfristige Partnerschaft', description: 'Wir unterstützen Sie auch nach dem Launch mit Wartung und kontinuierlicher Optimierung.' },
-  { title: 'Messbare Ergebnisse', description: 'Wir setzen auf datengesteuerte Strategien, um Ihre Website zu einem echten Business-Tool zu machen.' },
-  { title: 'Lokale Expertise', description: 'Als Agentur aus Dortmund kennen wir die regionalen Märkte und Besonderheiten.' },
+  { title: 'Individuelle Lösungen', description: 'Jede Website entsteht für Ihren Betrieb – mit WordPress zum Selbstpflegen oder individuell entwickelt, wenn Tempo und Eigenständigkeit zählen.' },
+  { title: 'Ein Ansprechpartner', description: 'Beratung, Design und Entwicklung liegen bei mir. Nichts geht in der Weitergabe verloren, und Sie wissen immer, wen Sie fragen.' },
+  { title: 'Betreuung nach dem Launch', description: 'Auf Wunsch kümmere ich mich auch danach um Updates, Backups und Verbesserungen – mit einem Wartungspaket ab 79 € im Monat.' },
+  { title: 'Lokal im Ruhrgebiet', description: 'Als Webdesigner aus Dortmund kenne ich die Betriebe und Märkte im Revier – von Bochum bis Unna.' },
 ]
 </script>
 
 <template>
   <div>
-    <PageHero
-      badge="Webdesign"
-      title="Professionelles"
-      highlight="Webdesign"
-      subtitle="Moderne, responsive Websites, die nicht nur beeindrucken, sondern messbare Ergebnisse liefern. Anspruchsvolles Design trifft intelligente Technologie."
+    <PageCover
+      title="Professionelles Webdesign zum Festpreis."
+      lead="Responsive Websites für Unternehmen im Ruhrgebiet, die erklären, was Sie tun, und Anfragen bringen. Klares Design, saubere Technik – mit WordPress zum Selbstpflegen oder individuell entwickelt."
     >
-      <NuxtLink to="/kontakt" class="btn-primary text-base">
-        Kostenlose Beratung
-        <AppIcon name="arrow-right" class="w-5 h-5" />
-      </NuxtLink>
-      <NuxtLink to="/leistungen" class="btn-secondary text-base">
-        Alle Leistungen
-      </NuxtLink>
-    </PageHero>
+      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
-    <!-- Features -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Das macht unser Webdesign"
-          highlight="besonders"
-          subtitle="Jede Website wird individuell entwickelt – mit modernem Design, hoher Benutzerfreundlichkeit und besten SEO-Praktiken."
-          class="mb-16"
-        />
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="feature in features" :key="feature.title" class="glass-card-hover p-8 group">
-            <IconBadge :icon="feature.icon" tone="primary" size="lg" class="mb-6 group-hover:scale-105" />
-            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-gradient transition-all duration-300">
-              {{ feature.title }}
-            </h3>
-            <p class="text-dark-200 leading-relaxed">{{ feature.description }}</p>
-          </div>
+      <template #aside>
+        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+          <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
+          <p class="mt-1 font-semibold">{{ service.priceNote }}</p>
+          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+            Für eine Unternehmenswebsite. Den genauen Preis bekommen Sie nach dem kostenlosen Erstgespräch schriftlich – was dort steht, zahlen Sie.
+          </p>
         </div>
-      </div>
-    </section>
+      </template>
+    </PageCover>
 
-    <!-- Process -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Unser"
-          highlight="Designprozess"
-          subtitle="Von der ersten Idee bis zum Launch – strukturiert, transparent und in enger Abstimmung mit Ihnen."
-          class="mb-16"
+    <!-- Aufstellung: was drinsteckt -->
+    <section class="section" data-rubric="Aufstellung" aria-labelledby="features-title">
+      <div class="wrap">
+        <SectionHead
+          id="features-title"
+          title="Das steckt in Ihrem Webdesign."
+          intro="Jede Website wird für Ihren Betrieb gebaut – mit klarem Design, hoher Benutzerfreundlichkeit und sauberer Technik, die Google versteht."
+          :rule="false"
         />
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="step in processSteps" :key="step.number" class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">{{ step.number }}</div>
-            <h3 class="text-lg font-semibold text-white mb-3">{{ step.title }}</h3>
-            <p class="text-dark-300 text-sm leading-relaxed">{{ step.description }}</p>
-          </div>
-        </div>
+        <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <li v-for="feature in features" :key="feature.title" class="border-t-2 border-ink pt-5">
+            <h3 class="t-title">{{ feature.title }}</h3>
+            <p class="mt-3 max-w-text text-ink-soft">{{ feature.description }}</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-6">
-              Warum <span class="text-gradient">Prestige Webdesign</span> wählen?
-            </h2>
-            <p class="text-lg text-dark-200 mb-8 leading-relaxed">
-              Wir unterstützen Unternehmen im Ruhrgebiet bei ihrer digitalen Präsenz – persönlich betreut, mit Design und Entwicklung aus einer Hand. So bringen wir Ihre Vision ohne Reibungsverluste in die Realität.
-            </p>
-            <ul class="space-y-5">
-              <li v-for="reason in reasons" :key="reason.title" class="flex gap-4">
-                <AppIcon name="check-circle" class="w-6 h-6 text-primary-300 shrink-0 mt-0.5" />
-                <div>
-                  <h3 class="text-base font-semibold text-white">{{ reason.title }}</h3>
-                  <p class="text-dark-300 text-sm mt-1">{{ reason.description }}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="glass-card p-8 md:p-10">
-            <p class="text-dark-200 leading-relaxed mb-8">
-              Mit einem bewährten Prozess und moderner Technologie liefern wir Websites, die optisch überzeugen und echte Geschäftsergebnisse erzielen.
-            </p>
-            <StatsRow bordered />
-          </div>
+    <!-- Taktik: warum Prestige Webdesign -->
+    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="why-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="why-title" class="t-headline">Warum Prestige Webdesign?</h2>
+          <p class="t-lead mt-5 max-w-text text-ink-soft">
+            Ich unterstütze Betriebe im Ruhrgebiet bei ihrem Auftritt im Netz – persönlich betreut, mit Design und Entwicklung aus einer Hand.
+          </p>
+          <ScoreBoard class="mt-10" />
         </div>
+        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="reason in reasons" :key="reason.title" class="grid gap-2 border-b border-ink/25 py-6 sm:grid-cols-[13rem_1fr] sm:gap-6">
+            <dt class="t-title">{{ reason.title }}</dt>
+            <dd class="max-w-text text-ink-soft">{{ reason.description }}</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <SectionHeader
-          title="Häufige Fragen zum"
-          highlight="Webdesign"
-          class="mb-12"
+    <!-- Heimspiele: Referenzen -->
+    <section class="section" data-rubric="Heimspiele" aria-labelledby="refs-title">
+      <div class="wrap">
+        <SectionHead
+          id="refs-title"
+          title="Webdesign, das schon online ist."
+          intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – drei Websites, die ich gestaltet und umgesetzt habe. Klicken Sie ruhig rein."
+          :rule="false"
+        >
+          <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+        </SectionHead>
+        <ReferenceShowcase class="mt-12" />
+      </div>
+    </section>
+
+    <!-- Spielplan: Ablauf -->
+    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+      <div class="wrap">
+        <SectionHead
+          id="process-title"
+          title="So läuft Ihr Webdesign-Projekt ab."
+          intro="Von der ersten Idee bis zum Launch – strukturiert, transparent und in enger Abstimmung mit Ihnen."
         />
-        <FaqAccordion :items="faqItems" />
+        <ProcessFixture class="mt-10" />
       </div>
     </section>
 
-    <CTASection
+    <!-- Fragen -->
+    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+      <div class="wrap grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <h2 id="faq-title" class="t-headline">Häufige Fragen zum Webdesign</h2>
+        </div>
+        <FaqList class="lg:col-span-8" :items="faqItems" />
+      </div>
+    </section>
+
+    <KickoffSection
+      source="Leistungen Webdesign – Anpfiff"
       title="Bereit für Ihre neue Website?"
-      subtitle="Lassen Sie uns ein unverbindliches Gespräch führen. Wir zeigen Ihnen, wie eine professionelle Website Ihr Business voranbringt."
-      buttonText="Termin vereinbaren"
-      buttonLink="/kontakt"
+      text="Lassen Sie uns unverbindlich sprechen. Ich zeige Ihnen, wie eine durchdachte Website Ihrem Betrieb Anfragen bringt – und Sie bekommen danach ein Angebot zum Festpreis."
     />
   </div>
 </template>

@@ -1,192 +1,127 @@
-<template>
-  <div>
-    <!-- Hero Section -->
-    <PageHero
-      badge="Webdesign Bochum"
-      title="Webdesign"
-      highlight="Bochum"
-      :subtitle="'Professionelle Webseiten und digitale Strategien für Bochumer Unternehmen. Prestige Webdesign schafft moderne Online-Lösungen, die Ihr Business in der aufstrebenden Stadt an der Ruhr erfolgreich macht.'"
-    >
-      <p class="mt-6 text-dark-200 max-w-2xl leading-relaxed">
-        Von Hightech-Startups über etablierte Industrie bis zu mittelständischen Dienstleistern: Wir kennen die Chancen und Anforderungen Bochums und entwickeln Websites, die wirklich funktionieren.
-      </p>
-      <NuxtLink to="/kontakt" class="btn-primary text-base">
-        Kostenlose Beratung vereinbaren
-        <AppIcon name="arrow-right" class="w-5 h-5" />
-      </NuxtLink>
-    </PageHero>
-
-    <!-- Why Bochum Web Design Matters -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Webdesign <span class="text-gradient">Bochum</span>: Digital durchstarten in der Wissensstadt
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Bochum ist Zentrum von Innovation, Bildung und Kultur – von der renommierten Ruhr-Universität über das Bermudadreieck als Szene-Viertel bis zum weltbekannten Starlight Express. Diese Dynamik erfordert digitale Partner, die verstehen, was Bochum bewegt. Unsere lokale Webdesign-Expertise verbindet kreatives Design mit strategischem Thinking für Ihren nachhaltigen Erfolg.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Websites, die Bochums Innovationsgeist widerspiegeln</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>SEO für lokale Suchanfragen in Bochum</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Performance-optimiert für alle Geräte</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-dark-200 mb-4 leading-relaxed">
-              Die Bochumer Wirtschaft ist vielfältig und ambitioniert. Ob Einzelhandel in der Innenstadt, Tech-Startups oder spezialisierte Dienstleister – jedes Geschäf braucht eine digitale Präsenz, die seine Einzigartigkeit zeigt und Kunden konvertiert. Wir erstellen Websites, die nicht nur schön anzuschauen sind, sondern auch messbare Geschäftsergebnisse liefern und Ihre lokale Marktposition stärken.
-            </p>
-            <ul class="space-y-3 text-dark-200">
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Conversion-orientierte Designs</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Intuitive Benutzerführung</span>
-              </li>
-              <li class="flex items-start">
-                <AppIcon name="check-circle" class="w-5 h-5 text-primary-300 shrink-0 mt-0.5" />
-                <span>Kontinuierliche Optimierung & Support</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Webdesign & Digital-Services für <span class="text-gradient">Bochum</span>
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Service 1: Website Design -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="code" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Website Design & Entwicklung
-            </h3>
-            <p class="text-dark-300">
-              Individuelle Websites für Bochumer Unternehmen: modern, responsiv, benutzerfreundlich. Jedes Projekt ist einzigartig – genauso wie Ihr Business.
-            </p>
-          </div>
-
-          <!-- Service 2: SEO & Digital Marketing -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="seo" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              SEO & Digital Marketing
-            </h3>
-            <p class="text-dark-300">
-              Suchmaschinen-Optimierung mit lokalem Fokus. Ihr Business wird sichtbar, wenn Bochumer Kunden nach Ihnen suchen.
-            </p>
-          </div>
-
-          <!-- Service 3: Branding & Corporate Identity -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="shield" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Branding & Corporate Identity
-            </h3>
-            <p class="text-dark-300">
-              Ihre Marke verdient mehr als nur eine Website. Wir entwickeln ein kohärentes digitales Erscheinungsbild.
-            </p>
-          </div>
-
-          <!-- Service 4: E-Commerce Solutions -->
-          <div class="glass-card-hover p-8 group">
-            <IconBadge icon="cart" tone="primary" size="lg" class="mb-6" />
-            <h3 class="text-xl font-semibold text-white mb-3">
-              E-Commerce & Online-Shops
-            </h3>
-            <p class="text-dark-300">
-              Sichere, benutzerfreundliche Shop-Systeme für Bochumer Einzelhandel und Produzenten. Online-Verkauf leicht gemacht.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="section-padding relative overflow-hidden bg-dark-800/30">
-      <div class="container-narrow mx-auto relative">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-10">
-          Warum <span class="text-gradient">Bochumer</span> Unternehmen auf uns vertrauen
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">01</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Lokale Expertise</h3>
-            <p class="text-dark-300">
-              Wir verstehen den Bochumer Markt – von der akademischen Szene bis zur Industrie. Diese Kenntnisse fließen in jedes Projekt ein.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">02</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Maßgeschneiderte Lösungen</h3>
-            <p class="text-dark-300">
-              Kein Templating, keine Standard-Websites. Jede Lösung wird speziell für Ihre Anforderungen entwickelt.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">03</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Ergebnisorientierung</h3>
-            <p class="text-dark-300">
-              Nicht Schönheit um ihrer selbst willen: Wir bauen Websites, die Conversions bringen und ROI generieren.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">04</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Langfristige Partnerschaften</h3>
-            <p class="text-dark-300">
-              Nach dem Launch beginnt die echte Zusammenarbeit. Wir unterstützen Sie mit Wartung, Optimierung und strategischem Rat.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">05</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Transparente Kommunikation</h3>
-            <p class="text-dark-300">
-              Regelmäßige Updates, klare Timelines, verständliche Reports: Sie wissen immer, wo Sie stehen.
-            </p>
-          </div>
-          <div class="glass-card p-8">
-            <div class="text-primary-300 text-4xl font-display font-semibold mb-4">06</div>
-            <h3 class="text-xl font-semibold text-white mb-3">Modernes Tech-Stack</h3>
-            <p class="text-dark-300">
-              Wir nutzen die neuesten Technologien (Nuxt, Vue, Headless CMS) für Speed, Sicherheit und Skalierbarkeit.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <CityKeywordLinks city-slug="bochum" city-name="Bochum" />
-
-    <CTASection />
-  </div>
-</template>
-
 <script setup lang="ts">
 useSeoMeta({
   title: 'Webdesign Bochum | Prestige Webdesign – Webagentur für Bochum',
   ogTitle: 'Webdesign Bochum | Prestige Webdesign – Webagentur für Bochum',
-  description: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen. SEO & Digital Marketing. Jetzt Beratung buchen!',
-  ogDescription: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen. SEO & Digital Marketing. Jetzt Beratung buchen!',
+  description: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen ab 800 € Festpreis. SEO & Online-Shops. Jetzt kostenloses Erstgespräch anfragen!',
+  ogDescription: 'Webdesign Bochum: Professionelle Websites für Bochumer Unternehmen ab 800 € Festpreis. SEO & Online-Shops. Jetzt kostenloses Erstgespräch anfragen!',
   keywords: 'Webdesign Bochum, Webagentur Bochum, Website Bochum, SEO Bochum, Webentwicklung Bochum, Digital Marketing Bochum',
-  ogImage: 'https://prestige-webdesign.de/images/og-default.svg',
+  ogImage: 'https://prestige-webdesign.de/images/og-default.png',
   robots: 'index, follow',
 })
+
+const localPoints = [
+  'Websites, die zu Ihrem Betrieb in Bochum passen',
+  'SEO für lokale Suchanfragen in Bochum',
+  'Schnell und sauber auf allen Geräten',
+  'Klare Wege zur Anfrage',
+  'Einfache, verständliche Benutzerführung',
+  'Auf Wunsch Wartung und Weiterentwicklung nach dem Launch',
+]
+
+const reasons = [
+  { title: 'Aus der Nachbarschaft', text: 'Ich sitze in Dortmund, eine S-Bahn-Fahrt von Bochum entfernt, und arbeite für Betriebe im ganzen Ruhrgebiet.' },
+  { title: 'Das passende Werkzeug', text: 'WordPress, wenn Sie selbst pflegen wollen. Individuell entwickelt, wenn Tempo und eigene Ideen zählen. Ich sage Ihnen ehrlich, was reicht.' },
+  { title: 'Auf Anfragen ausgerichtet', text: 'Nicht Schönheit um ihrer selbst willen: Jede Seite hat ein Ziel – dass Bochumer Kunden Sie kontaktieren.' },
+  { title: 'Auch nach dem Launch da', text: 'Updates, Erweiterungen und Support – auf Wunsch als Wartungspaket ab 79 € im Monat.' },
+  { title: 'Klare Kommunikation', text: 'Ein fester Ansprechpartner, ein Festpreis vorab, Zwischenstände zum Anschauen: Sie wissen immer, wo Sie stehen.' },
+  { title: 'Barrierefrei gebaut', text: 'Nach WCAG 2.2 AA – gut für alle Besucher und für viele Betriebe seit dem Barrierefreiheitsstärkungsgesetz ohnehin Pflicht.' },
+]
 </script>
+
+<template>
+  <div>
+    <PageCover
+      title="Webdesign Bochum"
+      lead="Websites für Bochumer Unternehmen – vom Startup an der Uni bis zum Dienstleister in der Innenstadt. Ein Ansprechpartner aus dem Revier, der gestaltet und entwickelt, zum Festpreis ab 800 €."
+    >
+      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
+    </PageCover>
+
+    <!-- Taktik: warum Bochum -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+      <div class="wrap grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="local-title" class="t-headline">Webdesign Bochum: Digital durchstarten in der Wissensstadt</h2>
+        </div>
+        <div class="max-w-text lg:col-span-7">
+          <p class="t-lead">
+            Bochum ist ein Zentrum von Bildung und Kultur – von der Ruhr-Universität über das Bermudadreieck bis zum Starlight Express.
+            Diese Dynamik braucht Websites, die genauso lebendig wirken wie die Stadt.
+          </p>
+          <p class="mt-5 text-ink-soft">
+            Die Bochumer Wirtschaft ist vielfältig: Einzelhandel in der Innenstadt, junge Tech-Firmen, spezialisierte Dienstleister.
+            Jeder dieser Betriebe braucht eine Online-Präsenz, die zeigt, was ihn ausmacht – und aus Besuchern Kunden macht.
+            Genau darauf baue ich Ihre Website aus.
+          </p>
+          <CheckList class="mt-8" :items="localPoints" columns />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabelle: Leistungen & Preise -->
+    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+      <div class="wrap">
+        <SectionHead
+          id="prices-title"
+          title="Webdesign & Digital-Services für Bochum"
+          intro="Websites, Online-Shops, Webanwendungen, SEO und Wartung für Bochumer Unternehmen – mit Preisanker vorab und einem Festpreis nach dem kostenlosen Erstgespräch."
+        >
+          <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+        </SectionHead>
+        <ServiceTable class="mt-10" />
+      </div>
+    </section>
+
+    <!-- Taktik: was Sie bekommen -->
+    <section class="section" data-rubric="Taktik" aria-labelledby="reasons-title">
+      <div class="wrap">
+        <SectionHead
+          id="reasons-title"
+          title="Was Bochumer Unternehmen von mir bekommen"
+          intro="Kein Agentur-Apparat, sondern ein Webdesigner, der Ihr Projekt vom ersten Gespräch bis zum Launch selbst betreut."
+        />
+        <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="item in reasons" :key="item.title" class="border-t-2 border-ink pt-5">
+            <h3 class="t-title">{{ item.title }}</h3>
+            <p class="mt-3 text-ink-soft">{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heimspiele: Referenzen -->
+    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+      <div class="wrap">
+        <SectionHead
+          id="refs-title"
+          title="Websites aus dem Revier."
+          intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – alle aus Dortmund und NRW, alle online. Klicken Sie ruhig rein."
+        >
+          <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+        </SectionHead>
+        <ReferenceShowcase class="mt-12" />
+      </div>
+    </section>
+
+    <!-- Spielplan: Ablauf -->
+    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+      <div class="wrap">
+        <SectionHead
+          id="process-title"
+          title="So läuft Ihr Projekt ab."
+          intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
+        />
+        <ProcessFixture class="mt-10" />
+      </div>
+    </section>
+
+    <CityKeywordLinks city-slug="bochum" city-name="Bochum" />
+
+    <KickoffSection
+      source="Webdesign Bochum – Anpfiff"
+      title="Ihre Website für Bochum."
+      text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
+    />
+  </div>
+</template>
