@@ -14,13 +14,13 @@ const others = computed(() => REFERENCES.filter(r => r.slug !== reference.value.
 
 useSeoMeta({
   title: () => `Referenz ${reference.value.name} – ${reference.value.industry} | Prestige Webdesign`,
-  description: () => `${reference.value.summary} Design und Umsetzung: Prestige Webdesign aus Dortmund.`,
+  description: () => `${reference.value.summary} ${reference.value.role}: Prestige Webdesign aus Dortmund.`,
   ogTitle: () => `${reference.value.name} – Referenz | Prestige Webdesign`,
   ogDescription: () => reference.value.summary,
 })
 
 const facts = computed(() => [
-  { term: 'Meine Rolle', value: 'Design & Umsetzung' },
+  { term: 'Meine Rolle', value: reference.value.role },
   { term: 'Umsetzung', value: reference.value.tool },
   { term: 'Technik', value: reference.value.tech.join(', ') },
   ...(reference.value.year ? [{ term: 'Jahr', value: String(reference.value.year) }] : []),

@@ -46,6 +46,10 @@ Dazu kommen ein Festpreis nach dem Erstgespräch und regionale Nähe im Ruhrgebi
 
 Alle Projekte laufen zum Festpreis nach dem Erstgespräch.
 
+**Von Robert bestätigte Zusatzleistungen:** Linkaufbau und SEO-Reporting (Monitoring mit verständlichen Berichten) sowie Texterstellung (suchmaschinenfreundliche Texte auf Wunsch).
+
+**Wartung:** Keine Uptime-Garantien, keine festen Reaktionszeiten außer der Antwort innerhalb von 24 Stunden, keine Backup-Intervalle, kein „monatlich kündbar“ und keine kostenlose Testwoche. Diese Aussagen wurden am 6. Oktober 2026 gestrichen und dürfen nicht wieder auftauchen.
+
 **Technik:**
 - Nuxt 4 SSG (`nuxt generate`) mit Tailwind 3.
 - Deploy per GitHub Actions über FTP zu All-inkl. Das Routing hängt an `.htaccess`.
@@ -107,7 +111,7 @@ Alle Projekte laufen zum Festpreis nach dem Erstgespräch.
   - WordPress mit Avada, Stand etwa 2019, wirkt veraltet.
   - Wird nicht als Referenz gezeigt (Empfehlung zu Q19).
 
-Roberts genaue Rolle in jedem Projekt ist nicht bestätigt, Annahme „Design & Umsetzung“. Weitere Leistungen wie SEO, Wartung oder Texte werden nicht behauptet, solange er sie nicht bestätigt.
+Rollen (bestätigt): Shape & Flow – Design, Umsetzung & SEO (inkl. JSON-LD, llms.txt, OG-Bilder); 13th Passion und Holtsträter – Design & Umsetzung.
 
 **Nicht vorhanden und darf nicht erfunden werden:**
 - Kundenzitate oder Testimonials
