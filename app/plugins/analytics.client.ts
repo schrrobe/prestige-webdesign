@@ -46,10 +46,27 @@ export default defineNuxtPlugin(() => {
   read()
   if (state.value === 'granted') load()
 
+  function clearGaCookies() {
+    const root = location.hostname.replace(/^www\./, '')
+    for (const name of document.cookie.split(';').map(c => c.split('=')[0]!.trim())) {
+      if (name === '_ga' || name.startsWith('_ga_')) {
+        document.cookie = `${name}=; Max-Age=0; path=/`
+        document.cookie = `${name}=; Max-Age=0; path=/; domain=.${root}`
+      }
+    }
+  }
+
   watch(state, (next) => {
-    if (next === 'granted') load()
+    if (next === 'granted') {
+      if (loaded) {
+        window.gtag?.('consent', 'update', { analytics_storage: 'granted' })
+      } else {
+        load()
+      }
+    }
     else if (next === 'denied' && loaded) {
-      window.gtag?.('consent', 'update', { analytics_storage: 'denied' })
+      clearGaCookies()
+      window.location.reload()
     }
   })
 })
