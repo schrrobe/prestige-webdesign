@@ -83,7 +83,7 @@ const nextSteps = [
             <h2 class="font-serif text-[1.75rem]" style="font-weight: 500;">So geht es weiter</h2>
             <ol class="mt-6 space-y-5">
               <li v-for="(step, i) in nextSteps" :key="step.title" class="grid grid-cols-[2.5rem_1fr] gap-x-3">
-                <span class="font-serif text-3xl italic leading-none text-accent" aria-hidden="true">{{ i + 1 }}</span>
+                <span class="font-serif text-3xl italic leading-none text-ink-soft" aria-hidden="true">{{ i + 1 }}</span>
                 <div>
                   <h3 class="font-semibold">{{ step.title }}</h3>
                   <p class="text-ink-soft">{{ step.text }}</p>

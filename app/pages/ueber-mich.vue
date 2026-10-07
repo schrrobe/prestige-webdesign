@@ -96,8 +96,8 @@ const principles = [
       <NuxtLink to="/referenzen" class="btn btn-outline">Meine Referenzen</NuxtLink>
     </PageCover>
 
-    <!-- Vorwort -->
-    <section class="section" data-rubric="Vorwort" aria-labelledby="intro-title">
+    <!-- In eigener Sache -->
+    <section class="section" aria-labelledby="intro-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="intro-title" class="t-headline">Ein Ansprechpartner. Kein Weiterreichen.</h2>
@@ -124,8 +124,8 @@ const principles = [
       </div>
     </section>
 
-    <!-- Statistik -->
-    <section class="section-tight bg-stone" data-rubric="Statistik" aria-labelledby="stats-title">
+    <!-- Kennzahlen -->
+    <section class="section-tight bg-stone" aria-labelledby="stats-title">
       <div class="wrap grid gap-8 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-4">
           <h2 id="stats-title" class="t-title">Die Zahlen hinter Prestige Webdesign</h2>
@@ -135,39 +135,39 @@ const principles = [
       </div>
     </section>
 
-    <!-- Taktik: So arbeite ich -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="principles-title">
+    <!-- So arbeite ich -->
+    <section class="section" aria-labelledby="principles-title">
       <div class="wrap">
         <SectionHead
           id="principles-title"
           title="So arbeite ich."
           intro="Fünf Grundsätze, die für jedes Projekt gelten – egal ob kleine Firmenwebsite oder Online-Shop."
         />
-        <ul class="mt-12 border-t-2 border-ink">
+        <ul class="mt-12 border-t border-ink">
           <li
             v-for="item in principles"
             :key="item.title"
-            class="grid gap-x-10 gap-y-2 border-b border-ink/25 py-7 md:grid-cols-12 md:py-9"
+            class="grid gap-x-10 gap-y-2 border-b border-hair py-7 md:grid-cols-12 md:py-9"
           >
-            <h3 class="text-3xl uppercase leading-[0.95] md:col-span-5 md:text-4xl" style="font-stretch: 62%; font-weight: 860;">{{ item.title }}</h3>
+            <h3 class="font-serif text-3xl leading-[1.05] md:col-span-5 md:text-4xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ item.title }}</h3>
             <p class="max-w-text text-ink-soft md:col-span-7 md:pt-1">{{ item.text }}</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Heimspiele -->
-    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="work-title">
+    <!-- Referenzen -->
+    <section class="section bg-stone" aria-labelledby="work-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="work-title" class="t-headline">Was ich zuletzt gebaut habe.</h2>
           <p class="mt-4 text-ink-soft">Bei allen drei Projekten lagen Design und Umsetzung bei mir.</p>
         </div>
-        <ul class="border-t-2 border-ink lg:col-span-8">
-          <li v-for="ref in REFERENCES" :key="ref.slug" class="border-b border-ink/25">
+        <ul class="border-t border-ink lg:col-span-8">
+          <li v-for="ref in REFERENCES" :key="ref.slug" class="border-b border-hair">
             <NuxtLink :to="`/referenzen/${ref.slug}`" class="group grid min-h-14 grid-cols-[1fr_auto] items-center gap-x-6 py-5">
               <span>
-                <span class="block text-3xl uppercase leading-none md:text-4xl" style="font-stretch: 62%; font-weight: 880;">{{ ref.name }}</span>
+                <span class="font-serif block text-3xl leading-[1.05] md:text-4xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ ref.name }}</span>
                 <span class="mt-2 block text-ink-soft">{{ ref.industry }} · {{ ref.tool }}</span>
               </span>
               <AppIcon name="arrow-right" class="h-6 w-6 text-accent transition-transform duration-200 group-hover:translate-x-1" />

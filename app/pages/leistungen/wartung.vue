@@ -125,17 +125,17 @@ const reasons = [
 
       <template #aside>
         <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
-          <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">ab 79 €</p>
+          <p class="font-serif text-6xl leading-[1.05] md:text-7xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">ab 79 €</p>
           <p class="mt-1 font-semibold">pro Monat</p>
-          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+          <p class="mt-4 border-t border-hair pt-4 text-ink-soft">
             {{ service.priceNote }} im Monat.
           </p>
         </div>
       </template>
     </PageCover>
 
-    <!-- Aufstellung: Leistungsumfang -->
-    <section class="section" data-rubric="Aufstellung" aria-labelledby="scope-title">
+    <!-- Leistungsumfang -->
+    <section class="section" aria-labelledby="scope-title">
       <div class="wrap">
         <SectionHead
           id="scope-title"
@@ -143,8 +143,8 @@ const reasons = [
           intro="Die Wartung deckt alles ab, was eine Website im Alltag braucht, damit sie zuverlässig läuft."
           :rule="false"
         />
-        <ul class="mt-10 border-t-2 border-ink">
-          <li v-for="item in maintenanceServices" :key="item.title" class="grid gap-x-8 gap-y-2 border-b border-ink/25 py-6 md:grid-cols-12 md:py-7">
+        <ul class="mt-10 border-t border-ink">
+          <li v-for="item in maintenanceServices" :key="item.title" class="grid gap-x-8 gap-y-2 border-b border-hair py-6 md:grid-cols-12 md:py-7">
             <h3 class="t-title md:col-span-5">{{ item.title }}</h3>
             <p class="max-w-xl text-ink-soft md:col-span-7">{{ item.description }}</p>
           </li>
@@ -152,8 +152,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Tabelle: Pakete im Vergleich -->
-    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="packages-title">
+    <!-- Pakete im Vergleich -->
+    <section class="section bg-stone" aria-labelledby="packages-title">
       <div class="wrap">
         <SectionHead
           id="packages-title"
@@ -165,17 +165,17 @@ const reasons = [
         <table class="mt-10 hidden w-full border-collapse text-left md:table">
           <caption class="sr-only">Wartungspakete im Vergleich: Basis, Professional und Premium</caption>
           <thead>
-            <tr class="border-b-2 border-ink align-bottom">
+            <tr class="border-b border-ink align-bottom">
               <th scope="col" class="t-label w-1/4 pb-5 pr-6 text-ink-soft">Leistung</th>
               <th
                 v-for="pkg in packages"
                 :key="pkg.name"
                 scope="col"
-                class="border-l border-ink/25 px-6 pb-5"
+                class="border-l border-hair px-6 pb-5"
               >
-                <span class="block text-3xl uppercase leading-none lg:text-4xl" style="font-stretch: 62%; font-weight: 880;">{{ pkg.name }}</span>
+                <span class="font-serif block text-3xl leading-[1.05] lg:text-4xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.name }}</span>
                 <span class="mt-4 flex items-baseline gap-1.5">
-                  <span class="text-5xl leading-none lg:text-6xl" style="font-stretch: 62%; font-weight: 880;">{{ pkg.price }} €</span>
+                  <span class="font-serif text-5xl leading-[1.05] lg:text-6xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.price }} €</span>
                   <span class="font-semibold text-ink-soft">/ Monat</span>
                 </span>
                 <span class="mt-3 block max-w-xs text-sm font-normal text-ink-soft">{{ pkg.description }}</span>
@@ -183,9 +183,9 @@ const reasons = [
             </tr>
           </thead>
           <tbody>
-            <tr v-for="row in comparison" :key="row.label" class="border-b border-ink/25">
+            <tr v-for="row in comparison" :key="row.label" class="border-b border-hair">
               <th scope="row" class="py-4 pr-6 align-top font-bold">{{ row.label }}</th>
-              <td v-for="(value, i) in row.values" :key="i" class="border-l border-ink/25 px-6 py-4 align-top">
+              <td v-for="(value, i) in row.values" :key="i" class="border-l border-hair px-6 py-4 align-top">
                 <template v-if="value">{{ value }}</template>
                 <template v-else>
                   <span aria-hidden="true" class="text-ink-soft">—</span>
@@ -199,11 +199,11 @@ const reasons = [
         <!-- Handy: ein Block je Paket -->
         <div class="mt-10 space-y-12 md:hidden">
           <article v-for="(pkg, p) in packages" :key="pkg.name" class="rule-top pt-5" :aria-labelledby="`pkg-${pkg.name}`">
-            <div class="flex items-baseline justify-between gap-4">
-              <h3 :id="`pkg-${pkg.name}`" class="text-4xl uppercase leading-none" style="font-stretch: 62%; font-weight: 880;">{{ pkg.name }}</h3>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 :id="`pkg-${pkg.name}`" class="font-serif text-[2rem] leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.name }}</h3>
               <p class="whitespace-nowrap">
-                <span class="text-4xl leading-none" style="font-stretch: 62%; font-weight: 880;">{{ pkg.price }} €</span>
-                <span class="font-semibold text-ink-soft"> / Monat</span>
+                <span class="font-serif text-[2rem] leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.price }} €</span>
+                <span class="text-ink-soft"> / Monat</span>
               </p>
             </div>
             <p class="mt-2 text-ink-soft">{{ pkg.description }}</p>
@@ -211,9 +211,9 @@ const reasons = [
               <div
                 v-for="row in comparison.filter(r => r.values[p])"
                 :key="row.label"
-                class="grid grid-cols-[9rem_1fr] gap-4 border-t border-ink/25 py-3"
+                class="grid grid-cols-[8.5rem_1fr] gap-4 border-t border-hair py-3 [overflow-wrap:anywhere]"
               >
-                <dt class="font-bold">{{ row.label }}</dt>
+                <dt class="font-semibold">{{ row.label }}</dt>
                 <dd>{{ row.values[p] }}</dd>
               </div>
             </dl>
@@ -229,8 +229,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Taktik: Vorteile -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="benefits-title">
+    <!-- Vorteile -->
+    <section class="section" aria-labelledby="benefits-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="benefits-title" class="t-headline">Vorteile professioneller Website-Wartung</h2>
@@ -238,8 +238,8 @@ const reasons = [
             Regelmäßige Wartung ist eine Investition in die Zukunft Ihrer Website – und Ihres Betriebs.
           </p>
         </div>
-        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
-          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-ink/25 py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
+        <dl class="border-t border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-hair py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
             <dt class="t-title">{{ benefit.title }}</dt>
             <dd class="max-w-text text-ink-soft">{{ benefit.description }}</dd>
           </div>
@@ -247,8 +247,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Vorwort: warum ich -->
-    <section class="section on-ink" data-rubric="Vorwort" aria-labelledby="why-title">
+    <!-- warum ich -->
+    <section class="section on-ink" aria-labelledby="why-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="why-title" class="t-headline">Warum Prestige Webdesign für Ihre Wartung?</h2>
@@ -265,8 +265,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -277,8 +277,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Häufige Fragen zur Wartung</h2>
@@ -288,7 +288,7 @@ const reasons = [
     </section>
 
     <InquirySection
-      source="Leistungen Wartung – Anpfiff"
+      source="Leistungen Wartung – Abschluss"
       title="Sichern Sie Ihre Website ab."
       text="Schreiben Sie mir, um welche Website es geht und welches Paket Sie interessiert. Ich schaue sie mir an und melde mich innerhalb von 24 Stunden."
     />

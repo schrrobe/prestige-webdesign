@@ -58,28 +58,28 @@ const tools = [
 <template>
   <div>
     <PageCover
-      title="Heimspiele."
       lead="Hier sehen Sie Websites, die ich gestaltet und umgesetzt habe – für ein Studio, ein Fotografenpaar und ein Transportunternehmen. Alle drei sind online. Klicken Sie ruhig rein."
     >
+      <template #title>Ausgewählte <em>Arbeiten</em>.</template>
       <NuxtLink to="/kontakt" class="btn btn-primary">Erstgespräch anfragen</NuxtLink>
-      <a href="#heimspiele" class="btn btn-outline">Zu den Projekten</a>
+      <a href="#projekte" class="btn btn-outline">Zu den Projekten</a>
     </PageCover>
 
-    <!-- Heimspiele -->
-    <section id="heimspiele" class="section scroll-mt-24" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section id="projekte" class="section scroll-mt-24" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
           title="Websites, die schon für ihre Betriebe arbeiten."
-          intro="Bei allen drei Projekten lagen Design und Umsetzung bei mir. Zu jeder Seite gibt es einen kurzen Spielbericht: Ausgangslage, was umgesetzt wurde und mit welcher Technik."
+          intro="Bei allen drei Projekten lagen Design und Umsetzung bei mir. Zu jeder Seite gibt es einen kurze Fallstudie: Ausgangslage, was umgesetzt wurde und mit welcher Technik."
           :rule="false"
         />
         <ReferenceShowcase class="mt-12" />
       </div>
     </section>
 
-    <!-- Taktik: das passende Werkzeug -->
-    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="tools-title">
+    <!-- das passende Werkzeug -->
+    <section class="section bg-stone" aria-labelledby="tools-title">
       <div class="wrap">
         <SectionHead
           id="tools-title"
@@ -87,11 +87,11 @@ const tools = [
           intro="Sie sehen es an den Projekten: Nicht jede Website ist gleich gebaut. Ich entscheide mit Ihnen gemeinsam, was zu Ihrem Betrieb passt – und sage ehrlich, wenn die einfachere Lösung reicht."
         />
         <div class="mt-12 grid gap-x-10 gap-y-12 md:grid-cols-2">
-          <div v-for="tool in tools" :key="tool.name" class="border-t-2 border-ink pt-6">
-            <h3 class="text-4xl uppercase leading-none md:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ tool.name }}</h3>
+          <div v-for="tool in tools" :key="tool.name" class="border-t border-ink pt-6">
+            <h3 class="font-serif text-4xl leading-[1.05] md:text-5xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ tool.name }}</h3>
             <p class="t-title mt-3">{{ tool.when }}</p>
             <p class="mt-4 max-w-text text-ink-soft">{{ tool.text }}</p>
-            <p class="mt-6 border-t border-ink/25 pt-4 font-semibold text-ink-soft">
+            <p class="mt-6 border-t border-hair pt-4 font-semibold text-ink-soft">
               So gebaut:
               <template v-for="(r, i) in tool.refs" :key="r.slug">
                 <NuxtLink :to="`/referenzen/${r.slug}`" class="link text-ink">{{ r.name }}</NuxtLink><template v-if="i < tool.refs.length - 1">, </template>
@@ -104,7 +104,7 @@ const tools = [
     </section>
 
     <InquirySection
-      title="Ihr Betrieb als nächstes Heimspiel?"
+      title="Ist Ihr Betrieb der nächste?"
       text="Erzählen Sie mir, was Ihre Website leisten soll. Im kostenlosen Erstgespräch klären wir, welches Werkzeug passt – danach bekommen Sie ein Angebot zum Festpreis."
       source="Referenzen"
     />

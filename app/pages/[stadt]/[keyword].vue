@@ -303,8 +303,8 @@ const coverLead = computed(() =>
 
     <!-- Rich Content für Top-Seiten -->
     <template v-if="isTopPage && richContent">
-      <!-- Taktik: Haupttext + Stadtkontext -->
-      <section class="section" data-rubric="Taktik" aria-labelledby="kw-main-title">
+      <!-- Haupttext + Stadtkontext -->
+      <section class="section" aria-labelledby="kw-main-title">
         <div class="wrap grid gap-10 lg:grid-cols-12">
           <div class="lg:col-span-7">
             <h2 id="kw-main-title" class="t-headline">{{ h1InCity }}</h2>
@@ -323,12 +323,12 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <!-- Aufstellung: Vorteile -->
-      <section class="section bg-stone" data-rubric="Aufstellung" aria-labelledby="kw-benefits-title">
+      <!-- Vorteile -->
+      <section class="section bg-stone" aria-labelledby="kw-benefits-title">
         <div class="wrap">
           <SectionHead id="kw-benefits-title" title="Was Sie von mir bekommen" />
-          <ul class="mt-10 border-t-2 border-ink">
-            <li v-for="benefit in richContent.benefits" :key="benefit.title" class="grid gap-x-8 gap-y-2 border-b border-ink/25 py-6 md:grid-cols-12 md:py-8">
+          <ul class="mt-10 border-t border-ink">
+            <li v-for="benefit in richContent.benefits" :key="benefit.title" class="grid gap-x-8 gap-y-2 border-b border-hair py-6 md:grid-cols-12 md:py-8">
               <h3 class="t-title md:col-span-5">{{ benefit.title }}</h3>
               <p class="max-w-xl text-ink-soft md:col-span-7">{{ benefit.text }}</p>
             </li>
@@ -336,8 +336,8 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <!-- Tabelle: Leistungen & Preise -->
-      <section class="section" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
+      <!-- Leistungen & Preise -->
+      <section class="section" aria-labelledby="kw-prices-title">
         <div class="wrap">
           <SectionHead
             id="kw-prices-title"
@@ -350,8 +350,8 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <!-- Spielplan: Ablauf -->
-      <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="kw-process-title">
+      <!-- Ablauf -->
+      <section class="section bg-stone" aria-labelledby="kw-process-title">
         <div class="wrap">
           <SectionHead
             id="kw-process-title"
@@ -362,8 +362,8 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <!-- Heimspiele: Referenzen -->
-      <section class="section" data-rubric="Heimspiele" aria-labelledby="kw-refs-title">
+      <!-- Referenzen -->
+      <section class="section" aria-labelledby="kw-refs-title">
         <div class="wrap">
           <SectionHead
             id="kw-refs-title"
@@ -376,8 +376,8 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <!-- Fragen -->
-      <section class="section bg-stone" data-rubric="Fragen" aria-labelledby="kw-faq-title">
+      <!-- Häufige Fragen -->
+      <section class="section bg-stone" aria-labelledby="kw-faq-title">
         <div class="wrap grid gap-10 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <h2 id="kw-faq-title" class="t-headline">Häufige Fragen zu {{ h1 }}</h2>
@@ -389,19 +389,19 @@ const coverLead = computed(() =>
 
     <!-- Basis-Content für noindex-Seiten -->
     <template v-else>
-      <section class="section" data-rubric="Aufstellung" aria-labelledby="kw-basic-title">
+      <section class="section" aria-labelledby="kw-basic-title">
         <div class="wrap">
           <SectionHead id="kw-basic-title" :title="h1InCity" />
           <dl class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-3">
-            <div class="border-t-2 border-ink pt-5">
+            <div class="border-t border-ink pt-5">
               <dt class="t-title">Leistung</dt>
               <dd class="mt-3 text-ink-soft">Ich setze {{ h1 }} mit klarem Seitenaufbau, einfacher Nutzerführung und technischer SEO-Basis um.</dd>
             </div>
-            <div class="border-t-2 border-ink pt-5">
+            <div class="border-t border-ink pt-5">
               <dt class="t-title">Zielgruppe</dt>
               <dd class="mt-3 text-ink-soft">Ausgerichtet auf {{ seed.focus }} – damit aus Besuchern Ihrer Website mehr passende Anfragen werden.</dd>
             </div>
-            <div class="border-t-2 border-ink pt-5">
+            <div class="border-t border-ink pt-5">
               <dt class="t-title">Standort</dt>
               <dd class="mt-3 text-ink-soft">Durch die lokale Ausrichtung auf {{ city.name }} wird Ihre Website bei regionalen Suchanfragen leichter gefunden.</dd>
             </div>
@@ -409,7 +409,7 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
+      <section class="section bg-stone" aria-labelledby="kw-prices-title">
         <div class="wrap">
           <SectionHead
             id="kw-prices-title"
@@ -422,7 +422,7 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <section class="section" data-rubric="Spielplan" aria-labelledby="kw-process-title">
+      <section class="section" aria-labelledby="kw-process-title">
         <div class="wrap">
           <SectionHead
             id="kw-process-title"
@@ -434,8 +434,8 @@ const coverLead = computed(() =>
       </section>
     </template>
 
-    <!-- Auswärts: interne Links -->
-    <section class="section" :class="isTopPage && richContent ? '' : 'bg-stone'" data-rubric="Auswärts" aria-labelledby="kw-links-title">
+    <!-- interne Links -->
+    <section class="section" :class="isTopPage && richContent ? '' : 'bg-stone'" aria-labelledby="kw-links-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="kw-links-title" class="t-headline">Mehr von Prestige Webdesign in {{ city.name }}</h2>
@@ -443,9 +443,9 @@ const coverLead = computed(() =>
             Alle Leistungen in {{ city.name }}
             <AppIcon name="arrow-right" class="h-5 w-5" />
           </NuxtLink>
-          <ul class="mt-10 border-t-2 border-ink">
-            <li v-for="link in serviceLinks" :key="link.to" class="border-b border-ink/25">
-              <NuxtLink :to="link.to" class="group flex min-h-12 items-center justify-between gap-4 py-3 text-lg font-bold" style="font-stretch: 88%;">
+          <ul class="mt-10 border-t border-ink">
+            <li v-for="link in serviceLinks" :key="link.to" class="border-b border-hair">
+              <NuxtLink :to="link.to" class="group flex min-h-12 items-center justify-between gap-4 py-3 text-lg font-medium">
                 {{ link.label }}
                 <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
               </NuxtLink>
@@ -454,8 +454,8 @@ const coverLead = computed(() =>
         </div>
         <div class="lg:col-span-6 lg:col-start-7">
           <h3 class="t-title">Häufige Anfragen in {{ city.name }}</h3>
-          <ul class="mt-6 border-t-2 border-ink">
-            <li v-for="link in siblingKeywordLinks" :key="link.to" class="border-b border-ink/25">
+          <ul class="mt-6 border-t border-ink">
+            <li v-for="link in siblingKeywordLinks" :key="link.to" class="border-b border-hair">
               <NuxtLink :to="link.to" class="link flex min-h-12 items-center py-3 font-semibold">
                 {{ link.label }}
               </NuxtLink>
@@ -465,6 +465,6 @@ const coverLead = computed(() =>
       </div>
     </section>
 
-    <InquirySection :source="`${h1InCity} – Anpfiff`" />
+    <InquirySection :source="`${h1InCity} – Abschluss`" />
   </div>
 </template>

@@ -117,16 +117,16 @@ const benefits = [
 
       <template #aside>
         <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
-          <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
-          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+          <p class="font-serif text-6xl leading-[1.05] md:text-7xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ service.price }}</p>
+          <p class="mt-4 border-t border-hair pt-4 text-ink-soft">
             {{ service.priceNote }}. Ich schaue mir Ihre Seite an, sage Ihnen, was sich lohnt – und nenne dann einen festen Preis.
           </p>
         </div>
       </template>
     </PageCover>
 
-    <!-- Aufstellung: SEO-Leistungen -->
-    <section class="section" data-rubric="Aufstellung" aria-labelledby="seo-services-title">
+    <!-- SEO-Leistungen -->
+    <section class="section" aria-labelledby="seo-services-title">
       <div class="wrap">
         <SectionHead
           id="seo-services-title"
@@ -135,7 +135,7 @@ const benefits = [
           :rule="false"
         />
         <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <li v-for="item in seoServices" :key="item.title" class="border-t-2 border-ink pt-5">
+          <li v-for="item in seoServices" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.description }}</p>
           </li>
@@ -143,8 +143,8 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Taktik: Vorteile -->
-    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="benefits-title">
+    <!-- Vorteile -->
+    <section class="section bg-stone" aria-labelledby="benefits-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="benefits-title" class="t-headline">Vorteile von professionellem SEO</h2>
@@ -152,8 +152,8 @@ const benefits = [
             SEO ist eine der langfristig wertvollsten Investitionen in Ihre Website – weil es Menschen bringt, die schon nach Ihnen suchen.
           </p>
         </div>
-        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
-          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-ink/25 py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
+        <dl class="border-t border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-hair py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
             <dt class="t-title">{{ benefit.title }}</dt>
             <dd class="max-w-text text-ink-soft">{{ benefit.description }}</dd>
           </div>
@@ -161,8 +161,8 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Auswärts: regionale SEO -->
-    <section class="section" data-rubric="Auswärts" aria-labelledby="regional-title">
+    <!-- regionale SEO -->
+    <section class="section" aria-labelledby="regional-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="max-w-text lg:col-span-7">
           <h2 id="regional-title" class="t-headline">SEO für Unternehmen im Ruhrgebiet</h2>
@@ -176,9 +176,9 @@ const benefits = [
         <div class="lg:col-span-4 lg:col-start-9">
           <h3 class="t-title rule-top pt-6">Regionale Zielseiten</h3>
           <ul class="mt-4">
-            <li v-for="city in CITIES" :key="city.to" class="border-b border-ink/25">
+            <li v-for="city in CITIES" :key="city.to" class="border-b border-hair">
               <NuxtLink :to="city.to" class="group flex min-h-14 items-center justify-between gap-2 py-2">
-                <span class="text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">Webdesign {{ city.name }}</span>
+                <span class="font-serif text-2xl leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">Webdesign {{ city.name }}</span>
                 <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
               </NuxtLink>
             </li>
@@ -187,8 +187,8 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Heimspiele: Verweis auf Referenzen -->
-    <section class="section-tight on-ink" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Verweis auf Referenzen -->
+    <section class="section-tight on-ink" aria-labelledby="refs-title">
       <div class="wrap grid gap-6 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-8">
           <h2 id="refs-title" class="t-title">Technisches SEO, das Sie nachprüfen können.</h2>
@@ -209,8 +209,8 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -221,8 +221,8 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">FAQ zur Suchmaschinenoptimierung</h2>
@@ -233,7 +233,7 @@ const benefits = [
     </section>
 
     <InquirySection
-      source="Leistungen SEO – Anpfiff"
+      source="Leistungen SEO – Abschluss"
       title="Besser gefunden werden?"
       text="Erzählen Sie mir, für welche Leistungen und in welcher Stadt Sie gefunden werden wollen. Im kostenlosen Erstgespräch zeige ich Ihnen, wo Potenzial liegt – danach bekommen Sie ein Angebot zum Festpreis."
     />

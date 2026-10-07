@@ -1,280 +1,272 @@
 ---
 name: Prestige Webdesign
-description: Revier-Stadionheft – Zeitungspapier, Druckschwarz, Rasengrün, Signal-Orange nur für Handlungen.
+description: Editorial web design from Dortmund. Cool paper, ink, one oxblood.
 colors:
-  paper: "#f4f4ef"
-  sheet: "#fcfcf9"
-  ink: "#151614"
-  ink-soft: "#4a4d47"
-  rule: "#848880"
-  field: "#0d4a32"
-  field-ink: "#f4f4ef"
-  field-soft: "#b9d3c3"
-  signal: "#ff5a1f"
-  signal-ink: "#b33a0a"
-  board: "#151614"
-  board-dot: "#f4f4ef"
-  danger: "#b42318"
-  flutlicht-paper: "#0f1411"
-  flutlicht-sheet: "#171e1a"
-  flutlicht-ink: "#ecede6"
-  flutlicht-ink-soft: "#a9ada4"
-  flutlicht-rule: "#5f655c"
-  flutlicht-field: "#123826"
-  flutlicht-signal: "#ff6a30"
-  flutlicht-signal-ink: "#ff7a45"
-  flutlicht-board: "#080a09"
-  flutlicht-danger: "#ff8a80"
+  paper: "#fbfbfa"
+  stone: "#efece7"
+  ink: "#161616"
+  ink-soft: "#5a5652"
+  hair: "#dcd8d2"
+  line: "#8a857f"
+  accent: "#7a1f2b"
+  accent-deep: "#5c1520"
+  accent-ink: "#ffffff"
+  danger: "#a81d1d"
+  paper-dark: "#121212"
+  stone-dark: "#1b1a19"
+  ink-dark: "#ecebe8"
+  ink-soft-dark: "#a9a5a0"
+  hair-dark: "#343230"
+  line-dark: "#6f6a65"
+  accent-dark: "#e58b95"
+  accent-ink-dark: "#121212"
+  danger-dark: "#ff8a80"
+  on-ink-paper: "#161616"
+  on-ink-ink-soft: "#b3aea8"
+  on-ink-hair: "#3a3836"
+  on-accent-ink: "#f6f3f0"
+  on-accent-ink-soft: "#ecd3d6"
+  on-accent-hair: "#7a343e"
+  on-accent-line: "#d6b2b7"
 typography:
   display:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
-    fontSize: "3.25rem / 4.5rem (sm) / 6rem (lg); hero 3.5rem to 6rem (xl)"
-    fontWeight: 860
-    lineHeight: 0.93
-    letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 62"
+    fontFamily: "Bodoni Moda Variable, Bodoni Moda, Didot, Georgia, serif"
+    fontSize: "2.375rem to 6rem, set per use"
+    fontWeight: 500
+    lineHeight: 1.02
+    letterSpacing: "-0.022em"
+    fontVariation: "'opsz' 96"
   headline:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
-    fontSize: "2.125rem / 3rem (sm) / 3.5rem (lg)"
-    fontWeight: 820
-    lineHeight: 0.98
-    letterSpacing: "-0.012em"
-    fontVariation: "'wdth' 72"
+    fontFamily: "Bodoni Moda Variable, Bodoni Moda, Didot, Georgia, serif"
+    fontSize: "2.25rem / 3rem (sm) / 3.5rem (lg)"
+    fontWeight: 500
+    lineHeight: 1.06
+    letterSpacing: "-0.018em"
+    fontVariation: "'opsz' 72"
   title:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
-    fontSize: "1.25rem / 1.5rem (md)"
-    fontWeight: 760
-    lineHeight: 1.1
-    fontVariation: "'wdth' 82"
-  body:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.65
+    fontFamily: "Schibsted Grotesk Variable, Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "1.25rem / 1.375rem (md)"
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "-0.01em"
   lead:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
+    fontFamily: "Schibsted Grotesk Variable, Schibsted Grotesk, system-ui, sans-serif"
     fontSize: "1.125rem / 1.25rem (md)"
     fontWeight: 400
     lineHeight: 1.625
+  body:
+    fontFamily: "Schibsted Grotesk Variable, Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.65
   label:
-    fontFamily: "Archivo Variable, Archivo, system-ui, sans-serif"
-    fontSize: "0.8125rem"
-    fontWeight: 700
-    letterSpacing: "0.06em"
-    fontVariation: "'wdth' 88"
-  board:
-    fontFamily: "Doto Variable, Doto, ui-monospace, monospace"
-    fontSize: "0.9375rem (header) / 2.5rem to 3rem (ScoreBoard)"
-    fontWeight: 800
-    lineHeight: 1
-    letterSpacing: "0.04em"
+    fontFamily: "Schibsted Grotesk Variable, Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 600
+    letterSpacing: "0.09em"
 rounded:
-  none: "0px"
+  pill: "9999px"
+  panel: "1rem"
+  menu: "0.5rem"
+  phone: "0.9rem"
+  shot: "0.375rem"
+  field: "0.25rem"
 spacing:
-  gutter-sm: "16px"
-  gutter-md: "24px"
-  gutter-lg: "40px"
-  section: "64px"
-  section-md: "96px"
-  section-tight: "48px"
-  section-tight-md: "64px"
-  page-max: "78rem"
-  text-max: "68ch"
-  header-h: "4.25rem"
+  gutter-sm: "20px"
+  gutter-md: "32px"
+  gutter-lg: "48px"
+  section-tight: "56px"
+  section: "80px"
+  section-tight-md: "80px"
+  section-md: "112px"
+  header: "72px"
+  page-max: "1280px"
+  text-max: "66ch"
 components:
-  button-signal:
-    backgroundColor: "{colors.signal}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
+  button-primary:
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.accent-ink}"
+    rounded: "{rounded.pill}"
     padding: "10px 24px"
     height: "48px"
-    typography: "{typography.label}"
-  button-signal-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.signal}"
-  button-ink:
+  button-primary-hover:
+    backgroundColor: "{colors.accent-deep}"
+    textColor: "{colors.accent-ink}"
+  button-dark:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.pill}"
     padding: "10px 24px"
     height: "48px"
-  button-ink-hover:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
   button-outline:
-    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.pill}"
     padding: "10px 24px"
     height: "48px"
-  button-outline-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
   input:
-    backgroundColor: "{colors.sheet}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "12px 16px"
+    typography: "{typography.lead}"
+    padding: "12px 0"
     height: "48px"
   chip:
-    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "8px 14px"
+    rounded: "{rounded.pill}"
+    padding: "8px 16px"
     height: "44px"
-  chip-checked:
+  chip-selected:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-  scoreboard:
-    backgroundColor: "{colors.board}"
-    textColor: "{colors.board-dot}"
-    rounded: "{rounded.none}"
-    padding: "16px 20px"
-  ticket:
-    backgroundColor: "{colors.sheet}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "28px 24px 24px"
+  panel:
+    backgroundColor: "{colors.paper}"
+    rounded: "{rounded.panel}"
+    padding: "32px"
 ---
 
 # Design System: Prestige Webdesign
 
 ## Overview
 
-**Creative North Star: "Das Revier-Stadionheft"**
+**Creative North Star: "The Well-Made Magazine"**
 
-The site is the printed programme for a home match: a green cover page, a league table of prices, a fixture list for the process, the home games as references, a personal foreword, and the kick-off ticket. Everything is printed matter. Newsprint paper (with a faint offset grain at 5 % opacity, 3.5 % in Flutlicht), press black, one solid field of turf green, and one signal orange reserved for doing something. Type is Archivo squeezed to its narrowest width for poster capitals; the only other face is the Doto dot matrix, and it lives exclusively on the scoreboard.
+A quiet editorial page: tall serif headlines with optical sizing, plenty of white, strong screenshots with captions under them, and plain grotesk text. Hierarchy comes from type size, 1px rules and air. There are no boxes, icons or effects doing the work. One colour, oxblood, marks what you can do and, at most, one italic word per view. The site is light by default and has a full dark mode. The footer sits on ink and the closing inquiry on deep oxblood.
 
-Density is that of a programme, not a brochure: heavy 6px rules open sections, tables carry real numbers in tabular figures, and depth comes from pasted-on layers overlapping each other, never from light. The world rejects the agency template it replaced: dark hero, glass cards, gradient washes and rows of icon tiles.
+The world has no theme and no metaphor. It is not a stadium, a building plan or a Revier costume. It reads as high-end because it holds back: real work, open prices, one contact person.
 
 **Key Characteristics:**
-- Three inks: paper/ink, field green, signal orange. Nothing else carries colour.
-- Square corners everywhere; 2px print frames; 6px section rules.
-- Ultra-condensed uppercase display (wdth 62 %, weight 860–880).
-- Header scoreboard announces the current rubric as you scroll.
-- Light theme by default; "Flutlicht" dark theme swaps only the RGB-channel tokens.
+- Bodoni Moda display at weight 500 with the opsz axis, set against Schibsted Grotesk for text and UI.
+- Cool paper (#fbfbfa), ink (#161616) and stone (#efece7) for alternating sections. Oxblood (#7a1f2b) is the only hue.
+- Structure comes from a full-ink rule at the top of a block and hairlines between rows.
+- Buttons are rounded pills with an arrow that nudges on hover. Fields are underlined.
+- One quiet motion moment: the lead image reveals with a clip-path.
 
 ## Colors
 
-Three inks on newsprint; every value is an RGB-channel custom property in `app/assets/css/tailwind.css` consumed as `rgb(var(--x) / <alpha>)`, so the themes swap channels and nothing else.
+The palette is warm-grey neutrals with one deep red. Every value is an RGB-channel custom property, so the light theme, dark theme and the two local surfaces (on-ink, on-accent) only swap tokens and the components never change.
 
 ### Primary
-- **Rasengrün / Field** (#0d4a32; Flutlicht #123826): the load-bearing solid surface. Cover pages (PageCover, home hero), the Anpfiff closer and the footer are full-bleed green. Text on it is **Field Ink** (#f4f4ef, 9.3:1; Flutlicht #ecede6, 11.0:1); secondary text and breadcrumbs use **Field Soft** (#b9d3c3, 6.5:1). `field-deep` is defined but unused; do not reach for it without a new decision.
-
-### Secondary
-- **Signal-Orange** (#ff5a1f; Flutlicht #ff6a30): the action ink. Fills the one primary button (press black text on it, 5.8:1), the nav underline, link underlines, the board's live dot and text selection. **Signal Ink** (#b33a0a; Flutlicht #ff7a45) is the text-safe variant for arrows, hover glyphs and the stamp on paper/sheet (5.4:1 on paper, 5.8:1 on sheet).
+- **Oxblood** (accent; dark theme accent-dark): used for actions. That means primary buttons, link underlines, the arrow affordance in rows and the active nav item, plus the single italic `<em>` in a display or headline. It is also the text-selection colour and the caret colour. Contrast is 9.9:1 on paper, 8.7:1 on stone and 7.6:1 on dark paper.
+- **Deep Oxblood** (accent-deep): the hover state of the primary button and the background of the closing inquiry section. It is the same in both themes. On it, on-accent-ink measures 12.0:1 and on-accent-ink-soft 9.4:1.
+- **Accent Ink** (accent-ink; dark accent-ink-dark): the text on oxblood. White on accent measures 10.2:1. In the dark theme the text is #121212 on #e58b95 at 7.5:1.
 
 ### Neutral
-- **Zeitungspapier / Paper** (#f4f4ef; Flutlicht #0f1411): page ground.
-- **Bogen / Sheet** (#fcfcf9; Flutlicht #171e1a): the alternate band (`bg-sheet` sections), input fill, ticket, dropdowns, consent bar.
-- **Druckschwarz / Ink** (#151614; Flutlicht #ecede6): text, frames, rules, the `on-ink` slab. 16.4:1 on paper (Flutlicht 15.8:1).
-- **Ink Soft** (#4a4d47; Flutlicht #a9ada4): secondary copy, table headings, metadata. 7.8:1 on paper.
-- **Rule** (#848880; Flutlicht #5f655c): resting input border only. Hairlines elsewhere are ink at 25 % alpha.
-- **Board** (#151614; Flutlicht #080a09) with **Board Dot** (#f4f4ef): the scoreboard surface and its matrix digits; labels on it use Field Soft (11.4:1).
-- **Danger** (#b42318; Flutlicht #ff8a80): field errors and invalid borders only.
+- **Paper** (paper / paper-dark): the page and panel background. Ink on it measures 17.5:1 light and 15.7:1 dark.
+- **Stone** (stone / stone-dark): the background of every other section, row hover at 60% and image placeholders. Ink-soft on stone measures 6.2:1.
+- **Ink** (ink / ink-dark): text, the dark button, selected chips, the full-weight top rule of a block and the phone frame.
+- **Soft Ink** (ink-soft / ink-soft-dark): leads, captions, metadata, labels and placeholders. It measures 7.0:1 light and 7.6:1 dark. It is a text colour and passes AA everywhere.
+- **Hair** (hair / hair-dark): 1px row dividers, section borders and panel outlines. Purely structural.
+- **Line** (line / line-dark): the interactive boundary for input underlines, outline buttons and chip borders. It measures 3.5:1 against paper (non-text).
+- **Danger** (danger / danger-dark): invalid field underlines and the error alert (7.1:1 light, 8.2:1 dark).
+
+### Local surfaces
+- **On Ink** (footer): paper becomes on-ink-paper and soft text on-ink-ink-soft (8.2:1). Hair becomes on-ink-hair and line #827d78. Italic accent words turn to the inherited colour.
+- **On Accent** (closing inquiry): paper becomes accent-deep, ink becomes on-accent-ink and soft text on-accent-ink-soft. Hair becomes on-accent-hair and line on-accent-line. The primary button inverts to an ink pill with oxblood text, and `<em>` inherits the text colour.
 
 ### Named Rules
-**The Three-Ink Rule.** Paper/ink, field green, signal orange. No fourth hue, no tints beyond alpha on ink, no gradients.
+**The One Colour Rule.** Oxblood means "act here". Use it only on actions (primary pill, link underline, arrow affordance, active nav) and on at most one italic accent word per view. Never use it as a fill, a border or a decorative tint.
 
-**The Signal-Means-Act Rule.** Orange marks something you can do: the primary button, link and nav underlines, action arrows, the stamp confirming an action. The single sanctioned exception is the closing word of the home cover headline ("Ruhrgebiet."), set at display size where signal on field (3.3:1) clears large-text contrast. Never use signal for body text, backgrounds of non-actions, or decoration.
+**The Token Flip Rule.** A dark surface is made by re-declaring the tokens locally (`.on-ink`, `.on-accent`), never by hard-coding colours inside components.
 
 ## Typography
 
-**Display Font:** Archivo Variable (with Archivo, system-ui, sans-serif), self-hosted, wdth 62–125, wght 100–900
-**Body Font:** Archivo Variable, normal width
-**Label/Mono Font:** Doto Variable (with ui-monospace, monospace), scoreboard only
+**Display Font:** Bodoni Moda Variable (with Didot, Georgia, serif)
+**Body Font:** Schibsted Grotesk Variable (with system-ui, sans-serif)
 
-**Character:** One family stretched across its width axis does all the work: narrow and heavy for posters, normal for reading. Doto is a measuring instrument, not a typeface for prose.
+**Character:** The Didone serif carries the brand and the grotesk does the work. Headlines are tight and big. Running text is sober and readable at 1.0625rem with a 1.65 line height.
 
 ### Hierarchy
-- **Display** (`t-display`: wdth 62 %, 860, line-height 0.93, -0.01em, uppercase): one per cover and on the Anpfiff/footer sign-offs. Size set per use: PageCover 3.25rem → 4.5rem → 6rem (xl) or 2.5rem → 3.75rem → 4.5rem for titles over 34 characters; home hero 3.5rem → 5.25–6rem.
-- **Headline** (`t-headline`: wdth 72 %, 820, 2.125rem / 3rem / 3.5rem, line-height 0.98, -0.012em, sentence case): every section H2 via SectionHead.
-- **Poster names** (wdth 62 %, 880, uppercase, leading 0.9–1): reference names, tool names (WordPress / Individuell), ticket heading, logo, stamp. Inline style, not a class; keep weight 880.
-- **Title** (`t-title`: wdth 82 %, 760, 1.25rem / 1.5rem, line-height 1.1): H3s, process step names, success headings.
-- **Lead** (`t-lead`: 1.125rem / 1.25rem, relaxed): intro paragraph under display and headline, max ~42rem.
-- **Body** (1.0625rem, line-height 1.65): reading measure capped at 68ch (`max-w-text`). `text-wrap: balance` on headings, `pretty` on paragraphs.
-- **Label** (`t-label`: wdth 88 %, 700, 0.8125rem, 0.06em, uppercase): table column heads, `dt` terms, process timing, footer column headings. Never above a heading.
-- **Board** (`t-board`: Doto 800, 0.04em): scoreboard values and the header rubric, nowhere else.
-- **Buttons/Nav**: wdth 85 %, 780 (nav 720), uppercase, 0.03–0.04em, 0.875–0.9375rem.
+- **Display** (500, opsz 96, 1.02, -0.022em): page covers, the homepage H1, the closing inquiry and the footer statement. Each use sets its own size: homepage H1 2.875rem to 6rem, xl cover 2.875rem to 5rem, standard cover 2.375rem to 4rem, closing 2.75rem to 4.25rem.
+- **Headline** (500, opsz 72, 2.25rem to 3.5rem, 1.06): section heads (H2).
+- **Serif sub-levels** (500, set inline): opsz 72 for card titles, fact-line figures and process numerals; opsz 48 for service names in the price table (1.75rem to 2rem); opsz 36 for FAQ questions and the panel form title; opsz 28 for the wordmark.
+- **Title** (grotesk 600, 1.25rem to 1.375rem, 1.25): H3 inside content, such as process steps and list items.
+- **Lead** (1.125rem to 1.25rem, 1.625): the intro paragraph under a display or headline, usually in soft ink.
+- **Body** (1.0625rem, 1.65): running text. Long-form prose is capped at 66ch.
+- **Label** (600, 0.75rem, 0.09em, uppercase): table column heads, `<dt>` terms, footer nav headings and the theme legend. It never sits above a headline.
 
 ### Named Rules
-**The Doto Stays on the Board Rule.** The dot-matrix face appears only inside `bg-board` (ScoreBoard, header rubric). Anywhere else it is costume.
+**The Optical Size Rule.** Every serif setting declares its opsz, and it scales with the size: 96 display, 72 headline, 48, 36, 28. Never let the serif render at the default optical size.
 
-**The Tabular Rule.** Tables and `.tabular` use `font-variant-numeric: tabular-nums`; prices and figures line up like a league table.
+**The Single Italic Rule.** Italic oxblood is reserved for one `<em>` word or phrase in a display or headline, and only one per viewport. On ink and oxblood surfaces it keeps the italic but drops the colour.
 
 ## Layout
 
-- **Container** `.wrap`: centred, max 78rem, gutters 16px / 24px (sm) / 40px (lg).
-- **Rhythm** `.section`: 64px / 96px (md) vertical; `.section-tight` 48px / 64px. Sections alternate paper and `bg-sheet`; green (`on-field`) opens the page (cover) and closes it (Anpfiff + footer); `on-ink` is a single slab inside a section (e.g. the "Individuell" half of the tool comparison).
-- **Section opening** `.rule-heavy`: 6px ink top border, then 24–32px to the headline. Lists and tables open on a 2px ink line and separate rows with 1px ink/25 % hairlines (FaqList, ProcessFixture, ServiceTable, reference articles).
-- **Grid**: 12 columns at lg; typical splits 7/5 (cover text/ticket, reference text/shots), 5/7 (headline/foreword), 6/5 offset (Anpfiff). Mobile stacks in reading order: headline, lead, buttons, board, ticket.
-- **Context classes** `on-field` and `on-ink` flip text and `--focus` to the paper side so focus rings stay visible.
-- **Sticky header** 4.25rem (`--header-h`); `scroll-padding-top` = header + 1rem.
+The page container is centred with a 1280px maximum and gutters of 20, 32 and 48px across breakpoints (sm 640px, lg 1024px). Content runs on an asymmetric 12-column grid. A cover splits 7 + 5, offset from column 8. Section heads put the title on the left and an optional action at the bottom right.
+
+A standard section has 80px of vertical padding (112px from md). A tight section uses 56px (80px). Section backgrounds alternate between paper and stone, and the homepage moves paper, stone, paper, stone. The sticky header is 72px tall, and scroll padding accounts for it. Mobile stacks in reading order: H1, lead, form, fact line, image.
+
+**The Rule-Not-Box Rule.** A block opens with a 1px full-ink rule (`rule-top`, or `border-t border-ink` on tables, the process list and the FAQ). Its rows divide with 1px hair. Content is not put in cards.
 
 ## Elevation & Depth
 
-No shadows anywhere. Depth exists only as overlap of flat, framed layers, like cuttings pasted into a programme: the home ticket hangs over the green edge into the paper (`-mb-20` / `-mb-28`, `z-10`); in ReferenceShots the phone screenshot overlaps the desktop screenshot's corner, both in 2px ink frames. The only `box-shadow` in the system is the input focus ring (0 0 0 2px ink), which is a stroke, not elevation.
+The system is flat. Depth comes from tonal alternation (paper and stone) and from rules. Shadows exist only where something physically overlaps the page.
 
-### Named Rules
-**The Scherenschnitt Rule.** To lift something, overlap it and frame it. Never shadow, blur or glow it.
+### Shadow Vocabulary
+- **Phone lift** (`box-shadow: 0 24px 48px -20px rgba(0,0,0,0.45)`): only on the mobile screenshot that overlaps the desktop shot.
+- **Menu layer** (`box-shadow: 0 12px 32px -12px rgba(0,0,0,0.18)`): the header's services dropdown.
+- **Consent layer** (`box-shadow: 0 18px 48px -16px rgba(0,0,0,0.28)`): the fixed cookie banner.
+
+**The Real Shadow Rule.** A shadow means "this sits above the page". If an element does not overlap anything, it gets no shadow.
 
 ## Shapes
 
-Square corners throughout (0px); the only rounded forms are the 8px signal dot beside the board and the ticket notches. Frames are 2px ink (`border-2`), section rules 6px, hairlines 1px ink at 25 %. The stamp uses a 3px signal-ink frame rotated -9°. The ticket is the one silhouette: a sheet card masked with two 14px half-circle notches 4.75rem from the top, joined by a 2px dashed ink/40 % perforation.
+There are two shape families. The interactive ones are fully round: pill buttons, chips, the theme switch and the FAQ toggle disc. The containers are softly rounded: panels and the comparison grid use 1rem, the dropdown and error alert 0.5rem, the desktop screenshot 0.375rem, and the phone frame 0.9rem with a 3px ink border. Input fields have square corners and only an underline. The textarea is the exception: a full 1.5px frame with 0.25rem corners.
 
 ## Components
 
 ### Buttons
-- **Shape:** square (0px), 2px border, min height 48px, padding 10px 24px, uppercase wdth 85 % weight 780 at 0.9375rem; `:active` nudges 1px down. Disabled at 60 % opacity.
-- **Signal** (`btn-signal`): signal fill, press-black text and border; hover inverts to black fill with signal text. On field/ink the border becomes signal. One per view: the "Erstgespräch anfragen" action.
-- **Ink** (`btn-ink`): ink fill, paper text; hover empties to transparent. Secondary decisive action ("Zur Fallstudie", "Zustimmen").
-- **Outline** (`btn-outline`): current-colour border, transparent; hover fills ink (paper on field). Tertiary and equal-weight alternatives ("Ablehnen" sits beside "Zustimmen" at the same size).
+- **Shape:** a pill, at least 48px tall, with 10px 24px padding, 0.9375rem semibold text, a 1px border and a trailing arrow icon.
+- **Primary:** oxblood fill with accent-ink text, and it hovers to deep oxblood. On the oxblood section it inverts to an ink pill with oxblood text and hovers to transparent.
+- **Dark:** an ink pill with paper text that hovers to transparent with ink text. It is the secondary action, as in "Zur Fallstudie" and consent "Zustimmen".
+- **Outline:** a line border on transparent that hovers to an ink border. Use it for the alternative choice.
+- **Motion:** the arrow translates 3px right in 200ms ease-out. Disabled buttons drop to 60% opacity.
 
 ### Chips
-- **Style:** radio/checkbox labels as printed boxes: 2px ink border, min 44px, wdth 88 % weight 700; hover ink 6 %; checked fills ink with paper text; focus ring on the label via `:has(input:focus-visible)`. ThemeSwitch is the same idea as a joined segmented control in field-ink.
+- **Style:** pill, at least 44px tall, line border, 0.9375rem medium. The radio input is visually hidden.
+- **State:** hover gives an ink border. The checked chip fills ink with paper text. The focus-visible outline is drawn on the chip.
 
 ### Inputs / Fields
-- **Style:** sheet fill, 2px rule border, square, min 48px, padding 12px 16px; placeholder in ink-soft at full opacity; hover border ink-soft.
-- **Focus:** border ink plus 2px ink ring. Invalid: danger border and a `field-error` line with alert icon. Labels sit above (`field-label`, bold wdth 90 %); hints below in ink-soft.
+- **Style:** an underline only (1.5px line) on a transparent background, 48px tall, 1.125rem text, with soft-ink placeholders. The textarea is fully framed with 0.25rem corners.
+- **Focus:** the underline turns ink and a 2px ink outline is offset 4px. Hover gives a soft-ink underline. Invalid fields get a danger underline and an error line under the field with an icon.
 
 ### Navigation
-- **Header:** sticky, paper with 2px ink bottom border. Nav links uppercase wdth 85 % weight 720, 0.875rem, min 44px; a 3px signal underline scales in from the left on hover and stays on the active route. Leistungen opens a square sheet dropdown with 2px ink frame. Mobile menu traps focus, closes on Escape and returns focus to the trigger.
-- **Rubric board:** a square black box (36px high) with the signal dot and the current rubric in Doto, driven by the nearest `[data-rubric]` section via IntersectionObserver (root margin -40 % / -55 %). Decorative (`aria-hidden`). Every top-level section must carry `data-rubric` with a programme term (Titelseite, Heimspiele, Tabelle, Taktik, Spielplan, Vorwort, Fragen, Anpfiff, Abpfiff; also Aufstellung, Auswärts, Spielbericht, Kontakt, Kleingedrucktes).
+The sticky header is paper with a hair bottom border. Nav links have an ink underline that scales in from the left on hover (300ms). The active link is oxblood with an oxblood underline. The mobile menu is a full-height paper sheet.
 
-### Signature components (when to use)
-- **PageCover**: green cover with breadcrumbs, display H1, lead, button slot and optional aside. Every page except home opens with it.
-- **ScoreBoard**: black `dl` of confirmed figures in Doto; field-soft labels. Only verified numbers (`TRUST_STATS`).
-- **SectionHead**: 6px rule, headline, optional lead, optional right-aligned action. The default opener for every section; it replaces eyebrow labels.
-- **ServiceTable**: the price table ("Tabelle"): position number, poster-name service link (whole row clickable), description, price; collapses to a grid on mobile.
-- **ProcessFixture**: the single process component ("Spielplan"): timing / step / description rows. Never rebuild a process section ad hoc.
-- **ReferenceShowcase / ReferenceShots**: first reference face-out (7/5 with overlapping shots and facts), the rest spine-style in two columns.
-- **TicketForm**: the short inquiry form inside the ticket (topic chips, e-mail, optional message). Used on the home cover and in KickoffSection.
-- **KickoffSection**: green closer of every page: display headline, three check promises, TicketForm.
-- **FaqList**: native `details` rows with a square plus box that fills ink and rotates 45° when open.
-- **CheckList**: check icon + text, one or two columns. **ContactForm**: full form on /kontakt with the same stamp. **CookieConsent**: non-modal bottom bar, reject and accept equal. **SiteLogo / DotMark**: 5×7 dot-matrix "PW" on a field rectangle with a signal dot, plus condensed wordmark.
+### Component inventory
+- **PageCover:** the opening of every sub-page. Breadcrumb, display H1 (7 columns when there is an aside, otherwise 10), lead, actions slot and aside.
+- **SectionHead:** the H2 headline with an optional intro and a top rule. Every content section starts with one.
+- **QuickInquiry:** the two-field inquiry (topic chips plus email). `inline` puts everything in one row, for the homepage hero. `panel` is a framed 1rem panel, for asides. Success appears in place.
+- **InquirySection:** the closing on-accent section with a display title, three check reassurances and an unframed QuickInquiry. Use one per page, at the end.
+- **ServiceTable:** services as a ruled table with a serif name, description and tabular price. The whole row is a link, with a stone hover and an arrow nudge.
+- **ProcessFixture:** the numbered steps. A ruled list with italic serif numerals, a title and a label-styled timing.
+- **ReferenceShowcase / ReferenceShots:** a featured case (screenshot right, text and pills left) plus a two-up of others. Shots always pair desktop with an overlapping phone, and a caption sits under each figure.
+- **FactLine:** small serif figures over soft labels in a 2/4-column grid divided by hairlines. `large` adds an ink top rule.
+- **FaqList:** `<details>` rows with serif questions. The round toggle fills ink when open and its plus rotates 45°.
+- **CheckList:** short benefit lists with a check icon, in one or two columns.
+- **Monogram / SiteLogo:** an oxblood disc with an italic serif P, plus the serif wordmark and a small uppercase "Webdesign · Dortmund".
+- **AppFooter:** on-ink. Display statement, address, three nav columns, primary pill and theme switch.
+- **CookieConsent:** a fixed 1rem-rounded paper banner with the consent shadow and an outline/dark pill pair.
+- **ThemeSwitch:** a segmented pill radio group (Hell / System / Dunkel). The selected segment is ink.
 
 ### Motion
-- **Board switch** (`animate-board`): 360ms `steps(4, end)` opacity 0.35 → 1 when the rubric changes; never on first paint.
-- **Stamp** (`animate-stamp`): "Angefragt" / "Fast fertig" lands at -9° from scale 1.5 to 1 over 520ms `cubic-bezier(0.16, 1, 0.3, 1)` after submitting.
-- **Micro**: colour transitions 150ms; nav underline and arrow nudges (translate-x 4px) 200ms ease-out; consent bar slides 300/200ms.
-- **Reduced motion:** all animation and transition durations collapse to 0.01ms; smooth scrolling only with `no-preference`.
+- **Lead reveal:** clip-path from `inset(100% 0 0 0)` plus a 12px rise, 900ms with a 120ms delay, easing `cubic-bezier(0.16, 1, 0.3, 1)`. Only on the hero's ReferenceShots.
+- **Success fade:** opacity plus a 6px rise, 420ms, same easing, on the inquiry success state.
+- **Reduced motion:** all animations and transitions collapse to 0.01ms, and smooth scrolling only applies under `no-preference`.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** open every section with SectionHead (6px ink rule + headline) and tag it with `data-rubric`.
-- **Do** keep targets at least 44px (links, chips, nav) and 48px for buttons and inputs.
-- **Do** use `on-field` / `on-ink` wrappers so text and `--focus` flip together; focus is always a 3px solid outline offset 3px.
-- **Do** keep one `btn-signal` per view and pair alternatives at equal size (consent: Ablehnen = Zustimmen).
-- **Do** give icons `aria-hidden` and real text alongside; external links announce "(öffnet neuen Tab)" via `sr-only`.
-- **Do** write in Ich-Form addressing the reader as "Sie"; state only confirmed facts (prices from PRODUCT.md, `TRUST_STATS`, real references).
-- **Do** alternate paper and sheet bands; start and end the page on field green.
+- **Do** open every block with a full-ink 1px rule and divide its rows with hair.
+- **Do** declare opsz on every serif setting, and use 500 for serif headings.
+- **Do** keep oxblood to actions plus one italic `<em>` per view.
+- **Do** put captions under images in soft ink at 0.875rem.
+- **Do** make targets at least 44px (chips, links, breadcrumbs) and 48px for buttons and inputs. Show focus with a 2px ink outline, offset 3px.
+- **Do** alternate paper and stone sections, end on the oxblood inquiry, and close with the ink footer.
+- **Do** write copy in the first person singular (Ich-Form) and address the reader formally (Sie). Use only facts on hand: real references, real prices, real response times. Never invent testimonials, numbers or logos.
 
 ### Don't:
-- **Don't** put an eyebrow or kicker label above a headline; the headline carries itself (`t-label` is for table heads and terms only).
-- **Don't** build card grids of icon tiles; services are a table, process is a fixture list, references are pasted shots.
-- **Don't** use gradients, glass, blur, or any box-shadow for depth.
-- **Don't** round corners.
-- **Don't** set Doto outside the scoreboard and header rubric.
-- **Don't** use signal orange for anything that is not an action (except the one cover word above).
-- **Don't** invent testimonials, client counts, awards or team members; no portrait photo.
+- **Don't** set an eyebrow or kicker (a small uppercase label above a headline). Labels head table columns, terms and nav groups only.
+- **Don't** build icon-tile card grids or feature boxes with icons.
+- **Don't** use gradients, glassmorphism or backdrop blur.
+- **Don't** add decorative shadows. The only shadows are the phone lift, the menu layer and the consent layer.
+- **Don't** introduce a second hue, or fill large areas with oxblood other than the closing section.
+- **Don't** use themed vocabulary or costume: stadium, building plan, mine shaft, Revier props.
+- **Don't** hard-code colours inside a dark surface. Flip the tokens instead.

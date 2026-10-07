@@ -1,5 +1,5 @@
 /**
- * Farbschema: „system“ folgt dem Gerät (Flutlicht bei Dunkelmodus),
+ * Farbschema: „system“ folgt dem Gerät (dunkel bei Dunkelmodus),
  * „light“/„dark“ überschreiben es. Das Boot-Skript in nuxt.config setzt
  * data-theme vor dem ersten Paint; hier wird nur gelesen und umgeschaltet.
  */

@@ -1,5 +1,5 @@
 /**
- * Der Ablauf („Spielplan“) – einmal definiert, überall gleich.
+ * Der Ablauf – einmal definiert, überall gleich.
  * Ersetzt die drei früheren, unterschiedlich formulierten Prozess-Abschnitte.
  */
 export interface ProcessStep {

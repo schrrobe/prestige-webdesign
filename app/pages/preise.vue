@@ -90,8 +90,8 @@ const maintenance = [
       <a href="#festpreis" class="btn btn-outline">Was Festpreis heißt</a>
     </PageCover>
 
-    <!-- Tabelle -->
-    <section class="section" data-rubric="Tabelle" aria-labelledby="table-title">
+    <!-- Preise -->
+    <section class="section" aria-labelledby="table-title">
       <div class="wrap">
         <SectionHead
           id="table-title"
@@ -103,8 +103,8 @@ const maintenance = [
       </div>
     </section>
 
-    <!-- Taktik: Festpreis -->
-    <section id="festpreis" class="section scroll-mt-24 bg-stone" data-rubric="Taktik" aria-labelledby="fixed-title">
+    <!-- Festpreis -->
+    <section id="festpreis" class="section scroll-mt-24 bg-stone" aria-labelledby="fixed-title">
       <div class="wrap">
         <SectionHead
           id="fixed-title"
@@ -112,7 +112,7 @@ const maintenance = [
           intro="Sie sollen wissen, worauf Sie sich einlassen, bevor die erste Stunde Arbeit anfällt."
         />
         <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-3">
-          <div v-for="item in fixedPrice" :key="item.title" class="border-t-2 border-ink pt-5">
+          <div v-for="item in fixedPrice" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.text }}</p>
           </div>
@@ -126,13 +126,13 @@ const maintenance = [
               Was enthalten ist und was nicht, steht danach schwarz auf weiß im Angebot.
             </p>
           </div>
-          <dl class="border-t-2 border-ink lg:col-span-8">
+          <dl class="border-t border-ink lg:col-span-8">
             <div
               v-for="factor in priceFactors"
               :key="factor.term"
-              class="grid gap-x-6 gap-y-1 border-b border-ink/25 py-5 sm:grid-cols-[10rem_1fr]"
+              class="grid gap-x-6 gap-y-1 border-b border-hair py-5 sm:grid-cols-[10rem_1fr]"
             >
-              <dt class="text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">{{ factor.term }}</dt>
+              <dt class="font-serif text-2xl leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ factor.term }}</dt>
               <dd class="text-ink-soft">{{ factor.text }}</dd>
             </div>
           </dl>
@@ -140,8 +140,8 @@ const maintenance = [
       </div>
     </section>
 
-    <!-- Tabelle: Wartung -->
-    <section class="section" data-rubric="Tabelle" aria-labelledby="care-title">
+    <!-- Wartung -->
+    <section class="section" aria-labelledby="care-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="care-title" class="t-headline">Nach dem Launch: Wartung ab 79 € im Monat.</h2>
@@ -153,15 +153,15 @@ const maintenance = [
             <AppIcon name="arrow-right" class="h-5 w-5" />
           </NuxtLink>
         </div>
-        <ul class="border-t-2 border-ink lg:col-span-7" aria-label="Wartungspakete">
+        <ul class="border-t border-ink lg:col-span-7" aria-label="Wartungspakete">
           <li
             v-for="pkg in maintenance"
             :key="pkg.name"
-            class="grid grid-cols-[1fr_auto] gap-x-6 gap-y-1 border-b border-ink/25 py-6"
+            class="grid grid-cols-[1fr_auto] gap-x-6 gap-y-1 border-b border-hair py-6"
           >
-            <p class="text-3xl uppercase leading-none md:text-4xl" style="font-stretch: 62%; font-weight: 880;">{{ pkg.name }}</p>
+            <p class="font-serif text-3xl leading-[1.05] md:text-4xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.name }}</p>
             <p class="row-span-2 text-right">
-              <span class="block whitespace-nowrap text-2xl leading-none md:text-3xl" style="font-stretch: 75%; font-weight: 820;">{{ pkg.price }}</span>
+              <span class="font-serif block whitespace-nowrap text-2xl leading-[1.05] md:text-3xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ pkg.price }}</span>
               <span class="mt-1.5 block text-sm text-ink-soft">pro Monat</span>
             </p>
             <p class="text-ink-soft">{{ pkg.text }}</p>
@@ -170,8 +170,8 @@ const maintenance = [
       </div>
     </section>
 
-    <!-- Spielplan -->
-    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -182,8 +182,8 @@ const maintenance = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Fragen zu den Kosten</h2>

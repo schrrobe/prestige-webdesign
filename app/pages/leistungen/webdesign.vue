@@ -96,17 +96,17 @@ const reasons = [
 
       <template #aside>
         <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
-          <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
+          <p class="font-serif text-6xl leading-[1.05] md:text-7xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ service.price }}</p>
           <p class="mt-1 font-semibold">{{ service.priceNote }}</p>
-          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+          <p class="mt-4 border-t border-hair pt-4 text-ink-soft">
             Für eine Unternehmenswebsite. Den genauen Preis bekommen Sie nach dem kostenlosen Erstgespräch schriftlich – was dort steht, zahlen Sie.
           </p>
         </div>
       </template>
     </PageCover>
 
-    <!-- Aufstellung: was drinsteckt -->
-    <section class="section" data-rubric="Aufstellung" aria-labelledby="features-title">
+    <!-- was drinsteckt -->
+    <section class="section" aria-labelledby="features-title">
       <div class="wrap">
         <SectionHead
           id="features-title"
@@ -115,7 +115,7 @@ const reasons = [
           :rule="false"
         />
         <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <li v-for="feature in features" :key="feature.title" class="border-t-2 border-ink pt-5">
+          <li v-for="feature in features" :key="feature.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ feature.title }}</h3>
             <p class="mt-3 max-w-text text-ink-soft">{{ feature.description }}</p>
           </li>
@@ -123,8 +123,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Taktik: warum Prestige Webdesign -->
-    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="why-title">
+    <!-- warum Prestige Webdesign -->
+    <section class="section bg-stone" aria-labelledby="why-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="why-title" class="t-headline">Warum Prestige Webdesign?</h2>
@@ -133,8 +133,8 @@ const reasons = [
           </p>
           <FactLine class="mt-10" />
         </div>
-        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
-          <div v-for="reason in reasons" :key="reason.title" class="grid gap-2 border-b border-ink/25 py-6 sm:grid-cols-[13rem_1fr] sm:gap-6">
+        <dl class="border-t border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="reason in reasons" :key="reason.title" class="grid gap-2 border-b border-hair py-6 sm:grid-cols-[13rem_1fr] sm:gap-6">
             <dt class="t-title">{{ reason.title }}</dt>
             <dd class="max-w-text text-ink-soft">{{ reason.description }}</dd>
           </div>
@@ -142,8 +142,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="section" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
@@ -157,8 +157,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -169,8 +169,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Häufige Fragen zum Webdesign</h2>
@@ -180,7 +180,7 @@ const reasons = [
     </section>
 
     <InquirySection
-      source="Leistungen Webdesign – Anpfiff"
+      source="Leistungen Webdesign – Abschluss"
       title="Bereit für Ihre neue Website?"
       text="Lassen Sie uns unverbindlich sprechen. Ich zeige Ihnen, wie eine durchdachte Website Ihrem Betrieb Anfragen bringt – und Sie bekommen danach ein Angebot zum Festpreis."
     />

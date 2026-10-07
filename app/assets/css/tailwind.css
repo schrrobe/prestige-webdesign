@@ -219,7 +219,6 @@
 
   /* ---------- Linien ---------- */
   .rule-top { border-top: 1px solid rgb(var(--ink)); }
-  .hairline { border-top: 1px solid rgb(var(--hair)); }
 }
 
 /* ---------- Bewegung: ein ruhiger Moment ---------- */

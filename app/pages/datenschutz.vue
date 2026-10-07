@@ -11,10 +11,9 @@ useSeoMeta({
     <PageCover
       title="Datenschutzerklärung"
       lead="Stand: 6. Oktober 2026"
-      rubric="Kleingedrucktes"
     />
 
-    <section class="section" data-rubric="Kleingedrucktes" aria-label="Datenschutzerklärung">
+    <section class="section" aria-label="Datenschutzerklärung">
       <div class="wrap">
         <div class="prose-paper">
           <!-- 1 -->
@@ -54,7 +53,7 @@ useSeoMeta({
           <!-- 5 -->
           <h2>5. Kontaktformulare und E-Mail</h2>
           <p>
-            Auf dieser Website gibt es zwei Formulare: die Kurzanfrage („Eintrittskarte“, z. B. auf der Startseite) und das ausführliche Kontaktformular auf der Kontaktseite. Dabei werden folgende Daten verarbeitet:
+            Auf dieser Website gibt es zwei Formulare: die Kurzanfrage (z. B. auf der Startseite) und das ausführliche Kontaktformular auf der Kontaktseite. Dabei werden folgende Daten verarbeitet:
           </p>
           <ul>
             <li>E-Mail-Adresse (Pflichtangabe, damit ich antworten kann)</li>
@@ -79,7 +78,7 @@ useSeoMeta({
             Diese Website setzt keine Cookies, solange Sie nicht in die Webanalyse eingewilligt haben (siehe Abschnitt 7). Zwei Einstellungen werden lokal in Ihrem Browser gespeichert (Local Storage) und nicht an mich übertragen:
           </p>
           <ul>
-            <li>Ihre gewählte Darstellung (Hell, Flutlicht oder Automatisch), falls Sie sie im Footer ändern</li>
+            <li>Ihre gewählte Darstellung (Hell, Dunkel oder Automatisch), falls Sie sie im Footer ändern</li>
             <li>Ihre Entscheidung zur Webanalyse (Zustimmung oder Ablehnung), falls Google Analytics aktiv ist</li>
           </ul>
           <p>

@@ -38,8 +38,8 @@ const reasons = [
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
-    <!-- Taktik: warum Bochum -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+    <!-- warum Bochum -->
+    <section class="section" aria-labelledby="local-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="local-title" class="t-headline">Webdesign Bochum: Digital durchstarten in der Wissensstadt</h2>
@@ -59,8 +59,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <!-- Leistungen & Preise -->
+    <section class="section bg-stone" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -73,8 +73,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Taktik: was Sie bekommen -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="reasons-title">
+    <!-- was Sie bekommen -->
+    <section class="section" aria-labelledby="reasons-title">
       <div class="wrap">
         <SectionHead
           id="reasons-title"
@@ -82,7 +82,7 @@ const reasons = [
           intro="Kein Agentur-Apparat, sondern ein Webdesigner, der Ihr Projekt vom ersten Gespräch bis zum Launch selbst betreut."
         />
         <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="item in reasons" :key="item.title" class="border-t-2 border-ink pt-5">
+          <div v-for="item in reasons" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.text }}</p>
           </div>
@@ -90,8 +90,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section bg-stone" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
@@ -104,8 +104,8 @@ const reasons = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -119,7 +119,7 @@ const reasons = [
     <CityKeywordLinks city-slug="bochum" city-name="Bochum" />
 
     <InquirySection
-      source="Webdesign Bochum – Anpfiff"
+      source="Webdesign Bochum – Abschluss"
       title="Ihre Website für Bochum."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
     />

@@ -11,10 +11,9 @@ useSeoMeta({
     <PageCover
       title="Impressum"
       lead="Angaben gemäß § 5 DDG"
-      rubric="Kleingedrucktes"
     />
 
-    <section class="section" data-rubric="Kleingedrucktes" aria-label="Impressum">
+    <section class="section" aria-label="Impressum">
       <div class="wrap">
         <div class="prose-paper">
           <!-- Anbieter -->

@@ -111,16 +111,16 @@ const useCases = [
 
       <template #aside>
         <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
-          <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
-          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+          <p class="font-serif text-6xl leading-[1.05] md:text-7xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ service.price }}</p>
+          <p class="mt-4 border-t border-hair pt-4 text-ink-soft">
             {{ service.priceNote }}. Jede Anwendung ist anders – deshalb kläre ich erst den Umfang und nenne Ihnen dann einen festen Preis.
           </p>
         </div>
       </template>
     </PageCover>
 
-    <!-- Aufstellung: Lösungsbereiche -->
-    <section class="section" data-rubric="Aufstellung" aria-labelledby="areas-title">
+    <!-- Lösungsbereiche -->
+    <section class="section" aria-labelledby="areas-title">
       <div class="wrap">
         <SectionHead
           id="areas-title"
@@ -129,7 +129,7 @@ const useCases = [
           :rule="false"
         />
         <ul class="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
-          <li v-for="item in solutionAreas" :key="item.title" class="border-t-2 border-ink pt-5">
+          <li v-for="item in solutionAreas" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 max-w-text text-ink-soft">{{ item.description }}</p>
           </li>
@@ -137,8 +137,8 @@ const useCases = [
       </div>
     </section>
 
-    <!-- Taktik: Anforderungen -->
-    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="requirements-title">
+    <!-- Anforderungen -->
+    <section class="section bg-stone" aria-labelledby="requirements-title">
       <div class="wrap">
         <SectionHead
           id="requirements-title"
@@ -146,7 +146,7 @@ const useCases = [
           intro="Komplexe Anwendungen brauchen mehr als eine schöne Oberfläche. Architektur, Nutzerführung und Erweiterbarkeit müssen zusammenpassen."
         />
         <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <li v-for="feature in features" :key="feature.title" class="border-t-2 border-ink pt-5">
+          <li v-for="feature in features" :key="feature.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ feature.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ feature.description }}</p>
           </li>
@@ -154,8 +154,8 @@ const useCases = [
       </div>
     </section>
 
-    <!-- Aufstellung: Einsatzbereiche -->
-    <section class="section" data-rubric="Aufstellung" aria-labelledby="usecases-title">
+    <!-- Einsatzbereiche -->
+    <section class="section" aria-labelledby="usecases-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="usecases-title" class="t-headline">Typische Einsatzbereiche</h2>
@@ -173,8 +173,8 @@ const useCases = [
       </div>
     </section>
 
-    <!-- Heimspiele: Verweis auf Referenzen -->
-    <section class="section-tight on-ink" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Verweis auf Referenzen -->
+    <section class="section-tight on-ink" aria-labelledby="refs-title">
       <div class="wrap grid gap-6 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-8">
           <h2 id="refs-title" class="t-title">Wie ich individuell entwickle, können Sie sich ansehen.</h2>
@@ -195,8 +195,8 @@ const useCases = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -207,8 +207,8 @@ const useCases = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Häufige Fragen zu Webanwendungen</h2>
@@ -218,7 +218,7 @@ const useCases = [
     </section>
 
     <InquirySection
-      source="Leistungen Webanwendungen – Anpfiff"
+      source="Leistungen Webanwendungen – Abschluss"
       title="Sie planen eine Webanwendung?"
       text="Schildern Sie mir Ihr Vorhaben in ein paar Sätzen. Im kostenlosen Erstgespräch klären wir, welcher Umfang und welche Architektur sinnvoll sind – danach bekommen Sie ein Angebot zum Festpreis."
     />
