@@ -71,7 +71,7 @@ const tools = [
         <SectionHead
           id="refs-title"
           title="Websites, die schon für ihre Betriebe arbeiten."
-          intro="Bei allen drei Projekten lagen Design und Umsetzung bei mir. Zu jeder Seite gibt es einen kurze Fallstudie: Ausgangslage, was umgesetzt wurde und mit welcher Technik."
+          intro="Bei allen drei Projekten lagen Design und Umsetzung bei mir. Zu jeder Seite gibt es eine kurze Fallstudie: Ausgangslage, was umgesetzt wurde und mit welcher Technik."
           :rule="false"
         />
         <ReferenceShowcase class="mt-12" />

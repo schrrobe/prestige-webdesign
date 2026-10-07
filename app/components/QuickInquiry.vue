@@ -40,6 +40,7 @@ const emailError = ref('')
 const emailInput = ref<HTMLInputElement | null>(null)
 const messageInput = ref<HTMLTextAreaElement | null>(null)
 const statusHeading = ref<HTMLElement | null>(null)
+const errorAlert = ref<HTMLElement | null>(null)
 
 const { status, send, reset } = useInquiry()
 
@@ -59,6 +60,9 @@ async function onSubmit() {
   if (status.value === 'sent' || status.value === 'mailto') {
     await nextTick()
     statusHeading.value?.focus()
+  } else if (status.value === 'error') {
+    await nextTick()
+    errorAlert.value?.focus()
   }
 }
 
@@ -182,7 +186,7 @@ function startOver() {
         <label>Bitte leer lassen <input v-model="botcheck" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <p v-if="status === 'error'" role="alert" class="mt-5 rounded-lg border border-danger px-4 py-3 text-[0.9375rem] font-semibold text-danger">
+      <p v-if="status === 'error'" ref="errorAlert" tabindex="-1" role="alert" class="focus:outline-none mt-5 rounded-lg border border-danger px-4 py-3 text-[0.9375rem] font-semibold text-danger">
         Das hat nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an
         <a :href="`mailto:${CONTACT.email}`" class="underline">{{ CONTACT.email }}</a>.
       </p>

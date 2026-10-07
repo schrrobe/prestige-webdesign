@@ -91,7 +91,7 @@ components:
     height: "48px"
   button-primary-hover:
     backgroundColor: "{colors.accent-deep}"
-    textColor: "{colors.accent-ink}"
+    textColor: "{colors.on-accent-ink}"
   button-dark:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
