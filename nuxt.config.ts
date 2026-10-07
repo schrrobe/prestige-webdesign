@@ -67,8 +67,9 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
 
   css: [
-    '@fontsource-variable/archivo/wdth.css',
-    '@fontsource-variable/doto/wght.css',
+    '@fontsource-variable/bodoni-moda/opsz.css',
+    '@fontsource-variable/bodoni-moda/opsz-italic.css',
+    '@fontsource-variable/schibsted-grotesk/wght.css',
   ],
 
   modules: [
@@ -87,7 +88,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Prestige Webdesign: Professionelle Webagentur für modernes Webdesign, SEO & E-Commerce im Ruhrgebiet. Jetzt Kontakt aufnehmen!' },
         { name: 'author', content: 'Prestige Webdesign - Robert Schreiner' },
-        { name: 'theme-color', content: '#0d4a32' },
+        { name: 'theme-color', content: '#fbfbfa' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Prestige Webdesign' },
         { property: 'og:locale', content: 'de_DE' },

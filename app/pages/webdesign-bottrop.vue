@@ -34,12 +34,12 @@ const seoEffects = [
       title="Webdesign Bottrop"
       lead="Websites für Betriebe in Bottrop – ob Innenstadt, Kirchhellen oder Gewerbegebiet. Ich gestalte und entwickle Auftritte, die Vertrauen schaffen und im Alltag funktionieren, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
-    <!-- Taktik: warum Bottrop -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+    <!-- warum Bottrop -->
+    <section class="section" aria-labelledby="local-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="local-title" class="t-headline">Warum professionelles Webdesign in Bottrop so wichtig ist</h2>
@@ -58,8 +58,8 @@ const seoEffects = [
       </div>
     </section>
 
-    <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <!-- Leistungen & Preise -->
+    <section class="section bg-stone" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -72,8 +72,8 @@ const seoEffects = [
       </div>
     </section>
 
-    <!-- Taktik: lokale SEO -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="seo-title">
+    <!-- lokale SEO -->
+    <section class="section" aria-labelledby="seo-title">
       <div class="wrap">
         <SectionHead
           id="seo-title"
@@ -81,7 +81,7 @@ const seoEffects = [
           intro="Wer „Webdesign Bottrop“ oder Ihre Leistung sucht, will einen Anbieter aus der Nähe. Eine lokal optimierte Website sorgt dafür, dass Sie dabei auftauchen."
         />
         <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="item in seoEffects" :key="item.title" class="border-t-2 border-ink pt-5">
+          <div v-for="item in seoEffects" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.text }}</p>
           </div>
@@ -89,8 +89,8 @@ const seoEffects = [
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section bg-stone" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
@@ -103,8 +103,8 @@ const seoEffects = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -117,8 +117,8 @@ const seoEffects = [
 
     <CityKeywordLinks city-slug="bottrop" city-name="Bottrop" />
 
-    <KickoffSection
-      source="Webdesign Bottrop – Anpfiff"
+    <InquirySection
+      source="Webdesign Bottrop – Abschluss"
       title="Ihre Website für Bottrop."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
     />

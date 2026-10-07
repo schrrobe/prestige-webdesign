@@ -133,21 +133,21 @@ const successFactors = [
       title="Online-Shop erstellen lassen."
       lead="E-Commerce Lösungen mit WooCommerce oder Shopify für Händler und Betriebe im Ruhrgebiet: ein Shop, der auf dem Smartphone verkauft – mit Produkten, Zahlung, Versand und sauberen Abläufen."
     >
-      <a href="#anpfiff" class="btn btn-signal">Shop-Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Shop-Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
-          <p class="mt-2 text-[2.5rem] uppercase leading-none sm:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
-          <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+          <p class="font-serif mt-2 text-[2.5rem] leading-[1.05] sm:text-5xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ service.price }}</p>
+          <p class="mt-4 border-t border-hair pt-4 text-ink-soft">
             Produktanzahl, Funktionen und Zahlungsanbieter bestimmen den Preis. Nach dem kostenlosen Erstgespräch steht er fest.
           </p>
         </div>
       </template>
     </PageCover>
 
-    <!-- Taktik: Plattformwahl -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="platforms-title">
+    <!-- Plattformwahl -->
+    <section class="section" aria-labelledby="platforms-title">
       <div class="wrap">
         <SectionHead
           id="platforms-title"
@@ -160,19 +160,19 @@ const successFactors = [
             v-for="(platform, i) in platforms"
             :key="platform.title"
             class="p-6 md:p-10"
-            :class="i > 0 ? 'border-t-2 border-ink md:border-l-2 md:border-t-0' : ''"
+            :class="i > 0 ? 'border-t border-ink md:border-l-2 md:border-t-0' : ''"
           >
-            <h3 class="text-4xl uppercase leading-none md:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ platform.title }}</h3>
+            <h3 class="font-serif text-4xl leading-[1.05] md:text-5xl" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ platform.title }}</h3>
             <p class="t-title mt-3 text-ink-soft">{{ platform.claim }}</p>
             <p class="mt-5 max-w-text">{{ platform.description }}</p>
-            <CheckList class="mt-6 border-t border-ink/25 pt-6" :items="platform.features" />
+            <CheckList class="mt-6 border-t border-hair pt-6" :items="platform.features" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Aufstellung: Leistungsumfang -->
-    <section class="section bg-sheet" data-rubric="Aufstellung" aria-labelledby="portfolio-title">
+    <!-- Leistungsumfang -->
+    <section class="section bg-stone" aria-labelledby="portfolio-title">
       <div class="wrap">
         <SectionHead
           id="portfolio-title"
@@ -180,7 +180,7 @@ const successFactors = [
           intro="Von der Shop-Entwicklung bis zum ersten Verkauf: Ich kümmere mich um die Technik, damit Sie sich um Ihre Kunden kümmern können."
         />
         <ul class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <li v-for="item in services" :key="item.title" class="border-t-2 border-ink pt-5">
+          <li v-for="item in services" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.description }}</p>
           </li>
@@ -188,8 +188,8 @@ const successFactors = [
       </div>
     </section>
 
-    <!-- Taktik: Vorteile -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="benefits-title">
+    <!-- Vorteile -->
+    <section class="section" aria-labelledby="benefits-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="benefits-title" class="t-headline">Warum ein professioneller Online-Shop?</h2>
@@ -197,8 +197,8 @@ const successFactors = [
             Ein gut gebauter Online-Shop ist eine der lohnendsten Investitionen, wenn Sie über Ihren Laden oder Ihre Region hinaus verkaufen wollen.
           </p>
         </div>
-        <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
-          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-ink/25 py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
+        <dl class="border-t border-ink lg:col-span-6 lg:col-start-7">
+          <div v-for="benefit in benefits" :key="benefit.title" class="grid gap-2 border-b border-hair py-5 sm:grid-cols-[13rem_1fr] sm:gap-6">
             <dt class="t-title">{{ benefit.title }}</dt>
             <dd class="max-w-text text-ink-soft">{{ benefit.description }}</dd>
           </div>
@@ -206,8 +206,8 @@ const successFactors = [
       </div>
     </section>
 
-    <!-- Aufstellung: Erfolgsfaktoren -->
-    <section class="section on-ink" data-rubric="Aufstellung" aria-labelledby="factors-title">
+    <!-- Erfolgsfaktoren -->
+    <section class="section on-ink" aria-labelledby="factors-title">
       <div class="wrap">
         <h2 id="factors-title" class="t-headline max-w-3xl">Was einen erfolgreichen Online-Shop ausmacht</h2>
         <p class="t-lead mt-5 max-w-2xl text-paper/75">
@@ -222,8 +222,8 @@ const successFactors = [
       </div>
     </section>
 
-    <!-- Heimspiele: Verweis auf Referenzen -->
-    <section class="section-tight border-b-2 border-ink" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Verweis auf Referenzen -->
+    <section class="section-tight border-b border-ink" aria-labelledby="refs-title">
       <div class="wrap grid gap-6 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-8">
           <h2 id="refs-title" class="t-title">Sehen Sie sich an, wie ich arbeite.</h2>
@@ -240,8 +240,8 @@ const successFactors = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -252,8 +252,8 @@ const successFactors = [
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Häufige Fragen zu E-Commerce</h2>
@@ -262,8 +262,8 @@ const successFactors = [
       </div>
     </section>
 
-    <KickoffSection
-      source="Leistungen E-Commerce – Anpfiff"
+    <InquirySection
+      source="Leistungen E-Commerce – Abschluss"
       title="Lassen Sie uns über Ihren Shop sprechen."
       text="Erzählen Sie mir, was Sie verkaufen und an wen. Im kostenlosen Erstgespräch klären wir Plattform und Umfang – danach bekommen Sie ein Angebot zum Festpreis."
     />

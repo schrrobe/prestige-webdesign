@@ -34,12 +34,12 @@ const localSeo = [
       title="Webdesign Dortmund"
       lead="Websites für Dortmunder Betriebe – von der Innenstadt bis zum Technologiepark. Ich sitze selbst in Dortmund, gestalte und entwickle Ihre Seite persönlich und nenne Ihnen vorher den Preis: Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
-    <!-- Taktik: warum lokal -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+    <!-- warum lokal -->
+    <section class="section" aria-labelledby="local-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="local-title" class="t-headline">Warum lokale Webgestaltung für Dortmund entscheidend ist</h2>
@@ -58,8 +58,8 @@ const localSeo = [
       </div>
     </section>
 
-    <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <!-- Leistungen & Preise -->
+    <section class="section bg-stone" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -72,8 +72,8 @@ const localSeo = [
       </div>
     </section>
 
-    <!-- Taktik: lokale SEO -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="seo-title">
+    <!-- lokale SEO -->
+    <section class="section" aria-labelledby="seo-title">
       <div class="wrap">
         <SectionHead
           id="seo-title"
@@ -81,7 +81,7 @@ const localSeo = [
           intro="Wer in Dortmund sucht, will meistens jemanden aus Dortmund. Eine lokal optimierte Website sorgt dafür, dass Sie bei diesen Suchen auftauchen."
         />
         <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="item in localSeo" :key="item.title" class="border-t-2 border-ink pt-5">
+          <div v-for="item in localSeo" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.text }}</p>
           </div>
@@ -89,8 +89,8 @@ const localSeo = [
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section bg-stone" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
@@ -103,8 +103,8 @@ const localSeo = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -117,8 +117,8 @@ const localSeo = [
 
     <CityKeywordLinks city-slug="dortmund" city-name="Dortmund" />
 
-    <KickoffSection
-      source="Webdesign Dortmund – Anpfiff"
+    <InquirySection
+      source="Webdesign Dortmund – Abschluss"
       title="Ihre Website aus Dortmund."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
     />

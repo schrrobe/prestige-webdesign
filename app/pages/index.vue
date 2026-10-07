@@ -54,108 +54,121 @@ useHead({
   ],
 })
 
+const featured = REFERENCES[0]!
 const wordpressRefs = REFERENCES.filter(r => r.tool === 'WordPress')
 const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
 </script>
 
 <template>
   <div>
-    <!-- Titelseite -->
-    <section class="on-field relative" data-rubric="Titelseite" aria-labelledby="cover-title">
-      <div class="wrap grid gap-10 pt-10 md:pt-14 lg:grid-cols-12 lg:gap-12">
-        <div class="lg:col-span-7 lg:pb-16">
-          <h1 id="cover-title" class="t-display text-[3.5rem] sm:text-[5.5rem] lg:text-[5.25rem] xl:text-[6rem]">
-            Webdesign<br>
-            aus Dortmund<br>
-            fürs <span class="text-signal">Ruhrgebiet.</span>
-          </h1>
-          <p class="t-lead mt-7 max-w-xl">
-            Schnelle, mobile und barrierefreie Websites für Betriebe im Revier.
-            Ein Ansprechpartner von der Idee bis zum Launch – <strong>zum Festpreis ab 800 €.</strong>
-          </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:hidden">
-            <a href="#anfrage" class="btn btn-signal">Erstgespräch anfragen</a>
-            <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
+    <!-- Aufmacher -->
+    <section class="border-b border-hair" aria-labelledby="cover-title">
+      <div class="wrap pb-20 pt-12 md:pb-28 md:pt-14">
+        <h1 id="cover-title" class="t-display max-w-[16ch] text-[2.875rem] sm:text-7xl lg:max-w-none lg:text-[5.5rem] xl:text-[6rem]">
+          Webdesign aus Dortmund, <br class="hidden lg:block"><em>mit Sorgfalt</em> gemacht.
+        </h1>
+        <div class="mt-10 grid gap-14 md:mt-14 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-6">
+            <p class="t-lead max-w-xl text-ink-soft">
+              Schnelle, mobile und barrierefreie Websites für Betriebe im Ruhrgebiet –
+              von einem Ansprechpartner, <span class="text-ink">zum Festpreis ab 800 €</span>.
+            </p>
+            <div id="anfrage" class="mt-9 max-w-xl scroll-mt-28">
+              <QuickInquiry variant="inline" source="Startseite – Aufmacher" />
+            </div>
+            <FactLine class="mt-12 max-w-xl" />
           </div>
-          <ScoreBoard class="mt-10 lg:mt-14" />
-        </div>
-        <div id="anfrage" class="relative z-10 -mb-20 scroll-mt-24 lg:col-span-5 lg:-mb-28 lg:self-end">
-          <TicketForm source="Startseite – Titelseite" />
+          <figure class="lg:col-span-6 lg:pl-6">
+            <ReferenceShots :reference="featured" eager reveal />
+            <figcaption class="mt-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-hair pt-4 text-sm">
+              <span class="text-ink-soft"><span class="font-semibold text-ink">{{ featured.name }}</span> · {{ featured.industry }}, {{ featured.location }}</span>
+              <NuxtLink :to="`/referenzen/${featured.slug}`" class="link inline-flex min-h-11 items-center gap-1 font-medium">
+                Zur Fallstudie
+                <span class="sr-only">{{ featured.name }}</span>
+                <AppIcon name="arrow-right" class="h-4 w-4" />
+              </NuxtLink>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="pb-16 pt-36 md:pb-24 lg:pt-44" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
           title="Websites, die schon für ihre Betriebe arbeiten."
-          intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – drei Beispiele aus den letzten Jahren. Klicken Sie ruhig rein, alle Seiten sind online."
-          :rule="false"
+          intro="Ein Studio, ein Fotografenpaar, ein Transportunternehmen – drei Beispiele aus den letzten Jahren. Alle Seiten sind online, klicken Sie ruhig hinein."
         >
-          <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
+          <NuxtLink to="/referenzen" class="btn btn-outline">
+            Alle Referenzen
+            <AppIcon name="arrow-right" class="h-4 w-4" />
+          </NuxtLink>
         </SectionHead>
-        <ReferenceShowcase class="mt-12" />
+        <ReferenceShowcase class="mt-14" />
       </div>
     </section>
 
-    <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <!-- Leistungen & Preise -->
+    <section class="section bg-stone" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
-          title="Was es kostet – vorher, nicht hinterher."
           intro="Jedes Projekt beginnt mit einem kostenlosen Erstgespräch. Danach bekommen Sie ein Angebot zum Festpreis. Was dort steht, zahlen Sie – nicht mehr."
         >
-          <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
+          <template #title>Was es kostet – <em>vorher</em>, nicht hinterher.</template>
+          <NuxtLink to="/preise" class="btn btn-outline">
+            Preise im Detail
+            <AppIcon name="arrow-right" class="h-4 w-4" />
+          </NuxtLink>
         </SectionHead>
-        <ServiceTable class="mt-10" />
+        <ServiceTable class="mt-12" />
       </div>
     </section>
 
-    <!-- Taktik: das passende Werkzeug -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="tools-title">
+    <!-- Das passende Werkzeug -->
+    <section class="section" aria-labelledby="tools-title">
       <div class="wrap">
         <SectionHead
           id="tools-title"
           title="Das passende Werkzeug für Ihren Betrieb."
           intro="Nicht jede Website braucht dasselbe. Im Erstgespräch finden wir heraus, was zu Ihnen passt – und ich sage Ihnen ehrlich, wenn die einfachere Lösung reicht."
         />
-        <div class="mt-12 grid border-y-2 border-ink md:grid-cols-2">
-          <div class="py-8 md:py-10 md:pr-10">
-            <h3 class="text-4xl uppercase leading-none md:text-5xl" style="font-stretch: 62%; font-weight: 880;">WordPress</h3>
-            <p class="t-title mt-3 text-ink-soft">Für alle, die selbst pflegen wollen.</p>
+        <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-hair bg-hair md:grid-cols-2">
+          <div class="bg-paper p-8 md:p-12">
+            <h3 class="font-serif text-4xl leading-none md:text-5xl" style="font-weight: 500; font-variation-settings: 'opsz' 72;">WordPress</h3>
+            <p class="t-lead mt-4 text-ink-soft">Für alle, die selbst pflegen wollen.</p>
             <CheckList
-              class="mt-6"
+              class="mt-8"
               :items="[
                 'Texte, Bilder und Angebote ohne Technikkenntnisse ändern',
                 'Bewährt, verbreitet, viele Erweiterungen',
                 'Ideal für Firmenwebsites, Blogs und Shops mit WooCommerce',
               ]"
             />
-            <p class="mt-8 border-t border-ink/25 pt-4 text-sm font-semibold text-ink-soft">
+            <p class="mt-10 border-t border-hair pt-5 text-sm text-ink-soft">
               So gebaut:
               <template v-for="(r, i) in wordpressRefs" :key="r.slug">
                 <NuxtLink :to="`/referenzen/${r.slug}`" class="link text-ink">{{ r.name }}</NuxtLink><template v-if="i < wordpressRefs.length - 1">, </template>
               </template>
             </p>
           </div>
-          <div class="on-ink p-6 md:p-10">
-            <h3 class="text-4xl uppercase leading-none md:text-5xl" style="font-stretch: 62%; font-weight: 880;">Individuell</h3>
-            <p class="t-title mt-3 opacity-80">Für maximale Geschwindigkeit und eigene Ideen.</p>
+          <div class="bg-paper p-8 md:p-12">
+            <h3 class="font-serif text-4xl italic leading-none md:text-5xl" style="font-weight: 500; font-variation-settings: 'opsz' 72;">Individuell</h3>
+            <p class="t-lead mt-4 text-ink-soft">Für maximale Geschwindigkeit und eigene Ideen.</p>
             <CheckList
-              class="mt-6"
+              class="mt-8"
               :items="[
                 'Von Grund auf entwickelt mit Nuxt und Vue – kein Baukasten',
                 'Lädt sehr schnell – auch bei schwachem Netz unterwegs',
                 'Ideal für besondere Abläufe, Portale und Webanwendungen',
               ]"
             />
-            <p class="mt-8 border-t border-current/25 pt-4 text-sm font-semibold opacity-90">
+            <p class="mt-10 border-t border-hair pt-5 text-sm text-ink-soft">
               So gebaut:
               <template v-for="r in customRefs" :key="r.slug">
-                <NuxtLink :to="`/referenzen/${r.slug}`" class="link">{{ r.name }}</NuxtLink>
+                <NuxtLink :to="`/referenzen/${r.slug}`" class="link text-ink">{{ r.name }}</NuxtLink>
               </template>
               und diese Website hier.
             </p>
@@ -164,76 +177,75 @@ const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section bg-stone" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
-          title="So läuft’s ab."
+          title="So läuft die Zusammenarbeit."
           intro="Fünf Schritte, keine Überraschungen. Sie wissen jederzeit, wo Ihr Projekt steht."
         />
-        <ProcessFixture class="mt-10" />
+        <ProcessFixture class="mt-12" />
       </div>
     </section>
 
-    <!-- Vorwort: in eigener Sache -->
-    <section class="section" data-rubric="Vorwort" aria-labelledby="intro-title">
-      <div class="wrap grid gap-10 lg:grid-cols-12">
+    <!-- In eigener Sache -->
+    <section class="section" aria-labelledby="intro-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <h2 id="intro-title" class="t-headline">Ein Ansprechpartner. Von Anfang bis Ende.</h2>
+          <h2 id="intro-title" class="t-headline">Ein Ansprechpartner. <em>Von Anfang bis Ende.</em></h2>
         </div>
-        <div class="max-w-text lg:col-span-7">
-          <p class="t-lead">
+        <div class="max-w-text lg:col-span-6 lg:col-start-7">
+          <p class="font-serif text-2xl leading-snug md:text-[1.75rem]" style="font-weight: 400; font-variation-settings: 'opsz' 36;">
             Ich bin {{ CONTACT.owner }} und baue seit {{ CONTACT.since }} Websites für Betriebe aus dem Ruhrgebiet.
-            Bei mir landen Sie nicht in einer Agentur-Warteschleife: Ich berate Sie, gestalte, entwickle und bin auch nach dem Launch für Sie da.
+            Bei mir landen Sie nicht in einer Agentur-Warteschleife.
           </p>
-          <p class="mt-5 text-ink-soft">
-            Mir ist wichtig, dass Ihre Website für alle funktioniert – auf dem alten Smartphone genauso wie mit Screenreader oder Tastatur.
+          <p class="mt-6 text-ink-soft">
+            Ich berate Sie, gestalte, entwickle und bin auch nach dem Launch für Sie da. Mir ist wichtig, dass Ihre Website für alle funktioniert – auf dem alten Smartphone genauso wie mit Screenreader oder Tastatur.
             Deshalb baue ich barrierefrei nach WCAG 2.2 AA. Das ist seit dem Barrierefreiheitsstärkungsgesetz für viele Betriebe ohnehin Pflicht – und es macht Ihre Seite für alle Besucher besser.
           </p>
-          <NuxtLink to="/ueber-mich" class="link mt-6 inline-flex min-h-11 items-center gap-2 text-lg font-bold">
+          <NuxtLink to="/ueber-mich" class="link mt-8 inline-flex min-h-11 items-center gap-2 font-medium">
             Mehr über mich und meine Arbeitsweise
-            <AppIcon name="arrow-right" class="h-5 w-5" />
+            <AppIcon name="arrow-right" class="h-4 w-4" />
           </NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- Auswärts: Standorte -->
-    <section class="section-tight border-y-2 border-ink" data-rubric="Auswärts" aria-labelledby="cities-title">
+    <!-- Standorte -->
+    <section class="section-tight border-y border-hair" aria-labelledby="cities-title">
       <div class="wrap grid gap-8 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-4">
-          <h2 id="cities-title" class="t-title">Im ganzen Revier für Sie da.</h2>
-          <p class="mt-2 text-ink-soft">Für Betriebe in Dortmund und dem ganzen Ruhrgebiet.</p>
+          <h2 id="cities-title" class="font-serif text-3xl leading-tight" style="font-weight: 500;">Für Betriebe im ganzen Ruhrgebiet.</h2>
         </div>
-        <ul class="grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-5">
-          <li v-for="city in CITIES" :key="city.to" class="border-t border-ink/25">
+        <ul class="grid grid-cols-2 gap-x-8 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-5">
+          <li v-for="city in CITIES" :key="city.to" class="border-t border-hair">
             <NuxtLink :to="city.to" class="group flex min-h-14 items-center justify-between gap-2 py-3">
               <span>
                 <span class="sr-only">Webdesign </span>
-                <span class="block text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">{{ city.name }}</span>
+                <span class="font-serif text-xl" style="font-weight: 500;">{{ city.name }}</span>
               </span>
-              <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="h-4 w-4 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Fragen -->
-    <section class="section" data-rubric="Fragen" aria-labelledby="faq-title">
-      <div class="wrap grid gap-10 lg:grid-cols-12">
+    <!-- Häufige Fragen -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="faq-title" class="t-headline">Häufige Fragen</h2>
-          <p class="mt-4 text-ink-soft">
+          <p class="mt-5 text-ink-soft">
             Ihre Frage ist nicht dabei? Schreiben Sie mir an
-            <a :href="`mailto:${CONTACT.email}`" class="link font-semibold text-ink">{{ CONTACT.email }}</a>.
+            <a :href="`mailto:${CONTACT.email}`" class="link text-ink">{{ CONTACT.email }}</a>.
           </p>
         </div>
         <FaqList class="lg:col-span-8" :items="faqItems" />
       </div>
     </section>
 
-    <KickoffSection source="Startseite – Anpfiff" />
+    <InquirySection source="Startseite – Abschluss" />
   </div>
 </template>

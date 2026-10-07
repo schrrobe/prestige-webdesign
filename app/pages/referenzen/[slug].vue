@@ -31,7 +31,7 @@ const facts = computed(() => [
   <div>
     <PageCover :title="reference.name">
       <template #lead>
-        <p class="t-title mt-6 text-field-soft md:mt-8">{{ reference.industry }} · {{ reference.location }}</p>
+        <p class="t-title mt-6 text-ink-soft md:mt-8">{{ reference.industry }} · {{ reference.location }}</p>
         <p class="t-lead mt-4 max-w-2xl">{{ reference.summary }}</p>
       </template>
       <a :href="reference.url" target="_blank" rel="noopener" class="btn btn-outline">
@@ -41,10 +41,9 @@ const facts = computed(() => [
       </a>
     </PageCover>
 
-    <!-- Heimspiele: Ansichten, ragen aus der Titelseite heraus -->
-    <section class="relative pb-16 md:pb-24" data-rubric="Heimspiele" aria-label="Ansichten der Website">
-      <div class="absolute inset-x-0 top-0 h-24 bg-field md:h-40" aria-hidden="true" />
-      <div class="wrap relative">
+    <!-- Ansichten der Website -->
+    <section class="pb-16 pt-14 md:pb-24 md:pt-20" aria-label="Ansichten der Website">
+      <div class="wrap">
         <ReferenceShots :reference="reference" eager class="mx-auto max-w-5xl" />
         <p class="mx-auto mt-4 max-w-5xl text-sm text-ink-soft">
           {{ reference.name }} auf Desktop und Smartphone –
@@ -57,33 +56,33 @@ const facts = computed(() => [
       </div>
     </section>
 
-    <!-- Spielbericht -->
-    <section class="section bg-sheet" data-rubric="Spielbericht" aria-labelledby="report-title">
+    <!-- Fallstudie -->
+    <section class="section bg-stone" aria-labelledby="report-title">
       <div class="wrap">
         <SectionHead
           id="report-title"
-          :title="`Spielbericht: ${reference.name}`"
+          :title="`Fallstudie: ${reference.name}`"
           intro="Was die Aufgabe war, was ich umgesetzt habe und womit. Nur Fakten, keine Schönfärberei – die Seite selbst können Sie jederzeit live ansehen."
         />
 
         <div class="mt-12 grid gap-x-12 gap-y-12 lg:grid-cols-12">
           <div class="lg:col-span-5">
-            <h3 class="t-title border-t-2 border-ink pt-4">Ausgangslage</h3>
+            <h3 class="t-title border-t border-ink pt-4">Ausgangslage</h3>
             <p class="t-lead mt-4 max-w-text">{{ reference.task }}</p>
           </div>
           <div class="lg:col-span-7">
-            <h3 class="t-title border-t-2 border-ink pt-4">Umgesetzt</h3>
+            <h3 class="t-title border-t border-ink pt-4">Umgesetzt</h3>
             <CheckList class="mt-5" :items="reference.built" />
           </div>
         </div>
 
         <div class="mt-14">
-          <h3 class="t-title border-t-2 border-ink pt-4">Technik</h3>
+          <h3 class="t-title border-t border-ink pt-4">Technik</h3>
           <dl class="mt-2 grid sm:grid-cols-2 lg:grid-cols-4">
             <div
               v-for="fact in facts"
               :key="fact.term"
-              class="border-b border-ink/25 py-4 sm:pr-6"
+              class="border-b border-hair py-4 sm:pr-6"
             >
               <dt class="t-label text-ink-soft">{{ fact.term }}</dt>
               <dd class="mt-1 text-lg font-bold">{{ fact.value }}</dd>
@@ -93,24 +92,24 @@ const facts = computed(() => [
       </div>
     </section>
 
-    <!-- Weitere Heimspiele -->
-    <section class="section" data-rubric="Heimspiele" aria-labelledby="more-title">
+    <!-- Weitere Referenzen -->
+    <section class="section" aria-labelledby="more-title">
       <div class="wrap">
-        <SectionHead id="more-title" title="Weitere Heimspiele" :rule="false">
+        <SectionHead id="more-title" title="Weitere Referenzen" :rule="false">
           <NuxtLink to="/referenzen" class="btn btn-outline">Alle Referenzen</NuxtLink>
         </SectionHead>
         <div class="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
-          <article v-for="item in others" :key="item.slug" class="border-t-2 border-ink pt-6">
+          <article v-for="item in others" :key="item.slug" class="border-t border-ink pt-6">
             <ReferenceShots :reference="item" />
-            <h3 class="mt-6 text-4xl uppercase leading-[0.9]" style="font-stretch: 62%; font-weight: 880;">
-              <NuxtLink :to="`/referenzen/${item.slug}`" class="decoration-signal decoration-[3px] underline-offset-[0.15em] hover:underline">
+            <h3 class="font-serif mt-6 text-4xl leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">
+              <NuxtLink :to="`/referenzen/${item.slug}`" class="decoration-accent decoration-[3px] underline-offset-[0.15em] hover:underline">
                 {{ item.name }}
               </NuxtLink>
             </h3>
             <p class="t-label mt-3 text-ink-soft">{{ item.industry }} · {{ item.tool }}</p>
             <p class="mt-3 max-w-lg text-ink-soft">{{ item.summary }}</p>
             <NuxtLink :to="`/referenzen/${item.slug}`" class="link mt-3 inline-flex min-h-11 items-center gap-1.5 font-semibold">
-              Zum Spielbericht <span class="sr-only">{{ item.name }}</span>
+              Zur Fallstudie <span class="sr-only">{{ item.name }}</span>
               <AppIcon name="arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </article>
@@ -118,8 +117,8 @@ const facts = computed(() => [
       </div>
     </section>
 
-    <KickoffSection
-      title="Ihre Website als nächstes Heimspiel?"
+    <InquirySection
+      title="Ihre Website als nächste Referenz?"
       :source="`Referenz – ${reference.name}`"
     />
   </div>

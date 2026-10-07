@@ -16,34 +16,25 @@ export default <Config>{
   theme: {
     extend: {
       colors: {
-        // Papier & Druckfarbe
         paper: token('paper'),
-        sheet: token('sheet'),
+        stone: token('stone'),
         ink: token('ink'),
         'ink-soft': token('ink-soft'),
-        rule: token('rule'),
-        // Rasen – die tragende Farbfläche
-        field: token('field'),
-        'field-deep': token('field-deep'),
-        'field-ink': token('field-ink'),
-        'field-soft': token('field-soft'),
-        // Signal – nur für Handlungen
-        signal: token('signal'),
-        'signal-ink': token('signal-ink'),
-        // Anzeigetafel
-        board: token('board'),
-        'board-dot': token('board-dot'),
-        // Status
+        hair: token('hair'),
+        line: token('line'),
+        accent: token('accent'),
+        'accent-deep': token('accent-deep'),
+        'accent-ink': token('accent-ink'),
+        'accent-soft': token('accent-soft'),
         danger: token('danger'),
       },
       fontFamily: {
-        sans: ['"Archivo Variable"', 'Archivo', 'system-ui', 'sans-serif'],
-        display: ['"Archivo Variable"', 'Archivo', 'system-ui', 'sans-serif'],
-        board: ['"Doto Variable"', 'Doto', 'ui-monospace', 'monospace'],
+        sans: ['"Schibsted Grotesk Variable"', '"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+        serif: ['"Bodoni Moda Variable"', '"Bodoni Moda"', 'Didot', 'Georgia', 'serif'],
       },
       maxWidth: {
-        page: '78rem',
-        text: '68ch',
+        page: '80rem',
+        text: '66ch',
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.16, 1, 0.3, 1)',

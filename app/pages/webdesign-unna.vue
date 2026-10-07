@@ -34,12 +34,12 @@ const advantages = [
       title="Webdesign Unna"
       lead="Websites für Betriebe in Unna und im Kreis Unna – von der Innenstadt über Massen bis Kamen und Holzwickede. Ein Ansprechpartner aus der Nachbarstadt Dortmund, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
-    <!-- Taktik: warum Unna -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="local-title">
+    <!-- warum Unna -->
+    <section class="section" aria-labelledby="local-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="local-title" class="t-headline">Webdesign in Unna mit Fokus auf Sichtbarkeit und Vertrauen</h2>
@@ -58,8 +58,8 @@ const advantages = [
       </div>
     </section>
 
-    <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <!-- Leistungen & Preise -->
+    <section class="section bg-stone" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -72,8 +72,8 @@ const advantages = [
       </div>
     </section>
 
-    <!-- Taktik: Vorteile -->
-    <section class="section" data-rubric="Taktik" aria-labelledby="advantages-title">
+    <!-- Vorteile -->
+    <section class="section" aria-labelledby="advantages-title">
       <div class="wrap">
         <SectionHead
           id="advantages-title"
@@ -81,7 +81,7 @@ const advantages = [
           intro="Eine Website, die zu Ihrem Betrieb passt, arbeitet jeden Tag mit – für Kunden aus Unna, Kamen, Holzwickede und dem ganzen Kreis."
         />
         <div class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="item in advantages" :key="item.title" class="border-t-2 border-ink pt-5">
+          <div v-for="item in advantages" :key="item.title" class="border-t border-ink pt-5">
             <h3 class="t-title">{{ item.title }}</h3>
             <p class="mt-3 text-ink-soft">{{ item.text }}</p>
           </div>
@@ -89,8 +89,8 @@ const advantages = [
       </div>
     </section>
 
-    <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <!-- Referenzen -->
+    <section class="section bg-stone" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"
@@ -103,8 +103,8 @@ const advantages = [
       </div>
     </section>
 
-    <!-- Spielplan: Ablauf -->
-    <section class="section" data-rubric="Spielplan" aria-labelledby="process-title">
+    <!-- Ablauf -->
+    <section class="section" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"
@@ -117,8 +117,8 @@ const advantages = [
 
     <CityKeywordLinks city-slug="unna" city-name="Unna" />
 
-    <KickoffSection
-      source="Webdesign Unna – Anpfiff"
+    <InquirySection
+      source="Webdesign Unna – Abschluss"
       title="Ihre Website für Unna."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
     />

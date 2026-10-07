@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /**
- * „Spielplan“: der Ablauf als Spielansetzung – Zeitpunkt links,
- * Partie rechts. Einmal gebaut, auf allen Seiten gleich.
+ * Der Ablauf in fünf Schritten – einmal gebaut, auf allen Seiten gleich.
+ * Die Ziffern tragen echte Reihenfolge, deshalb stehen sie groß.
  */
 import { PROCESS_STEPS, PROCESS_DURATION } from '~/data/process'
 
@@ -10,19 +10,20 @@ withDefaults(defineProps<{ showDuration?: boolean }>(), { showDuration: true })
 
 <template>
   <div>
-    <ol class="border-t-2 border-ink">
+    <ol class="border-t border-ink">
       <li
         v-for="(step, i) in PROCESS_STEPS"
         :key="step.title"
-        class="grid gap-x-8 gap-y-2 border-b border-ink/25 py-6 md:grid-cols-12 md:py-8"
+        class="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 border-b border-hair py-7 md:grid-cols-12 md:gap-x-8 md:py-9"
       >
-        <p class="t-label order-2 text-ink-soft md:order-none md:col-span-3 md:pt-1.5">
-          <span class="sr-only">Schritt {{ i + 1 }}: </span>{{ step.when }}
-        </p>
-        <h3 class="t-title order-1 md:order-none md:col-span-4">{{ step.title }}</h3>
-        <p class="order-3 max-w-xl text-ink-soft md:order-none md:col-span-5">{{ step.description }}</p>
+        <span class="row-span-3 font-serif text-4xl italic leading-none text-ink-soft md:col-span-1 md:row-span-1 md:text-5xl" style="font-variation-settings: 'opsz' 72;" aria-hidden="true">{{ i + 1 }}</span>
+        <h3 class="t-title md:col-span-4 md:col-start-2">
+          <span class="sr-only">Schritt {{ i + 1 }}: </span>{{ step.title }}
+        </h3>
+        <p class="t-label text-ink-soft md:col-span-2 md:col-start-6 md:pt-1.5">{{ step.when }}</p>
+        <p class="max-w-xl text-ink-soft md:col-span-5 md:col-start-8">{{ step.description }}</p>
       </li>
     </ol>
-    <p v-if="showDuration" class="mt-6 max-w-2xl font-semibold">{{ PROCESS_DURATION }}</p>
+    <p v-if="showDuration" class="mt-7 max-w-2xl">{{ PROCESS_DURATION }}</p>
   </div>
 </template>

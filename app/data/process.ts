@@ -1,5 +1,5 @@
 /**
- * Der Ablauf („Spielplan“) – einmal definiert, überall gleich.
+ * Der Ablauf – einmal definiert, überall gleich.
  * Ersetzt die drei früheren, unterschiedlich formulierten Prozess-Abschnitte.
  */
 export interface ProcessStep {
@@ -10,7 +10,7 @@ export interface ProcessStep {
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
-    when: 'Anstoß',
+    when: 'Zum Start',
     title: 'Kostenloses Erstgespräch',
     description: 'Wir sprechen über Ihren Betrieb, Ihre Ziele und Ihr Budget. Unverbindlich – Sie entscheiden danach in Ruhe.',
   },
@@ -30,7 +30,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     description: 'Smartphone, Tablet, Desktop, Tastatur und Screenreader: Ich prüfe Ladezeit, Darstellung und Barrierefreiheit.',
   },
   {
-    when: 'Abpfiff',
+    when: 'Zum Schluss',
     title: 'Launch & Übergabe',
     description: 'Domain, SSL, Weiterleitungen und Google Search Console. Auf Wunsch kümmere ich mich danach um Wartung und Updates.',
   },

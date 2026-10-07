@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * „Auswärts“: interne Links einer Stadtseite – Leistungen, die indexierten
+ * Interne Links einer Stadtseite – Leistungen, die indexierten
  * Keyword-Seiten der Stadt (TOP_KEYWORDS, gegen Orphan Pages) und die
  * übrigen Standorte. Alle Links bleiben erhalten, nur die Darstellung ist neu.
  */
@@ -52,7 +52,7 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
 </script>
 
 <template>
-  <section class="section bg-sheet" data-rubric="Auswärts" :aria-labelledby="headingId">
+  <section class="section bg-stone" :aria-labelledby="headingId">
     <div class="wrap">
       <div class="grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
@@ -63,20 +63,20 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
           </p>
         </div>
 
-        <ul class="border-t-2 border-ink lg:col-span-7">
-          <li v-for="link in serviceLinks" :key="link.to" class="border-b border-ink/25">
+        <ul class="border-t border-ink lg:col-span-7">
+          <li v-for="link in serviceLinks" :key="link.to" class="border-b border-hair">
             <NuxtLink :to="link.to" class="group grid min-h-11 grid-cols-[1fr_auto] items-start gap-x-6 py-5">
               <span>
                 <span class="t-title block">{{ link.title }}</span>
                 <span class="mt-1.5 block max-w-xl text-ink-soft">{{ link.description }}</span>
               </span>
-              <AppIcon name="arrow-right" class="mt-1 h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="mt-1 h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>
       </div>
 
-      <div v-if="hasKeywordPages" class="mt-16 grid gap-6 rule-heavy pt-6 md:pt-8 lg:grid-cols-12">
+      <div v-if="hasKeywordPages" class="mt-16 grid gap-6 rule-top pt-6 md:pt-8 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h3 class="t-title">Beliebte Themen in {{ cityName }}</h3>
           <p class="mt-2 max-w-md text-ink-soft">
@@ -84,7 +84,7 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
           </p>
         </div>
         <ul class="grid gap-x-8 sm:grid-cols-2 lg:col-span-7">
-          <li v-for="link in keywordLinks" :key="link.to" class="border-t border-ink/25">
+          <li v-for="link in keywordLinks" :key="link.to" class="border-t border-hair">
             <NuxtLink :to="link.to" class="link flex min-h-11 items-center py-2.5 font-semibold">
               {{ link.label }}
             </NuxtLink>
@@ -92,16 +92,16 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
         </ul>
       </div>
 
-      <div class="mt-16 grid gap-6 border-t-2 border-ink pt-6 md:pt-8 lg:grid-cols-12 lg:items-center">
+      <div class="mt-16 grid gap-6 border-t border-ink pt-6 md:pt-8 lg:grid-cols-12 lg:items-center">
         <h3 class="t-title lg:col-span-4">Weitere Standorte im Ruhrgebiet</h3>
         <ul class="grid grid-cols-2 gap-x-6 sm:grid-cols-4 lg:col-span-8">
-          <li v-for="city in otherCities" :key="city.to" class="border-t border-ink/25">
+          <li v-for="city in otherCities" :key="city.to" class="border-t border-hair">
             <NuxtLink :to="city.to" class="group flex min-h-14 items-center justify-between gap-2 py-3">
               <span>
                 <span class="sr-only">Webdesign </span>
-                <span class="block text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">{{ city.name }}</span>
+                <span class="font-serif block text-2xl leading-[1.05]" style="font-weight: 500; font-variation-settings: 'opsz' 48;">{{ city.name }}</span>
               </span>
-              <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>
