@@ -61,7 +61,7 @@ const tools = [
       title="Heimspiele."
       lead="Hier sehen Sie Websites, die ich gestaltet und umgesetzt habe – für ein Studio, ein Fotografenpaar und ein Transportunternehmen. Alle drei sind online. Klicken Sie ruhig rein."
     >
-      <NuxtLink to="/kontakt" class="btn btn-signal">Erstgespräch anfragen</NuxtLink>
+      <NuxtLink to="/kontakt" class="btn btn-primary">Erstgespräch anfragen</NuxtLink>
       <a href="#heimspiele" class="btn btn-outline">Zu den Projekten</a>
     </PageCover>
 
@@ -79,7 +79,7 @@ const tools = [
     </section>
 
     <!-- Taktik: das passende Werkzeug -->
-    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="tools-title">
+    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="tools-title">
       <div class="wrap">
         <SectionHead
           id="tools-title"

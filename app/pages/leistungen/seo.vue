@@ -112,11 +112,11 @@ const benefits = [
       title="Suchmaschinenoptimierung fürs Ruhrgebiet."
       lead="Damit Kunden aus Ihrer Stadt Sie bei Google finden: saubere Technik, klare Inhalte und lokale Signale. Nachhaltige Suchmaschinenoptimierung aus Dortmund – ohne leere Versprechen."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
           <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
             {{ service.priceNote }}. Ich schaue mir Ihre Seite an, sage Ihnen, was sich lohnt – und nenne dann einen festen Preis.
@@ -144,7 +144,7 @@ const benefits = [
     </section>
 
     <!-- Taktik: Vorteile -->
-    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="benefits-title">
+    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="benefits-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="benefits-title" class="t-headline">Vorteile von professionellem SEO</h2>
@@ -174,12 +174,12 @@ const benefits = [
           </p>
         </div>
         <div class="lg:col-span-4 lg:col-start-9">
-          <h3 class="t-title rule-heavy pt-6">Regionale Zielseiten</h3>
+          <h3 class="t-title rule-top pt-6">Regionale Zielseiten</h3>
           <ul class="mt-4">
             <li v-for="city in CITIES" :key="city.to" class="border-b border-ink/25">
               <NuxtLink :to="city.to" class="group flex min-h-14 items-center justify-between gap-2 py-2">
                 <span class="text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">Webdesign {{ city.name }}</span>
-                <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+                <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
               </NuxtLink>
             </li>
           </ul>
@@ -210,7 +210,7 @@ const benefits = [
     </section>
 
     <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

@@ -294,7 +294,7 @@ const coverLead = computed(() =>
 <template>
   <div>
     <PageCover :title="h1" :lead="coverLead" align="start">
-      <a href="#anfrage-abschluss" class="btn btn-signal lg:hidden">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary lg:hidden">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
       <template #aside>
         <QuickInquiry :source="`Keyword-Seite – ${h1InCity}`" class="hidden lg:block" />
@@ -311,7 +311,7 @@ const coverLead = computed(() =>
             <p class="t-lead mt-6 max-w-text">{{ richContent.mainText }}</p>
           </div>
           <aside v-if="cityContext" class="lg:col-span-5 lg:pt-2" aria-labelledby="kw-city-title">
-            <div class="rule-heavy pt-6">
+            <div class="rule-top pt-6">
               <h3 id="kw-city-title" class="t-title">{{ city.name }} als Standort</h3>
               <p class="mt-3 text-ink-soft">{{ cityContext }}</p>
               <NuxtLink :to="cityPageSlug" class="link mt-4 inline-flex min-h-11 items-center gap-2 font-semibold">
@@ -324,7 +324,7 @@ const coverLead = computed(() =>
       </section>
 
       <!-- Aufstellung: Vorteile -->
-      <section class="section bg-sheet" data-rubric="Aufstellung" aria-labelledby="kw-benefits-title">
+      <section class="section bg-stone" data-rubric="Aufstellung" aria-labelledby="kw-benefits-title">
         <div class="wrap">
           <SectionHead id="kw-benefits-title" title="Was Sie von mir bekommen" />
           <ul class="mt-10 border-t-2 border-ink">
@@ -351,7 +351,7 @@ const coverLead = computed(() =>
       </section>
 
       <!-- Spielplan: Ablauf -->
-      <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="kw-process-title">
+      <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="kw-process-title">
         <div class="wrap">
           <SectionHead
             id="kw-process-title"
@@ -377,7 +377,7 @@ const coverLead = computed(() =>
       </section>
 
       <!-- Fragen -->
-      <section class="section bg-sheet" data-rubric="Fragen" aria-labelledby="kw-faq-title">
+      <section class="section bg-stone" data-rubric="Fragen" aria-labelledby="kw-faq-title">
         <div class="wrap grid gap-10 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <h2 id="kw-faq-title" class="t-headline">Häufige Fragen zu {{ h1 }}</h2>
@@ -409,7 +409,7 @@ const coverLead = computed(() =>
         </div>
       </section>
 
-      <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
+      <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="kw-prices-title">
         <div class="wrap">
           <SectionHead
             id="kw-prices-title"
@@ -435,11 +435,11 @@ const coverLead = computed(() =>
     </template>
 
     <!-- Auswärts: interne Links -->
-    <section class="section" :class="isTopPage && richContent ? '' : 'bg-sheet'" data-rubric="Auswärts" aria-labelledby="kw-links-title">
+    <section class="section" :class="isTopPage && richContent ? '' : 'bg-stone'" data-rubric="Auswärts" aria-labelledby="kw-links-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="kw-links-title" class="t-headline">Mehr von Prestige Webdesign in {{ city.name }}</h2>
-          <NuxtLink :to="cityPageSlug" class="btn btn-ink mt-8">
+          <NuxtLink :to="cityPageSlug" class="btn btn-dark mt-8">
             Alle Leistungen in {{ city.name }}
             <AppIcon name="arrow-right" class="h-5 w-5" />
           </NuxtLink>
@@ -447,7 +447,7 @@ const coverLead = computed(() =>
             <li v-for="link in serviceLinks" :key="link.to" class="border-b border-ink/25">
               <NuxtLink :to="link.to" class="group flex min-h-12 items-center justify-between gap-4 py-3 text-lg font-bold" style="font-stretch: 88%;">
                 {{ link.label }}
-                <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+                <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
               </NuxtLink>
             </li>
           </ul>

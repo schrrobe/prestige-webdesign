@@ -120,11 +120,11 @@ const reasons = [
       title="Website-Wartung & Support."
       lead="Ihre Website soll nicht nur heute funktionieren, sondern auch morgen und übermorgen. Ich halte sie aktuell, sicher und schnell – und bin da, wenn etwas hakt."
     >
-      <a href="#packages-title" class="btn btn-signal">Pakete vergleichen</a>
+      <a href="#packages-title" class="btn btn-primary">Pakete vergleichen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
           <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">ab 79 €</p>
           <p class="mt-1 font-semibold">pro Monat</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
@@ -153,7 +153,7 @@ const reasons = [
     </section>
 
     <!-- Tabelle: Pakete im Vergleich -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="packages-title">
+    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="packages-title">
       <div class="wrap">
         <SectionHead
           id="packages-title"
@@ -198,7 +198,7 @@ const reasons = [
 
         <!-- Handy: ein Block je Paket -->
         <div class="mt-10 space-y-12 md:hidden">
-          <article v-for="(pkg, p) in packages" :key="pkg.name" class="rule-heavy pt-5" :aria-labelledby="`pkg-${pkg.name}`">
+          <article v-for="(pkg, p) in packages" :key="pkg.name" class="rule-top pt-5" :aria-labelledby="`pkg-${pkg.name}`">
             <div class="flex items-baseline justify-between gap-4">
               <h3 :id="`pkg-${pkg.name}`" class="text-4xl uppercase leading-none" style="font-stretch: 62%; font-weight: 880;">{{ pkg.name }}</h3>
               <p class="whitespace-nowrap">
@@ -224,7 +224,7 @@ const reasons = [
           <p class="max-w-text font-semibold">
             Bei allen Paketen bin ich Ihr Ansprechpartner – Sie sprechen immer mit derselben Person.
           </p>
-          <a href="#anfrage-abschluss" class="btn btn-signal shrink-0">Paket anfragen</a>
+          <a href="#anfrage-abschluss" class="btn btn-primary shrink-0">Paket anfragen</a>
         </div>
       </div>
     </section>
@@ -266,7 +266,7 @@ const reasons = [
     </section>
 
     <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

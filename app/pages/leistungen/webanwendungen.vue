@@ -106,11 +106,11 @@ const useCases = [
       title="Komplexe Webanwendungen für Ihr Unternehmen."
       lead="Ich entwickle individuelle Web-Apps für Abläufe, die kein Baukasten abbildet: Kundenportale, Dashboards, Buchungssysteme und Werkzeuge, die genau zu Ihrem Geschäftsmodell passen."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Vorhaben schildern</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Vorhaben schildern</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
           <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
             {{ service.priceNote }}. Jede Anwendung ist anders – deshalb kläre ich erst den Umfang und nenne Ihnen dann einen festen Preis.
@@ -138,7 +138,7 @@ const useCases = [
     </section>
 
     <!-- Taktik: Anforderungen -->
-    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="requirements-title">
+    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="requirements-title">
       <div class="wrap">
         <SectionHead
           id="requirements-title"
@@ -164,7 +164,7 @@ const useCases = [
           </p>
         </div>
         <div class="lg:col-span-6 lg:col-start-7">
-          <CheckList class="rule-heavy pt-6 text-lg font-semibold" :items="useCases" />
+          <CheckList class="rule-top pt-6 text-lg font-semibold" :items="useCases" />
           <h3 class="t-title mt-12">Für wen sich eine individuelle Web-App lohnt</h3>
           <p class="mt-3 max-w-text text-ink-soft">
             Besonders sinnvoll ist eine eigene Anwendung, wenn Ihre Prozesse zu speziell für Standardsoftware sind – etwa im B2B mit Portalen und Freigaben, im Betrieb mit internen Werkzeugen oder bei Auswertungen und Berichten – oder wenn ein digitales Angebot Ihnen einen klaren Vorteil gegenüber dem Wettbewerb verschafft.
@@ -196,7 +196,7 @@ const useCases = [
     </section>
 
     <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

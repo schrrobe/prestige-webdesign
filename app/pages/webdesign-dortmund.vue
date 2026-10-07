@@ -34,7 +34,7 @@ const localSeo = [
       title="Webdesign Dortmund"
       lead="Websites für Dortmunder Betriebe – von der Innenstadt bis zum Technologiepark. Ich sitze selbst in Dortmund, gestalte und entwickle Ihre Seite persönlich und nenne Ihnen vorher den Preis: Festpreis ab 800 €."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -59,7 +59,7 @@ const localSeo = [
     </section>
 
     <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -90,7 +90,7 @@ const localSeo = [
     </section>
 
     <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"

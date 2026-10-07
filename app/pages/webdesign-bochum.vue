@@ -34,7 +34,7 @@ const reasons = [
       title="Webdesign Bochum"
       lead="Websites für Bochumer Unternehmen – vom Startup an der Uni bis zum Dienstleister in der Innenstadt. Ein Ansprechpartner aus dem Revier, der gestaltet und entwickelt, zum Festpreis ab 800 €."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -60,7 +60,7 @@ const reasons = [
     </section>
 
     <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -91,7 +91,7 @@ const reasons = [
     </section>
 
     <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"

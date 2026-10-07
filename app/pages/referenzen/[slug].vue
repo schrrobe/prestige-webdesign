@@ -31,7 +31,7 @@ const facts = computed(() => [
   <div>
     <PageCover :title="reference.name">
       <template #lead>
-        <p class="t-title mt-6 text-field-soft md:mt-8">{{ reference.industry }} · {{ reference.location }}</p>
+        <p class="t-title mt-6 text-ink-soft md:mt-8">{{ reference.industry }} · {{ reference.location }}</p>
         <p class="t-lead mt-4 max-w-2xl">{{ reference.summary }}</p>
       </template>
       <a :href="reference.url" target="_blank" rel="noopener" class="btn btn-outline">
@@ -43,7 +43,7 @@ const facts = computed(() => [
 
     <!-- Heimspiele: Ansichten, ragen aus der Titelseite heraus -->
     <section class="relative pb-16 md:pb-24" data-rubric="Heimspiele" aria-label="Ansichten der Website">
-      <div class="absolute inset-x-0 top-0 h-24 bg-field md:h-40" aria-hidden="true" />
+      <div class="absolute inset-x-0 top-0 h-24 bg-stone md:h-40" aria-hidden="true" />
       <div class="wrap relative">
         <ReferenceShots :reference="reference" eager class="mx-auto max-w-5xl" />
         <p class="mx-auto mt-4 max-w-5xl text-sm text-ink-soft">
@@ -58,7 +58,7 @@ const facts = computed(() => [
     </section>
 
     <!-- Spielbericht -->
-    <section class="section bg-sheet" data-rubric="Spielbericht" aria-labelledby="report-title">
+    <section class="section bg-stone" data-rubric="Spielbericht" aria-labelledby="report-title">
       <div class="wrap">
         <SectionHead
           id="report-title"
@@ -103,7 +103,7 @@ const facts = computed(() => [
           <article v-for="item in others" :key="item.slug" class="border-t-2 border-ink pt-6">
             <ReferenceShots :reference="item" />
             <h3 class="mt-6 text-4xl uppercase leading-[0.9]" style="font-stretch: 62%; font-weight: 880;">
-              <NuxtLink :to="`/referenzen/${item.slug}`" class="decoration-signal decoration-[3px] underline-offset-[0.15em] hover:underline">
+              <NuxtLink :to="`/referenzen/${item.slug}`" class="decoration-accent decoration-[3px] underline-offset-[0.15em] hover:underline">
                 {{ item.name }}
               </NuxtLink>
             </h3>

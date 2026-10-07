@@ -86,7 +86,7 @@ const maintenance = [
       title="Preise. Vorher, nicht hinterher."
       lead="Hier steht, was eine Website bei mir kostet – ab 800 €. Den genauen Betrag bekommen Sie nach dem kostenlosen Erstgespräch schriftlich, als Festpreis."
     >
-      <NuxtLink to="/kontakt" class="btn btn-signal">Erstgespräch anfragen</NuxtLink>
+      <NuxtLink to="/kontakt" class="btn btn-primary">Erstgespräch anfragen</NuxtLink>
       <a href="#festpreis" class="btn btn-outline">Was Festpreis heißt</a>
     </PageCover>
 
@@ -104,7 +104,7 @@ const maintenance = [
     </section>
 
     <!-- Taktik: Festpreis -->
-    <section id="festpreis" class="section scroll-mt-24 bg-sheet" data-rubric="Taktik" aria-labelledby="fixed-title">
+    <section id="festpreis" class="section scroll-mt-24 bg-stone" data-rubric="Taktik" aria-labelledby="fixed-title">
       <div class="wrap">
         <SectionHead
           id="fixed-title"
@@ -171,7 +171,7 @@ const maintenance = [
     </section>
 
     <!-- Spielplan -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

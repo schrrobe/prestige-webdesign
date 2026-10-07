@@ -133,11 +133,11 @@ const successFactors = [
       title="Online-Shop erstellen lassen."
       lead="E-Commerce Lösungen mit WooCommerce oder Shopify für Händler und Betriebe im Ruhrgebiet: ein Shop, der auf dem Smartphone verkauft – mit Produkten, Zahlung, Versand und sauberen Abläufen."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Shop-Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Shop-Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
           <p class="mt-2 text-[2.5rem] uppercase leading-none sm:text-5xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
             Produktanzahl, Funktionen und Zahlungsanbieter bestimmen den Preis. Nach dem kostenlosen Erstgespräch steht er fest.
@@ -172,7 +172,7 @@ const successFactors = [
     </section>
 
     <!-- Aufstellung: Leistungsumfang -->
-    <section class="section bg-sheet" data-rubric="Aufstellung" aria-labelledby="portfolio-title">
+    <section class="section bg-stone" data-rubric="Aufstellung" aria-labelledby="portfolio-title">
       <div class="wrap">
         <SectionHead
           id="portfolio-title"
@@ -241,7 +241,7 @@ const successFactors = [
     </section>
 
     <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

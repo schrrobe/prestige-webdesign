@@ -81,18 +81,18 @@ const principles = [
         </p>
       </template>
       <template #aside>
-        <dl class="border-t-[6px] border-field-ink" aria-label="Steckbrief">
+        <dl class="border-t border-ink" aria-label="Steckbrief">
           <div
             v-for="row in profile"
             :key="row.term"
-            class="grid grid-cols-[7.5rem_1fr] gap-x-4 border-b border-field-ink/30 py-3"
+            class="grid grid-cols-[7.5rem_1fr] gap-x-4 border-b border-hair py-3"
           >
-            <dt class="t-label pt-0.5 text-field-soft">{{ row.term }}</dt>
+            <dt class="t-label pt-0.5 text-ink-soft">{{ row.term }}</dt>
             <dd class="font-semibold">{{ row.value }}</dd>
           </div>
         </dl>
       </template>
-      <NuxtLink to="/kontakt" class="btn btn-signal">Schreiben Sie mir</NuxtLink>
+      <NuxtLink to="/kontakt" class="btn btn-primary">Schreiben Sie mir</NuxtLink>
       <NuxtLink to="/referenzen" class="btn btn-outline">Meine Referenzen</NuxtLink>
     </PageCover>
 
@@ -125,7 +125,7 @@ const principles = [
     </section>
 
     <!-- Statistik -->
-    <section class="section-tight bg-sheet" data-rubric="Statistik" aria-labelledby="stats-title">
+    <section class="section-tight bg-stone" data-rubric="Statistik" aria-labelledby="stats-title">
       <div class="wrap grid gap-8 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-4">
           <h2 id="stats-title" class="t-title">Die Zahlen hinter Prestige Webdesign</h2>
@@ -157,7 +157,7 @@ const principles = [
     </section>
 
     <!-- Heimspiele -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="work-title">
+    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="work-title">
       <div class="wrap grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <h2 id="work-title" class="t-headline">Was ich zuletzt gebaut habe.</h2>
@@ -170,7 +170,7 @@ const principles = [
                 <span class="block text-3xl uppercase leading-none md:text-4xl" style="font-stretch: 62%; font-weight: 880;">{{ ref.name }}</span>
                 <span class="mt-2 block text-ink-soft">{{ ref.industry }} · {{ ref.tool }}</span>
               </span>
-              <AppIcon name="arrow-right" class="h-6 w-6 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="h-6 w-6 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>

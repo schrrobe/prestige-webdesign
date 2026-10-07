@@ -34,7 +34,7 @@ const seoEffects = [
       title="Webdesign Bottrop"
       lead="Websites für Betriebe in Bottrop – ob Innenstadt, Kirchhellen oder Gewerbegebiet. Ich gestalte und entwickle Auftritte, die Vertrauen schaffen und im Alltag funktionieren, zum Festpreis ab 800 €."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -59,7 +59,7 @@ const seoEffects = [
     </section>
 
     <!-- Tabelle: Leistungen & Preise -->
-    <section class="section bg-sheet" data-rubric="Tabelle" aria-labelledby="prices-title">
+    <section class="section bg-stone" data-rubric="Tabelle" aria-labelledby="prices-title">
       <div class="wrap">
         <SectionHead
           id="prices-title"
@@ -90,7 +90,7 @@ const seoEffects = [
     </section>
 
     <!-- Heimspiele: Referenzen -->
-    <section class="section bg-sheet" data-rubric="Heimspiele" aria-labelledby="refs-title">
+    <section class="section bg-stone" data-rubric="Heimspiele" aria-labelledby="refs-title">
       <div class="wrap">
         <SectionHead
           id="refs-title"

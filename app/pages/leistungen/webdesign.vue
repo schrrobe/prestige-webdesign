@@ -91,11 +91,11 @@ const reasons = [
       title="Professionelles Webdesign zum Festpreis."
       lead="Responsive Websites für Unternehmen im Ruhrgebiet, die erklären, was Sie tun, und Anfragen bringen. Klares Design, saubere Technik – mit WordPress zum Selbstpflegen oder individuell entwickelt."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
-        <div class="border-2 border-field-ink bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
+        <div class="rounded-2xl border border-hair bg-paper p-6 text-ink md:p-8 lg:ml-auto lg:max-w-sm">
           <p class="text-6xl uppercase leading-none md:text-7xl" style="font-stretch: 62%; font-weight: 880;">{{ service.price }}</p>
           <p class="mt-1 font-semibold">{{ service.priceNote }}</p>
           <p class="mt-4 border-t border-ink/25 pt-4 text-ink-soft">
@@ -124,7 +124,7 @@ const reasons = [
     </section>
 
     <!-- Taktik: warum Prestige Webdesign -->
-    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="why-title">
+    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="why-title">
       <div class="wrap grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h2 id="why-title" class="t-headline">Warum Prestige Webdesign?</h2>
@@ -158,7 +158,7 @@ const reasons = [
     </section>
 
     <!-- Spielplan: Ablauf -->
-    <section class="section bg-sheet" data-rubric="Spielplan" aria-labelledby="process-title">
+    <section class="section bg-stone" data-rubric="Spielplan" aria-labelledby="process-title">
       <div class="wrap">
         <SectionHead
           id="process-title"

@@ -52,7 +52,7 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
 </script>
 
 <template>
-  <section class="section bg-sheet" data-rubric="Auswärts" :aria-labelledby="headingId">
+  <section class="section bg-stone" data-rubric="Auswärts" :aria-labelledby="headingId">
     <div class="wrap">
       <div class="grid gap-12 lg:grid-cols-12">
         <div class="lg:col-span-5">
@@ -70,13 +70,13 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
                 <span class="t-title block">{{ link.title }}</span>
                 <span class="mt-1.5 block max-w-xl text-ink-soft">{{ link.description }}</span>
               </span>
-              <AppIcon name="arrow-right" class="mt-1 h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="mt-1 h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>
       </div>
 
-      <div v-if="hasKeywordPages" class="mt-16 grid gap-6 rule-heavy pt-6 md:pt-8 lg:grid-cols-12">
+      <div v-if="hasKeywordPages" class="mt-16 grid gap-6 rule-top pt-6 md:pt-8 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <h3 class="t-title">Beliebte Themen in {{ cityName }}</h3>
           <p class="mt-2 max-w-md text-ink-soft">
@@ -101,7 +101,7 @@ const otherCities = CITIES.filter(city => city.slug !== props.citySlug)
                 <span class="sr-only">Webdesign </span>
                 <span class="block text-2xl uppercase leading-none" style="font-stretch: 62%; font-weight: 860;">{{ city.name }}</span>
               </span>
-              <AppIcon name="arrow-right" class="h-5 w-5 text-signal-ink transition-transform duration-200 group-hover:translate-x-1" />
+              <AppIcon name="arrow-right" class="h-5 w-5 text-accent transition-transform duration-200 group-hover:translate-x-1" />
             </NuxtLink>
           </li>
         </ul>

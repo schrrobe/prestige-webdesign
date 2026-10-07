@@ -16,7 +16,7 @@ const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
       title="Leistungen aus einer Hand."
       lead="Webdesign, Online-Shops, Webanwendungen, SEO und Wartung für Betriebe im Ruhrgebiet. Ein Ansprechpartner von der ersten Idee bis lange nach dem Launch – und ein Festpreis, bevor es losgeht."
     >
-      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-primary">Erstgespräch anfragen</a>
       <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
     </PageCover>
 
@@ -33,7 +33,7 @@ const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
     </section>
 
     <!-- Taktik: WordPress oder individuell -->
-    <section class="section bg-sheet" data-rubric="Taktik" aria-labelledby="tools-title">
+    <section class="section bg-stone" data-rubric="Taktik" aria-labelledby="tools-title">
       <div class="wrap">
         <SectionHead
           id="tools-title"
