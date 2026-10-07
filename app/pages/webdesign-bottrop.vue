@@ -34,7 +34,7 @@ const seoEffects = [
       title="Webdesign Bottrop"
       lead="Websites für Betriebe in Bottrop – ob Innenstadt, Kirchhellen oder Gewerbegebiet. Ich gestalte und entwickle Auftritte, die Vertrauen schaffen und im Alltag funktionieren, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -117,7 +117,7 @@ const seoEffects = [
 
     <CityKeywordLinks city-slug="bottrop" city-name="Bottrop" />
 
-    <KickoffSection
+    <InquirySection
       source="Webdesign Bottrop – Anpfiff"
       title="Ihre Website für Bottrop."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."

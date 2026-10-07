@@ -78,6 +78,13 @@ Alle Projekte laufen zum Festpreis nach dem Erstgespräch.
 
 ## Brand Commitments
 
+- **Gestalterische Grundhaltung (von Robert festgelegt am 6. Oktober 2026, nach drei verworfenen Würfen):**
+  - hochwertig und edel
+  - kein Thema und keine Metapher (kein Stadion, kein Bauplan, keine Revier-Kostüme)
+  - klar und modern
+  - hell als Standard
+  - Gewählte Richtung: „Editorial“.
+
 - Der Name „Prestige Webdesign“ ist verbindlich. Ein neues Logo bzw. eine neue Wortmarke ist erlaubt.
 - Es gibt kein Porträtfoto, und es soll auch keins geben. Vertrauen entsteht über Referenzen, Ablauf, Preise und die Qualität der Seite selbst.
 

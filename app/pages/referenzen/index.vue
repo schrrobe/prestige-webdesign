@@ -103,7 +103,7 @@ const tools = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       title="Ihr Betrieb als nächstes Heimspiel?"
       text="Erzählen Sie mir, was Ihre Website leisten soll. Im kostenlosen Erstgespräch klären wir, welches Werkzeug passt – danach bekommen Sie ein Angebot zum Festpreis."
       source="Referenzen"

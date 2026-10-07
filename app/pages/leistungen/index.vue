@@ -16,7 +16,7 @@ const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
       title="Leistungen aus einer Hand."
       lead="Webdesign, Online-Shops, Webanwendungen, SEO und Wartung für Betriebe im Ruhrgebiet. Ein Ansprechpartner von der ersten Idee bis lange nach dem Launch – und ein Festpreis, bevor es losgeht."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/preise" class="btn btn-outline">Preise im Detail</NuxtLink>
     </PageCover>
 
@@ -94,7 +94,7 @@ const customRefs = REFERENCES.filter(r => r.tool !== 'WordPress')
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen – Anpfiff"
       title="Welche Leistung passt zu Ihnen?"
       text="Sie müssen das nicht vorher wissen. Erzählen Sie mir kurz, was Ihr Betrieb braucht – im kostenlosen Erstgespräch sortieren wir das gemeinsam, danach bekommen Sie ein Angebot zum Festpreis."

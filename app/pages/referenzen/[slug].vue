@@ -118,7 +118,7 @@ const facts = computed(() => [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       title="Ihre Website als nächstes Heimspiel?"
       :source="`Referenz – ${reference.name}`"
     />

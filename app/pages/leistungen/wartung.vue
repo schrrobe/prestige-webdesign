@@ -224,7 +224,7 @@ const reasons = [
           <p class="max-w-text font-semibold">
             Bei allen Paketen bin ich Ihr Ansprechpartner – Sie sprechen immer mit derselben Person.
           </p>
-          <a href="#anpfiff" class="btn btn-signal shrink-0">Paket anfragen</a>
+          <a href="#anfrage-abschluss" class="btn btn-signal shrink-0">Paket anfragen</a>
         </div>
       </div>
     </section>
@@ -287,7 +287,7 @@ const reasons = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen Wartung – Anpfiff"
       title="Sichern Sie Ihre Website ab."
       text="Schreiben Sie mir, um welche Website es geht und welches Paket Sie interessiert. Ich schaue sie mir an und melde mich innerhalb von 24 Stunden."

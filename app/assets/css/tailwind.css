@@ -3,78 +3,66 @@
 @tailwind utilities;
 
 /* =====================================================================
-   Prestige Webdesign – „Revier-Stadionheft“
-   Papier, Druckschwarz, Rasengrün als tragende Fläche, Signal-Orange
-   nur für Handlungen. Tokens als RGB-Kanäle, Hell/Dunkel tauscht nur sie.
+   Prestige Webdesign – „Editorial“
+   Kühles Weiß, Tinte, Stein für Wechselflächen. Ochsenblut ist die einzige
+   Farbe: Handlungen und höchstens ein kursives Akzentwort pro Ansicht.
+   Bodoni Moda für Überschriften, Schibsted Grotesk für Text und Bedienung.
    ===================================================================== */
 
 @layer base {
   :root {
     color-scheme: light;
-    --paper: 244 244 239;
-    --sheet: 252 252 249;
-    --ink: 21 22 20;
-    --ink-soft: 74 77 71;
-    --rule: 132 136 128;
-    --field: 13 74 50;
-    --field-deep: 9 54 36;
-    --field-ink: 244 244 239;
-    --field-soft: 185 211 195;
-    --signal: 255 90 31;
-    --signal-ink: 179 58 10;
-    --board: 21 22 20;
-    --board-dot: 244 244 239;
-    --danger: 180 35 24;
+    --paper: 251 251 250;
+    --stone: 239 236 231;
+    --ink: 22 22 22;
+    --ink-soft: 90 86 82;
+    --hair: 220 216 210;
+    --line: 138 133 127;
+    --accent: 122 31 43;
+    --accent-deep: 92 21 32;
+    --accent-ink: 255 255 255;
+    --accent-soft: 236 211 214;
+    --danger: 168 29 29;
     --focus: var(--ink);
-    --grain-opacity: 0.05;
-    --header-h: 4.25rem;
+    --header-h: 4.5rem;
   }
 
-  /* „Flutlicht“: Systemeinstellung, solange niemand „Hell“ gewählt hat */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
       color-scheme: dark;
-      --paper: 15 20 17;
-      --sheet: 23 30 26;
-      --ink: 236 237 230;
-      --ink-soft: 169 173 164;
-      --rule: 95 101 92;
-      --field: 18 56 38;
-      --field-deep: 11 38 25;
-      --field-ink: 236 237 230;
-      --field-soft: 185 211 195;
-      --signal: 255 106 48;
-      --signal-ink: 255 122 69;
-      --board: 8 10 9;
-      --board-dot: 244 244 239;
+      --paper: 18 18 18;
+      --stone: 27 26 25;
+      --ink: 236 235 232;
+      --ink-soft: 169 165 160;
+      --hair: 52 50 48;
+      --line: 111 106 101;
+      --accent: 229 139 149;
+      --accent-deep: 92 21 32;
+      --accent-ink: 18 18 18;
+      --accent-soft: 236 211 214;
       --danger: 255 138 128;
-      --grain-opacity: 0.035;
     }
   }
 
   :root[data-theme='dark'] {
     color-scheme: dark;
-    --paper: 15 20 17;
-    --sheet: 23 30 26;
-    --ink: 236 237 230;
-    --ink-soft: 169 173 164;
-    --rule: 95 101 92;
-    --field: 18 56 38;
-    --field-deep: 11 38 25;
-    --field-ink: 236 237 230;
-    --field-soft: 185 211 195;
-    --signal: 255 106 48;
-    --signal-ink: 255 122 69;
-    --board: 8 10 9;
-    --board-dot: 244 244 239;
+    --paper: 18 18 18;
+    --stone: 27 26 25;
+    --ink: 236 235 232;
+    --ink-soft: 169 165 160;
+    --hair: 52 50 48;
+    --line: 111 106 101;
+    --accent: 229 139 149;
+    --accent-deep: 92 21 32;
+    --accent-ink: 18 18 18;
+    --accent-soft: 236 211 214;
     --danger: 255 138 128;
-    --grain-opacity: 0.035;
   }
 
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    scroll-padding-top: calc(var(--header-h) + 1rem);
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -85,203 +73,172 @@
     @apply bg-paper text-ink font-sans antialiased;
     font-size: 1.0625rem;
     line-height: 1.65;
-    caret-color: rgb(var(--signal-ink));
+    caret-color: rgb(var(--accent));
   }
 
-  /* Zeitungspapier-Korn – ein Hauch Offsetdruck, kein Effekt */
-  body { position: relative; }
-  body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: var(--grain-opacity);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  h1, h2, h3, h4 {
-    @apply font-display;
-    text-wrap: balance;
-  }
-
+  h1, h2, h3, h4 { text-wrap: balance; }
   p, li, dd { text-wrap: pretty; }
 
   :focus-visible {
-    outline: 3px solid rgb(var(--focus));
+    outline: 2px solid rgb(var(--focus));
     outline-offset: 3px;
   }
 
   ::selection {
-    background: rgb(var(--signal));
-    color: rgb(21 22 20);
+    background: rgb(var(--accent));
+    color: rgb(var(--accent-ink));
   }
 
-  /* Tabellarische Ziffern überall, wo Zahlen stehen */
-  table, .tabular { font-variant-numeric: tabular-nums; }
+  .tabular { font-variant-numeric: tabular-nums lining-nums; }
 
-  * { scrollbar-width: thin; scrollbar-color: rgb(var(--ink-soft)) rgb(var(--paper)); }
+  * { scrollbar-width: thin; scrollbar-color: rgb(var(--line)) rgb(var(--paper)); }
 }
 
 @layer components {
   /* ---------- Raster ---------- */
-  .wrap { @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-10; }
-  .section { @apply py-16 md:py-24; }
-  .section-tight { @apply py-12 md:py-16; }
+  .wrap { @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-12; }
+  .section { @apply py-20 md:py-28; }
+  .section-tight { @apply py-14 md:py-20; }
 
-  /* Grüne Fläche: Text und Fokus kippen auf Papierfarbe */
-  .on-field {
-    @apply bg-field text-field-ink;
-    --focus: var(--field-ink);
-  }
-  .on-field ::selection { background: rgb(var(--signal)); color: rgb(21 22 20); }
-
+  /* Dunkle Flächen: Footer (Tinte) und Abschluss (Ochsenblut).
+     Die Tokens werden lokal umgedreht, damit Komponenten darin einfach funktionieren. */
   .on-ink {
-    background: rgb(var(--ink));
-    color: rgb(var(--paper));
-    --focus: var(--paper);
+    --paper: 22 22 22;
+    --stone: 32 31 30;
+    --ink: 236 235 232;
+    --ink-soft: 179 174 168;
+    --hair: 58 56 54;
+    --line: 130 125 120;
+    --focus: var(--ink);
+    background: rgb(var(--paper));
+    color: rgb(var(--ink));
+  }
+  .on-accent {
+    --paper: var(--accent-deep);
+    --ink: 246 243 240;
+    --ink-soft: 236 211 214;
+    --hair: 122 52 62;
+    --line: 214 178 183;
+    --focus: var(--ink);
+    background: rgb(var(--accent-deep));
+    color: rgb(var(--ink));
   }
 
   /* ---------- Typografie ---------- */
   .t-display {
-    font-stretch: 62%;
-    font-weight: 860;
-    line-height: 0.93 !important;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
+    @apply font-serif;
+    font-weight: 500;
+    font-variation-settings: 'opsz' 96;
+    line-height: 1.02;
+    letter-spacing: -0.022em;
   }
+  .t-display em, .t-headline em {
+    font-style: italic;
+    color: rgb(var(--accent));
+  }
+  .on-ink .t-display em, .on-accent .t-display em,
+  .on-ink .t-headline em, .on-accent .t-headline em { color: inherit; }
+
   .t-headline {
-    font-stretch: 72%;
-    font-weight: 820;
-    line-height: 0.98 !important;
-    letter-spacing: -0.012em;
-    @apply text-[2.125rem] sm:text-5xl lg:text-[3.5rem];
+    @apply font-serif text-[2.25rem] sm:text-5xl lg:text-[3.5rem];
+    font-weight: 500;
+    font-variation-settings: 'opsz' 72;
+    line-height: 1.06 !important;
+    letter-spacing: -0.018em;
   }
   .t-title {
-    font-stretch: 82%;
-    font-weight: 760;
-    line-height: 1.1;
-    @apply text-xl md:text-2xl;
+    @apply text-xl md:text-[1.375rem];
+    font-weight: 600;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em;
   }
   .t-label {
-    font-stretch: 88%;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    @apply text-[0.75rem];
+    font-weight: 600;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    @apply text-[0.8125rem];
   }
   .t-lead { @apply text-lg md:text-xl leading-relaxed; }
-  .t-board { @apply font-board; font-weight: 800; letter-spacing: 0.04em; }
 
   .link {
-    @apply underline decoration-2 underline-offset-[0.22em] transition-colors duration-150;
-    text-decoration-color: rgb(var(--signal));
+    @apply underline decoration-1 underline-offset-[0.25em] transition-colors duration-150;
+    text-decoration-color: rgb(var(--accent));
   }
-  .link:hover { text-decoration-color: currentColor; }
+  .on-ink .link, .on-accent .link { text-decoration-color: currentColor; }
+  .link:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 
   /* Fließtext für lange Inhalte (Recht, Fallstudien) */
   .prose-paper { @apply max-w-text; }
-  .prose-paper h2 { @apply mt-12 mb-3 text-xl md:text-2xl; font-stretch: 82%; font-weight: 760; line-height: 1.1; }
-  .prose-paper h3 { @apply font-bold mt-8 mb-2 text-lg; }
+  .prose-paper h2 { @apply font-serif mt-14 mb-3 text-2xl md:text-[1.75rem]; font-weight: 500; line-height: 1.15; }
+  .prose-paper h3 { @apply font-semibold mt-8 mb-2 text-lg; }
   .prose-paper p { @apply mb-4; }
   .prose-paper ul { @apply mb-4 list-disc pl-5 space-y-1; }
   .prose-paper a {
-    @apply underline decoration-2 underline-offset-[0.22em];
-    text-decoration-color: rgb(var(--signal));
+    @apply underline decoration-1 underline-offset-[0.25em];
+    text-decoration-color: rgb(var(--accent));
   }
 
-  /* ---------- Buttons: gedruckte Felder, eckig, 48px hoch ---------- */
+  /* ---------- Buttons: Pillen mit Pfeil ---------- */
   .btn {
-    @apply inline-flex min-h-12 whitespace-nowrap items-center justify-center gap-2.5 border-2 px-6 py-2.5 text-center transition-colors duration-150;
-    font-stretch: 85%;
-    font-weight: 780;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    font-size: 0.9375rem;
-    line-height: 1.15;
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border px-6 py-2.5 text-center text-[0.9375rem] font-semibold transition-colors duration-200;
   }
-  .btn:active { transform: translateY(1px); }
+  .btn > svg { @apply transition-transform duration-200 ease-out; }
+  .btn:hover > svg { transform: translateX(3px); }
   .btn[disabled], .btn[aria-disabled='true'] { @apply cursor-not-allowed opacity-60; }
 
-  /* Signal: die eine Handlung. Druckschwarz auf Orange (5,8:1). */
-  .btn-signal { @apply border-ink bg-signal text-[#151614]; }
-  .btn-signal:hover { @apply bg-[#151614] text-signal border-[#151614]; }
-  .on-field .btn-signal, .on-ink .btn-signal { @apply border-signal; }
+  .btn-primary { @apply border-accent bg-accent text-accent-ink; }
+  .btn-primary:hover { @apply border-accent-deep bg-accent-deep text-white; }
+  .on-accent .btn-primary { @apply border-ink bg-ink text-accent-deep; }
+  .on-accent .btn-primary:hover { @apply bg-transparent text-ink; }
 
-  .btn-ink { @apply border-ink bg-ink text-paper; }
-  .btn-ink:hover { @apply bg-transparent text-ink; }
+  .btn-dark { @apply border-ink bg-ink text-paper; }
+  .btn-dark:hover { @apply bg-transparent text-ink; }
 
-  .btn-outline { @apply border-current bg-transparent; }
-  .btn-outline:hover { @apply bg-ink text-paper border-ink; }
-  .on-field .btn-outline:hover { @apply bg-field-ink text-field border-field-ink; }
+  .btn-outline { @apply border-line bg-transparent text-ink; }
+  .btn-outline:hover { @apply border-ink; }
 
-  /* ---------- Formulare ---------- */
+  /* ---------- Formulare: unterstrichene Felder ---------- */
   .input {
-    @apply block w-full min-h-12 border-2 border-rule bg-sheet px-4 py-3 text-ink transition-colors duration-150;
-    border-radius: 0;
+    @apply block w-full min-h-12 rounded-none border-0 border-b-[1.5px] border-line bg-transparent px-0 py-3 text-lg text-ink transition-colors duration-150;
   }
   .input::placeholder { color: rgb(var(--ink-soft)); opacity: 1; }
   .input:hover { @apply border-ink-soft; }
-  .input:focus { @apply border-ink outline-none; box-shadow: 0 0 0 2px rgb(var(--ink)); }
+  .input:focus { @apply border-ink; outline: none; }
+  .input:focus-visible { outline: 2px solid rgb(var(--focus)); outline-offset: 4px; }
+  textarea.input { @apply rounded border-[1.5px] px-3; }
   .input[aria-invalid='true'] { @apply border-danger; }
-  .field-label { @apply mb-2 block font-bold; font-stretch: 90%; }
+  .field-label { @apply mb-1 block text-[0.9375rem] font-semibold; }
   .field-error { @apply mt-2 flex items-start gap-2 text-[0.9375rem] font-semibold text-danger; }
 
-  /* Auswahl-Chips (Radio/Checkbox als bedruckte Felder) */
   .chip {
-    @apply relative inline-flex min-h-11 cursor-pointer select-none items-center border-2 border-ink px-3.5 py-2 transition-colors duration-150;
-    font-stretch: 88%;
-    font-weight: 700;
+    @apply relative inline-flex min-h-11 cursor-pointer select-none items-center rounded-full border border-line px-4 py-2 text-[0.9375rem] font-medium transition-colors duration-150;
   }
-  .chip:hover { @apply bg-ink/[0.06]; }
-  .chip:has(input:checked) { @apply bg-ink text-paper; }
-  .chip:has(input:focus-visible) { outline: 3px solid rgb(var(--focus)); outline-offset: 3px; }
+  .chip:hover { @apply border-ink; }
+  .chip:has(input:checked) { @apply border-ink bg-ink text-paper; }
+  .chip:has(input:focus-visible) { outline: 2px solid rgb(var(--focus)); outline-offset: 3px; }
 
-  /* ---------- Linien wie im Heft ---------- */
-  .rule-heavy { border-top: 6px solid rgb(var(--ink)); }
-  .rule-thin { border-top: 1px solid rgb(var(--ink) / 0.25); }
-
-  /* ---------- Eintrittskarte ---------- */
-  .ticket {
-    --notch: 14px;
-    --tear: 4.75rem;
-    @apply relative bg-sheet text-ink;
-    -webkit-mask:
-      radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat,
-      radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat;
-    mask:
-      radial-gradient(circle var(--notch) at 0 var(--tear), transparent 98%, #000) left / 51% 100% no-repeat,
-      radial-gradient(circle var(--notch) at 100% var(--tear), transparent 98%, #000) right / 51% 100% no-repeat;
-  }
-  .ticket-tear {
-    @apply absolute inset-x-6 border-t-2 border-dashed border-ink/40;
-    top: var(--tear);
-  }
+  /* ---------- Linien ---------- */
+  .rule-top { border-top: 1px solid rgb(var(--ink)); }
+  .hairline { border-top: 1px solid rgb(var(--hair)); }
 }
 
-@layer utilities {
-  .stretch-62 { font-stretch: 62%; }
-  .stretch-75 { font-stretch: 75%; }
-  .stretch-88 { font-stretch: 88%; }
+/* ---------- Bewegung: ein ruhiger Moment ---------- */
+@keyframes lead-reveal {
+  from { clip-path: inset(100% 0 0 0); transform: translateY(12px); }
+  to { clip-path: inset(0 0 0 0); transform: none; }
 }
-
-/* ---------- Bewegung: ein Moment pro Element, nie Pflicht ---------- */
-@keyframes board-switch {
-  0% { opacity: 0.35; }
-  100% { opacity: 1; }
-}
-.animate-board { animation: board-switch 360ms steps(4, end); }
+.animate-lead { animation: lead-reveal 900ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both; }
 
 @keyframes stamp-in {
-  0% { opacity: 0; transform: rotate(-9deg) scale(1.5); filter: blur(2px); }
-  60% { opacity: 1; transform: rotate(-9deg) scale(0.96); filter: blur(0); }
-  100% { opacity: 1; transform: rotate(-9deg) scale(1); }
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }
-.animate-stamp { animation: stamp-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-stamp { animation: stamp-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }

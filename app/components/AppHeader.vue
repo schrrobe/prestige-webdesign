@@ -9,36 +9,7 @@ const mobileNav = ref<HTMLElement | null>(null)
 const menuButton = ref<HTMLElement | null>(null)
 const servicesWrap = ref<HTMLElement | null>(null)
 
-/* ---------- Anzeigetafel: zeigt die Rubrik des Abschnitts im Blick ---------- */
-const rubric = ref('Titelseite')
-// Erst animieren, wenn sich die Rubrik beim Scrollen ändert – nie beim ersten Paint
-const rubricChanged = ref(false)
-let observer: IntersectionObserver | null = null
-
-function watchRubrics() {
-  observer?.disconnect()
-  const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-rubric]'))
-  rubric.value = sections[0]?.dataset.rubric ?? 'Titelseite'
-  rubricChanged.value = false
-  if (!('IntersectionObserver' in window) || !sections.length) return
-  observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const next = (entry.target as HTMLElement).dataset.rubric
-        if (entry.isIntersecting && next && next !== rubric.value) {
-          rubricChanged.value = true
-          rubric.value = next
-        }
-      }
-    },
-    { rootMargin: '-40% 0px -55% 0px' },
-  )
-  sections.forEach(s => observer!.observe(s))
-}
-
-onMounted(() => nextTick(watchRubrics))
 onBeforeUnmount(() => {
-  observer?.disconnect()
   if (import.meta.client) document.documentElement.style.overflow = ''
 })
 
@@ -78,7 +49,6 @@ function onMenuKeydown(e: KeyboardEvent) {
 watch(() => route.fullPath, () => {
   menuOpen.value = false
   servicesOpen.value = false
-  nextTick(watchRubrics)
 })
 
 function isActive(to: string) {
@@ -87,18 +57,9 @@ function isActive(to: string) {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b-2 border-ink bg-paper">
+  <header class="sticky top-0 z-50 border-b border-hair bg-paper">
     <div class="wrap flex h-[var(--header-h)] items-center gap-4">
       <SiteLogo class="mr-auto lg:mr-0" />
-
-      <!-- Anzeigetafel: rein dekorativ, die Überschriften tragen die Bedeutung -->
-      <div
-        class="hidden sm:flex lg:hidden xl:flex xl:ml-4 h-9 min-w-[9.5rem] md:min-w-[11.5rem] items-center gap-2.5 bg-board px-3 text-board-dot"
-        aria-hidden="true"
-      >
-        <span class="h-2 w-2 shrink-0 rounded-full bg-signal" />
-        <span :key="rubric" class="t-board inline-block text-[0.9375rem] uppercase leading-none" :class="{ 'animate-board': rubricChanged }">{{ rubric }}</span>
-      </div>
 
       <!-- Desktop-Navigation -->
       <nav class="ml-auto hidden lg:block" aria-label="Hauptnavigation">
@@ -113,7 +74,7 @@ function isActive(to: string) {
               >{{ item.label }}</NuxtLink>
               <button
                 type="button"
-                class="-ml-2 grid h-11 w-9 place-items-center hover:text-signal-ink"
+                class="-ml-2 grid h-11 w-9 place-items-center hover:text-accent"
                 :aria-expanded="servicesOpen"
                 aria-controls="nav-services"
                 @click="servicesOpen = !servicesOpen"
@@ -124,12 +85,12 @@ function isActive(to: string) {
               <ul
                 v-show="servicesOpen"
                 id="nav-services"
-                class="absolute left-0 top-full mt-[2px] w-64 border-2 border-ink bg-sheet py-2"
+                class="absolute left-0 top-full mt-2 w-64 rounded-lg border border-hair bg-paper py-2 shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)]"
               >
                 <li v-for="child in item.children" :key="child.to">
                   <NuxtLink
                     :to="child.to"
-                    class="block px-4 py-2.5 font-semibold hover:bg-ink hover:text-paper"
+                    class="block px-4 py-2.5 font-medium hover:bg-stone"
                     :aria-current="route.path === child.to ? 'page' : undefined"
                     @click="servicesOpen = false"
                   >{{ child.label }}</NuxtLink>
@@ -147,7 +108,7 @@ function isActive(to: string) {
         </ul>
       </nav>
 
-      <NuxtLink to="/kontakt" class="btn btn-signal !min-h-11 !px-4 text-[0.8125rem] sm:!px-5 sm:text-sm">
+      <NuxtLink to="/kontakt" class="btn btn-primary !min-h-11 !px-4 text-[0.875rem] sm:!px-5">
         <span class="sm:hidden">Anfragen</span>
         <span class="hidden sm:inline">Erstgespräch anfragen</span>
       </NuxtLink>
@@ -176,27 +137,22 @@ function isActive(to: string) {
         v-if="menuOpen"
         id="mobile-navigation"
         ref="mobileNav"
-        class="fixed inset-x-0 bottom-0 top-[var(--header-h)] overflow-y-auto border-t-2 border-ink bg-paper lg:hidden"
+        class="fixed inset-x-0 bottom-0 top-[var(--header-h)] overflow-y-auto border-t border-hair bg-paper lg:hidden"
         aria-label="Hauptnavigation"
         @keydown="onMenuKeydown"
       >
         <div class="wrap flex min-h-full flex-col pb-8 pt-4">
-          <p class="mb-3 flex h-9 items-center gap-2.5 self-start bg-board px-3 text-board-dot sm:hidden">
-            <span class="h-2 w-2 shrink-0 rounded-full bg-signal" aria-hidden="true" />
-            <span class="sr-only">Sie sind gerade im Abschnitt: </span>
-            <span class="t-board text-[0.9375rem] uppercase leading-none">{{ rubric }}</span>
-          </p>
-          <ul class="divide-y divide-ink/20 border-b border-ink/20">
+          <ul class="divide-y divide-hair border-b border-hair">
             <li v-for="item in MAIN_NAV" :key="item.to">
               <NuxtLink
                 :to="item.to"
-                class="flex min-h-14 items-center justify-between py-3 text-[2rem] uppercase leading-none"
-                style="font-stretch: 65%; font-weight: 850;"
+                class="flex min-h-16 items-center justify-between py-3 font-serif text-[2rem] leading-none"
+                style="font-weight: 500; font-variation-settings: 'opsz' 48;"
                 :aria-current="route.path === item.to ? 'page' : undefined"
                 @click="closeMenu()"
               >
                 {{ item.label }}
-                <AppIcon name="arrow-right" class="h-6 w-6 text-signal-ink" />
+                <AppIcon name="arrow-right" class="h-5 w-5 text-accent" />
               </NuxtLink>
               <ul v-if="item.children" class="-mt-1 grid grid-cols-2 gap-x-4 pb-4">
                 <li v-for="child in item.children" :key="child.to">
@@ -211,7 +167,7 @@ function isActive(to: string) {
             </li>
           </ul>
           <div class="mt-auto pt-8">
-            <NuxtLink to="/kontakt" class="btn btn-signal w-full" @click="closeMenu()">
+            <NuxtLink to="/kontakt" class="btn btn-primary w-full" @click="closeMenu()">
               Kostenloses Erstgespräch
             </NuxtLink>
             <a :href="`mailto:${CONTACT.email}`" class="mt-4 flex min-h-11 items-center justify-center gap-2 font-semibold">
@@ -227,17 +183,14 @@ function isActive(to: string) {
 
 <style scoped>
 .nav-link {
-  @apply relative flex min-h-11 items-center whitespace-nowrap px-2.5 xl:px-3.5;
-  font-stretch: 85%;
-  font-weight: 720;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.875rem;
+  @apply relative flex min-h-11 items-center whitespace-nowrap px-3 text-[0.9375rem] font-medium xl:px-4;
 }
 .nav-link::after {
   content: '';
-  @apply absolute inset-x-2.5 bottom-1.5 h-[3px] origin-left scale-x-0 bg-signal transition-transform duration-200 ease-out xl:inset-x-3.5;
+  @apply absolute inset-x-3 bottom-2 h-px origin-left scale-x-0 bg-ink transition-transform duration-300 ease-out xl:inset-x-4;
 }
 .nav-link:hover::after,
 .nav-link-active::after { @apply scale-x-100; }
+.nav-link-active { @apply text-accent; }
+.nav-link-active::after { @apply bg-accent; }
 </style>

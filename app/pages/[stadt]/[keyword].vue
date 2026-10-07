@@ -294,10 +294,10 @@ const coverLead = computed(() =>
 <template>
   <div>
     <PageCover :title="h1" :lead="coverLead" align="start">
-      <a href="#anpfiff" class="btn btn-signal lg:hidden">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal lg:hidden">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
       <template #aside>
-        <TicketForm :source="`Keyword-Seite – ${h1InCity}`" class="hidden lg:block" />
+        <QuickInquiry :source="`Keyword-Seite – ${h1InCity}`" class="hidden lg:block" />
       </template>
     </PageCover>
 
@@ -465,6 +465,6 @@ const coverLead = computed(() =>
       </div>
     </section>
 
-    <KickoffSection :source="`${h1InCity} – Anpfiff`" />
+    <InquirySection :source="`${h1InCity} – Anpfiff`" />
   </div>
 </template>

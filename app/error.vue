@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Fehlerseite („Abseits“). Läuft außerhalb von <NuxtPage>, deshalb
+ * Fehlerseite. Läuft außerhalb von <NuxtPage>, deshalb
  * selbst in <NuxtLayout> gewickelt, damit Kopf und Fuß erscheinen.
  * Links funktionieren auch ohne JavaScript (statische 404.html),
  * mit JavaScript räumt clearError() den Fehlerzustand auf.
@@ -32,38 +32,32 @@ function go(to: string) {
 
 <template>
   <NuxtLayout>
-    <section class="on-field" data-rubric="Abseits" aria-labelledby="error-title">
-      <div class="wrap grid gap-12 pb-20 pt-12 md:pb-28 md:pt-16 lg:grid-cols-12 lg:items-end">
+    <section class="border-b border-hair" aria-labelledby="error-title">
+      <div class="wrap grid gap-12 pb-24 pt-14 md:pb-32 md:pt-20 lg:grid-cols-12 lg:items-end">
         <div class="lg:col-span-8">
-          <h1 id="error-title" class="t-display text-[4rem] sm:text-8xl lg:text-[9rem]">
-            {{ notFound ? 'Abseits.' : 'Spiel\u00ADunterbrechung.' }}
+          <p class="font-serif text-[6rem] italic leading-none text-accent sm:text-[9rem]" style="font-variation-settings: 'opsz' 96;" aria-hidden="true">{{ status }}</p>
+          <h1 id="error-title" class="t-display mt-6 text-5xl sm:text-6xl lg:text-7xl">
+            {{ notFound ? 'Diese Seite gibt es nicht.' : 'Hier ist etwas schiefgelaufen.' }}
           </h1>
-          <p class="t-lead mt-6 max-w-2xl md:mt-8">
+          <p class="t-lead mt-7 max-w-2xl text-ink-soft">
             <template v-if="notFound">
-              Diese Seite gibt es hier nicht – vielleicht hat sich die Adresse geändert, oder im Link steckt ein Tippfehler.
-              Von hier aus geht es zurück ins Spiel:
+              Vielleicht hat sich die Adresse geändert, oder im Link steckt ein Tippfehler (Fehlercode {{ status }}).
+              Hier geht es weiter:
             </template>
             <template v-else>
-              Hier ist gerade etwas schiefgelaufen. Bitte versuchen Sie es gleich noch einmal –
-              oder schreiben Sie mir, wenn der Fehler bleibt.
+              Bitte versuchen Sie es gleich noch einmal – oder schreiben Sie mir, wenn der Fehler bleibt (Fehlercode {{ status }}).
             </template>
           </p>
-          <ul class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ul class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <li v-for="link in links" :key="link.to">
               <a
                 :href="link.to"
                 class="btn w-full sm:w-auto"
-                :class="link.primary ? 'btn-signal' : 'btn-outline'"
+                :class="link.primary ? 'btn-primary' : 'btn-outline'"
                 @click.prevent="go(link.to)"
               >{{ link.label }}</a>
             </li>
           </ul>
-        </div>
-        <div class="lg:col-span-4">
-          <dl class="inline-flex flex-col bg-board px-6 py-5 text-board-dot">
-            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.06em] text-[#e9e2d0]" style="font-stretch: 88%;">Fehlercode</dt>
-            <dd class="t-board order-first text-7xl leading-none sm:text-8xl">{{ status }}</dd>
-          </dl>
         </div>
       </div>
     </section>

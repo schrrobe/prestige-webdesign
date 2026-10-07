@@ -38,14 +38,13 @@ function startOver() {
 </script>
 
 <template>
-  <div class="border-2 border-ink bg-sheet p-6 md:p-10">
-    <div v-if="status === 'sent' || status === 'mailto'" role="status" class="relative py-6">
-      <p
-        class="animate-stamp absolute right-0 top-0 border-[3px] border-signal-ink px-3 py-1 text-2xl uppercase text-signal-ink"
-        style="font-stretch: 62%; font-weight: 880;"
-        aria-hidden="true"
-      >{{ status === 'sent' ? 'Angefragt' : 'Fast fertig' }}</p>
-      <h2 ref="statusHeading" tabindex="-1" class="t-headline max-w-[16ch] pt-12 focus:outline-none">
+  <div class="rounded-2xl border border-hair p-6 md:p-10">
+    <div v-if="status === 'sent' || status === 'mailto'" role="status" class="animate-stamp py-6">
+      <p class="flex items-center gap-2 text-sm font-semibold text-accent">
+        <AppIcon name="check-circle" class="h-5 w-5" />
+        {{ status === 'sent' ? 'Nachricht gesendet' : 'Fast geschafft' }}
+      </p>
+      <h2 ref="statusHeading" tabindex="-1" class="t-headline mt-4 max-w-[18ch] focus:outline-none">
         {{ status === 'sent' ? 'Danke – Ihre Nachricht ist angekommen.' : 'Bitte noch im E-Mail-Programm absenden.' }}
       </h2>
       <p v-if="status === 'sent'" class="t-lead mt-5 max-w-xl text-ink-soft">
@@ -59,12 +58,12 @@ function startOver() {
     </div>
 
     <form v-else novalidate aria-labelledby="cf-title" @submit.prevent="onSubmit">
-      <h2 id="cf-title" class="t-title">Erzählen Sie mir von Ihrem Vorhaben</h2>
+      <h2 id="cf-title" class="font-serif text-[1.75rem] leading-tight md:text-[2rem]" style="font-weight: 500;">Erzählen Sie mir von Ihrem Vorhaben</h2>
       <p class="mt-2 text-ink-soft">Nur die E-Mail-Adresse ist Pflicht. Alles andere hilft mir, gut vorbereitet ins Gespräch zu gehen.</p>
 
       <fieldset class="mt-8">
         <legend class="field-label">Worum geht es?</legend>
-        <div class="flex flex-wrap gap-2">
+        <div class="mt-2 flex flex-wrap gap-2">
           <label v-for="t in INQUIRY_TOPICS" :key="t" class="chip">
             <input v-model="form.topic" type="radio" name="cf-topic" :value="t" class="sr-only" />
             {{ t }}
@@ -118,13 +117,13 @@ function startOver() {
         <label>Bitte leer lassen <input v-model="form.botcheck" type="text" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <p v-if="status === 'error'" role="alert" class="mt-6 border-2 border-danger px-4 py-3 font-semibold text-danger">
+      <p v-if="status === 'error'" role="alert" class="mt-6 rounded-lg border border-danger px-4 py-3 font-semibold text-danger">
         Das hat nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an
         <a :href="`mailto:${CONTACT.email}`" class="underline">{{ CONTACT.email }}</a>.
       </p>
 
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <button type="submit" class="btn btn-signal" :disabled="status === 'submitting'">
+        <button type="submit" class="btn btn-primary" :disabled="status === 'submitting'">
           <template v-if="status === 'submitting'">Wird gesendet …</template>
           <template v-else>
             Nachricht senden

@@ -131,7 +131,7 @@ const principles = [
           <h2 id="stats-title" class="t-title">Die Zahlen hinter Prestige Webdesign</h2>
           <p class="mt-2 text-ink-soft">Ohne Aufrundung, ohne Sternchen.</p>
         </div>
-        <ScoreBoard class="lg:col-span-8" />
+        <FactLine class="lg:col-span-8" />
       </div>
     </section>
 
@@ -177,7 +177,7 @@ const principles = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       title="Lernen wir uns kennen."
       text="Erzählen Sie mir von Ihrem Betrieb und Ihrer Website. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."
       source="Über mich"

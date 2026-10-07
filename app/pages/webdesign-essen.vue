@@ -34,7 +34,7 @@ const benefits = [
       title="Webdesign Essen"
       lead="Websites für Essener Unternehmen – von der Rüttenscheider Straße bis zum Handwerksbetrieb im Essener Norden. Ein Ansprechpartner aus dem Ruhrgebiet, der gestaltet und entwickelt, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -118,7 +118,7 @@ const benefits = [
 
     <CityKeywordLinks city-slug="essen" city-name="Essen" />
 
-    <KickoffSection
+    <InquirySection
       source="Webdesign Essen – Anpfiff"
       title="Ihre Website für Essen."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."

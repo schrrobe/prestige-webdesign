@@ -34,7 +34,7 @@ const advantages = [
       title="Webdesign Unna"
       lead="Websites für Betriebe in Unna und im Kreis Unna – von der Innenstadt über Massen bis Kamen und Holzwickede. Ein Ansprechpartner aus der Nachbarstadt Dortmund, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -117,7 +117,7 @@ const advantages = [
 
     <CityKeywordLinks city-slug="unna" city-name="Unna" />
 
-    <KickoffSection
+    <InquirySection
       source="Webdesign Unna – Anpfiff"
       title="Ihre Website für Unna."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."

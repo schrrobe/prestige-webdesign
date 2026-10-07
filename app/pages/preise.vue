@@ -195,7 +195,7 @@ const maintenance = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       title="Was kostet Ihre Website?"
       text="Finden wir es heraus. Im kostenlosen Erstgespräch klären wir, was Sie brauchen – danach bekommen Sie ein Angebot zum Festpreis, und Sie entscheiden in Ruhe."
       source="Preise"

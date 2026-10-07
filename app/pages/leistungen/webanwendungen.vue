@@ -106,7 +106,7 @@ const useCases = [
       title="Komplexe Webanwendungen für Ihr Unternehmen."
       lead="Ich entwickle individuelle Web-Apps für Abläufe, die kein Baukasten abbildet: Kundenportale, Dashboards, Buchungssysteme und Werkzeuge, die genau zu Ihrem Geschäftsmodell passen."
     >
-      <a href="#anpfiff" class="btn btn-signal">Vorhaben schildern</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Vorhaben schildern</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
@@ -217,7 +217,7 @@ const useCases = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen Webanwendungen – Anpfiff"
       title="Sie planen eine Webanwendung?"
       text="Schildern Sie mir Ihr Vorhaben in ein paar Sätzen. Im kostenlosen Erstgespräch klären wir, welcher Umfang und welche Architektur sinnvoll sind – danach bekommen Sie ein Angebot zum Festpreis."

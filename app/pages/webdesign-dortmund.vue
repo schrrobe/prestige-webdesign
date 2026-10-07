@@ -34,7 +34,7 @@ const localSeo = [
       title="Webdesign Dortmund"
       lead="Websites für Dortmunder Betriebe – von der Innenstadt bis zum Technologiepark. Ich sitze selbst in Dortmund, gestalte und entwickle Ihre Seite persönlich und nenne Ihnen vorher den Preis: Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -117,7 +117,7 @@ const localSeo = [
 
     <CityKeywordLinks city-slug="dortmund" city-name="Dortmund" />
 
-    <KickoffSection
+    <InquirySection
       source="Webdesign Dortmund – Anpfiff"
       title="Ihre Website aus Dortmund."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."

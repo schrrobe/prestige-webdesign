@@ -91,7 +91,7 @@ const reasons = [
       title="Professionelles Webdesign zum Festpreis."
       lead="Responsive Websites für Unternehmen im Ruhrgebiet, die erklären, was Sie tun, und Anfragen bringen. Klares Design, saubere Technik – mit WordPress zum Selbstpflegen oder individuell entwickelt."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
@@ -131,7 +131,7 @@ const reasons = [
           <p class="t-lead mt-5 max-w-text text-ink-soft">
             Ich unterstütze Betriebe im Ruhrgebiet bei ihrem Auftritt im Netz – persönlich betreut, mit Design und Entwicklung aus einer Hand.
           </p>
-          <ScoreBoard class="mt-10" />
+          <FactLine class="mt-10" />
         </div>
         <dl class="border-t-2 border-ink lg:col-span-6 lg:col-start-7">
           <div v-for="reason in reasons" :key="reason.title" class="grid gap-2 border-b border-ink/25 py-6 sm:grid-cols-[13rem_1fr] sm:gap-6">
@@ -179,7 +179,7 @@ const reasons = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen Webdesign – Anpfiff"
       title="Bereit für Ihre neue Website?"
       text="Lassen Sie uns unverbindlich sprechen. Ich zeige Ihnen, wie eine durchdachte Website Ihrem Betrieb Anfragen bringt – und Sie bekommen danach ein Angebot zum Festpreis."

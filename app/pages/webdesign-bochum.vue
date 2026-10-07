@@ -34,7 +34,7 @@ const reasons = [
       title="Webdesign Bochum"
       lead="Websites für Bochumer Unternehmen – vom Startup an der Uni bis zum Dienstleister in der Innenstadt. Ein Ansprechpartner aus dem Revier, der gestaltet und entwickelt, zum Festpreis ab 800 €."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/referenzen" class="btn btn-outline">Referenzen ansehen</NuxtLink>
     </PageCover>
 
@@ -118,7 +118,7 @@ const reasons = [
 
     <CityKeywordLinks city-slug="bochum" city-name="Bochum" />
 
-    <KickoffSection
+    <InquirySection
       source="Webdesign Bochum – Anpfiff"
       title="Ihre Website für Bochum."
       text="Erzählen Sie mir kurz, worum es geht. Das Erstgespräch ist kostenlos und unverbindlich – danach bekommen Sie ein Angebot zum Festpreis."

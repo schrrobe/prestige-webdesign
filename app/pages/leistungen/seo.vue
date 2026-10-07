@@ -112,7 +112,7 @@ const benefits = [
       title="Suchmaschinenoptimierung fürs Ruhrgebiet."
       lead="Damit Kunden aus Ihrer Stadt Sie bei Google finden: saubere Technik, klare Inhalte und lokale Signale. Nachhaltige Suchmaschinenoptimierung aus Dortmund – ohne leere Versprechen."
     >
-      <a href="#anpfiff" class="btn btn-signal">Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
@@ -232,7 +232,7 @@ const benefits = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen SEO – Anpfiff"
       title="Besser gefunden werden?"
       text="Erzählen Sie mir, für welche Leistungen und in welcher Stadt Sie gefunden werden wollen. Im kostenlosen Erstgespräch zeige ich Ihnen, wo Potenzial liegt – danach bekommen Sie ein Angebot zum Festpreis."

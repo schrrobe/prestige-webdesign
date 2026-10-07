@@ -133,7 +133,7 @@ const successFactors = [
       title="Online-Shop erstellen lassen."
       lead="E-Commerce Lösungen mit WooCommerce oder Shopify für Händler und Betriebe im Ruhrgebiet: ein Shop, der auf dem Smartphone verkauft – mit Produkten, Zahlung, Versand und sauberen Abläufen."
     >
-      <a href="#anpfiff" class="btn btn-signal">Shop-Erstgespräch anfragen</a>
+      <a href="#anfrage-abschluss" class="btn btn-signal">Shop-Erstgespräch anfragen</a>
       <NuxtLink to="/leistungen" class="btn btn-outline">Alle Leistungen</NuxtLink>
 
       <template #aside>
@@ -262,7 +262,7 @@ const successFactors = [
       </div>
     </section>
 
-    <KickoffSection
+    <InquirySection
       source="Leistungen E-Commerce – Anpfiff"
       title="Lassen Sie uns über Ihren Shop sprechen."
       text="Erzählen Sie mir, was Sie verkaufen und an wen. Im kostenlosen Erstgespräch klären wir Plattform und Umfang – danach bekommen Sie ein Angebot zum Festpreis."
